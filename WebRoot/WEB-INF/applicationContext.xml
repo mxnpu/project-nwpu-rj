@@ -62,59 +62,72 @@
 			<ref local="sessionFactory"/>
 		</property>
 	</bean>
-	
-	<bean id="PlacardDAO" class="com.goodfriend.dao.impl.PlacardDAO">
+	<bean id="userDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager"></ref>
+		</property>
+		<property name="target">
+			<ref bean="userDAO"/>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="save">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="placardDAO" class="com.goodfriend.dao.impl.PlacardDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	
-	<bean id="StatementDAO" class="com.goodfriend.dao.impl.StatementDAO">
+	<bean id="statementDAO" class="com.goodfriend.dao.impl.StatementDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="GossipDAO" class="com.goodfriend.dao.impl.GossipDAO">
+	<bean id="gossipDAO" class="com.goodfriend.dao.impl.GossipDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="ItemDAO" class="com.goodfriend.dao.impl.ItemDAO">
+	<bean id="itemDAO" class="com.goodfriend.dao.impl.ItemDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="AlbumDAO" class="com.goodfriend.dao.impl.AlbumDAO">
+	<bean id="albumDAO" class="com.goodfriend.dao.impl.AlbumDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="BlogDAO" class="com.goodfriend.dao.impl.BlogDAO">
+	<bean id="blogDAO" class="com.goodfriend.dao.impl.BlogDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="UserDAO" class="com.goodfriend.dao.impl.UserDAO">
+	<bean id="userDAO" class="com.goodfriend.dao.impl.UserDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="PictureDAO" class="com.goodfriend.dao.impl.PictureDAO">
+	<bean id="pictureDAO" class="com.goodfriend.dao.impl.PictureDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="ReplyDAO" class="com.goodfriend.dao.impl.ReplyDAO">
+	<bean id="replyDAO" class="com.goodfriend.dao.impl.ReplyDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="FriendsDAO" class="com.goodfriend.dao.impl.FriendsDAO">
+	<bean id="friendsDAO" class="com.goodfriend.dao.impl.FriendsDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="AdminDAO" class="com.goodfriend.dao.impl.AdminDAO">
+	<bean id="adminDAO" class="com.goodfriend.dao.impl.AdminDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -123,7 +136,7 @@
 	<bean id="loginAction" class="com.goodfriend.action.LoginAction"
 			scope="prototype">
 		<property name="userDao">
-			<ref bean="UserDAO"/>
+			<ref bean="userDAO"/>
 		</property>
 	</bean>
 	
