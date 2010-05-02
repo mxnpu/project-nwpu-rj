@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/goodfriend
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">xurunhua</property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+
+		<mapping resource="com/goodfriend/model/Placard.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Statement.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Gossip.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Item.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Album.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Blog.hbm.xml" />
+		<mapping resource="com/goodfriend/model/User.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Picture.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Reply.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Friends.hbm.xml" />
+		<mapping resource="com/goodfriend/model/Admin.hbm.xml" />
+
+	</session-factory>
+
+</hibernate-configuration>

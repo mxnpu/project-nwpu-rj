@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.goodfriend.model.Picture" table="picture" catalog="goodfriend">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment"></generator>
+        </id>
+        <many-to-one name="album" class="com.goodfriend.model.Album" fetch="select">
+            <column name="album_id" />
+        </many-to-one>
+        <many-to-one name="item" class="com.goodfriend.model.Item" fetch="select">
+            <column name="item_id" not-null="true" />
+        </many-to-one>
+        <property name="introduction" type="java.lang.String">
+            <column name="introduction" length="65535" />
+        </property>
+        <property name="path" type="java.lang.String">
+            <column name="path" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!--  
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/goodfriend">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="xurunhua"></property>
+	</bean>
+ 
+ 	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+				org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResource">
+			<list>
+				<value>com/goodfriend/model/Placard.hbm.xml</value>
+				<value>com/goodfriend/model/Statement.hbm.xml</value>
+				<value>com/goodfriend/model/Gossip.hbm.xml</value>
+				<value>com/goodfriend/model/Item.hbm.xml</value>
+				<value>com/goodfriend/model/Album.hbm.xml</value>
+				<value>com/goodfriend/model/Blog.hbm.xml</value>
+				<value>com/goodfriend/model/User.hbm.xml</value>
+				<value>com/goodfriend/model/Picture.hbm.xml</value>
+				<value>com/goodfriend/model/Reply.hbm.xml</value>
+				<value>com/goodfriend/model/Friends.hbm.xml</value>
+				<value>com/goodfriend/model/Admin.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+ -->
+ 
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+
+	
+	<bean id="PlacardDAO" class="com.goodfriend.dao.impl.PlacardDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="StatementDAO" class="com.goodfriend.dao.impl.StatementDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="GossipDAO" class="com.goodfriend.dao.impl.GossipDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ItemDAO" class="com.goodfriend.dao.impl.ItemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AlbumDAO" class="com.goodfriend.dao.impl.AlbumDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="BlogDAO" class="com.goodfriend.dao.impl.BlogDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserDAO" class="com.goodfriend.dao.impl.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PictureDAO" class="com.goodfriend.dao.impl.PictureDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ReplyDAO" class="com.goodfriend.dao.impl.ReplyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="FriendsDAO" class="com.goodfriend.dao.impl.FriendsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AdminDAO" class="com.goodfriend.dao.impl.AdminDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="loginAction" class="com.goodfriend.action.LoginAction"
+			scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO"/>
+		</property>
+	</bean>
+	
+</beans>
