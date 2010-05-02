@@ -12,8 +12,14 @@
             <column name="item_id" not-null="true" />
         </many-to-one>
         <property name="title" type="java.lang.String">
-            <column name="title" length="65535" />
+            <column name="title" length="100" />
         </property>
+		<property name="cover" type="java.lang.String">
+			<column name="cover" length="100"></column>
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="description" length="200"></column>
+		</property>
         <set name="pictures" inverse="true">
             <key>
                 <column name="album_id" />

@@ -17,6 +17,8 @@ public class Album implements java.io.Serializable {
 	private Item item;
 	private String title;
 	private Set<Picture> pictures = new HashSet<Picture>(0);
+	private String cover;
+	private String description;
 
 	// Constructors
 
@@ -70,4 +72,21 @@ public class Album implements java.io.Serializable {
 		this.pictures = pictures;
 	}
 
+	public String getCover() {
+		return cover;
+	}
+
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	
 }
