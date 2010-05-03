@@ -165,7 +165,7 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	///////////////////////////苗欣begin///////////////////////////////
 	public List<FAlbum> findAllFlex(){
 		List<Album> temp = findAll();
-		List<FAlbum> result = new ArrayList();
+		List<FAlbum> result = new ArrayList<FAlbum>();
 		FAlbum album;
 		for(int i = 0; i <temp.size(); i++){
 			album = new FAlbum();
