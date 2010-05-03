@@ -73,8 +73,9 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/flex-messaging-opt.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/flex-messaging-proxy.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/flex-messaging-remoting.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xalan.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/org.springframework.flex-1.0.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jackson-core-asl-1.0.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/org.springframework.flex-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xalan.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-lang-2.5.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

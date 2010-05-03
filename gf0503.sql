@@ -3,11 +3,9 @@
 -- Host: localhost    Database: goodfriend
 -- ------------------------------------------------------
 -- Server version	5.0.67-community-nt
-
 Create database if not exists `goodfriend`;
 
 Use `goodfriend`;
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -59,7 +57,7 @@ CREATE TABLE `album` (
   `item_id` int(10) unsigned NOT NULL,
   `title` varchar(100) default NULL,
   `cover` varchar(100) NOT NULL,
-  `decription` varchar(200) default NULL,
+  `description` varchar(200) default NULL,
   PRIMARY KEY  (`id_album`),
   KEY `FK_album_item` (`item_id`),
   CONSTRAINT `FK_album_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -172,7 +170,10 @@ SET character_set_client = utf8;
 CREATE TABLE `item` (
   `id_item` int(10) unsigned NOT NULL auto_increment,
   `record_time` datetime default NULL,
-  PRIMARY KEY  (`id_item`)
+  `user` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`id_item`),
+  KEY `FK_item_user` (`user`),
+  CONSTRAINT `FK_item_user` FOREIGN KEY (`user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -314,11 +315,8 @@ CREATE TABLE `user` (
   `email` varchar(45) default NULL,
   `hoby` varchar(150) default NULL,
   `photo` varchar(150) default NULL,
-  `items` int(10) unsigned default NULL,
-  PRIMARY KEY  (`id_user`),
-  KEY `FK_user_items` (`items`),
-  CONSTRAINT `FK_user_items` FOREIGN KEY (`items`) REFERENCES `item` (`id_item`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  PRIMARY KEY  (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -327,7 +325,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'xurunhua','xurunhua','xurunhua',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'xiaoxu','xiaoxu','xiaoxu',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,'xiaorun','xiaorun','xiaorun',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'xiaohua','xiaohua','xiaohua',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'xurunhua','xurunhua','xurunhua',NULL,NULL,NULL,NULL,NULL,NULL),(2,'xiaoxu','xiaoxu','xiaoxu',NULL,NULL,NULL,NULL,NULL,NULL),(3,'xiaorun','xiaorun','xiaorun',NULL,NULL,NULL,NULL,NULL,NULL),(4,'xiaohua','xiaohua','xiaohua',NULL,NULL,NULL,NULL,NULL,NULL),(5,'testSave','testSave','testSave',NULL,NULL,NULL,NULL,NULL,NULL),(6,'testSaved','testSaved','testSaved',NULL,NULL,NULL,NULL,NULL,NULL),(7,'dddd','dddd','dddd','M','1990-01-11','dada','dsadsa','dasd','Default psth');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -340,4 +338,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-05-02 14:35:06
+-- Dump completed on 2010-05-03 11:04:48

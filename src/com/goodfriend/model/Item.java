@@ -5,21 +5,21 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Item entity. 
+ * Item entity.
  * @author 
  */
 
 public class Item implements java.io.Serializable {
 
-	private static final long serialVersionUID = 1L;
 	// Fields
-
+	
+	private static final long serialVersionUID = 1L;
 	private Integer idItem;
+	private User user;
 	private Timestamp recordTime;
 	private Set<Gossip> gossips = new HashSet<Gossip>(0);
 	private Set<Picture> pictures = new HashSet<Picture>(0);
 	private Set<Statement> statements = new HashSet<Statement>(0);
-	private Set<User> users = new HashSet<User>(0);
 	private Set<Blog> blogs = new HashSet<Blog>(0);
 	private Set<Reply> replies = new HashSet<Reply>(0);
 	private Set<Album> albums = new HashSet<Album>(0);
@@ -30,14 +30,19 @@ public class Item implements java.io.Serializable {
 	public Item() {
 	}
 
+	/** minimal constructor */
+	public Item(User user) {
+		this.user = user;
+	}
+
 	/** full constructor */
-	public Item(Timestamp recordTime, Set<Gossip> gossips, Set<Picture> pictures,
-			Set<Statement> statements, Set<User> users, Set<Blog> blogs, Set<Reply> replies, Set<Album> albums) {
+	public Item(User user, Timestamp recordTime, Set<Gossip> gossips, Set<Picture> pictures,
+			Set<Statement> statements, Set<Blog> blogs, Set<Reply> replies, Set<Album> albums) {
+		this.user = user;
 		this.recordTime = recordTime;
 		this.gossips = gossips;
 		this.pictures = pictures;
 		this.statements = statements;
-		this.users = users;
 		this.blogs = blogs;
 		this.replies = replies;
 		this.albums = albums;
@@ -51,6 +56,14 @@ public class Item implements java.io.Serializable {
 
 	public void setIdItem(Integer idItem) {
 		this.idItem = idItem;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Timestamp getRecordTime() {
@@ -83,14 +96,6 @@ public class Item implements java.io.Serializable {
 
 	public void setStatements(Set<Statement> statements) {
 		this.statements = statements;
-	}
-
-	public Set<User> getUsers() {
-		return this.users;
-	}
-
-	public void setUsers(Set<User> users) {
-		this.users = users;
 	}
 
 	public Set<Blog> getBlogs() {
