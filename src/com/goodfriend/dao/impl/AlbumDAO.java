@@ -1,5 +1,6 @@
 package com.goodfriend.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -10,6 +11,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.goodfriend.dao.IAlbumDAO;
 import com.goodfriend.model.Album;
+import com.goodfriend.model.flex.FAlbum;
 
 /**
  * A data access object (DAO) providing persistence and search support for Album
@@ -156,6 +158,36 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 			throw re;
 		}
 	}
+	
+	///////////////////////////苗欣begin///////////////////////////////
+	public List<FAlbum> findAllFlex(){
+		List<Album> temp = findAll();
+		List<FAlbum> result = new ArrayList();
+		FAlbum album;
+		for(int i = 0; i <temp.size(); i++){
+			album = new FAlbum();
+			album.setIdAlbum(temp.get(i).getIdAlbum());
+			album.setItemId(temp.get(i).getItem().getIdItem());
+			album.setTitle(temp.get(i).getTitle());
+			album.setCover(temp.get(i).getCover());
+			album.setDescription(temp.get(i).getDescription());
+			System.out.println(temp.get(i).getIdAlbum());
+			result.add(album);
+		}
+		return result;
+	}
+	
+	public FAlbum findByIdFlex(int id){
+		Album a = findById(id);
+		FAlbum album = new FAlbum();
+		album.setIdAlbum(a.getIdAlbum());
+		album.setItemId(a.getItem().getIdItem());
+		album.setTitle(a.getTitle());
+		album.setCover(a.getCover());
+		album.setDescription(a.getDescription());
+		return album;
+	}
+	//////////////////////////////end//////////////////////////////////
 
 	public static IAlbumDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (IAlbumDAO) ctx.getBean("AlbumDAO");
