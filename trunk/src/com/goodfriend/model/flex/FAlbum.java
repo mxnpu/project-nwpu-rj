@@ -1,6 +1,6 @@
 package com.goodfriend.model.flex;
 
-public class FAlbum {
+public class FAlbum implements java.io.Serializable{
 
 	private int idAlbum;
 	private int itemId;
@@ -11,6 +11,7 @@ public class FAlbum {
 	public FAlbum(){
 		
 	}
+	
 	
 	public int getIdAlbum() {
 		return idAlbum;
