@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class FItem implements java.io.Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	private int idItem;
 	
 	private Date recordTime;

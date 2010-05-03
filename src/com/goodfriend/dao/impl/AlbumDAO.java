@@ -1,7 +1,5 @@
 package com.goodfriend.dao.impl;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -12,9 +10,6 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.goodfriend.dao.IAlbumDAO;
 import com.goodfriend.model.Album;
-import com.goodfriend.model.Item;
-import com.goodfriend.model.flex.FAlbum;
-import com.goodfriend.model.flex.FItem;
 
 /**
  * A data access object (DAO) providing persistence and search support for Album
@@ -37,9 +32,6 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		// do nothing
 	}
 
-	/* (non-Javadoc)
-	 * @see com.goodfriend.dao.impl.IAlbumDAO#save(com.goodfriend.model.Album)
-	 */
 	public void save(Album transientInstance) {
 		log.debug("saving Album instance");
 		try {
@@ -51,9 +43,6 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see com.goodfriend.dao.impl.IAlbumDAO#delete(com.goodfriend.model.Album)
-	 */
 	public void delete(Album persistentInstance) {
 		log.debug("deleting Album instance");
 		try {
@@ -161,50 +150,6 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 			throw re;
 		}
 	}
-	
-	///////////////////////////苗欣begin///////////////////////////////
-	public List<FAlbum> findAllFlex(){
-		List<Album> temp = findAll();
-		List<FAlbum> result = new ArrayList<FAlbum>();
-		FAlbum album;
-		for(int i = 0; i <temp.size(); i++){
-			album = new FAlbum();
-			album.setIdAlbum(temp.get(i).getIdAlbum());
-			album.setItemId(temp.get(i).getItem().getIdItem());
-			album.setTitle(temp.get(i).getTitle());
-			album.setCover(temp.get(i).getCover());
-			album.setDescription(temp.get(i).getDescription());
-			System.out.println(temp.get(i).getIdAlbum());
-			result.add(album);
-		}
-		return result;
-	}
-	
-	public FAlbum findByIdFlex(int id){
-		Album a = findById(id);
-		FAlbum album = new FAlbum();
-		album.setIdAlbum(a.getIdAlbum());
-		album.setItemId(a.getItem().getIdItem());
-		album.setTitle(a.getTitle());
-		album.setCover(a.getCover());
-		album.setDescription(a.getDescription());
-		return album;
-	}
-	
-	public void saveFlex(FAlbum fAlbum, FItem fItem){
-		Item item = new Item();
-		item.setRecordTime(new Timestamp(fItem.getRecordTime().getTime()));
-		
-		Album album = new Album();
-		album.setItem(item);
-		album.setCover(fAlbum.getCover());
-		album.setDescription(fAlbum.getDescription());
-		album.setTitle(fAlbum.getTitle());
-		System.out.println(album.getTitle());
-		save(album);
-	}
-	
-	//////////////////////////////end//////////////////////////////////
 
 	public static IAlbumDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (IAlbumDAO) ctx.getBean("AlbumDAO");

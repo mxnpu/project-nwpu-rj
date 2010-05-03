@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -15,21 +24,23 @@
 			<ref local="sessionFactory" />
 		</property>
 	</bean>
-
-	<bean id="userDAOProxy"
-		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
-		<property name="transactionManager">
-			<ref bean="transactionManager"></ref>
-		</property>
-		<property name="target">
-			<ref bean="userDAO"/>
-		</property>
-		<property name="transactionAttributes">
-			<props>
-				<prop key="save">PROPAGATION_REQUIRED</prop>
-			</props>
-		</property>
-	</bean>
+	
+	<!-- Configure the transaction propagation behavior -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="del*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- The method which participate the transaction -->
+	<aop:config>
+		<aop:pointcut id="allDaoManager" 
+		expression="execution(* com.goodfriend.daomanager.impl.*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="allDaoManager"/>
+	</aop:config>
 
 	<bean id="placardDAO" class="com.goodfriend.dao.impl.PlacardDAO">
 		<property name="sessionFactory">
@@ -87,10 +98,17 @@
 		</property>
 	</bean>
 
-	<bean id="loginAction" class="com.goodfriend.action.LoginAction"
-		scope="prototype">
+	<!-- The DAO manager bean manager -->
+	<bean id="userDaoManager" 
+			class="com.goodfriend.daomanager.impl.UserDaoManager">
 		<property name="userDao">
-			<ref bean="userDAO" />
+			<ref bean="userDAO"/>
+		</property>
+	</bean>
+	<bean id="albumDaoManager"
+			class="com.goodfriend.daomanager.impl.AlbumDaoManager">
+		<property name="albumDao">
+			<ref bean="albumDAO"/>
 		</property>
 	</bean>
 

@@ -1,7 +1,8 @@
 package com.goodfriend.model.flex;
 
 public class FAlbum implements java.io.Serializable{
-
+	
+	private static final long serialVersionUID = 1L;
 	private int idAlbum;
 	private int itemId;
 	private String title;

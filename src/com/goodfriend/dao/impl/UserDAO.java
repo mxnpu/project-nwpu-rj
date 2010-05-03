@@ -43,7 +43,7 @@ public class UserDAO extends HibernateDaoSupport implements IUserDAO {
 	public void save(User transientInstance) {
 		log.debug("saving User instance");
 		try {
-			getHibernateTemplate().save(transientInstance);
+			getHibernateTemplate().saveOrUpdate(transientInstance);
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);

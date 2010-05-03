@@ -10,18 +10,18 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.goodfriend.dao.impl.UserDAO;
+import com.goodfriend.dao.IUserDAO;
 import com.goodfriend.model.User;
 
 public class UserDAOTest {
 
-	UserDAO userDao;
+	IUserDAO userDao;
 	ApplicationContext ctx;
 	
 	@Before
 	public void setUp() throws Exception {
-		ctx = new ClassPathXmlApplicationContext("applicationContextForTest.xml");
-		userDao = (UserDAO) ctx.getBean("UserDAO");
+		ctx = new ClassPathXmlApplicationContext("beans-test.xml");
+		userDao = (IUserDAO) ctx.getBean("userDAO");
 	}
 
 	@After
