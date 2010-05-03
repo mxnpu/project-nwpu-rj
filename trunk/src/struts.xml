@@ -7,9 +7,17 @@
 	<constant name="struts.objectFactory" value="spring"/>
 	
 	<package name="user" namespace="/user" extends="struts-default">
-		<action name="login" class="loginAction">
+		<action name="login" class="loginAction" method="login">
 			<result name="success" type="redirect">success.jsp</result>
 			<result name="login" type="redirect">index.jsp</result>
+		</action>
+		<action name="logout" class="loginAction" method="logout">
+			<result name="index" type="redirect">index.jsp</result>
+			<result>index.jsp</result>
+		</action>
+		<action name="register" class="registerAction" method="register">
+			<result name="success">register_success.jsp</result>
+			<result name="failed">register.jsp</result>
 		</action>
 	</package>
 

@@ -151,12 +151,6 @@ public class ItemDAO extends HibernateDaoSupport implements IItemDAO {
 			throw re;
 		}
 	}
-	
-	///////////////////////苗欣   begin////////////////////////////////
-//	public void saveFlex(FItem item){
-//		
-//	}
-	///////////////////////end//////////////////////////////////
 
 	public static IItemDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (IItemDAO) ctx.getBean("ItemDAO");
