@@ -1,5 +1,6 @@
 package com.goodfriend.dao.impl;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,9 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.goodfriend.dao.IAlbumDAO;
 import com.goodfriend.model.Album;
+import com.goodfriend.model.Item;
 import com.goodfriend.model.flex.FAlbum;
+import com.goodfriend.model.flex.FItem;
 
 /**
  * A data access object (DAO) providing persistence and search support for Album
@@ -187,6 +190,20 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		album.setDescription(a.getDescription());
 		return album;
 	}
+	
+	public void saveFlex(FAlbum fAlbum, FItem fItem){
+		Item item = new Item();
+		item.setRecordTime(new Timestamp(fItem.getRecordTime().getTime()));
+		
+		Album album = new Album();
+		album.setItem(item);
+		album.setCover(fAlbum.getCover());
+		album.setDescription(fAlbum.getDescription());
+		album.setTitle(fAlbum.getTitle());
+		System.out.println(album.getTitle());
+		save(album);
+	}
+	
 	//////////////////////////////end//////////////////////////////////
 
 	public static IAlbumDAO getFromApplicationContext(ApplicationContext ctx) {
