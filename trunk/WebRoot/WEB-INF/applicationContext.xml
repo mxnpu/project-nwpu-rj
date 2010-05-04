@@ -89,6 +89,16 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="allDaoManager"/>
 	</aop:config>
 	
+	<tx:advice id="daoTest">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut expression="execution(* com.goodfriend.dao.impl.*.*(..))" id="test"/>
+		<aop:advisor advice-ref="daoTest" pointcut-ref="test"/>
+	</aop:config>
+	
  	<!-- The DAO bean configuration -->
 	<bean id="placardDAO" class="com.goodfriend.dao.impl.PlacardDAO">
 		<property name="sessionFactory">
@@ -157,6 +167,12 @@
 			class="com.goodfriend.daomanager.impl.AlbumDaoManager">
 		<property name="albumDao">
 			<ref bean="albumDAO"/>
+		</property>
+	</bean>
+	<bean id="pictureDaoManager"
+			class="com.goodfriend.daomanager.impl.PictureDaoManager">
+		<property name="pictureDao">
+			<ref bean="pictureDAO"/>
 		</property>
 	</bean>
 	
