@@ -40,7 +40,8 @@ public class Gossip implements java.io.Serializable {
 		return this.idGossip;
 	}
 
-	public void setIdGossip(Integer idGossip) {
+	@SuppressWarnings("unused")
+	private void setIdGossip(Integer idGossip) {
 		this.idGossip = idGossip;
 	}
 

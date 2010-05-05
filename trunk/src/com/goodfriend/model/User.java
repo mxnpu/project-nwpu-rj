@@ -23,12 +23,17 @@ public class User implements java.io.Serializable {
 	private String email;
 	private String hoby;
 	private String photo;
-	private Set<Item> items = new HashSet<Item>(0);
-	private Set<Friends> friendsesForFriendId = new HashSet<Friends>(0);
-	private Set<Reply> replies = new HashSet<Reply>(0);
-	private Set<Friends> friendsesForUserId = new HashSet<Friends>(0);
-	private Set<Gossip> gossips = new HashSet<Gossip>(0);
-
+	// the items which user have
+	private Set<Item> items = new HashSet<Item>(0);		
+	// the user's friends
+	private Set<Friends> friends = new HashSet<Friends>(0);
+	// the replies which user reply to other.
+	private Set<Reply> replies = new HashSet<Reply>(0);	
+	// the users who the current user belong to
+	private Set<Friends> friendsForOther = new HashSet<Friends>(0);
+	// the gossips which the user to his friend.
+	private Set<Gossip> gossips = new HashSet<Gossip>(0);	
+	
 	// Constructors
 
 	/** default constructor */
@@ -45,8 +50,8 @@ public class User implements java.io.Serializable {
 	/** full constructor */
 	public User(String userName, String password, String realName,
 			String gender, Date birthday, String phone, String email,
-			String hoby, String photo, Set<Item> items, Set<Friends> friendsesForFriendId,
-			Set<Reply> replies, Set<Friends> friendsesForUserId, Set<Gossip> gossips) {
+			String hoby, String photo, Set<Item> items, Set<Friends> friends,
+			Set<Reply> replies, Set<Friends> friendsForOther, Set<Gossip> gossips) {
 		this.userName = userName;
 		this.password = password;
 		this.realName = realName;
@@ -57,9 +62,9 @@ public class User implements java.io.Serializable {
 		this.hoby = hoby;
 		this.photo = photo;
 		this.items = items;
-		this.friendsesForFriendId = friendsesForFriendId;
+		this.friends = friends;
 		this.replies = replies;
-		this.friendsesForUserId = friendsesForUserId;
+		this.friendsForOther = friendsForOther;
 		this.gossips = gossips;
 	}
 
@@ -69,7 +74,8 @@ public class User implements java.io.Serializable {
 		return this.idUser;
 	}
 
-	public void setIdUser(Integer idUser) {
+	@SuppressWarnings("unused")
+	private void setIdUser(Integer idUser) {
 		this.idUser = idUser;
 	}
 
@@ -153,14 +159,6 @@ public class User implements java.io.Serializable {
 		this.items = items;
 	}
 
-	public Set<Friends> getFriendsesForFriendId() {
-		return this.friendsesForFriendId;
-	}
-
-	public void setFriendsesForFriendId(Set<Friends> friendsesForFriendId) {
-		this.friendsesForFriendId = friendsesForFriendId;
-	}
-
 	public Set<Reply> getReplies() {
 		return this.replies;
 	}
@@ -169,20 +167,28 @@ public class User implements java.io.Serializable {
 		this.replies = replies;
 	}
 
-	public Set<Friends> getFriendsesForUserId() {
-		return this.friendsesForUserId;
-	}
-
-	public void setFriendsesForUserId(Set<Friends> friendsesForUserId) {
-		this.friendsesForUserId = friendsesForUserId;
-	}
-
 	public Set<Gossip> getGossips() {
 		return this.gossips;
 	}
 
 	public void setGossips(Set<Gossip> gossips) {
 		this.gossips = gossips;
+	}
+
+	public void setFriends(Set<Friends> friends) {
+		this.friends = friends;
+	}
+
+	public Set<Friends> getFriends() {
+		return friends;
+	}
+
+	public void setFriendsForOther(Set<Friends> friendsForOther) {
+		this.friendsForOther = friendsForOther;
+	}
+
+	public Set<Friends> getFriendsForOther() {
+		return friendsForOther;
 	}
 
 }

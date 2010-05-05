@@ -2,13 +2,13 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-    <class name="com.goodfriend.model.Statement" table="statement" catalog="goodfriend">
+<hibernate-mapping package="com.goodfriend.model">
+    <class name="Statement" table="statement" catalog="goodfriend">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="item" class="com.goodfriend.model.Item" fetch="select">
+        <many-to-one name="item" class="Item" fetch="select" cascade="all">
             <column name="item_id" not-null="true" />
         </many-to-one>
         <property name="content" type="java.lang.String">

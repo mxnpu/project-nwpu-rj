@@ -43,7 +43,8 @@ public class Placard implements java.io.Serializable {
 		return this.idPlacard;
 	}
 
-	public void setIdPlacard(Integer idPlacard) {
+	@SuppressWarnings("unused")
+	private void setIdPlacard(Integer idPlacard) {
 		this.idPlacard = idPlacard;
 	}
 

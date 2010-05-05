@@ -34,7 +34,8 @@ public class Reply implements java.io.Serializable {
 		return this.idReply;
 	}
 
-	public void setIdReply(Integer idReply) {
+	@SuppressWarnings("unused")
+	private void setIdReply(Integer idReply) {
 		this.idReply = idReply;
 	}
 

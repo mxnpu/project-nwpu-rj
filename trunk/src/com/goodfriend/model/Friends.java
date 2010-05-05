@@ -11,8 +11,8 @@ public class Friends implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Integer idFriends;
-	private User userByFriendId; // owner's friend
-	private User userByUserId; // owner
+	private User userFriend; // owner's friend
+	private User user; // owner
 	private String success;
 	private String group;
 
@@ -23,16 +23,16 @@ public class Friends implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Friends(User userByFriendId, User userByUserId) {
-		this.userByFriendId = userByFriendId;
-		this.userByUserId = userByUserId;
+	public Friends(User userFriend, User user) {
+		this.userFriend = userFriend;
+		this.user = user;
 	}
 
 	/** full constructor */
-	public Friends(User userByFriendId, User userByUserId, String success,
+	public Friends(User userFriend, User user, String success,
 			String group) {
-		this.userByFriendId = userByFriendId;
-		this.userByUserId = userByUserId;
+		this.userFriend = userFriend;
+		this.user = user;
 		this.success = success;
 		this.group = group;
 	}
@@ -43,24 +43,9 @@ public class Friends implements java.io.Serializable {
 		return this.idFriends;
 	}
 
-	public void setIdFriends(Integer idFriends) {
+	@SuppressWarnings("unused")
+	private void setIdFriends(Integer idFriends) {
 		this.idFriends = idFriends;
-	}
-
-	public User getUserByFriendId() {
-		return this.userByFriendId;
-	}
-
-	public void setUserByFriendId(User userByFriendId) {
-		this.userByFriendId = userByFriendId;
-	}
-
-	public User getUserByUserId() {
-		return this.userByUserId;
-	}
-
-	public void setUserByUserId(User userByUserId) {
-		this.userByUserId = userByUserId;
 	}
 
 	public String getSuccess() {
@@ -77,6 +62,22 @@ public class Friends implements java.io.Serializable {
 
 	public void setGroup(String group) {
 		this.group = group;
+	}
+
+	public void setUserFriend(User userFriend) {
+		this.userFriend = userFriend;
+	}
+
+	public User getUserFriend() {
+		return userFriend;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public User getUser() {
+		return user;
 	}
 
 }

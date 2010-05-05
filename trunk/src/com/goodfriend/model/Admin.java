@@ -42,7 +42,8 @@ public class Admin implements java.io.Serializable {
 		return this.idAdmin;
 	}
 
-	public void setIdAdmin(Integer idAdmin) {
+	@SuppressWarnings("unused")
+	private void setIdAdmin(Integer idAdmin) {
 		this.idAdmin = idAdmin;
 	}
 
