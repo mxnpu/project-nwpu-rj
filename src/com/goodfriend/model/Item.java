@@ -54,7 +54,8 @@ public class Item implements java.io.Serializable {
 		return this.idItem;
 	}
 
-	public void setIdItem(Integer idItem) {
+	@SuppressWarnings("unused")
+	private void setIdItem(Integer idItem) {
 		this.idItem = idItem;
 	}
 

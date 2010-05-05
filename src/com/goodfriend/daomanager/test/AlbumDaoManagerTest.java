@@ -12,7 +12,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.goodfriend.dao.IItemDAO;
-import com.goodfriend.dao.IPictureDAO;
 import com.goodfriend.daomanager.IAlbumDaoManager;
 import com.goodfriend.daomanager.IUserDaoManager;
 import com.goodfriend.model.Album;
@@ -24,7 +23,6 @@ public class AlbumDaoManagerTest {
 	private IAlbumDaoManager albumDaoManager;
 	private IUserDaoManager userDaoManager;
 	private IItemDAO itemDao;
-	private IPictureDAO pictureDao;
 	private ApplicationContext ctx;
 	
 	@Before
@@ -33,7 +31,6 @@ public class AlbumDaoManagerTest {
 		albumDaoManager = (IAlbumDaoManager) ctx.getBean("albumDaoManager");
 		userDaoManager = (IUserDaoManager) ctx.getBean("userDaoManager");
 		itemDao = (IItemDAO) ctx.getBean("itemDAO");
-		pictureDao = (IPictureDAO) ctx.getBean("pictureDAO");
 	}
 
 	@After
@@ -55,13 +52,9 @@ public class AlbumDaoManagerTest {
 			picture.setIntroduction("picture" + i);
 			picture.setItem(item1);
 			picture.setPath("D:\\fsdf\\dfsf\\p" + i + ".jpg");
-			pictureDao.save(picture);
+			picture.setAlbum(album);
 		}
-		Item item2 = new Item();
-		item2.setRecordTime(new Timestamp(new Date().getTime()));
-		item2.setUser(userDaoManager.getUser(1));
-		itemDao.save(item2);
-		album.setItem(item2);
+		album.setItem(item1);
 		album.setCover("tty");
 		albumDaoManager.addAlbum(album);
 	}

@@ -17,6 +17,7 @@
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>
+		<property name="show_sql">true</property>
 
 		<mapping resource="com/goodfriend/model/Placard.hbm.xml" />
 		<mapping resource="com/goodfriend/model/Statement.hbm.xml" />

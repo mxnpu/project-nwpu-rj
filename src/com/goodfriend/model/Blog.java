@@ -40,7 +40,8 @@ public class Blog implements java.io.Serializable {
 		return this.id;
 	}
 
-	public void setId(Integer id) {
+	@SuppressWarnings("unused")
+	private void setId(Integer id) {
 		this.id = id;
 	}
 

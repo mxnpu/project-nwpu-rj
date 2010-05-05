@@ -3,9 +3,11 @@
 -- Host: localhost    Database: goodfriend
 -- ------------------------------------------------------
 -- Server version	5.0.67-community-nt
+
 Create database if not exists `goodfriend`;
 
 Use `goodfriend`;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -60,8 +62,8 @@ CREATE TABLE `album` (
   `description` varchar(200) default NULL,
   PRIMARY KEY  (`id_album`),
   KEY `FK_album_item` (`item_id`),
-  CONSTRAINT `FK_album_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `FK_album_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -87,7 +89,7 @@ CREATE TABLE `blog` (
   `content` text,
   PRIMARY KEY  (`id`),
   KEY `FK_blog_item` (`item_id`),
-  CONSTRAINT `FK_blog_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_blog_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -116,8 +118,8 @@ CREATE TABLE `friends` (
   PRIMARY KEY  (`id_friends`),
   KEY `FK_friends_user` (`friend_id`),
   KEY `FK_friends_user2` (`user_id`),
-  CONSTRAINT `FK_friends_user2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_friends_user` FOREIGN KEY (`friend_id`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_friends_user2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_friends_user` FOREIGN KEY (`friend_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -127,7 +129,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `friends` WRITE;
 /*!40000 ALTER TABLE `friends` DISABLE KEYS */;
-INSERT INTO `friends` VALUES (1,1,'Y','one',2),(2,1,'Y','one',3),(3,1,'Y','two',4),(4,2,'Y','tttttt',3);
 /*!40000 ALTER TABLE `friends` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,8 +147,8 @@ CREATE TABLE `gossip` (
   PRIMARY KEY  (`id_gossip`),
   KEY `FK_gossip_item` (`item_id`),
   KEY `FK_gossip_user` (`from`),
-  CONSTRAINT `FK_gossip_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_gossip_user` FOREIGN KEY (`from`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_gossip_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_gossip_user` FOREIGN KEY (`from`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -173,8 +174,8 @@ CREATE TABLE `item` (
   `user` int(10) unsigned NOT NULL,
   PRIMARY KEY  (`id_item`),
   KEY `FK_item_user` (`user`),
-  CONSTRAINT `FK_item_user` FOREIGN KEY (`user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `FK_item_user` FOREIGN KEY (`user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -202,9 +203,9 @@ CREATE TABLE `picture` (
   PRIMARY KEY  (`id`),
   KEY `FK_picture_item` (`item_id`),
   KEY `FK_picture_album` (`album_id`),
-  CONSTRAINT `FK_picture_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_picture_album` FOREIGN KEY (`album_id`) REFERENCES `album` (`id_album`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `FK_picture_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_picture_album` FOREIGN KEY (`album_id`) REFERENCES `album` (`id_album`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -257,8 +258,8 @@ CREATE TABLE `reply` (
   PRIMARY KEY  (`id_reply`),
   KEY `FK_reply_item` (`item_id`),
   KEY `FK_reply_user` (`from`),
-  CONSTRAINT `FK_reply_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_reply_user` FOREIGN KEY (`from`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_reply_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_reply_user` FOREIGN KEY (`from`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -284,7 +285,7 @@ CREATE TABLE `statement` (
   `content` varchar(200) NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `FK_statement_item` (`item_id`),
-  CONSTRAINT `FK_statement_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_statement_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -325,7 +326,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'xurunhua','xurunhua','xurunhua',NULL,NULL,NULL,NULL,NULL,NULL),(2,'xiaoxu','xiaoxu','xiaoxu',NULL,NULL,NULL,NULL,NULL,NULL),(3,'xiaorun','xiaorun','xiaorun',NULL,NULL,NULL,NULL,NULL,NULL),(4,'xiaohua','xiaohua','xiaohua',NULL,NULL,NULL,NULL,NULL,NULL),(5,'testSave','testSave','testSave',NULL,NULL,NULL,NULL,NULL,NULL),(6,'testSaved','testSaved','testSaved',NULL,NULL,NULL,NULL,NULL,NULL),(7,'dddd','dddd','dddd','M','1990-01-11','dada','dsadsa','dasd','Default psth');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -338,4 +338,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-05-03 11:04:48
+-- Dump completed on 2010-05-05  9:35:45

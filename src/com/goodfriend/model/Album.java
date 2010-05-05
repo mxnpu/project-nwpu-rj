@@ -44,7 +44,8 @@ public class Album implements java.io.Serializable {
 		return this.idAlbum;
 	}
 
-	public void setIdAlbum(Integer idAlbum) {
+	@SuppressWarnings("unused")
+	private void setIdAlbum(Integer idAlbum) {
 		this.idAlbum = idAlbum;
 	}
 

@@ -38,7 +38,7 @@
 	<!-- The method which participate the transaction -->
 	<aop:config>
 		<aop:pointcut id="allDaoManager" 
-		expression="execution(* com.goodfriend.daomanager.impl.*.*(..))"/>
+		expression="execution(* com.goodfriend.daomanager.impl.UserDaoManager.*(..))"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="allDaoManager"/>
 	</aop:config>
 

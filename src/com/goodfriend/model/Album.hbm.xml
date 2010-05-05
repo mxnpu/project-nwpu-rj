@@ -2,29 +2,30 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-    <class name="com.goodfriend.model.Album" table="album" catalog="goodfriend">
+<hibernate-mapping package="com.goodfriend.model">
+    <class name="Album" table="album" catalog="goodfriend"
+    dynamic-insert="true" dynamic-update="true" >
         <id name="idAlbum" type="java.lang.Integer">
             <column name="id_album" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="item" class="com.goodfriend.model.Item" fetch="select">
+        <many-to-one name="item" class="Item" fetch="select" cascade="all">
             <column name="item_id" not-null="true" />
         </many-to-one>
         <property name="title" type="java.lang.String">
             <column name="title" length="100" />
         </property>
 		<property name="cover" type="java.lang.String">
-			<column name="cover" length="100"></column>
+			<column name="cover" length="100" not-null="true"></column>
 		</property>
 		<property name="description" type="java.lang.String">
 			<column name="description" length="200"></column>
 		</property>
-        <set name="pictures" inverse="true">
+        <set name="pictures" inverse="true" cascade="all">
             <key>
                 <column name="album_id" />
             </key>
-            <one-to-many class="com.goodfriend.model.Picture" />
+            <one-to-many class="Picture" />
         </set>
     </class>
 </hibernate-mapping>
