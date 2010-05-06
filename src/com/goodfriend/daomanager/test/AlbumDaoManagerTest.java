@@ -55,7 +55,7 @@ public class AlbumDaoManagerTest {
 			picture.setAlbum(album);
 		}
 		album.setItem(item1);
-		album.setCover("tty");
+		album.setCover("ttddy");
 		albumDaoManager.addAlbum(album);
 	}
 
