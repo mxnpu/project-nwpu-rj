@@ -62,4 +62,16 @@
 		<servlet-name>flex</servlet-name>
 		<url-pattern>/spring/*</url-pattern>
 	</servlet-mapping>  
+	
+	<!-- 
+		上传图片的servlet
+	 -->
+	<servlet>
+    	<servlet-name>FileUploadServlet</servlet-name>
+    	<servlet-class>com.goodfriend.flexServlet.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+   		<servlet-name>FileUploadServlet</servlet-name>
+    	<url-pattern>/flexServlet/FileUploadServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

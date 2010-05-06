@@ -90,4 +90,9 @@ public class Album implements java.io.Serializable {
 	}
 
 	
+	@Override
+	public String toString(){
+		return "cover:" + cover + "\ndescription:" + description + "\nrecordTime:" + item.getRecordTime();
+	}
+	
 }

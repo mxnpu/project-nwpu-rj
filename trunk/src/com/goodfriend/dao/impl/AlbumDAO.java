@@ -1,5 +1,6 @@
 package com.goodfriend.dao.impl;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -8,10 +9,15 @@ import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.goodfriend.dao.IAlbumDAO;
+import com.goodfriend.daomanager.IUserDaoManager;
 import com.goodfriend.model.Album;
+import com.goodfriend.model.Item;
+import com.goodfriend.model.flex.FAlbum;
+import com.goodfriend.model.flex.FItem;
 
 /**
  * A data access object (DAO) providing persistence and search support for Album
@@ -197,5 +203,20 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 
 	public static IAlbumDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (IAlbumDAO) ctx.getBean("AlbumDAO");
+	}
+	
+	public void saveAlbumFlex(FAlbum fAlbum, FItem fItem){
+		Album album = new Album();
+		Item item = new Item();
+		item.setRecordTime(new Timestamp(fItem.getRecordTime().getTime()));
+		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-test.xml");
+		IUserDaoManager userDaoManager = (IUserDaoManager) ctx.getBean("userDaoManager");
+		item.setUser(userDaoManager.getUser(1));
+		album.setItem(item);
+		album.setCover(fAlbum.getCover());
+		album.setTitle(fAlbum.getTitle());
+		
+		save(album);
 	}
 }
