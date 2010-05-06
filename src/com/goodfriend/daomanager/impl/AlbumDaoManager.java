@@ -39,5 +39,7 @@ public class AlbumDaoManager implements IAlbumDaoManager {
 	public IAlbumDAO getAlbumDao() {
 		return albumDao;
 	}
+	
+	
 
 }

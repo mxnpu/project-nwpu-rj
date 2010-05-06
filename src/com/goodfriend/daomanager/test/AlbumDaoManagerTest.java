@@ -52,7 +52,11 @@ public class AlbumDaoManagerTest {
 			picture.setIntroduction("picture" + i);
 			picture.setItem(item1);
 			picture.setPath("D:\\fsdf\\dfsf\\p" + i + ".jpg");
+
+//			pictureDao.save(picture);
+
 			picture.setAlbum(album);
+
 		}
 		album.setItem(item1);
 		album.setCover("ttddy");
