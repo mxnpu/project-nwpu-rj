@@ -7,7 +7,7 @@ import com.goodfriend.model.User;
 /**
  * The the manager DAO to the user
  * 
- * @author
+ * @author xurunhua
  * @version 
  * Last modify time : 2010.05.03 
  */
