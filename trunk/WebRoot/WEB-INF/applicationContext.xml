@@ -86,9 +86,12 @@
 	
 	<!-- The method which participate the transaction -->
 	<aop:config>
-		<aop:pointcut id="allDaoManager" 
+		<aop:pointcut id="userDaoManagerPointcut" 
 		expression="execution(* com.goodfriend.daomanager.impl.UserDaoManager.*(..))"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="allDaoManager"/>
+		<aop:pointcut id="friendDaoManagerPointcut"
+		expression="execution(* com.goodfriend.daomanager.impl.FriendDaoManager.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="userDaoManagerPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendDaoManagerPointcut"/>
 	</aop:config>
 	
  	<!-- The DAO bean configuration -->
@@ -165,6 +168,12 @@
 			class="com.goodfriend.daomanager.impl.PictureDaoManager">
 		<property name="pictureDao">
 			<ref bean="pictureDAO"/>
+		</property>
+	</bean>
+	<bean id="friendsDaoManager"
+			class="com.goodfriend.daomanager.impl.FriendDaoManager">
+		<property name="fiendDao">
+			<ref bean="friendsDAO"/>
 		</property>
 	</bean>
 	

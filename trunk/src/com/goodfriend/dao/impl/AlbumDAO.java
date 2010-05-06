@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -34,8 +36,13 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 
 	public void save(Album transientInstance) {
 		log.debug("saving Album instance");
+		Session session;
 		try {
-			getHibernateTemplate().save(transientInstance);
+			session = getSessionFactory().openSession();
+			session.beginTransaction();
+			session.save(transientInstance);
+			session.getTransaction().commit();
+			session.close();
 			log.debug("save successful");
 		} catch (RuntimeException re) {
 			log.error("save failed", re);
@@ -45,8 +52,13 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 
 	public void delete(Album persistentInstance) {
 		log.debug("deleting Album instance");
+		Session session;
 		try {
-			getHibernateTemplate().delete(persistentInstance);
+			session = getSessionFactory().openSession();
+			session.beginTransaction();
+			session.delete(persistentInstance);
+			session.getTransaction().commit();
+			session.close();
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -54,14 +66,15 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see com.goodfriend.dao.impl.IAlbumDAO#findById(java.lang.Integer)
-	 */
 	public Album findById(java.lang.Integer id) {
 		log.debug("getting Album instance with id: " + id);
+		Session session;
 		try {
-			Album instance = (Album) getHibernateTemplate().get(
-					"com.goodfriend.model.Album", id);
+			session = getSessionFactory().openSession();
+			session.beginTransaction();
+			Album instance = (Album) session.get("com.goodfriend.model.Album", id);
+			session.getTransaction().commit();
+			session.close();
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -87,10 +100,23 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	public List<Album> findByProperty(String propertyName, Object value) {
 		log.debug("finding Album instance with property: " + propertyName
 				+ ", value: " + value);
+		Session session;
 		try {
+			session = getSessionFactory().openSession();
+			session.beginTransaction();
 			String queryString = "from Album as model where model."
-					+ propertyName + "= ?";
-			return getHibernateTemplate().find(queryString, value);
+				+ propertyName + "= ?";
+			Query queryObject = session.createQuery(queryString);
+			Object[] values = new Object[] {value};
+			if (values != null) {
+				for (int i = 0; i < values.length; i++) {
+					queryObject.setParameter(i, values[i]);
+				}
+			}
+			List<Album> lists =  queryObject.list();
+			session.getTransaction().commit();
+			session.close();
+			return lists;
 		} catch (RuntimeException re) {
 			log.error("find by property name failed", re);
 			throw re;
@@ -101,15 +127,19 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		return findByProperty(TITLE, title);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.goodfriend.dao.impl.IAlbumDAO#findAll()
-	 */
 	@SuppressWarnings("unchecked")
 	public List<Album> findAll() {
 		log.debug("finding all Album instances");
+		Session session;
 		try {
+			session = getSessionFactory().openSession();
+			session.beginTransaction();
 			String queryString = "from Album";
-			return getHibernateTemplate().find(queryString);
+			List<Album> lists = (List<Album>) session.createQuery(queryString);
+			session.getTransaction().commit();
+			session.close();
+			
+			return lists;
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -118,9 +148,13 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 
 	public Album merge(Album detachedInstance) {
 		log.debug("merging Album instance");
+		Session session;
 		try {
-			Album result = (Album) getHibernateTemplate().merge(
-					detachedInstance);
+			session = getSessionFactory().openSession();
+			session.beginTransaction();
+			Album result = (Album)session.merge(detachedInstance);
+			session.getTransaction().commit();
+			session.close();
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -131,8 +165,13 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 
 	public void attachDirty(Album instance) {
 		log.debug("attaching dirty Album instance");
+		Session session;
 		try {
-			getHibernateTemplate().saveOrUpdate(instance);
+			session = getSessionFactory().openSession();
+			session.beginTransaction();
+			session.saveOrUpdate(instance);
+			session.getTransaction().commit();
+			session.close();
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -142,8 +181,13 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 
 	public void attachClean(Album instance) {
 		log.debug("attaching clean Album instance");
+		Session session;
 		try {
-			getHibernateTemplate().lock(instance, LockMode.NONE);
+			session = getSessionFactory().openSession();
+			session.beginTransaction();
+			session.lock(instance,LockMode.NONE);
+			session.getTransaction().commit();
+			session.close();
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
