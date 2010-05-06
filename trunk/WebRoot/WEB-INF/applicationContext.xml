@@ -90,8 +90,14 @@
 		expression="execution(* com.goodfriend.daomanager.impl.UserDaoManager.*(..))"/>
 		<aop:pointcut id="friendDaoManagerPointcut"
 		expression="execution(* com.goodfriend.daomanager.impl.FriendDaoManager.*(..))"/>
+		<aop:pointcut id="adminDaoManagerPointcut"
+		expression="execution(* com.goodfriend.daomanager.impl.AdminDaoManager.*(..))"/>
+		<aop:pointcut id="placardDaoManagerPointcut"
+		expression="execution(* com.goodfriend.daomanager.impl.PlacardDaoManager.*(..))"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="userDaoManagerPointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendDaoManagerPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="adminDaoManagerPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="placardDaoManagerPointcut"/>
 	</aop:config>
 	
  	<!-- The DAO bean configuration -->
@@ -152,12 +158,6 @@
 	</bean>
 	
 	<!-- The DAO manager bean manager -->
-	<bean id="userDaoManager" 
-			class="com.goodfriend.daomanager.impl.UserDaoManager">
-		<property name="userDao">
-			<ref bean="userDAO"/>
-		</property>
-	</bean>
 	<bean id="albumDaoManager"
 			class="com.goodfriend.daomanager.impl.AlbumDaoManager">
 		<property name="albumDao">
@@ -170,10 +170,28 @@
 			<ref bean="pictureDAO"/>
 		</property>
 	</bean>
+	<bean id="userDaoManager" 
+			class="com.goodfriend.daomanager.impl.UserDaoManager">
+		<property name="userDao">
+			<ref bean="userDAO"/>
+		</property>
+	</bean>
 	<bean id="friendsDaoManager"
 			class="com.goodfriend.daomanager.impl.FriendDaoManager">
 		<property name="fiendDao">
 			<ref bean="friendsDAO"/>
+		</property>
+	</bean>
+	<bean id="adminDaoManager"
+			class="com.goodfriend.daomanager.impl.AdminDaoManager">
+		<property name="adminDao">
+			<ref bean="adminDAO"/>
+		</property>
+	</bean>
+	<bean id="placardDaoManager"
+			class="com.goodfriend.daomanager.impl.PlacardDaoManager">
+		<property name="placrdDao">
+			<ref bean="placardDAO"/>
 		</property>
 	</bean>
 	
