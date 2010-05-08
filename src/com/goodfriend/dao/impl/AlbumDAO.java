@@ -13,11 +13,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.goodfriend.dao.IAlbumDAO;
-import com.goodfriend.daomanager.IUserDaoManager;
 import com.goodfriend.model.Album;
 import com.goodfriend.model.Item;
 import com.goodfriend.model.flex.FAlbum;
 import com.goodfriend.model.flex.FItem;
+import com.goodfriend.service.IUserService;
 
 /**
  * A data access object (DAO) providing persistence and search support for Album
@@ -210,9 +210,10 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		Item item = new Item();
 		item.setRecordTime(new Timestamp(fItem.getRecordTime().getTime()));
 		
+		
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-test.xml");
-		IUserDaoManager userDaoManager = (IUserDaoManager) ctx.getBean("userDaoManager");
-		item.setUser(userDaoManager.getUser(1));
+		IUserService userService = (IUserService) ctx.getBean("userService");
+		item.setUser(userService.getUser(1));
 		album.setItem(item);
 		album.setCover(fAlbum.getCover());
 		album.setTitle(fAlbum.getTitle());
