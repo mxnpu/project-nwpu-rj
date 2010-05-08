@@ -159,7 +159,7 @@
 	
 	<!-- The Service bean manager -->
 	<bean id="albumService"
-			class="com.goodfriend.service.impl.AlbumService">
+			class="com.goodfriend.service.impl.AlbumService"> 
 		<property name="albumDao">
 			<ref bean="albumDAO"/>
 		</property>
