@@ -4,20 +4,29 @@
 	"http://struts.apache.org/dtds/struts-2.1.dtd">
 
 <struts>
-	<constant name="struts.objectFactory" value="spring"/>
-	
+	<constant name="struts.objectFactory" value="spring" />
+
 	<package name="user" namespace="/user" extends="struts-default">
 		<action name="login" class="loginAction" method="login">
-			<result name="success" type="redirect">success.jsp</result>
-			<result name="login" type="redirect">index.jsp</result>
+			<result name="success" type="redirect">index.jsp</result>
+			<result name="login" type="redirect">login.jsp</result>
 		</action>
 		<action name="logout" class="loginAction" method="logout">
-			<result name="index" type="redirect">index.jsp</result>
-			<result>index.jsp</result>
+			<result name="login" type="redirect">login.jsp</result>
+			<result>login.jsp</result>
 		</action>
 		<action name="register" class="registerAction" method="register">
 			<result name="success">register_success.jsp</result>
 			<result name="failed">register.jsp</result>
+		</action>
+
+		<!-- Random验证码 -->
+		<action name="random" class="randomNumberAction"
+					method="execute">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+			</result>
 		</action>
 	</package>
 
