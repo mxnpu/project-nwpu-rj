@@ -86,18 +86,18 @@
 	
 	<!-- The method which participate the transaction -->
 	<aop:config>
-		<aop:pointcut id="userDaoManagerPointcut" 
-		expression="execution(* com.goodfriend.daomanager.impl.UserDaoManager.*(..))"/>
-		<aop:pointcut id="friendDaoManagerPointcut"
-		expression="execution(* com.goodfriend.daomanager.impl.FriendDaoManager.*(..))"/>
-		<aop:pointcut id="adminDaoManagerPointcut"
-		expression="execution(* com.goodfriend.daomanager.impl.AdminDaoManager.*(..))"/>
-		<aop:pointcut id="placardDaoManagerPointcut"
-		expression="execution(* com.goodfriend.daomanager.impl.PlacardDaoManager.*(..))"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="userDaoManagerPointcut"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendDaoManagerPointcut"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="adminDaoManagerPointcut"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="placardDaoManagerPointcut"/>
+		<aop:pointcut id="userServicePointcut" 
+		expression="execution(* com.goodfriend.service.impl.UserService.*(..))"/>
+		<aop:pointcut id="friendServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.FriendService.*(..))"/>
+		<aop:pointcut id="adminServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.AdminService.*(..))"/>
+		<aop:pointcut id="placardServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.PlacardService.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="userServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="adminServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="placardServicePointcut"/>
 	</aop:config>
 	
  	<!-- The DAO bean configuration -->
@@ -157,39 +157,39 @@
 		</property>
 	</bean>
 	
-	<!-- The DAO manager bean manager -->
-	<bean id="albumDaoManager"
-			class="com.goodfriend.daomanager.impl.AlbumDaoManager">
+	<!-- The Service bean manager -->
+	<bean id="albumService"
+			class="com.goodfriend.service.impl.AlbumService">
 		<property name="albumDao">
 			<ref bean="albumDAO"/>
 		</property>
 	</bean>
-	<bean id="pictureDaoManager"
-			class="com.goodfriend.daomanager.impl.PictureDaoManager">
+	<bean id="pictureService"
+			class="com.goodfriend.service.impl.PictureService">
 		<property name="pictureDao">
 			<ref bean="pictureDAO"/>
 		</property>
 	</bean>
-	<bean id="userDaoManager" 
-			class="com.goodfriend.daomanager.impl.UserDaoManager">
+	<bean id="userService" 
+			class="com.goodfriend.service.impl.UserService">
 		<property name="userDao">
 			<ref bean="userDAO"/>
 		</property>
 	</bean>
-	<bean id="friendsDaoManager"
-			class="com.goodfriend.daomanager.impl.FriendDaoManager">
+	<bean id="friendsService"
+			class="com.goodfriend.service.impl.FriendService">
 		<property name="fiendDao">
 			<ref bean="friendsDAO"/>
 		</property>
 	</bean>
-	<bean id="adminDaoManager"
-			class="com.goodfriend.daomanager.impl.AdminDaoManager">
+	<bean id="adminService"
+			class="com.goodfriend.service.impl.AdminService">
 		<property name="adminDao">
 			<ref bean="adminDAO"/>
 		</property>
 	</bean>
-	<bean id="placardDaoManager"
-			class="com.goodfriend.daomanager.impl.PlacardDaoManager">
+	<bean id="placardService"
+			class="com.goodfriend.service.impl.PlacardService">
 		<property name="placrdDao">
 			<ref bean="placardDAO"/>
 		</property>
@@ -198,15 +198,18 @@
 	<!-- The struts action bean manager -->
 	<bean id="loginAction" class="com.goodfriend.action.LoginAction"
 			scope="prototype">
-		<property name="userDaoManager">
-			<ref bean="userDaoManager"/>
+		<property name="userService">
+			<ref bean="userService"/>
 		</property>
 	</bean>
 	<bean id="registerAction" class="com.goodfriend.action.RegisterAction"
 			scope="prototype">
-		<property name="userDaoManager">
-			<ref bean="userDaoManager"/>
+		<property name="userService">
+			<ref bean="userService"/>
 		</property>
+	</bean>
+	<bean id="randomNumberAction" class="com.goodfriend.action.RandomNumberAction"
+			scope="prototype">
 	</bean>
 	
 </beans>
