@@ -4,33 +4,102 @@
 <html>
 	<head>
 		<title>Register Page</title>
-
+		<script type="text/javascript" src="../js/formUtils.js"></script>
 	</head>
 
 	<body>
 		<h1>
-			Welcome to become one of us.
+			欢迎注册成为我们的一员.
 		</h1>
-		<hr />
-		<br>
-		The register information.
-		<br />
-		<s:form action="register.action" method="post" >
-			<s:textfield name="username" label="UserName" maxlength="16"
-				required="ture"></s:textfield>
-			<s:password name="password" label="Password" maxlength="16"
-				required="true"></s:password>
-			<s:password name="confirmPassword" label="ConfirmPassword"
-				maxlength="16" required="true"></s:password>
-			<s:textfield name="realname" label="RealName" maxlength="16"
-				required="true"></s:textfield>
-			<s:radio name="gender" list="#{1:'Male',0:'Female'}" label="Gender"></s:radio>
-			<s:textfield name="birthday" label="Birthday(yyyy-mm-dd)"></s:textfield> 
-			<s:textfield name="email" label="Email"></s:textfield>
-			<s:textfield name="phone" label="Phone"></s:textfield>
-			<s:textarea name="hoby" label="Hoby" ></s:textarea>
-			<s:reset></s:reset>
-			<s:submit></s:submit>
-		</s:form>
+		<hr/>
+		<br/>
+		<br/>
+		<div id="loginForm">
+			<form action="register.action" method="post">
+				<table>
+				<thead>
+					<tr>
+						<th>请填写你的注册信息.<br/><br/></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>用户名：</td>
+						<td><input type="text" name="username" maxlength="16" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>密码：</td>
+						<td><input type="password" name="password" maxlength="16" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>密码确认：</td>
+						<td><input type="password" name="confirmPassword" maxlength="16" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>真实姓名：</td>
+						<td><input type="text" name="realname" maxlength="16" /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>性别：</td>
+						<td>
+							<input type="radio" name="gender" value="male"/>男
+							<input type="radio" name="gender" value="female"/>女 
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Email：</td>
+						<td><input type="text" name="email"/> </td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>生日：<br>(YYYY-MM-DD)</td>
+						<td><input type="text" name="birthday"/> </td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>电话：</td>
+						<td><input type="text" name="phone"/> </td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>爱好：</td>
+						<td><textarea rows="4" cols="16" name="hoby" ></textarea> </td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>验证码:</td>
+						<td><input type="text" name="validateCode"></td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<img src="random.action" 
+						     onclick="changeValidateCode(this)" 
+						     title="点击图片刷新验证码"/>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><input type="reset" value="重置"/> </td>
+						<td><input type="submit" value="注册"> </td>
+						<td></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>	
+						<td>Tips:如有问题,联系我们</td>
+					</tr>
+				</tfoot>
+			</table>
+			</form>
+		</div>
+		
 	</body>
 </html>

@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   	<h1>Welcome to our web site.</h1><br>
-    <a href="user/index.jsp">User</a><br/>
+    <a href="user/login.jsp">User</a><br/>
     <a href="admin/index.jsp">Administrator</a>
   </body>
 </html>
