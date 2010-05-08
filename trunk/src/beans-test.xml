@@ -37,9 +37,18 @@
 	
 	<!-- The method which participate the transaction -->
 	<aop:config>
-		<aop:pointcut id="allDaoManager" 
-		expression="execution(* com.goodfriend.daomanager.impl.UserDaoManager.*(..))"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="allDaoManager"/>
+		<aop:pointcut id="userServicePointcut" 
+		expression="execution(* com.goodfriend.service.impl.UserDaoManager.*(..))"/>
+		<aop:pointcut id="friendServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.FriendDaoManager.*(..))"/>
+		<aop:pointcut id="adminServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.AdminDaoManager.*(..))"/>
+		<aop:pointcut id="placardServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.PlacardDaoManager.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="userServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="adminServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="placardServicePointcut"/>
 	</aop:config>
 
 	<bean id="placardDAO" class="com.goodfriend.dao.impl.PlacardDAO">
@@ -98,18 +107,41 @@
 		</property>
 	</bean>
 
-	<!-- The DAO manager bean manager -->
-	<bean id="userDaoManager" 
-			class="com.goodfriend.daomanager.impl.UserDaoManager">
-		<property name="userDao">
-			<ref bean="userDAO"/>
-		</property>
-	</bean>
-	<bean id="albumDaoManager"
-			class="com.goodfriend.daomanager.impl.AlbumDaoManager">
+	<!-- The Service bean manager -->
+	<bean id="albumService"
+			class="com.goodfriend.service.impl.AlbumService">
 		<property name="albumDao">
 			<ref bean="albumDAO"/>
 		</property>
 	</bean>
-
+	<bean id="pictureService"
+			class="com.goodfriend.service.impl.PictureService">
+		<property name="pictureDao">
+			<ref bean="pictureDAO"/>
+		</property>
+	</bean>
+	<bean id="userService" 
+			class="com.goodfriend.service.impl.UserService">
+		<property name="userDao">
+			<ref bean="userDAO"/>
+		</property>
+	</bean>
+	<bean id="friendsService"
+			class="com.goodfriend.service.impl.FriendService">
+		<property name="fiendDao">
+			<ref bean="friendsDAO"/>
+		</property>
+	</bean>
+	<bean id="adminService"
+			class="com.goodfriend.service.impl.AdminService">
+		<property name="adminDao">
+			<ref bean="adminDAO"/>
+		</property>
+	</bean>
+	<bean id="placardService"
+			class="com.goodfriend.service.impl.PlacardService">
+		<property name="placrdDao">
+			<ref bean="placardDAO"/>
+		</property>
+	</bean>
 </beans>
