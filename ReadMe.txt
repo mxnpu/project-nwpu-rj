@@ -2,11 +2,11 @@
 ---许润华
 
 1.数据持久化（操作数据库，存储数据）
-	a.关于数据持久化方面的类放在com.goodfriend.daomanager.impl包中
+	a.关于数据持久化方面的类放在com.goodfriend.service.impl包中
 	     调用相应的类的方法即可
 	b.不允许更改和调用com.goodfriend.dao.impl包中的类
 	c.如有需要添加访问数据库自己的个性化方法时，
-	    在com.goodfriend.daomanager包中写接口，com.goodfriend.daomanager.impl实现类
+	    在com.goodfriend.service包中写接口，com.goodfriend.service.impl实现类
 	    为了使你的方法能够事务管理，请根据方法功能按如下规则命名你的方法：
 	  C(创建)----add*
 	  R(读取)----命名随便
