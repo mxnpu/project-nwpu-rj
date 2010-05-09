@@ -4,14 +4,15 @@
 <html>
 	<head>
 		<title>Welcome</title>
-		<script type="text/javascript" src="../js/formUtils.js"></script>  
+		<script type="text/javascript" src="../js/prototype-1.6.0.3.js"></script>
+		<script type="text/javascript" src="../js/formUtils.js"></script> 
 	</head>
 
-	<body>
+	<body onload="FormUtil.focusOnFirst()">
 		<h1>Welcome to our web site.</h1>
 		<hr />
-		<br>The user's login page<br />
-		<form action="login" method="post">
+		<br/><s:property value="#session.getAttribute('errorMsg')"/> <br/>
+		<form action="login" method="post" id="loginForm">
 			<table>
 			<thead>
 				<tr>	
@@ -23,25 +24,34 @@
 				
 				<tr>
 					<td>用户名:</td>
-					<td><input type="text" name="username" /></td>
-					<td></td>
+					<td>
+						<input type="text" name="username" 
+							onblur="Validate.required(this,'用户名需要','userNameError');"/>
+					</td>
+					<td><div class="errorMsg" id="userNameError"></div></td>
 				</tr>
 				<tr>
 					<td>密    码:</td>
-					<td><input type="password" name="password"></td>
-					<td></td>
+					<td><input type="password" name="password"
+							onblur="Validate.required(this,'密码需要','userPasswordError')">
+					</td>
+					<td>
+						<div class="errorMsg" id="userPasswordError"></div>
+					</td>
 				</tr>
 				<tr>
 					<td>验证码:</td>
-					<td><input type="text" name="validateCode"></td>
+					<td><input type="text" name="validateCode"
+							onblur="Validate.required(this,'验证码需要','userValiCodeError')"></td>
 					<td>
+						<div class="errorMsg" id="userValiCodeError"></div>
 					</td>
 				</tr>
 				<tr>
 					<td></td>
 					<td>
 						<img src="random.action" 
-						     onclick="changeValidateCode(this)" 
+						     onclick="Validate.changeCode(this)" 
 						     title="点击图片刷新验证码"/>
 					</td>
 					<td></td>
@@ -55,7 +65,9 @@
 				</tr>
 				<tr>
 					<td><input type="reset" value="重置"> </td>
-					<td><input type="submit" value="登录"> </td>
+					<td>
+						<input type="button" value="登录" onclick="this.disabled=true;this.form.submit();"> 
+					</td>
 					<td></td>
 				</tr>
 				

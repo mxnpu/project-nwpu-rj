@@ -5,6 +5,7 @@
 	<head>
 		<title>Register Page</title>
 		<script type="text/javascript" src="../js/formUtils.js"></script>
+		<script type="text/javascript" src="../js/datePicker/WdatePicker.js"></script>
 	</head>
 
 	<body>
@@ -57,8 +58,12 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>生日：<br>(YYYY-MM-DD)</td>
-						<td><input type="text" name="birthday"/> </td>
+						<td>生日：</td>
+						<td><input type="text" name="birthday" 
+								onfocus="WdatePicker({readOnly:true,highLineWeekDay:false})"id="date"/> 
+							<img onclick="WdatePicker({el:'date',readOnly:true,highLineWeekDay:false})" 
+							src="../js/datePicker/skin/datePicker.gif" width="16" height="22" align="middle"/>
+						</td>
 						<td></td>
 					</tr>
 					<tr>

@@ -39,7 +39,7 @@ public class LoginAction {
 			}
 		}
 		else {
-			
+			ActionContext.getContext().getSession().put("errorMsg","验证码没有匹配");
 		}
 		
 		return "login";
