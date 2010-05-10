@@ -105,7 +105,7 @@
 						<td></td>
 						<td>
 							<img src="random.action" 
-						     onclick="changeValidateCode(this)" 
+						     onclick="Validate.changeCode(this)" 
 						     title="点击图片刷新验证码"/>
 						</td>
 						<td></td>
