@@ -1,0 +1,25 @@
+time:2010.5.9
+Some Boring:
+1.在Admin中的username和User中的userNmae不一致，搞死我了
+2.在admin中index.jsp的text表单中居然是user的，更加搞死我
+3.在com.goodfriend.daomanager中的IAminDaoManager.java是不是应该为IAdminDaoManager
+
+
+suggestions：
+1.把Admin中的model中的username改为userName,并且对应的Admin.hbm.xml中的username改了
+2.把文件的路径都改为绝对路径，这样不容易出错
+
+update:
+1.增加了Admin的login和logout功能。
+增加和修改的文件为：
+①com.goodfriend.admin.action中的LoginAction.java
+②在struts_admin.xml中相应增加了action
+③增加jsp:login_success.jsp/logout_success.jsp
+④修改了admin中的index.jsp的text标签内容，改为admin中的属性
+
+2.增加添加管理员的功能。
+增加和修改的文件：
+①com.goodfriend.admin.action中的ManagerAdminAction.java,这样起名字是为了把以后update&delete方法都放进去
+②在struts_admin.xml中相应增加action
+③增加jsp:add_admin.jsp/add_failed.jsp/add_success.jsp
+④同时在添加管理员的时候用了DTO，这样使add.action中的代码简洁一些，如果不用也可以
