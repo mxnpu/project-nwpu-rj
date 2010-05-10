@@ -22,7 +22,7 @@ public class LoginAction {
 		String randomString =(String)(ActionContext.getContext().getSession().get("random")); 
 		
 		// 判断验证码是否正确
-		if (randomString.equals(validateCode)) {
+		if (randomString.toLowerCase().equals(validateCode.toLowerCase())) {
 			User dbUser = userService.getUser(username);
 			// 判断用户名和密码
 			if (dbUser != null && dbUser.getPassword().equals(password) ){

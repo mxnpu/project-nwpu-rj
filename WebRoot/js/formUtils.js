@@ -81,7 +81,6 @@ Validate.required = function(element, s, e, message, showId) {
 	}
 }
 
-
 /**
  * 检查Email地址是否正确
  * 

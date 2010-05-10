@@ -29,7 +29,7 @@ public class RegisterAction {
 		
 		//从session中取出RandomAction.java 中生成的验证码 random  
 		String randomString =(String)(ActionContext.getContext().getSession().get("random"));
-		if (randomString.equals(validateCode)) {
+		if (randomString.toLowerCase().equals(validateCode.toLowerCase())) {
 			
 			if (!userService.isUserExist(username)) {
 			
