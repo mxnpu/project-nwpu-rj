@@ -58,7 +58,7 @@ public class RegisterAction {
 				} else {
 					user.setGender("");
 				}
-				if (birthday != null) {
+				if (birthday != null && !birthday.equals("")) {
 					String[] pattern = new String[] { "yyyy-MM", "yyyyMM",
 							"yyyy/MM", "yyyyMMdd", "yyyy-MM-dd", "yyyy/MM/dd",
 							"yyyyMMddHHmmss", "yyyy-MM-dd HH:mm:ss",
