@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="../js/datePicker/WdatePicker.js"></script>
 	</head>
 
-	<body>
+	<body onload="FormUtil.focusOnFirst()">
 		<h1>
 			欢迎注册成为我们的一员.
 		</h1>
