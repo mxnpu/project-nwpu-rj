@@ -6,21 +6,20 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.goodfriend.model.Admin;
-import com.goodfriend.service.IAminDaoManager;
-import com.opensymphony.xwork2.ActionContext;
+import com.goodfriend.service.IAminService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 
-	private IAminDaoManager adminDaoManager;
+	private IAminService adminService;
 	private Admin admin;
 	private Map<String, Object> session;
 
 	public String login() throws Exception {
 		System.out.println("Admin login action execute...........");
 
-		Admin dbAdmin = adminDaoManager.getAdmin(admin.getUsername());	//这里和用户的get方法不一致，可以改成相同
+		Admin dbAdmin = adminService.getAdmin(admin.getUsername());	//这里和用户的get方法不一致，可以改成相同
 //		if(adminDaoManager.getAdmin(admin.getUsername()) instanceof Admin) {
 //			
 //			System.out.println("true");
@@ -51,12 +50,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		this.session = session;
 	}
 
-	public IAminDaoManager getAdminDaoManager() {
-		return adminDaoManager;
+	public IAminService getAdminDaoManager() {
+		return adminService;
 	}
 
-	public void setAdminDaoManager(IAminDaoManager adminDaoManager) {
-		this.adminDaoManager = adminDaoManager;
+	public void setAdminDaoManager(IAminService adminDaoManager) {
+		this.adminService = adminDaoManager;
 	}
 
 	public Admin getAdmin() {

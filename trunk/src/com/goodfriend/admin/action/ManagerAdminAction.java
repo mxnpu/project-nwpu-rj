@@ -1,13 +1,8 @@
 package com.goodfriend.admin.action;
 
-import java.util.Map;
-
-import org.apache.struts2.interceptor.SessionAware;
-
 import com.goodfriend.admin.dto.AdminDTO;
 import com.goodfriend.model.Admin;
-import com.goodfriend.service.IAminDaoManager;
-import com.opensymphony.xwork2.ActionContext;
+import com.goodfriend.service.IAminService;
 import com.opensymphony.xwork2.ActionSupport;
 /**
  * 
@@ -15,12 +10,13 @@ import com.opensymphony.xwork2.ActionSupport;
  * Last modify:2010.5.9
  */
 public class ManagerAdminAction extends ActionSupport {
-		
+
+	private static final long serialVersionUID = 1L;
 	private static final String SUCCESS = "success";
 	private static final String FAILED = "failed";
 
 	private AdminDTO adminDTO;
-	private IAminDaoManager adminDaoManager;
+	private IAminService adminService;
 	
 	public String add() throws Exception {
 		
@@ -29,7 +25,7 @@ public class ManagerAdminAction extends ActionSupport {
 //	
 //	System.out.println(a.getUsername());
 //}
-		if (!adminDaoManager.isAdminExist(adminDTO.getUsername())) {
+		if (!adminService.isAdminExist(adminDTO.getUsername())) {
 			Admin admin = new Admin();
 			if (adminDTO.getUsername() != null && !adminDTO.getUsername().equals("")) {
 				admin.setUsername(adminDTO.getUsername());
@@ -65,7 +61,7 @@ public class ManagerAdminAction extends ActionSupport {
 				admin.setAddress("");
 			}
 
-			adminDaoManager.addAdmin(admin);
+			adminService.addAdmin(admin);
 			System.out.println("添加管理员： " + admin.getUsername() + " 成功");
 
 		}
@@ -83,12 +79,12 @@ public class ManagerAdminAction extends ActionSupport {
 	}
 
 
-	public IAminDaoManager getAdminDaoManager() {
-		return adminDaoManager;
+	public IAminService getAdminDaoManager() {
+		return adminService;
 	}
 
-	public void setAdminDaoManager(IAminDaoManager adminDaoManager) {
-		this.adminDaoManager = adminDaoManager;
+	public void setAdminService(IAminService adminDaoManager) {
+		this.adminService = adminDaoManager;
 	}
 
 
