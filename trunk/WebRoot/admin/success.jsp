@@ -7,7 +7,9 @@
   </head>
   
   <body> 
-    The Successful Page. <hr>
-    Welcome you, <s:property value="#session.currentUser.userName"/> <br>
+   The Successful Page. <hr> 
+   Welcome you,<br><s:property value="#session.currentUser.userName"/> <br>
+ 	
+  <s:debug></s:debug>
   </body>
 </html>
