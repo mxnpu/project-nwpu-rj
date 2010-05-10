@@ -26,14 +26,14 @@
 					<td>用户名:</td>
 					<td>
 						<input type="text" name="username" 
-							onblur="Validate.required(this,'用户名需要','userNameError');"/>
+							onblur="Validate.required(this,4,16,'用户名需要','userNameError');"/>
 					</td>
 					<td><div class="errorMsg" id="userNameError"></div></td>
 				</tr>
 				<tr>
 					<td>密    码:</td>
 					<td><input type="password" name="password"
-							onblur="Validate.required(this,'密码需要','userPasswordError')">
+							onblur="Validate.required(this,4,16,'密码需要','userPasswordError')">
 					</td>
 					<td>
 						<div class="errorMsg" id="userPasswordError"></div>
@@ -42,7 +42,7 @@
 				<tr>
 					<td>验证码:</td>
 					<td><input type="text" name="validateCode"
-							onblur="Validate.required(this,'验证码需要','userValiCodeError')"></td>
+							onblur="Validate.required(this,6,6,'验证码需要','userValiCodeError')"></td>
 					<td>
 						<div class="errorMsg" id="userValiCodeError"></div>
 					</td>

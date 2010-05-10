@@ -4,7 +4,8 @@
 <html>
 	<head>
 		<title>Register Page</title>
-		<script type="text/javascript" src="../js/formUtils.js"></script>
+		<script type="text/javascript" src="../js/prototype-1.6.0.3.js"></script>
+		<script type="text/javascript" src="../js/formUtils.js"></script> 
 		<script type="text/javascript" src="../js/datePicker/WdatePicker.js"></script>
 	</head>
 
@@ -26,23 +27,35 @@
 				<tbody>
 					<tr>
 						<td>用户名：</td>
-						<td><input type="text" name="username" maxlength="16" /></td>
-						<td></td>
+						<td><input type="text" name="username" maxlength="16" 
+								onblur="Validate.required(this,4,16,'用户名需要','userNameError'); "/></td>
+						<td>
+							<div class="errorMsg" id="userNameError"></div>
+						</td>
 					</tr>
 					<tr>
 						<td>密码：</td>
-						<td><input type="password" name="password" maxlength="16" /></td>
-						<td></td>
+						<td><input type="password" name="password" maxlength="16" 
+								onblur="Validate.required(this,4,16,'密码需要','passwordError'); "/></td>
+						<td>
+							<div class="errorMsg" id="passwordError"></div>
+						</td>
 					</tr>
 					<tr>
 						<td>密码确认：</td>
-						<td><input type="password" name="confirmPassword" maxlength="16" /></td>
-						<td></td>
+						<td><input type="password" name="confirmPassword" maxlength="16" 
+								onblur="Validate.required(this,4,16,'密码确认需要','passwordComfirmError'); "/></td>
+						<td>
+							<div class="errorMsg" id="passwordComfirmError"></div>
+						</td>
 					</tr>
 					<tr>
 						<td>真实姓名：</td>
-						<td><input type="text" name="realname" maxlength="16" /></td>
-						<td></td>
+						<td><input type="text" name="realname" maxlength="16" 
+								onblur="Validate.required(this,'真实姓名需要','realNameError'); "/></td>
+						<td>
+							<div class="errorMsg" id="realNameError"></div>
+						</td>
 					</tr>
 					<tr>
 						<td>性别：</td>
@@ -50,12 +63,16 @@
 							<input type="radio" name="gender" value="male"/>男
 							<input type="radio" name="gender" value="female"/>女 
 						</td>
-						<td></td>
+						<td>
+						</td>
 					</tr>
 					<tr>
 						<td>Email：</td>
-						<td><input type="text" name="email"/> </td>
-						<td></td>
+						<td><input type="text" name="email"
+								onblur="Validate.email(this, 'validateEmailError')"/> </td>
+						<td>
+							<div class="errorMsg" id="validateEmailError"></div>
+						</td>
 					</tr>
 					<tr>
 						<td>生日：</td>
@@ -78,8 +95,10 @@
 					</tr>
 					<tr>
 						<td>验证码:</td>
-						<td><input type="text" name="validateCode"></td>
-						<td>
+						<td><input type="text" name="validateCode" 
+								onblur="Validate.required(this,6,6,'验证码需要','userValiCodeError')"/></td>
+						<td>	
+							<div class="errorMsg" id="userValiCodeError"></div>
 						</td>
 					</tr>
 					<tr>

@@ -1,3 +1,9 @@
+/**
+ * 需要prototype.js库的支持
+ * 
+ * 许润华
+ */
+ 
 var Validate = new Object;
 
 /**
@@ -14,37 +20,92 @@ Validate.changeCode = function(obj) {
 }
 
 /**
- * 判断元素是否为空
+ * 检查元素长度
  * 
- * @param {}
- *            element 需要判断的元素
- * @param {}
- *            message 出错提示信息
- * @param {}
- *            showId 提示信息位置
+ * @param {} 
+ * 				element 需要判断的元素
+ * @param {} 
+ * 				s 长度控制，最小长度
+ * @param {} 
+ * 				e 长度控制，最大长度
+ * @param {} 
+ * 				message 出错提示信息
+ * @param {} 
+ * 				showId
  * @return {Boolean} 表单为空时，返回false； 否则返回 true
  */
-Validate.required = function(element, message, showId) {
+Validate.required = function(element, s, e, message, showId) {
+	
+	var args = arguments.length;
+	var flag = false;
+	var message;
+	var showId;
+	if (args == 5) {
+		flag = true;
+	}
+	else {
+		message = arguments[1];
+		showId = arguments[2];
+	}
+	
 	with (element) {
 		if (value == null || value == "") {
 
 			var oText = document.createTextNode(message);
-			if (document.getElementById(showId).firstChild != null) {
-				var child = document.getElementById(showId).firstChild;
-				document.getElementById(showId).removeChild(child);
+			if ($(showId).firstChild != null) {
+				var child = $(showId).firstChild;
+				$(showId).removeChild(child);
 			}
-			document.getElementById(showId).appendChild(oText);
+			$(showId).appendChild(oText);
 			return false;
 
 		} 
 		else {
-			return true;
+			if (flag && value.length < s || value.length > e) {
+				var oText = document.createTextNode("长度范围" + s + "-" + e);
+				if ($(showId).firstChild != null) {
+					var child = $(showId).firstChild;
+					$(showId).removeChild(child);
+				}
+				$(showId).appendChild(oText);
+				return false;
+			}
+			else {
+				if ($(showId).firstChild != null) {
+					var child = $(showId).firstChild;
+					$(showId).removeChild(child);
+				}
+				return true;
+			}
 		}
 	}
 }
 
-Validate.email = function() {
 
+/**
+ * 检查Email地址是否正确
+ * 
+ * @param {} emailElement email输入控件
+ */
+Validate.email = function(emailElement, showId) {
+	var regEmail = /^(?:\w+\.?)*\w+@(?:\w+\.?)*\w+$/;
+	var flag = regEmail.test(emailElement.value);
+	if (!flag) {
+		var oText = document.createTextNode("邮件地址不合法");
+		if ($(showId).firstChild != null) {
+			var child = $(showId).firstChild;
+			$(showId).removeChild(child);
+		}
+		$(showId).appendChild(oText);
+		return false;
+	}
+	else {
+		if ($(showId).firstChild != null) {
+			var child = $(showId).firstChild;
+			$(showId).removeChild(child);
+		}
+		return true;
+	}
 }
 
 var FormUtil = new Object;
