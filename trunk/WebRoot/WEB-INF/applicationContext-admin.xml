@@ -6,4 +6,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	
 	
+	<!-- The struts action bean manager -->
+	<bean id="adminLoginAction" class="com.goodfriend.admin.action.LoginAction"
+			scope="prototype">
+		<property name="adminService">
+			<ref bean="adminService"/>
+		</property>
+	</bean>
+	
 </beans>

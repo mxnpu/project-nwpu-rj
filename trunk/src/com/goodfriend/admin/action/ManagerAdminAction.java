@@ -2,7 +2,7 @@ package com.goodfriend.admin.action;
 
 import com.goodfriend.admin.dto.AdminDTO;
 import com.goodfriend.model.Admin;
-import com.goodfriend.service.IAminService;
+import com.goodfriend.service.IAdminService;
 import com.opensymphony.xwork2.ActionSupport;
 /**
  * 
@@ -10,13 +10,13 @@ import com.opensymphony.xwork2.ActionSupport;
  * Last modify:2010.5.9
  */
 public class ManagerAdminAction extends ActionSupport {
-
+		
 	private static final long serialVersionUID = 1L;
 	private static final String SUCCESS = "success";
 	private static final String FAILED = "failed";
 
 	private AdminDTO adminDTO;
-	private IAminService adminService;
+	private IAdminService adminService;
 	
 	public String add() throws Exception {
 		
@@ -78,13 +78,13 @@ public class ManagerAdminAction extends ActionSupport {
 		this.adminDTO = adminDTO;
 	}
 
-
-	public IAminService getAdminDaoManager() {
+	public IAdminService getAdminService() {
 		return adminService;
 	}
 
-	public void setAdminService(IAminService adminDaoManager) {
-		this.adminService = adminDaoManager;
+
+	public void setAdminService(IAdminService adminService) {
+		this.adminService = adminService;
 	}
 
 

@@ -4,14 +4,14 @@ import java.util.List;
 
 import com.goodfriend.dao.IAdminDAO;
 import com.goodfriend.model.Admin;
-import com.goodfriend.service.IAminService;
+import com.goodfriend.service.IAdminService;
 
 /**
  * 
  * 
  * @author xurunhua 
  */
-public class AdminService implements IAminService {
+public class AdminService implements IAdminService {
 
 	private IAdminDAO adminDao;
 	

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.goodfriend.model.Admin;
 
-public interface IAminService {
+public interface IAdminService {
 	public void addAdmin(Admin admin);
 	public Admin getAdmin(Integer id);
 	public Admin getAdmin(String adminName);
