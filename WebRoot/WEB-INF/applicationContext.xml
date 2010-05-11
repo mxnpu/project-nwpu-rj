@@ -12,6 +12,7 @@
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
+
 <!--  
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">
@@ -212,4 +213,5 @@
 			scope="prototype">
 	</bean>
 	
+	<import resource="applicationContext-admin.xml"/>
 </beans>

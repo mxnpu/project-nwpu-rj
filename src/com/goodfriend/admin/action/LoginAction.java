@@ -6,13 +6,13 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.goodfriend.model.Admin;
-import com.goodfriend.service.IAminService;
+import com.goodfriend.service.IAdminService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 
-	private IAminService adminService;
+	private IAdminService adminService;
 	private Admin admin;
 	private Map<String, Object> session;
 
@@ -50,19 +50,18 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		this.session = session;
 	}
 
-	public IAminService getAdminDaoManager() {
-		return adminService;
-	}
-
-	public void setAdminDaoManager(IAminService adminDaoManager) {
-		this.adminService = adminDaoManager;
-	}
-
 	public Admin getAdmin() {
 		return admin;
 	}
 
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
+	}
+	public IAdminService getAdminService() {
+		return adminService;
+	}
+
+	public void setAdminService(IAdminService adminService) {
+		this.adminService = adminService;
 	}
 }
