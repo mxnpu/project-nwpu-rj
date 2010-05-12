@@ -10,19 +10,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     
     <title>写新日志</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<script type="text/javascript" src="../../js/kindeditor/kindeditor.js"></script>
+
 	<script type="text/javascript">
     	KE.show({
-        	id : 'content',
+        	id : 'content'
    	    });	
     	</script>
   </head>
@@ -37,6 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<label>标题：</label><input id="title" name="title" type="text"><br><br>
     	
     	<textarea id="content" rows="20" cols="80" name="content"></textarea><br><br>
+
     	<button type="submit">发布</button>
      	</form>
     </div>
