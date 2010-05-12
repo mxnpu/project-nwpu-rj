@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="../js/prototype-1.6.0.3.js"></script>
 		<script type="text/javascript" src="../js/formUtils.js"></script> 
 		<script type="text/javascript" src="../js/datePicker/WdatePicker.js"></script>
-		<link rel="stylesheet" type="text/css" href="/style/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../style/style.css"/>
 	</head>
 
   <body onLoad="FormUtil.focusOnFirst()">
@@ -16,7 +16,7 @@
       
       	<h1 class="logo">
           <a href="#">
-   	        <img src="style/image/bf_logo.png" alt="Good Friend"/>
+   	        <img src="../style/image/bf_logo.png" alt="Good Friend"/>
           </a>
         </h1>
       	<div class="nav_account">
@@ -115,7 +115,7 @@
       
       <div id="footer">
         <p class="r_option">
-          <a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP"><img src="style/image/top.gif" alt="" style="padding: 5px 6px 6px;"></a>
+          <a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP"><img src="../style/image/top.gif" alt="" style="padding: 5px 6px 6px;"></a>
         </p>
         <p>交友乐园 - Good Friend 网友互动社区 - <a href="mailto:qinzishi@gmail.com">联系我们</a>
       </div>
