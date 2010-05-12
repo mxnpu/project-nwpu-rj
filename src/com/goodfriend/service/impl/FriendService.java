@@ -9,7 +9,7 @@ import com.goodfriend.service.IFriendService;
 
 public class FriendService implements IFriendService {
 	
-	private FriendsDAO fiendDao;
+	private FriendsDAO friendDao;
 
 	public void addFriend(Friends friend) {
 		// TODO Auto-generated method stub
@@ -31,12 +31,12 @@ public class FriendService implements IFriendService {
 
 	}
 
-	public void setFiendDao(FriendsDAO fiendDao) {
-		this.fiendDao = fiendDao;
+	public void setFriendDao(FriendsDAO friendDao) {
+		this.friendDao = friendDao;
 	}
 
-	public FriendsDAO getFiendDao() {
-		return fiendDao;
+	public FriendsDAO getFriendDao() {
+		return friendDao;
 	}
 
 }

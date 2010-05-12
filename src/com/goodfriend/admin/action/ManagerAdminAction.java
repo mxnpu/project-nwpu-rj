@@ -2,7 +2,12 @@ package com.goodfriend.admin.action;
 
 import com.goodfriend.admin.dto.AdminDTO;
 import com.goodfriend.model.Admin;
+
 import com.goodfriend.service.IAdminService;
+
+
+import com.opensymphony.xwork2.ActionContext;
+
 import com.opensymphony.xwork2.ActionSupport;
 /**
  * 
@@ -16,7 +21,12 @@ public class ManagerAdminAction extends ActionSupport {
 	private static final String FAILED = "failed";
 
 	private AdminDTO adminDTO;
+
+ 
 	private IAdminService adminService;
+
+
+
 	
 	public String add() throws Exception {
 		
@@ -78,13 +88,18 @@ public class ManagerAdminAction extends ActionSupport {
 		this.adminDTO = adminDTO;
 	}
 
+
 	public IAdminService getAdminService() {
+
 		return adminService;
+
 	}
 
 
 	public void setAdminService(IAdminService adminService) {
 		this.adminService = adminService;
+
+
 	}
 
 

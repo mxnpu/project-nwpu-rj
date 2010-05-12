@@ -35,6 +35,11 @@
 				<param name="inputName">inputStream</param>
 			</result>
 		</action>
+		
+		<!-- 发布blog -->
+		<action name="publishBlog" class="publishBlogAction" method="publish">
+			<result name="success" type="redirect">blog/publish_success.jsp</result>
+		</action>
 	</package>
 
 	<include file="struts_admin.xml" />

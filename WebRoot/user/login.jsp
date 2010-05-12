@@ -4,6 +4,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 	<head>
+	
 		<title>Good Friend 互动社区</title>
 		<script type="text/javascript" src="../js/prototype-1.6.0.3.js"></script>
 		<script type="text/javascript" src="../js/formUtils.js"></script> 

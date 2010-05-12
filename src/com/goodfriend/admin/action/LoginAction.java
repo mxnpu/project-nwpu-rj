@@ -6,13 +6,21 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.goodfriend.model.Admin;
+
+
 import com.goodfriend.service.IAdminService;
+
+
+import com.opensymphony.xwork2.ActionContext;
+
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport implements SessionAware {
+public class LoginAction {
 	private static final long serialVersionUID = 1L;
 
+
 	private IAdminService adminService;
+
 	private Admin admin;
 	private Map<String, Object> session;
 
@@ -49,6 +57,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 		this.session = session;
 	}
+
 
 	public Admin getAdmin() {
 		return admin;
