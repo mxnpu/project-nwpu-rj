@@ -17,7 +17,7 @@
   	<div id="header">
   	</div>
   	
-  	<div id="main">
+  	<div id="wrap">
   		<label>发表新日志</label><br><br>
   		<form action="publishBlog" method="post">
     	<label>标题：</label><input id="title" name="title" type="text"><br><br>
