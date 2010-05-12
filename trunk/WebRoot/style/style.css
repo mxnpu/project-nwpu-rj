@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+* { word-wrap: break-word; word-break: break-all; }
+body, th, td, input, select, textarea, button { font: 12px/1.5em Verdana, "Lucida Grande", Arial, Helvetica, sans-serif; }
+body, h1, h2, h3, h4, h5, h6, p, ul, dl, dt, dd, form, fieldset { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6 { font-size: 1em; }
+ul li { list-style: none; }
+select { margin-right: 2px; }
+.t_input, select, textarea { padding: 3px 2px; border: 1px solid #ddd; line-height: 16px; }
+
+/*************************************************HEADER***/
+#header { margin: 0 0 20px; }
+  .headerwarp { margin: 0 auto; padding: 0 20px; width: 930px; height: 40px; background: #FF8E00 url(image/vc_header_bg.gif); color: #FFF; }
+    .headerwarp a { color: #FFF; }
+      .headerwarp .logo { float: left; margin: 0 30px 0 0; }
+
+.menu { float: left; height: 40px; font-size: 14px; font-weight: bold; }
+  .menu li { float: left; padding: 10px; line-height: 20px; vertical-align: top; }
+    .menu .edit { padding-left: 4px; color: #FFF; font-size: 12px; font-weight: normal; }
+
+.nav_account { float: right; width: 200px; white-space:nowrap; overflow: hidden; }
+  .login_thumb { float: left; margin: 6px 6px 0 0; padding: 3px 0 0 3px; width: 24px; height: 24px; background: url(image/thumb20bg.gif) no-repeat; display: block; }
+  .login_thumb img{ width: 20px; height: 20px; }
+    li.notify { margin: 9px 0 0; padding: 0 0 0 18px; width: 72px; height: 20px; background: url(image/notify_bg.gif); color: #FFF; font-size: 12px; font-weight: normal; }
+
+.menu li.dropmenu { margin: 0 10px 0 0; padding: 10px 15px 10px 10px; height: 20px; background: url(image/triangle.gif) no-repeat right center; overflow: hidden; }
+  .dropmenu_drop { margin: -1px 0 0; padding: 0 10px 10px; width: 150px; border: 1px solid #EBE6C9; background: #FFF; z-index: 200; }
+      .dropmenu_drop li { padding: 5px 10px; border-bottom: 1px solid #EEE; }
+        .dropmenu_drop li a { color: #2C629E; font-size: 12px; font-weight: normal; }
+		.dropmenu_drop .active { font-weight: bold; }
+
+#main { margin: 0 0 20px; width: 100%; background: url(image/appSidebar_bg.gif) repeat-y 0 0; overflow: hidden; }
+
+/*************************************************Login***/
+#wrap, .wrap { margin: 0 auto; width: 970px; }
+
+.formtable { width: 100%; }
+    .formtable caption { padding: 10px 0; color: #666; font-size: 12px; }
+        .formtable caption h2 { padding-bottom: 8px; border-bottom: 1px solid #CCC; color: #333; font-size: 14px; }
+        .formtable caption p { margin-top: 8px; }
+            .formtable td, .formtable th { padding: 5px; }
+            .formtable th { padding-right: 1em; text-align: right; }
+caption, th { text-align: left; }
+  caption { font-size: 14px; font-weight: bold; }
+  caption p { font-weight: normal; }
+  
+.c_form { padding: 0.5em 3em; }
+.submit { background: #c00000;	border-color: #d66666 #b00 #b00 #d66666; border-width: 1px;	color: #fff; height: 20px; padding: 0px 4px; padding-bottom:2px; text-align: center; vertical-align: middle; font-size: 12px; }
+.reset { background: #00c000;	border-color: #66d666 #b00 #b00 #66d666; border-width: 1px;	color: #000; height: 20px; padding: 0px 4px; padding-bottom:2px; text-align: center; vertical-align: middle; font-size: 12px; }
+
+#register { display: block; margin: 0 110px 2em; width: 100px; border: 1px solid #486B26; background: #76A14F; line-height: 30px; font-size: 14px; text-align: center; text-decoration: none; }
+  #register strong{ display: block; border-top: 1px solid #9EBC84; color: #FFF; padding: 0 0.5em; }
+
+/*************************************************Login***/
+#footer { padding: 10px 0 10px 0; border-top: 1px solid #EBE6C9; color: #333; text-align: center; }
+    #footer a { color: #333; }
+
+.r_option { float: right; font-size: 12px; font-weight: normal; }
