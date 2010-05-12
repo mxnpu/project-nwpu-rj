@@ -1,5 +1,8 @@
 package com.goodfriend.action;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 import org.apache.commons.lang.time.DateUtils;
@@ -20,19 +23,22 @@ public class RegisterAction {
 	private String hoby;
 	private String validateCode;
 
+	private InputStream inputStream;
+
 	private static final String SUCCESS = "success";
 	private static final String FAILED = "failed";
 
 	private IUserService userService;
 
 	public String register() throws Exception {
-		
-		//从session中取出RandomAction.java 中生成的验证码 random  
-		String randomString =(String)(ActionContext.getContext().getSession().get("random"));
+
+		// 从session中取出RandomAction.java 中生成的验证码 random
+		String randomString = (String) (ActionContext.getContext().getSession()
+				.get("random"));
 		if (randomString.toLowerCase().equals(validateCode.toLowerCase())) {
-			
+
 			if (!userService.isUserExist(username)) {
-			
+
 				User user = new User();
 				if (username != null && !username.equals("")) {
 					user.setUserName(username);
@@ -89,21 +95,48 @@ public class RegisterAction {
 				userService.addUser(user);
 
 				if (userService.isUserExist(username)) {
-					ActionContext.getContext().getSession().put("currentUser", user);
+					ActionContext.getContext().getSession().put("currentUser",
+							user);
 					return SUCCESS;
 				} else {
 					return FAILED;
 				}
 
+			} else {
+
 			}
-			else {
-				
-			}
-		}
-		else {
-			
+		} else {
+
 		}
 		return FAILED;
+	}
+
+	/**
+	 * 异步交互时，验证用户名是否已经存在 如果存在，不允许使用注册
+	 * 
+	 * @return success
+	 */
+	public String validateName() {
+		String parameter = (String) ActionContext.getContext().getParameters().get("valiName");
+		System.out.println(parameter);
+		if (userService.isUserExist(parameter)) {
+			toInStream("用户名 已经存在...already exist");
+		}
+		else {
+			toInStream("可以注册");
+		}
+		return SUCCESS;
+	}
+
+	public void toInStream(String str) {
+		try {
+
+			inputStream = new ByteArrayInputStream(str.getBytes("utf-8"));
+			
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	public String getUsername() {
@@ -192,5 +225,13 @@ public class RegisterAction {
 
 	public IUserService getUserService() {
 		return userService;
+	}
+
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+
+	public InputStream getInputStream() {
+		return inputStream;
 	}
 }

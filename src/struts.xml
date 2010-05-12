@@ -7,19 +7,26 @@
 	<constant name="struts.objectFactory" value="spring" />
 
 	<package name="user" namespace="/user" extends="struts-default">
+	
+		<!-- 用户登录请求处理Action -->
 		<action name="login" class="loginAction" method="login">
 			<result name="success" type="redirect">index.jsp</result>
 			<result name="login" type="redirect">login.jsp</result>
 		</action>
+		<!-- 用户退出请求处理Action -->
 		<action name="logout" class="loginAction" method="logout">
 			<result name="login" type="redirect">login.jsp</result>
 			<result>login.jsp</result>
 		</action>
+		<!-- 用户注册请求处理Action -->
 		<action name="register" class="registerAction" method="register">
 			<result name="success">register_success.jsp</result>
 			<result name="failed">register.jsp</result>
 		</action>
-
+		<!-- 用户注册用户名是否存在验证AJAX请求处理Action -->
+		<action name="isNameExist" class="registerAction" method="validateName">
+			<result name="success" type="stream"></result>
+		</action>
 		<!-- Random验证码 -->
 		<action name="random" class="randomNumberAction"
 					method="execute">

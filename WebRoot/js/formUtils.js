@@ -123,3 +123,25 @@ FormUtil.focusOnFirst = function() {
 		}
 	}
 }
+
+var myNameValidateAjax = {
+	url : "isNameExist.action",
+	params : "",
+	tips : "",
+	validate : function (tips, value) {
+		this.tips = tips;
+		this.params = "valiName=" + value;
+		var myAjax = new Ajax.Request (
+			this.url,
+			{
+				method : 'get',
+				parameters : this.params,
+				onComplete : this.showResponse,
+				asynchronous : true
+			}
+		);
+	},
+	showResponse : function(request) {
+		$(this.tips).innerHTML = request.responseText;
+	}
+}

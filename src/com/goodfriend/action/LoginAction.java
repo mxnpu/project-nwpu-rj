@@ -17,31 +17,21 @@ public class LoginAction {
 	private Map<String, Object> session;
 
 	public String login() throws Exception {
-		
-		//从session中取出RandomAction.java 中生成的验证码 random  
-		String randomString =(String)(ActionContext.getContext().getSession().get("random")); 
-		
-		// 判断验证码是否正确
-		if (randomString.toLowerCase().equals(validateCode.toLowerCase())) {
-			User dbUser = userService.getUser(username);
-			// 判断用户名和密码
-			if (dbUser != null && dbUser.getPassword().equals(password) ){
-				session = (Map<String, Object>) ActionContext.getContext()
-						.getSession();
-				if (session == null) {
-					session = new HashMap<String, Object>();
-				}
-				session.put("currentUser", dbUser);
-				return "success";
+
+		User dbUser = userService.getUser(username);
+		// 判断用户名和密码
+		if (dbUser != null && dbUser.getPassword().equals(password)) {
+			session = (Map<String, Object>) ActionContext.getContext()
+					.getSession();
+			if (session == null) {
+				session = new HashMap<String, Object>();
 			}
-			else {
-				
-			}
+			session.put("currentUser", dbUser);
+			return "success";
+		} else {
+
 		}
-		else {
-			ActionContext.getContext().getSession().put("errorMsg","验证码没有匹配");
-		}
-		
+
 		return "login";
 	}
 
