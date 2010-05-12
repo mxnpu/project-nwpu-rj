@@ -1,6 +1,6 @@
 package com.goodfriend.service.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
@@ -9,11 +9,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.goodfriend.model.Blog;
-import com.goodfriend.model.Friends;
-import com.goodfriend.model.User;
 import com.goodfriend.service.IBlogService;
 import com.goodfriend.service.IUserService;
-import com.goodfriend.service.impl.BlogService;
 
 public class BlogServiceTest {
 	ApplicationContext ctx;

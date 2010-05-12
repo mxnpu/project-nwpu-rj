@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="../style/style.css"/>
 	</head>
 	
-  <body onLoad="FormUtil.focusOnFirst()">
+  <body>
     <div id="wrap">
     <s:property value="#session.getAttribute('errorMsg')"/>
       <form id="loginform" name="loginform" action="login" method="post" class="c_form">

@@ -1,23 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
- 
-
+<jsp:include page="../header.jsp"></jsp:include>
 <html>
-  <head>
-    
-    <title>写新日志</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-	<script type="text/javascript" src="../../js/kindeditor/kindeditor.js"></script>
-
-	<script type="text/javascript">
+	<head>
+		<title>写新日志</title>
+		<link rel="stylesheet" type="text/css" href="../../style/style.css"/>
+		<script type="text/javascript" src="../../js/kindeditor/kindeditor.js"></script>
+		<script type="text/javascript">
     	KE.show({
         	id : 'content'
    	    });	
@@ -42,3 +31,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    </div>
   </body>
 </html>
+<jsp:include page="../footer.jsp"></jsp:include>

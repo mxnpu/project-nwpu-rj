@@ -97,11 +97,20 @@
 		expression="execution(* com.goodfriend.service.impl.PlacardService.*(..))"/>
 		<aop:pointcut id="blogServicePointcut"
 		expression="execution(* com.goodfriend.service.impl.BlogService.*(..))"/>
+		<aop:pointcut id="gossipServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.GossipService.*(..))" />
+		<aop:pointcut id="replyServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.ReplyService.*(..))" />
+		<aop:pointcut id="statementServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.StatementService.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="userServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="adminServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="placardServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="blogServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="gossipServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="replyServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="statementServicePointcut"/>
 	</aop:config>
 	
  	<!-- The DAO bean configuration -->
@@ -179,7 +188,7 @@
 		<property name="userDao">
 			<ref bean="userDAO"/>
 		</property>
-	</bean>
+	</bean> 
 	<bean id="friendsService"
 			class="com.goodfriend.service.impl.FriendService">
 		<property name="friendDao">
@@ -202,6 +211,24 @@
 			class="com.goodfriend.service.impl.BlogService">
 		<property name="blogDao">
 			<ref bean="blogDAO"/>
+		</property>
+	</bean>
+	<bean id="gossipService"
+			class="com.goodfriend.service.impl.GossipService">
+		<property name="gossipDao">
+			<ref bean="gossipDAO"/>
+		</property>
+	</bean>
+	<bean id="replyService"
+			class="com.goodfriend.service.impl.ReplyService">
+		<property name="replyDao">
+			<ref bean="replyDAO"/>
+		</property>
+	</bean>
+	<bean id="statementService"
+			class="com.goodfriend.service.impl.StatementService">
+		<property name="statementDao">
+			<ref bean="statementDAO"/>
 		</property>
 	</bean>
 	
