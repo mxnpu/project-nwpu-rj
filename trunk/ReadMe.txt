@@ -9,7 +9,7 @@
 	    在com.goodfriend.service包中写接口，com.goodfriend.service.impl实现类
 	    为了使你的方法能够事务管理，请根据方法功能按如下规则命名你的方法：
 	  C(创建)----add*
-	  R(读取)----命名随便
+	  R(读取)----get*
 	  U(更新)----update*
 	  D(删除)----del*
     

@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<jsp:include page="header.jsp"></jsp:include>
 <html>
 	<head>
 		<title>Good Friend 互动社区</title>
@@ -10,25 +11,6 @@
 	</head>
 	
   <body onLoad="FormUtil.focusOnFirst()">
-    <div id="header">
-   	  <div class="headerwarp">
-      
-      	<h1 class="logo">
-          <a href="#">
-   	        <img src="../style/image/bf_logo.png" alt="Good Friend"/>
-          </a>
-        </h1>
-      	<div class="nav_account">
-          欢迎您
-          <br>
-          <a href="login.jsp">登录</a>
-          |
-          <a href="register.jsp">注册</a>
-        </div>
-        
-      </div>
-    </div>
-    
     <div id="wrap">
     <s:property value="#session.getAttribute('errorMsg')"/>
       <form id="loginform" name="loginform" action="login" method="post" class="c_form">
@@ -85,14 +67,10 @@
         </table>
       </div>
       
-      <div id="footer">
-        <p class="r_option">
-          <a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP"><img src="../style/image/top.gif" alt="" style="padding: 5px 6px 6px;"></a>
-        </p>
-        <p>交友乐园 - Good Friend 网友互动社区 - <a href="mailto:qinzishi@gmail.com">联系我们</a>
-      </div>
+      
       
     </div>
   </body>
 
 </html>
+<jsp:include page="footer.jsp"></jsp:include>
