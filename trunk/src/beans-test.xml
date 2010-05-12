@@ -12,19 +12,69 @@
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
+
+<!--  
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/goodfriend">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="xurunhua"></property>
+	</bean>
+ 
+ 	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+				org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResource">
+			<list>
+				<value>com/goodfriend/model/Placard.hbm.xml</value>
+				<value>com/goodfriend/model/Statement.hbm.xml</value>
+				<value>com/goodfriend/model/Gossip.hbm.xml</value>
+				<value>com/goodfriend/model/Item.hbm.xml</value>
+				<value>com/goodfriend/model/Album.hbm.xml</value>
+				<value>com/goodfriend/model/Blog.hbm.xml</value>
+				<value>com/goodfriend/model/User.hbm.xml</value>
+				<value>com/goodfriend/model/Picture.hbm.xml</value>
+				<value>com/goodfriend/model/Reply.hbm.xml</value>
+				<value>com/goodfriend/model/Friends.hbm.xml</value>
+				<value>com/goodfriend/model/Admin.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+ -->
+ 
+ 	<!-- Create the hibernate session factory -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-		<property name="configLocation" value="classpath:hibernate.cfg.xml">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
 		</property>
 	</bean>
 
+	<!-- Configure the transaction manager -->
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory">
-			<ref local="sessionFactory" />
+			<ref local="sessionFactory"/>
 		</property>
 	</bean>
 	
+	<tx:annotation-driven/>
+
 	<!-- Configure the transaction propagation behavior -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
@@ -38,19 +88,23 @@
 	<!-- The method which participate the transaction -->
 	<aop:config>
 		<aop:pointcut id="userServicePointcut" 
-		expression="execution(* com.goodfriend.service.impl.UserDaoManager.*(..))"/>
+		expression="execution(* com.goodfriend.service.impl.UserService.*(..))"/>
 		<aop:pointcut id="friendServicePointcut"
-		expression="execution(* com.goodfriend.service.impl.FriendDaoManager.*(..))"/>
+		expression="execution(* com.goodfriend.service.impl.FriendService.*(..))"/>
 		<aop:pointcut id="adminServicePointcut"
-		expression="execution(* com.goodfriend.service.impl.AdminDaoManager.*(..))"/>
+		expression="execution(* com.goodfriend.service.impl.AdminService.*(..))"/>
 		<aop:pointcut id="placardServicePointcut"
-		expression="execution(* com.goodfriend.service.impl.PlacardDaoManager.*(..))"/>
+		expression="execution(* com.goodfriend.service.impl.PlacardService.*(..))"/>
+		<aop:pointcut id="blogServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.BlogService.*(..))"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="userServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="adminServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="placardServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="blogServicePointcut"/>
 	</aop:config>
-
+	
+ 	<!-- The DAO bean configuration -->
 	<bean id="placardDAO" class="com.goodfriend.dao.impl.PlacardDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -106,10 +160,10 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-
+	
 	<!-- The Service bean manager -->
 	<bean id="albumService"
-			class="com.goodfriend.service.impl.AlbumService">
+			class="com.goodfriend.service.impl.AlbumService"> 
 		<property name="albumDao">
 			<ref bean="albumDAO"/>
 		</property>
@@ -128,10 +182,10 @@
 	</bean>
 	<bean id="friendsService"
 			class="com.goodfriend.service.impl.FriendService">
-		<property name="fiendDao">
+		<property name="friendDao">
 			<ref bean="friendsDAO"/>
 		</property>
-	</bean>
+	</bean> 
 	<bean id="adminService"
 			class="com.goodfriend.service.impl.AdminService">
 		<property name="adminDao">
@@ -144,4 +198,29 @@
 			<ref bean="placardDAO"/>
 		</property>
 	</bean>
+	<bean id="blogService"
+			class="com.goodfriend.service.impl.BlogService">
+		<property name="blogDao">
+			<ref bean="blogDAO"/>
+		</property>
+	</bean>
+	
+	<!-- The struts action bean manager -->
+	<bean id="loginAction" class="com.goodfriend.action.LoginAction"
+			scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	<bean id="registerAction" class="com.goodfriend.action.RegisterAction"
+			scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	<bean id="randomNumberAction" class="com.goodfriend.action.RandomNumberAction"
+			scope="prototype">
+	</bean>
+	
+	
 </beans>

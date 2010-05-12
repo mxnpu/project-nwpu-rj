@@ -95,10 +95,13 @@
 		expression="execution(* com.goodfriend.service.impl.AdminService.*(..))"/>
 		<aop:pointcut id="placardServicePointcut"
 		expression="execution(* com.goodfriend.service.impl.PlacardService.*(..))"/>
+		<aop:pointcut id="blogServicePointcut"
+		expression="execution(* com.goodfriend.service.impl.BlogService.*(..))"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="userServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="adminServicePointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="placardServicePointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="blogServicePointcut"/>
 	</aop:config>
 	
  	<!-- The DAO bean configuration -->
@@ -179,10 +182,10 @@
 	</bean>
 	<bean id="friendsService"
 			class="com.goodfriend.service.impl.FriendService">
-		<property name="fiendDao">
+		<property name="friendDao">
 			<ref bean="friendsDAO"/>
 		</property>
-	</bean>
+	</bean> 
 	<bean id="adminService"
 			class="com.goodfriend.service.impl.AdminService">
 		<property name="adminDao">
@@ -193,6 +196,12 @@
 			class="com.goodfriend.service.impl.PlacardService">
 		<property name="placrdDao">
 			<ref bean="placardDAO"/>
+		</property>
+	</bean>
+	<bean id="blogService"
+			class="com.goodfriend.service.impl.BlogService">
+		<property name="blogDao">
+			<ref bean="blogDAO"/>
 		</property>
 	</bean>
 	
@@ -212,6 +221,14 @@
 	<bean id="randomNumberAction" class="com.goodfriend.action.RandomNumberAction"
 			scope="prototype">
 	</bean>
-	
+	<bean id="publishBlogAction" class="com.goodfriend.action.PublishBlogAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
 	<import resource="applicationContext-admin.xml"/>
 </beans>
