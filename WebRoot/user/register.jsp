@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="../style/style.css"/>
 	</head>
 
-  <body onLoad="FormUtil.focusOnFirst()">
+  <body>
    
     
     <div id="wrap">

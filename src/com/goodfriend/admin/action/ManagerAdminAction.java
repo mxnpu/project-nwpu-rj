@@ -2,12 +2,7 @@ package com.goodfriend.admin.action;
 
 import com.goodfriend.admin.dto.AdminDTO;
 import com.goodfriend.model.Admin;
-
 import com.goodfriend.service.IAdminService;
-
-
-import com.opensymphony.xwork2.ActionContext;
-
 import com.opensymphony.xwork2.ActionSupport;
 /**
  * 

@@ -5,7 +5,7 @@ import java.util.List;
 import com.goodfriend.model.User;
 
 /**
- * The the manager DAO to the user
+ * The the service component for the user
  * 
  * @author xurunhua
  * @version 

@@ -3,17 +3,8 @@ package com.goodfriend.admin.action;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.struts2.interceptor.SessionAware;
-
 import com.goodfriend.model.Admin;
-
-
 import com.goodfriend.service.IAdminService;
-
-
-import com.opensymphony.xwork2.ActionContext;
-
-import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction {
 	private static final long serialVersionUID = 1L;
