@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <jsp:include page="../header.jsp"></jsp:include>
-<html>
+<html> 
 	<head>
 		<title>写新日志</title>
 		<link rel="stylesheet" type="text/css" href="../../style/style.css"/>
@@ -18,7 +18,7 @@
   	</div>
   	
   	<div id="wrap">
-  		<label>发表新日志</label><br><br>
+  		<label><br>发表新日志</label><br><br>
   		<form action="publishBlog" method="post">
     	<label>标题：</label><input id="title" name="title" type="text"><br><br>
     	
@@ -30,5 +30,6 @@
    <div id="footer">
    </div>
   </body>
+  <jsp:include page="../footer.jsp"></jsp:include>
 </html>
-<jsp:include page="../footer.jsp"></jsp:include>
+
