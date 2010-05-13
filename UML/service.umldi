@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_E_eMYF6WEd-W4-e1V8YrAQ" activeDiagram="_E_eMYV6WEd-W4-e1V8YrAQ">
   <model href="service.uml#_qb8akM37EdqwVrslYOdUDA"/>
-  <diagrams xmi:id="_E_eMYV6WEd-W4-e1V8YrAQ" position="0,0" size="100,100" name="service" viewport="-29,29">
+  <diagrams xmi:id="_E_eMYV6WEd-W4-e1V8YrAQ" position="0,0" size="100,100" name="service" viewport="0,0">
     <property xmi:id="_E_xHUF6WEd-W4-e1V8YrAQ" key="pageFormatName" value="A4"/>
     <property xmi:id="_E_xHUV6WEd-W4-e1V8YrAQ" key="diagramWidth" value="840"/>
     <property xmi:id="_E_xHUl6WEd-W4-e1V8YrAQ" key="diagramHeight" value="1188"/>
@@ -288,7 +288,7 @@
           </semanticModel>
         </contained>
       </contained>
-      <contained xsi:type="di:GraphNode" xmi:id="_sxyD-F6WEd-W4-e1V8YrAQ" position="40,621" size="156,-1">
+      <contained xsi:type="di:GraphNode" xmi:id="_sxyD-F6WEd-W4-e1V8YrAQ" position="79,565" size="156,-1">
         <anchorage xmi:id="_syOIyl6WEd-W4-e1V8YrAQ" graphEdge="_syOIy16WEd-W4-e1V8YrAQ _syhq1F6WEd-W4-e1V8YrAQ _6P_gAF6XEd-W4-e1V8YrAQ"/>
         <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_sxyD-V6WEd-W4-e1V8YrAQ" presentation="default">
           <element href="service.uml#_sxLnSl6WEd-W4-e1V8YrAQ"/>

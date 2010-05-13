@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<jsp:include page="header.jsp"></jsp:include>
 <html>
 	<head>
 		<title>Register Page</title>
@@ -13,6 +12,24 @@
 
   <body>
    
+   	<div id="header">
+			<div class="headerwarp">
+
+				<h1 class="logo">
+					<a href="#"> <img src="../style/image/bf_logo.png"
+							alt="Good Friend" /> </a>
+				</h1>
+				<div class="nav_account">
+					欢迎您
+					<s:if test="#session.currentUser.userName != null">
+						, <s:property value="#session.currentUser.userName"/>
+					</s:if>
+					<br>
+					<a href="login.jsp">登录</a> |
+					<a href="register.jsp">注册</a>
+				</div>
+			</div>
+		</div>
     
     <div id="wrap">
       <form id="loginform" name="loginform" action="register.action" method="post" class="c_form">
@@ -49,7 +66,7 @@
             <tr>
               <th width="100"><label>性　别</label></th>
               <td>
-                <input type="radio" name="gender" id="male" value="male" tabindex="6"/><label for="male">男</label>
+                <input type="radio" name="gender" id="male" value="male" tabindex="6" checked="checked"/><label for="male">男</label>
 				<input type="radio" name="gender" id="female" value="female" tabindex="7"/><label for="female">女</label>
               </td>
             </tr>
@@ -77,7 +94,7 @@
               <th width="100"><label for="validateCode">验证码</label></th>
               <td>
                 <p>
-                  <img src="random.action" onClick="changeValidateCode(this)" title="点击图片刷新验证码"/>
+                  <img src="random.action" onClick="Validate.changeCode(this)" title="点击图片刷新验证码"/>
                 </p>
                 <p>
                   <input type="text" name="validateCode" id="validateCode" class="t_input" tabindex="12" maxlength="16" onBlur="Validate.required(this,6,6,'验证码需要','userValiCodeError')">
@@ -98,7 +115,14 @@
         </table>
       </form>
     </div>
+    
+     <div id="footer">
+        <p class="r_option">
+          <a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP"><img src="../style/image/top.gif" alt="" style="padding: 5px 6px 6px;"></a>
+        </p>
+        <p>交友乐园 - Good Friend 网友互动社区 - <a href="mailto:admin@gmail.com">联系我们</a>
+      </div>
+    
   </body>
 
 </html>
-<jsp:include page="footer.jsp"></jsp:include>

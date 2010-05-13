@@ -5,7 +5,6 @@
 
 
 <struts>
-    <constant name="struts.devMode" value="true" />
     <package name="admin" extends="struts-default" namespace="/admin">
         
         <action name="login" class="adminLoginAction" method="login">
