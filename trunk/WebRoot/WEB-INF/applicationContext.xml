@@ -238,6 +238,9 @@
 		<property name="userService">
 			<ref bean="userService"/>
 		</property>
+		<property name="adminService">
+			<ref bean="adminService"/>
+		</property>
 	</bean>
 	<bean id="registerAction" class="com.goodfriend.action.RegisterAction"
 			scope="prototype">

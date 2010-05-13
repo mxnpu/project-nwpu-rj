@@ -3,7 +3,9 @@ package com.goodfriend.action;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.goodfriend.model.Admin;
 import com.goodfriend.model.User;
+import com.goodfriend.service.IAdminService;
 import com.goodfriend.service.IUserService;
 import com.opensymphony.xwork2.ActionContext;
 
@@ -17,27 +19,45 @@ public class LoginAction {
 	private static final long serialVersionUID = 1L;
 
 	private IUserService userService;
+	private IAdminService adminService;
 	private String username;
 	private String password;
+	private String purview;
 	private String validateCode;
 	private Map<String, Object> session;
 
 	public String login() throws Exception {
-
-		User dbUser = userService.getUser(username);
-		// 判断用户名和密码
-		if (dbUser != null && dbUser.getPassword().equals(password)) {
-			session = (Map<String, Object>) ActionContext.getContext()
-					.getSession();
-			if (session == null) {
-				session = new HashMap<String, Object>();
+	
+		if (purview.equals("user")) {
+			User dbUser = userService.getUser(username);
+			// 判断用户名和密码
+			if (dbUser != null && dbUser.getPassword().equals(password)) {
+				session = (Map<String, Object>) ActionContext.getContext()
+						.getSession();
+				if (session == null) {
+					session = new HashMap<String, Object>();
+				}
+				session.put("currentUser", dbUser);
+				return "success";
+			} else {
+				
 			}
-			session.put("currentUser", dbUser);
-			return "success";
-		} else {
-
 		}
-
+		else {
+			Admin dbAdmin = adminService.getAdmin(username);
+			if (dbAdmin != null && dbAdmin.getPassword().equals(password)) {
+				session = (Map<String, Object>) ActionContext.getContext()
+						.getSession();
+				if (session == null) {
+					session = new HashMap<String, Object>();
+				}
+				session.put("currentAdmin", dbAdmin);
+				return "admin";
+			}
+			else {
+			}
+			
+		}
 		return "login";
 	}
 
@@ -77,6 +97,22 @@ public class LoginAction {
 
 	public IUserService getUserService() {
 		return userService;
+	}
+
+	public void setPurview(String purview) {
+		this.purview = purview;
+	}
+
+	public String getPurview() {
+		return purview;
+	}
+
+	public void setAdminService(IAdminService adminService) {
+		this.adminService = adminService;
+	}
+
+	public IAdminService getAdminService() {
+		return adminService;
 	}
 
 }
