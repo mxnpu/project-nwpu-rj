@@ -26,7 +26,9 @@
           <tbody style="display:;">
             <tr>
               <th width="100"><label for="username">用户名</label></th>
-              <td><input type="text" name="username" id="username" class="t_input" tabindex="2" maxlength="16" onBlur="Validate.required(this,4,16,'用户名需要','userNameError'); "></td>
+              <td><input type="text" name="username" id="username" class="t_input" tabindex="2" maxlength="16" 
+              		onBlur="Validate.required(this,4,16,'用户名需要','userNameError');
+              				myNameValidateAjax.validate(this.value); "></td>
               <td><div class="errorMsg" id="userNameError"></div></td>
             </tr>
             <tr>
