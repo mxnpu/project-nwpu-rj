@@ -3,9 +3,15 @@
  * 
  * 许润华
  */
- 
+
 var Validate = new Object;
 
+/**
+ * 用户注册部分时，是否异步验证其注册用户名是否存在.
+ * 
+ * @type Boolean 默认为true,即是异步验证
+ */
+var ajaxNameValidate = true;
 /**
  * 重发action请求，改变验证码
  * 
@@ -22,32 +28,31 @@ Validate.changeCode = function(obj) {
 /**
  * 检查元素长度
  * 
- * @param {} 
- * 				element 需要判断的元素
- * @param {} 
- * 				s 长度控制，最小长度
- * @param {} 
- * 				e 长度控制，最大长度
- * @param {} 
- * 				message 出错提示信息
- * @param {} 
- * 				showId
+ * @param {}
+ *            element 需要判断的元素
+ * @param {}
+ *            s 长度控制，最小长度
+ * @param {}
+ *            e 长度控制，最大长度
+ * @param {}
+ *            message 出错提示信息
+ * @param {}
+ *            showId
  * @return {Boolean} 表单为空时，返回false； 否则返回 true
  */
 Validate.required = function(element, s, e, message, showId) {
-	
+
 	var args = arguments.length;
 	var flag = false;
 	var message;
 	var showId;
 	if (args == 5) {
 		flag = true;
-	}
-	else {
+	} else {
 		message = arguments[1];
 		showId = arguments[2];
 	}
-	
+
 	with (element) {
 		if (value == null || value == "") {
 
@@ -57,10 +62,10 @@ Validate.required = function(element, s, e, message, showId) {
 				$(showId).removeChild(child);
 			}
 			$(showId).appendChild(oText);
+			ajaxNameValidate = false;
 			return false;
 
-		} 
-		else {
+		} else {
 			if (flag && value.length < s || value.length > e) {
 				var oText = document.createTextNode("长度范围" + s + "-" + e);
 				if ($(showId).firstChild != null) {
@@ -68,13 +73,14 @@ Validate.required = function(element, s, e, message, showId) {
 					$(showId).removeChild(child);
 				}
 				$(showId).appendChild(oText);
+				ajaxNameValidate = false;
 				return false;
-			}
-			else {
+			} else {
 				if ($(showId).firstChild != null) {
 					var child = $(showId).firstChild;
 					$(showId).removeChild(child);
 				}
+				ajaxNameValidate = true;
 				return true;
 			}
 		}
@@ -84,7 +90,8 @@ Validate.required = function(element, s, e, message, showId) {
 /**
  * 检查Email地址是否正确
  * 
- * @param {} emailElement email输入控件
+ * @param {}
+ *            emailElement email输入控件
  */
 Validate.email = function(emailElement, showId) {
 	var regEmail = /^(?:\w+\.?)*\w+@(?:\w+\.?)*\w+$/;
@@ -97,8 +104,7 @@ Validate.email = function(emailElement, showId) {
 		}
 		$(showId).appendChild(oText);
 		return false;
-	}
-	else {
+	} else {
 		if ($(showId).firstChild != null) {
 			var child = $(showId).firstChild;
 			$(showId).removeChild(child);
@@ -124,24 +130,30 @@ FormUtil.focusOnFirst = function() {
 	}
 }
 
+/**
+ * 异步验证用户名是否已经注册.
+ * 
+ * @type Class
+ */
 var myNameValidateAjax = {
 	url : "isNameExist.action",
 	params : "",
-	tips : "",
-	validate : function (tips, value) {
-		this.tips = tips;
-		this.params = "valiName=" + value;
-		var myAjax = new Ajax.Request (
-			this.url,
-			{
-				method : 'get',
-				parameters : this.params,
-				onComplete : this.showResponse,
-				asynchronous : true
-			}
-		);
+	validate : function(value) {
+		if (ajaxNameValidate) {
+			this.params = "valiName=" + value;
+			var myAjax = new Ajax.Request(this.url, {
+						method : 'get',
+						parameters : this.params,
+						onComplete : this.showResponse,
+						asynchronous : true
+					});
+		}
+		else {
+			return false;
+		}
+
 	},
 	showResponse : function(request) {
-		$(this.tips).innerHTML = request.responseText;
+		$("userNameError").innerHTML = request.responseText;
 	}
 }

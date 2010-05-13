@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.Map;
 
 import org.apache.commons.lang.time.DateUtils;
 
@@ -11,6 +12,12 @@ import com.goodfriend.model.User;
 import com.goodfriend.service.IUserService;
 import com.opensymphony.xwork2.ActionContext;
 
+/**
+ * 用户注册请求处理Action类
+ * 
+ * @author xurunhua
+ * Last Modified time 2010.05.13
+ */
 public class RegisterAction {
 	private String username;
 	private String password;
@@ -116,11 +123,13 @@ public class RegisterAction {
 	 * 
 	 * @return success
 	 */
-	public String validateName() {
-		String parameter = (String) ActionContext.getContext().getParameters().get("valiName");
-		System.out.println(parameter);
-		if (userService.isUserExist(parameter)) {
-			toInStream("用户名 已经存在...already exist");
+	public String validateName() throws Exception {
+		System.out.println("execute.... validate name ......");
+		Map<String, Object> parameters = ActionContext.getContext().getParameters();
+		String[] parameter = (String[]) parameters.get("valiName");
+		System.out.println(parameter[0]);
+		if (userService.isUserExist(parameter[0])) {
+			toInStream("用户名已经存在");
 		}
 		else {
 			toInStream("可以注册");
