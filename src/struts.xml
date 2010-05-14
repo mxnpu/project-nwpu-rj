@@ -41,6 +41,15 @@
 		<action name="publishBlog" class="publishBlogAction" method="publish">
 			<result name="success" type="redirect">blog/publish_success.jsp</result>
 		</action>
+		
+		<!-- 查看某一页的blog -->
+		<action name="showAllBlogs" class="showAllBlogsAction" method="showBlogs">
+			<result name="success" >blog/all_blogs.jsp</result>
+		</action>
+		
+		<action name="personalInfo" class="personalInfoAction" method="showPersonalInfo">
+			<result name="success" type="redirect">personal_info.jsp</result>
+		</action>
 	</package>
 
 	<include file="struts_admin.xml" />

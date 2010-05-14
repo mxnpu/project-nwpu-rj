@@ -2,6 +2,8 @@ package com.goodfriend.service.test;
 
 import static org.junit.Assert.fail;
 
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,11 +38,17 @@ public class BlogServiceTest {
 
 	@Test
 	public void testAddBlog() {
-		blog = new Blog();
-		blog.setTitle("title");
-		blog.setContent("content");
-		
-		blogService.addBlog(blog, userService.getUser(1));
+//		blog = new Blog();
+//		blog.setTitle("title");
+//		blog.setContent("content");
+//		
+//		blogService.addBlog(blog, userService.getUser(1));
+	}
+	
+	@Test
+	public void testGetBlogsByPage(){
+		List<Blog> list = blogService.getBlogsByPage(userService.getUser(1), 1, 2);
+
 	}
 	
 	@Test

@@ -10,7 +10,7 @@ import com.goodfriend.model.User;
  * 
  * @author Miao Xin
  * 创建时间：2010/05/12 
- * 最后修改时间：2010/05/12
+ * 最后修改时间：2010/05/13
  */
 public interface IBlogService {
 	
@@ -22,5 +22,9 @@ public interface IBlogService {
 	
 	public List<Blog> getAllBlogs();
 	
+	public List<Blog> getBlogsByPage(User user, int index, int pageSize);
+	
 	public List<Blog> getBlogByProperty(String propertyName, Object value);
+	
+	public int getTotalPage(User user, int pageSize);
 }

@@ -84,7 +84,7 @@
 			<tx:method name="get*" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
-	
+	 
 	<!-- The method which participate the transaction -->
 	<aop:config>
 		<aop:pointcut id="userServicePointcut" 
@@ -260,5 +260,23 @@
 			<ref bean="userService"/>
 		</property>
 	</bean>
+	
+	<bean id="showAllBlogsAction" class="com.goodfriend.action.ShowAllBlogsAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="personalInfoAction" class="com.goodfriend.action.PersonalInfoAction"
+			scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
 	<import resource="applicationContext-admin.xml"/>
 </beans>

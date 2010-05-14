@@ -35,11 +35,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<ul>
             		<li><a href="<%=basePath%>/user/index.jsp">首页</a></li>
     				<li><a href="">个人主页</a></li>
-    				<li><a href="<%=basePath%>/user/blog/write_blog.jsp">日志</a></li>
+    				<li><s:a href="showAllBlogs">日志</s:a></li>
     				<li><a href="">好友</a></li>
     				<li><a href="">相册</a></li>
     				<li><a href="">留言</a></li>
-    				<li><a href="">个人管理</a></li>
+    				<li><a href="personal_info.jsp">个人管理</a></li>
     				</ul>
 				</div>
 			</div>

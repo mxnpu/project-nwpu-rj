@@ -3,6 +3,7 @@ package com.goodfriend.dao;
 import java.util.List;
 
 import com.goodfriend.model.Blog;
+import com.goodfriend.model.User;
 
 public interface IBlogDAO {
 	public abstract void save(Blog transientInstance);
@@ -16,4 +17,8 @@ public interface IBlogDAO {
 	public abstract Blog merge(Blog detachedInstance);
 	public abstract void attachDirty(Blog instance);
 	public abstract void attachClean(Blog instance);
+	//分页查询
+	public abstract List<Blog> findByPage(User user, int index, int size);
+	
+	public abstract int getTotalPage(User user, int pageSize);
 }
