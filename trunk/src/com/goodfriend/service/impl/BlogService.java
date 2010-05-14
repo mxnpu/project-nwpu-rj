@@ -12,17 +12,17 @@ import com.goodfriend.model.User;
 import com.goodfriend.service.IBlogService;
 
 /**
- * Blog的数据库操作类
+ * Blog的数据库操作类 
  * 
  * @author Miao Xin
  * 创建时间：2010/05/12
- * 最后修改时间：2010/05/12
+ * 最后修改时间：2010/05/13
  *
  */
 public class BlogService implements IBlogService {
 	
 	private IBlogDAO blogDao;
-
+	
 	public IBlogDAO getBlogDao() {
 		return blogDao;
 	}
@@ -50,6 +50,10 @@ public class BlogService implements IBlogService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public List<Blog> getBlogsByPage(User user, int index, int pageSize){
+		return blogDao.findByPage(user, index, pageSize);
+	}
 
 	public List<Blog> getBlogByProperty(String propertyName, Object value) {
 		// TODO Auto-generated method stub
@@ -60,5 +64,8 @@ public class BlogService implements IBlogService {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	public int getTotalPage(User user, int pageSize){
+		return blogDao.getTotalPage(user, pageSize);
+	}
 }

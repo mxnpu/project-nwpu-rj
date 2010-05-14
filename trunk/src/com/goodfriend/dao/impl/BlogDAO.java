@@ -1,5 +1,6 @@
 package com.goodfriend.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -10,6 +11,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.goodfriend.dao.IBlogDAO;
 import com.goodfriend.model.Blog;
+import com.goodfriend.model.User;
 
 /**
  * A data access object (DAO) providing persistence and search support for Blog
@@ -163,5 +165,42 @@ public class BlogDAO extends HibernateDaoSupport implements IBlogDAO {
 
 	public static IBlogDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (IBlogDAO) ctx.getBean("BlogDAO");
+	}
+
+	//方法需要改进！！
+	public List<Blog> findByPage(User user, int index, int size) {
+		// TODO Auto-generated method stub
+		List<Blog> allBlogs = findAll();
+		List<Blog> tempList = new ArrayList<Blog>();
+		List<Blog> result = new ArrayList<Blog>();
+		for (int i = 0; i < allBlogs.size(); i++){
+			if (allBlogs.get(i).getItem().getUser().getUserName().equals(user.getUserName())){
+				//替换掉所有的html标签  
+				allBlogs.get(i).setContent(allBlogs.get(i).getContent().replaceAll("<[^<]+?>", ""));
+				tempList.add(allBlogs.get(i));
+			}
+		}
+		if (index * size - size > tempList.size()){
+			return result;
+		}else if (index * size > tempList.size()){
+			return tempList.subList(index * size - size, tempList.size());
+		}else{
+			result = tempList.subList(index * size - size, index * size);
+			return result;
+		}
+	}
+	
+	public int getTotalPage(User user, int pageSize){
+		List<Blog> allBlogs = findAll();
+		
+		int count = 0;
+		for (int i = 0; i < allBlogs.size(); i++){
+			if (allBlogs.get(i).getItem().getUser().getUserName().equals(user.getUserName())){
+				//替换掉所有的html标签  
+//				allBlogs.get(i).setContent(allBlogs.get(i).getContent().replaceAll("<[^<]+?>", ""));
+				count++;
+			}
+		}
+		return (int)Math.ceil(count / (double)pageSize);
 	}
 }
