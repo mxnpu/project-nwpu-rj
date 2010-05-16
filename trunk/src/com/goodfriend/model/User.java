@@ -1,5 +1,6 @@
 package com.goodfriend.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,6 +24,7 @@ public class User implements java.io.Serializable {
 	private String email;
 	private String hoby;
 	private String photo;
+	private Timestamp lastLogoutTime;
 	// the items which user have
 	private Set<Item> items = new HashSet<Item>(0);		
 	// the user's friends
@@ -189,6 +191,14 @@ public class User implements java.io.Serializable {
 
 	public Set<Friends> getFriendsForOther() {
 		return friendsForOther;
+	}
+
+	public void setLastLogoutTime(Timestamp lastLogoutTime) {
+	    this.lastLogoutTime = lastLogoutTime;
+	}
+
+	public Timestamp getLastLogoutTime() {
+	    return lastLogoutTime;
 	}
 
 }

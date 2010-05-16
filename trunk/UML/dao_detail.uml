@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_-SUD8F6tEd-H1py5kUvCBA" name="dao">
+  <elementImport xmi:id="_-iaVeF6tEd-H1py5kUvCBA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-Sd08F6tEd-H1py5kUvCBA" name="com">
+    <packagedElement xmi:type="uml:Package" xmi:id="_-Sd08V6tEd-H1py5kUvCBA" name="goodfriend">
+      <packagedElement xmi:type="uml:Package" xmi:id="_-Sd08l6tEd-H1py5kUvCBA" name="dao">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Sd09F6tEd-H1py5kUvCBA" name="IStatementDAO">
+          <ownedOperation xmi:id="_-ikGcl6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGc16tEd-H1py5kUvCBA" name="transientInstance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGdF6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGdV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGdl6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGd16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-ikGeF6tEd-H1py5kUvCBA" name="return" type="_-fu05V6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGeV6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGel6tEd-H1py5kUvCBA" name="instance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-ikGe16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGfF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGfV6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-ikGfl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-ikGf16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGgF6tEd-H1py5kUvCBA" name="findByContent" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGgV6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-ikGgl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGg16tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGhF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGhV6tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGhl6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-ikGh16tEd-H1py5kUvCBA" name="return" type="_-fu05V6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGiF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGiV6tEd-H1py5kUvCBA" name="instance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGil6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGi16tEd-H1py5kUvCBA" name="instance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Sd09l6tEd-H1py5kUvCBA" name="IFriendsDAO">
+          <ownedOperation xmi:id="_-i3BbF6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-i3BbV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu0516tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-i3Bbl6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-i3Bb16tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu0516tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-i3BcF6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-i3BcV6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-i3Bcl6tEd-H1py5kUvCBA" name="return" type="_-fu0516tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALUF6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALUV6tEd-H1py5kUvCBA" name="instance" type="_-fu0516tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jALUl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALU16tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALVF6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-jALVV6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jALVl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALV16tEd-H1py5kUvCBA" name="findBySuccess" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALWF6tEd-H1py5kUvCBA" name="success" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jALWV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALWl6tEd-H1py5kUvCBA" name="findByGroup" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALW16tEd-H1py5kUvCBA" name="group" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jALXF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALXV6tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALXl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALX16tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALYF6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu0516tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jALYV6tEd-H1py5kUvCBA" name="return" type="_-fu0516tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALYl6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALY16tEd-H1py5kUvCBA" name="instance" type="_-fu0516tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALZF6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALZV6tEd-H1py5kUvCBA" name="instance" type="_-fu0516tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Snl8F6tEd-H1py5kUvCBA" name="IReplyDAO">
+          <ownedOperation xmi:id="_-jJ8XV6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8Xl6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jJ8X16tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8YF6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jJ8YV6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8Yl6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jJ8Y16tEd-H1py5kUvCBA" name="return" type="_-fu06V6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jJ8ZF6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8ZV6tEd-H1py5kUvCBA" name="instance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jJ8Zl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtUF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtUV6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-jTtUl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jTtU16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtVF6tEd-H1py5kUvCBA" name="findByContent" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtVV6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jTtVl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtV16tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtWF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtWV6tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtWl6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jTtW16tEd-H1py5kUvCBA" name="return" type="_-fu06V6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtXF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtXV6tEd-H1py5kUvCBA" name="instance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtXl6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtX16tEd-H1py5kUvCBA" name="instance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Snl816tEd-H1py5kUvCBA" name="IGossipDAO">
+          <ownedOperation xmi:id="_-jmoXF6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jwZQF6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jwZQV6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jwZQl6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jwZQ16tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jwZRF6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jwZRV6tEd-H1py5kUvCBA" name="return" type="_-fu07F6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jwZRl6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jwZR16tEd-H1py5kUvCBA" name="instance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jwZSF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jwZSV6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jwZSl6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-jwZS16tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jwZTF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jwZTV6tEd-H1py5kUvCBA" name="findByContent" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jwZTl6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jwZT16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jwZUF6tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jwZUV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jwZUl6tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jwZU16tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jwZVF6tEd-H1py5kUvCBA" name="return" type="_-fu07F6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-j5jMF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-j5jMV6tEd-H1py5kUvCBA" name="instance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-j5jMl6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-j5jM16tEd-H1py5kUvCBA" name="instance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Snl9F6tEd-H1py5kUvCBA" name="IBlogDAO">
+          <ownedOperation xmi:id="_-j5jNF6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-j5jNV6tEd-H1py5kUvCBA" name="transientInstance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-j5jNl6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-j5jN16tEd-H1py5kUvCBA" name="persistentInstance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-j5jOF6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-j5jOV6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-j5jOl6tEd-H1py5kUvCBA" name="return" type="_-f3-0F6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUMF6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUMV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUMl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUM16tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUNF6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-kDUNV6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUNl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUN16tEd-H1py5kUvCBA" name="findByTitle" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUOF6tEd-H1py5kUvCBA" name="title" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUOV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUOl6tEd-H1py5kUvCBA" name="findByContent" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUO16tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUPF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUPV6tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUPl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUP16tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUQF6tEd-H1py5kUvCBA" name="detachedInstance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUQV6tEd-H1py5kUvCBA" name="return" type="_-f3-0F6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUQl6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUQ16tEd-H1py5kUvCBA" name="instance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDURF6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDURV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Swv4F6tEd-H1py5kUvCBA" name="IUserDAO">
+          <ownedOperation xmi:id="_-kDURl6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUR16tEd-H1py5kUvCBA" name="transientInstance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUSF6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUSV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUSl6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUS16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUTF6tEd-H1py5kUvCBA" name="return" type="_-f3-0V6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUTV6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUTl6tEd-H1py5kUvCBA" name="instance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUT16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUUF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUUV6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-kDUUl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUU16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kDUVF6tEd-H1py5kUvCBA" name="findByUserName" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kDUVV6tEd-H1py5kUvCBA" name="userName" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kDUVl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeIF6tEd-H1py5kUvCBA" name="findByPassword" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeIV6tEd-H1py5kUvCBA" name="password" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kMeIl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeI16tEd-H1py5kUvCBA" name="findByRealName" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeJF6tEd-H1py5kUvCBA" name="realName" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kMeJV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeJl6tEd-H1py5kUvCBA" name="findByGender" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeJ16tEd-H1py5kUvCBA" name="gender" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kMeKF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeKV6tEd-H1py5kUvCBA" name="findByPhone" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeKl6tEd-H1py5kUvCBA" name="phone" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kMeK16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeLF6tEd-H1py5kUvCBA" name="findByEmail" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeLV6tEd-H1py5kUvCBA" name="email" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kMeLl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeL16tEd-H1py5kUvCBA" name="findByHoby" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeMF6tEd-H1py5kUvCBA" name="hoby" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kMeMV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeMl6tEd-H1py5kUvCBA" name="findByPhoto" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeM16tEd-H1py5kUvCBA" name="photo" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kMeNF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeNV6tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeNl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kMeN16tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kMeOF6tEd-H1py5kUvCBA" name="detachedInstance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-kMeOV6tEd-H1py5kUvCBA" name="return" type="_-f3-0V6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kWPIF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kWPIV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-kWPIl6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-kWPI16tEd-H1py5kUvCBA" name="instance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_-Swv4V6tEd-H1py5kUvCBA" name="impl">
+          <packagedElement xmi:type="uml:Class" xmi:id="_-Swv4l6tEd-H1py5kUvCBA" name="UserDAO" clientDependency="_-kWPJF6tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-S6g4F6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for User
+ * entities. Transaction control of the save(), update() and delete() operations
+ * can directly support Spring container-managed transactions or they can be
+ * augmented to handle user-managed Spring transactions. Each of these methods
+ * provides additional information for how to configure it for the desired type
+ * of transaction control.
+ * @see com.goodfriend.model.User
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-kWPJV6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-kgAIF6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-kpKEF6tEd-H1py5kUvCBA" name="USER_NAME" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-kpKEV6tEd-H1py5kUvCBA" value="userName"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-k8sEF6tEd-H1py5kUvCBA" name="PASSWORD" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-k8sEV6tEd-H1py5kUvCBA" value="password"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-lF2AF6tEd-H1py5kUvCBA" name="REAL_NAME" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-lF2AV6tEd-H1py5kUvCBA" value="realName"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-lPnAF6tEd-H1py5kUvCBA" name="GENDER" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-lPnAV6tEd-H1py5kUvCBA" value="gender"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-lYw8F6tEd-H1py5kUvCBA" name="PHONE" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-lih8F6tEd-H1py5kUvCBA" value="phone"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-lsS8F6tEd-H1py5kUvCBA" name="EMAIL" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-lsS8V6tEd-H1py5kUvCBA" value="email"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-mI-4F6tEd-H1py5kUvCBA" name="HOBY" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-mI-4V6tEd-H1py5kUvCBA" value="hoby"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-mSI0F6tEd-H1py5kUvCBA" name="PHOTO" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-mSI0V6tEd-H1py5kUvCBA" value="photo"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-kWPJF6tEd-H1py5kUvCBA" name="IUserDAO" supplier="_-Swv4F6tEd-H1py5kUvCBA" client="_-Swv4l6tEd-H1py5kUvCBA" contract="_-Swv4F6tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-mSI0l6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-mb50F6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-mb50V6tEd-H1py5kUvCBA" name="transientInstance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-mlDwF6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-mlDwV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-mlDwl6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-mlDw16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-mlDxF6tEd-H1py5kUvCBA" name="return" type="_-f3-0V6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-nLgsF6tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-nLgsV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-nLgsl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-nVRsF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-nVRsV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-nVRsl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-nVRs16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-nVRtF6tEd-H1py5kUvCBA" name="findByUserName" visibility="public">
+              <ownedParameter xmi:id="_-nVRtV6tEd-H1py5kUvCBA" name="userName" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-nVRtl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-neboF6tEd-H1py5kUvCBA" name="findByPassword" visibility="public">
+              <ownedParameter xmi:id="_-neboV6tEd-H1py5kUvCBA" name="password" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-nebol6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-noMoF6tEd-H1py5kUvCBA" name="findByRealName" visibility="public">
+              <ownedParameter xmi:id="_-noMoV6tEd-H1py5kUvCBA" name="realName" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-noMol6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-nxWkF6tEd-H1py5kUvCBA" name="findByGender" visibility="public">
+              <ownedParameter xmi:id="_-nxWkV6tEd-H1py5kUvCBA" name="gender" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-nxWkl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-n7HkF6tEd-H1py5kUvCBA" name="findByPhone" visibility="public">
+              <ownedParameter xmi:id="_-n7HkV6tEd-H1py5kUvCBA" name="phone" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-n7Hkl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-oE4kF6tEd-H1py5kUvCBA" name="findByEmail" visibility="public">
+              <ownedParameter xmi:id="_-oE4kV6tEd-H1py5kUvCBA" name="email" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-oE4kl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-oE4k16tEd-H1py5kUvCBA" name="findByHoby" visibility="public">
+              <ownedParameter xmi:id="_-oE4lF6tEd-H1py5kUvCBA" name="hoby" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-oE4lV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-oOCgF6tEd-H1py5kUvCBA" name="findByPhoto" visibility="public">
+              <ownedParameter xmi:id="_-oOCgV6tEd-H1py5kUvCBA" name="photo" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-oOCgl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-oXzgF6tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-oXzgV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-oXzgl6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-oXzg16tEd-H1py5kUvCBA" name="detachedInstance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-oXzhF6tEd-H1py5kUvCBA" name="return" type="_-f3-0V6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-ohkgF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-ohkgV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-oqucF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-oqucV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-o0fcF6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-o0fcV6tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-o0fcl6tEd-H1py5kUvCBA" name="return" type="_-Swv4F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-S6g4V6tEd-H1py5kUvCBA" name="BlogDAO" clientDependency="_-o0fc16tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-TER4F6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for Blog
+ * entities. Transaction control of the save(), update() and delete() operations
+ * can directly support Spring container-managed transactions or they can be
+ * augmented to handle user-managed Spring transactions. Each of these methods
+ * provides additional information for how to configure it for the desired type
+ * of transaction control.
+ * @see com.goodfriend.model.Blog
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-o0fdF6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-o9pYF6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-pRLYF6tEd-H1py5kUvCBA" name="TITLE" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-pRLYV6tEd-H1py5kUvCBA" value="title"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-paVUF6tEd-H1py5kUvCBA" name="CONTENT" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-paVUV6tEd-H1py5kUvCBA" value="content"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-o0fc16tEd-H1py5kUvCBA" name="IBlogDAO" supplier="_-Snl9F6tEd-H1py5kUvCBA" client="_-S6g4V6tEd-H1py5kUvCBA" contract="_-Snl9F6tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-pkGUF6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-pt3UF6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-pt3UV6tEd-H1py5kUvCBA" name="transientInstance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-pt3Ul6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-pt3U16tEd-H1py5kUvCBA" name="persistentInstance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-p3BQF6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-p3BQV6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-p3BQl6tEd-H1py5kUvCBA" name="return" type="_-f3-0F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-qAyQF6tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-qAyQV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-qAyQl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-qJ8MF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-qJ8MV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-qJ8Ml6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-qJ8M16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-qJ8NF6tEd-H1py5kUvCBA" name="findByTitle" visibility="public">
+              <ownedParameter xmi:id="_-qJ8NV6tEd-H1py5kUvCBA" name="title" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-qJ8Nl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-qdeMF6tEd-H1py5kUvCBA" name="findByContent" visibility="public">
+              <ownedParameter xmi:id="_-qdeMV6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-qdeMl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-qdeM16tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-qdeNF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-qmoIF6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-qmoIV6tEd-H1py5kUvCBA" name="detachedInstance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-qmoIl6tEd-H1py5kUvCBA" name="return" type="_-f3-0F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-qwZIF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-qwZIV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-q6KIF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-q6KIV6tEd-H1py5kUvCBA" name="instance" type="_-f3-0F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-rDUEF6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-rDUEV6tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-rDUEl6tEd-H1py5kUvCBA" name="return" type="_-Snl9F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-TER4V6tEd-H1py5kUvCBA" name="StatementDAO" clientDependency="_-rDUE16tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-TER4l6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for
+ * Statement entities. Transaction control of the save(), update() and delete()
+ * operations can directly support Spring container-managed transactions or they
+ * can be augmented to handle user-managed Spring transactions. Each of these
+ * methods provides additional information for how to configure it for the
+ * desired type of transaction control.
+ * @see com.goodfriend.model.Statement
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-rNFEF6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-rNFEV6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-rWPAF6tEd-H1py5kUvCBA" name="CONTENT" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-rWPAV6tEd-H1py5kUvCBA" value="content"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-rDUE16tEd-H1py5kUvCBA" name="IStatementDAO" supplier="_-Sd09F6tEd-H1py5kUvCBA" client="_-TER4V6tEd-H1py5kUvCBA" contract="_-Sd09F6tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-rgAAF6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-rgAAV6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-rgAAl6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-rpxAF6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-rpxAV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-ry68F6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-ry68V6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-ry68l6tEd-H1py5kUvCBA" name="return" type="_-fu05V6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-ry6816tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-ry69F6tEd-H1py5kUvCBA" name="instance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-ry69V6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-r8r8F6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-r8r8V6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-r8r8l6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-r8r816tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-sGc8F6tEd-H1py5kUvCBA" name="findByContent" visibility="public">
+              <ownedParameter xmi:id="_-sGc8V6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-sGc8l6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-sGc816tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-sGc9F6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-sZX4F6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-sZX4V6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-sZX4l6tEd-H1py5kUvCBA" name="return" type="_-fu05V6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-sih0F6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-sih0V6tEd-H1py5kUvCBA" name="instance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-sih0l6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-sih016tEd-H1py5kUvCBA" name="instance" type="_-fu05V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-ssS0F6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-ssS0V6tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-ssS0l6tEd-H1py5kUvCBA" name="return" type="_-Sd09F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-TER416tEd-H1py5kUvCBA" name="FriendsDAO" clientDependency="_-ssS016tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-TNb0F6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for
+ * Friends entities. Transaction control of the save(), update() and delete()
+ * operations can directly support Spring container-managed transactions or they
+ * can be augmented to handle user-managed Spring transactions. Each of these
+ * methods provides additional information for how to configure it for the
+ * desired type of transaction control.
+ * @see com.goodfriend.model.Friends
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-s2D0F6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-s2D0V6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-s_NwF6tEd-H1py5kUvCBA" name="SUCCESS" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-s_NwV6tEd-H1py5kUvCBA" value="success"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-tSvwF6tEd-H1py5kUvCBA" name="GROUP" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-tSvwV6tEd-H1py5kUvCBA" value="group"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-ssS016tEd-H1py5kUvCBA" name="IFriendsDAO" supplier="_-Sd09l6tEd-H1py5kUvCBA" client="_-TER416tEd-H1py5kUvCBA" contract="_-Sd09l6tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-tSvwl6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-tb5sF6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-tb5sV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu0516tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-tlqsF6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-tlqsV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu0516tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-tlqsl6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-tlqs16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-tlqtF6tEd-H1py5kUvCBA" name="return" type="_-fu0516tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-tu0oF6tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-tu0oV6tEd-H1py5kUvCBA" name="instance" type="_-fu0516tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-tu0ol6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-tu0o16tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-tu0pF6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-tu0pV6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-tu0pl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-uCWoF6tEd-H1py5kUvCBA" name="findBySuccess" visibility="public">
+              <ownedParameter xmi:id="_-uCWoV6tEd-H1py5kUvCBA" name="success" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-uCWol6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-uCWo16tEd-H1py5kUvCBA" name="findByGroup" visibility="public">
+              <ownedParameter xmi:id="_-uCWpF6tEd-H1py5kUvCBA" name="group" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-uCWpV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-uLgkF6tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-uLgkV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-uLgkl6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-uLgk16tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu0516tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-uLglF6tEd-H1py5kUvCBA" name="return" type="_-fu0516tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-uVRkF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-uVRkV6tEd-H1py5kUvCBA" name="instance" type="_-fu0516tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-ufCkF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-ufCkV6tEd-H1py5kUvCBA" name="instance" type="_-fu0516tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-ufCkl6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-ufCk16tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-ufClF6tEd-H1py5kUvCBA" name="return" type="_-Sd09l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-TNb0V6tEd-H1py5kUvCBA" name="GossipDAO" clientDependency="_-uoMgF6tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-TgWwF6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for
+ * Gossip entities. Transaction control of the save(), update() and delete()
+ * operations can directly support Spring container-managed transactions or they
+ * can be augmented to handle user-managed Spring transactions. Each of these
+ * methods provides additional information for how to configure it for the
+ * desired type of transaction control.
+ * @see com.goodfriend.model.Gossip
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-uoMgV6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-uoMgl6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-ux9gF6tEd-H1py5kUvCBA" name="CONTENT" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-ux9gV6tEd-H1py5kUvCBA" value="content"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-uoMgF6tEd-H1py5kUvCBA" name="IGossipDAO" supplier="_-Snl816tEd-H1py5kUvCBA" client="_-TNb0V6tEd-H1py5kUvCBA" contract="_-Snl816tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-u7HcF6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-u7HcV6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-u7Hcl6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-vE4cF6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-vE4cV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-vE4cl6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-vE4c16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-vE4dF6tEd-H1py5kUvCBA" name="return" type="_-fu07F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-vOpcF6tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-vOpcV6tEd-H1py5kUvCBA" name="instance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-vOpcl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-vXzYF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-vXzYV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-vXzYl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-vXzY16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-vXzZF6tEd-H1py5kUvCBA" name="findByContent" visibility="public">
+              <ownedParameter xmi:id="_-vXzZV6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-vXzZl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-vhkYF6tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-vhkYV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-vhkYl6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-vhkY16tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-vhkZF6tEd-H1py5kUvCBA" name="return" type="_-fu07F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-vrVYF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-vrVYV6tEd-H1py5kUvCBA" name="instance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-v0fUF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-v0fUV6tEd-H1py5kUvCBA" name="instance" type="_-fu07F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-v0fUl6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-v0fU16tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-v0fVF6tEd-H1py5kUvCBA" name="return" type="_-Snl816tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-TqHwF6tEd-H1py5kUvCBA" name="ReplyDAO" clientDependency="_-v-QUF6tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-Tz4wF6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for Reply
+ * entities. Transaction control of the save(), update() and delete() operations
+ * can directly support Spring container-managed transactions or they can be
+ * augmented to handle user-managed Spring transactions. Each of these methods
+ * provides additional information for how to configure it for the desired type
+ * of transaction control.
+ * @see com.goodfriend.model.Reply
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-v-QUV6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-v-QUl6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-wHaQF6tEd-H1py5kUvCBA" name="CONTENT" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-wHaQV6tEd-H1py5kUvCBA" value="content"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-v-QUF6tEd-H1py5kUvCBA" name="IReplyDAO" supplier="_-Snl8F6tEd-H1py5kUvCBA" client="_-TqHwF6tEd-H1py5kUvCBA" contract="_-Snl8F6tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-wRLQF6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-wa8QF6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-wa8QV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-wkGMF6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-wkGMV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xAyIF6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-xAyIV6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-xAyIl6tEd-H1py5kUvCBA" name="return" type="_-fu06V6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xAyI16tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-xAyJF6tEd-H1py5kUvCBA" name="instance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-xAyJV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xKjIF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-xKjIV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-xKjIl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-xKjI16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xKjJF6tEd-H1py5kUvCBA" name="findByContent" visibility="public">
+              <ownedParameter xmi:id="_-xKjJV6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-xKjJl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xTtEF6tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-xTtEV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xdeEF6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-xdeEV6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-xdeEl6tEd-H1py5kUvCBA" name="return" type="_-fu06V6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xdeE16tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-xdeFF6tEd-H1py5kUvCBA" name="instance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xnPEF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-xnPEV6tEd-H1py5kUvCBA" name="instance" type="_-fu06V6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-xwZAF6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-xwZAV6tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-xwZAl6tEd-H1py5kUvCBA" name="return" type="_-Snl8F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-Tz4w16tEd-H1py5kUvCBA" name="ItemDAO" clientDependency="_-0cgoF6tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-T9CsF6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for Item
+ * entities. Transaction control of the save(), update() and delete() operations
+ * can directly support Spring container-managed transactions or they can be
+ * augmented to handle user-managed Spring transactions. Each of these methods
+ * provides additional information for how to configure it for the desired type
+ * of transaction control.
+ * @see com.goodfriend.model.Item
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-0cgoV6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-0lqkF6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <interfaceRealization xmi:id="_-0cgoF6tEd-H1py5kUvCBA" name="IItemDAO" supplier="_-Sd0916tEd-H1py5kUvCBA" client="_-Tz4w16tEd-H1py5kUvCBA" contract="_-Sd0916tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-0lqkV6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-0vbkF6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-0vbkV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-0vbkl6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-0vbk16tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-04lgF6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-04lgV6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-04lgl6tEd-H1py5kUvCBA" name="return" type="_-fu06F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-04lg16tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-04lhF6tEd-H1py5kUvCBA" name="instance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-04lhV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-1MHgF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-1MHgV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-1MHgl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-1MHg16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-1VRcF6tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-1VRcV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-1VRcl6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-1VRc16tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-1VRdF6tEd-H1py5kUvCBA" name="return" type="_-fu06F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-1fCcF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-1fCcV6tEd-H1py5kUvCBA" name="instance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-1ozcF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-1ozcV6tEd-H1py5kUvCBA" name="instance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-1ozcl6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-1ozc16tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-1ozdF6tEd-H1py5kUvCBA" name="return" type="_-Sd0916tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-Ujfo16tEd-H1py5kUvCBA" name="AlbumDAO" clientDependency="_-7cggF6tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-VJVgF6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for Album
+ * entities. Transaction control of the save(), update() and delete() operations
+ * can directly support Spring container-managed transactions or they can be
+ * augmented to handle user-managed Spring transactions. Each of these methods
+ * provides additional information for how to configure it for the desired type
+ * of transaction control.
+ * @see com.goodfriend.model.Album
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-7cggV6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-7cggl6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-7vbcF6tEd-H1py5kUvCBA" name="TITLE" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-7vbcV6tEd-H1py5kUvCBA" value="title"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-7cggF6tEd-H1py5kUvCBA" name="IAlbumDAO" supplier="_-Sd0816tEd-H1py5kUvCBA" client="_-Ujfo16tEd-H1py5kUvCBA" contract="_-Sd0816tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-7vbcl6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-75McF6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-75McV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-8CWYF6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-8CWYV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-8CWYl6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-8CWY16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-8CWZF6tEd-H1py5kUvCBA" name="return" type="_-fu05F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-8MHYF6tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-8MHYV6tEd-H1py5kUvCBA" name="instance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-8MHYl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-8V4YF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-8V4YV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-8V4Yl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-8V4Y16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-8fCUF6tEd-H1py5kUvCBA" name="findByTitle" visibility="public">
+              <ownedParameter xmi:id="_-8fCUV6tEd-H1py5kUvCBA" name="title" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-8fCUl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-8ozUF6tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-8ozUV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-8ykUF6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-8ykUV6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-8ykUl6tEd-H1py5kUvCBA" name="return" type="_-fu05F6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-8ykU16tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-8ykVF6tEd-H1py5kUvCBA" name="instance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-87uQF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-87uQV6tEd-H1py5kUvCBA" name="instance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-9FfQF6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-9FfQV6tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-9FfQl6tEd-H1py5kUvCBA" name="return" type="_-Sd0816tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-9YaMF6tEd-H1py5kUvCBA" name="saveAlbumFlex" visibility="public">
+              <ownedParameter xmi:id="_-9YaMV6tEd-H1py5kUvCBA" name="fAlbum" type="_-gBv116tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-9YaMl6tEd-H1py5kUvCBA" name="fItem" type="_-gBv2F6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-UjfoV6tEd-H1py5kUvCBA" name="PictureDAO" clientDependency="_-5Nr4F6tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-Ujfol6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for
+ * Picture entities. Transaction control of the save(), update() and delete()
+ * operations can directly support Spring container-managed transactions or they
+ * can be augmented to handle user-managed Spring transactions. Each of these
+ * methods provides additional information for how to configure it for the
+ * desired type of transaction control.
+ * @see com.goodfriend.model.Picture
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-5W10F6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-5gm0F6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-5pwwF6tEd-H1py5kUvCBA" name="INTRODUCTION" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-5pwwV6tEd-H1py5kUvCBA" value="introduction"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-59SwF6tEd-H1py5kUvCBA" name="PATH" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-59SwV6tEd-H1py5kUvCBA" value="path"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-5Nr4F6tEd-H1py5kUvCBA" name="IPictureDAO" supplier="_-Snl8V6tEd-H1py5kUvCBA" client="_-UjfoV6tEd-H1py5kUvCBA" contract="_-Snl8V6tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-6GcsF6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-6QNsF6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-6QNsV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-6Z-sF6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-6Z-sV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-6jIoF6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-6jIoV6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-6jIol6tEd-H1py5kUvCBA" name="return" type="_-fu06l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-6jIo16tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-6jIpF6tEd-H1py5kUvCBA" name="instance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-6jIpV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-6s5oF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-6s5oV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-6s5ol6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-6s5o16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-62DkF6tEd-H1py5kUvCBA" name="findByIntroduction" visibility="public">
+              <ownedParameter xmi:id="_-62DkV6tEd-H1py5kUvCBA" name="introduction" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-62Dkl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-62Dk16tEd-H1py5kUvCBA" name="findByPath" visibility="public">
+              <ownedParameter xmi:id="_-62DlF6tEd-H1py5kUvCBA" name="path" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-62DlV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-6_0kF6tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-6_0kV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-6_0kl6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-6_0k16tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-6_0lF6tEd-H1py5kUvCBA" name="return" type="_-fu06l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-7JlkF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-7JlkV6tEd-H1py5kUvCBA" name="instance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-7SvgF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-7SvgV6tEd-H1py5kUvCBA" name="instance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-7Svgl6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-7Svg16tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-7SvhF6tEd-H1py5kUvCBA" name="return" type="_-Snl8V6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-T9CsV6tEd-H1py5kUvCBA" name="AdminDAO" clientDependency="_-1x9YF6tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-UjfoF6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for Admin
+ * entities. Transaction control of the save(), update() and delete() operations
+ * can directly support Spring container-managed transactions or they can be
+ * augmented to handle user-managed Spring transactions. Each of these methods
+ * provides additional information for how to configure it for the desired type
+ * of transaction control.
+ * @see com.goodfriend.model.Admin
+ * @author 
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-1x9YV6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-1x9Yl6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-17uYF6tEd-H1py5kUvCBA" name="USERNAME" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-17uYV6tEd-H1py5kUvCBA" value="username"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-2OpUF6tEd-H1py5kUvCBA" name="PASSWORD" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-2OpUV6tEd-H1py5kUvCBA" value="password"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-2YaUF6tEd-H1py5kUvCBA" name="REAL_NAME" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-2YaUV6tEd-H1py5kUvCBA" value="realName"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-2hkQF6tEd-H1py5kUvCBA" name="PHONE" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-2hkQV6tEd-H1py5kUvCBA" value="phone"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-2rVQF6tEd-H1py5kUvCBA" name="EMAIL" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-2rVQV6tEd-H1py5kUvCBA" value="email"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-2-QMF6tEd-H1py5kUvCBA" name="ADDRESS" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-2-QMV6tEd-H1py5kUvCBA" value="address"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-1x9YF6tEd-H1py5kUvCBA" name="IAdminDAO" supplier="_-Sd09V6tEd-H1py5kUvCBA" client="_-T9CsV6tEd-H1py5kUvCBA" contract="_-Sd09V6tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-3IBMF6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-3RLIF6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-3RLIV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-3a8IF6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-3a8IV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-3a8Il6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-3a8I16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-3a8JF6tEd-H1py5kUvCBA" name="return" type="_-fu05l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-3ktIF6tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-3ktIV6tEd-H1py5kUvCBA" name="instance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-3ktIl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-33oEF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-33oEV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-33oEl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-33oE16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-33oFF6tEd-H1py5kUvCBA" name="findByUsername" visibility="public">
+              <ownedParameter xmi:id="_-33oFV6tEd-H1py5kUvCBA" name="username" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-33oFl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-4BZEF6tEd-H1py5kUvCBA" name="findByPassword" visibility="public">
+              <ownedParameter xmi:id="_-4BZEV6tEd-H1py5kUvCBA" name="password" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-4BZEl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-4KjAF6tEd-H1py5kUvCBA" name="findByRealName" visibility="public">
+              <ownedParameter xmi:id="_-4KjAV6tEd-H1py5kUvCBA" name="realName" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-4KjAl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-4dd8F6tEd-H1py5kUvCBA" name="findByPhone" visibility="public">
+              <ownedParameter xmi:id="_-4dd8V6tEd-H1py5kUvCBA" name="phone" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-4dd8l6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-4dd816tEd-H1py5kUvCBA" name="findByEmail" visibility="public">
+              <ownedParameter xmi:id="_-4dd9F6tEd-H1py5kUvCBA" name="email" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-4dd9V6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-4nO8F6tEd-H1py5kUvCBA" name="findByAddress" visibility="public">
+              <ownedParameter xmi:id="_-4nO8V6tEd-H1py5kUvCBA" name="address" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-4nO8l6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-4nO816tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-4nO9F6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-4w_8F6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-4w_8V6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-4w_8l6tEd-H1py5kUvCBA" name="return" type="_-fu05l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-46J4F6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-46J4V6tEd-H1py5kUvCBA" name="instance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-5D64F6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-5D64V6tEd-H1py5kUvCBA" name="instance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-5D64l6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-5D6416tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-5D65F6tEd-H1py5kUvCBA" name="return" type="_-Sd09V6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_-Tz4wV6tEd-H1py5kUvCBA" name="PlacardDAO" clientDependency="_-xwZA16tEd-H1py5kUvCBA">
+            <ownedComment xmi:id="_-Tz4wl6tEd-H1py5kUvCBA">
+              <body>/** 
+ * A data access object (DAO) providing persistence and search support for
+ * Placard entities. Transaction control of the save(), update() and delete()
+ * operations can directly support Spring container-managed transactions or they
+ * can be augmented to handle user-managed Spring transactions. Each of these
+ * methods provides additional information for how to configure it for the
+ * desired type of transaction control.
+ * @see com.goodfriend.model.Placard
+ * @author
+ */
+</body>
+            </ownedComment>
+            <generalization xmi:id="_-xwZBF6tEd-H1py5kUvCBA" general="_-f3-4F6tEd-H1py5kUvCBA"/>
+            <ownedAttribute xmi:id="_-x6KAF6tEd-H1py5kUvCBA" name="log" visibility="private" isStatic="true" type="_-f3-1l6tEd-H1py5kUvCBA" isReadOnly="true"/>
+            <ownedAttribute xmi:id="_-yNE8F6tEd-H1py5kUvCBA" name="TITLE" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-yNE8V6tEd-H1py5kUvCBA" value="title"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-yW18F6tEd-H1py5kUvCBA" name="CONTENT" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-yW18V6tEd-H1py5kUvCBA" value="content"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_-yf_4F6tEd-H1py5kUvCBA" name="PUBLISH" visibility="public" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-yf_4V6tEd-H1py5kUvCBA" value="publish"/>
+            </ownedAttribute>
+            <interfaceRealization xmi:id="_-xwZA16tEd-H1py5kUvCBA" name="IPlacardDAO" supplier="_-Snl8l6tEd-H1py5kUvCBA" client="_-Tz4wV6tEd-H1py5kUvCBA" contract="_-Snl8l6tEd-H1py5kUvCBA"/>
+            <ownedOperation xmi:id="_-ypw4F6tEd-H1py5kUvCBA" name="initDao" visibility="protected"/>
+            <ownedOperation xmi:id="_-yzh4F6tEd-H1py5kUvCBA" name="save" visibility="public">
+              <ownedParameter xmi:id="_-yzh4V6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu0616tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-yzh4l6tEd-H1py5kUvCBA" name="delete" visibility="public">
+              <ownedParameter xmi:id="_-yzh416tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu0616tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-y8r0F6tEd-H1py5kUvCBA" name="findById" visibility="public">
+              <ownedParameter xmi:id="_-y8r0V6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-y8r0l6tEd-H1py5kUvCBA" name="return" type="_-fu0616tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-zGc0F6tEd-H1py5kUvCBA" name="findByExample" visibility="public">
+              <ownedParameter xmi:id="_-zGc0V6tEd-H1py5kUvCBA" name="instance" type="_-fu0616tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-zGc0l6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-zZXwF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public">
+              <ownedParameter xmi:id="_-zZXwV6tEd-H1py5kUvCBA" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_-zZXwl6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-zZXw16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-zsSsF6tEd-H1py5kUvCBA" name="findByTitle" visibility="public">
+              <ownedParameter xmi:id="_-zsSsV6tEd-H1py5kUvCBA" name="title" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-zsSsl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-zsSs16tEd-H1py5kUvCBA" name="findByContent" visibility="public">
+              <ownedParameter xmi:id="_-zsStF6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-zsStV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-z2DsF6tEd-H1py5kUvCBA" name="findByPublish" visibility="public">
+              <ownedParameter xmi:id="_-z2DsV6tEd-H1py5kUvCBA" name="publish" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-z2Dsl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-z_0sF6tEd-H1py5kUvCBA" name="findAll" visibility="public">
+              <ownedParameter xmi:id="_-z_0sV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-z_0sl6tEd-H1py5kUvCBA" name="merge" visibility="public">
+              <ownedParameter xmi:id="_-z_0s16tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu0616tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-z_0tF6tEd-H1py5kUvCBA" name="return" type="_-fu0616tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-0I-oF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public">
+              <ownedParameter xmi:id="_-0I-oV6tEd-H1py5kUvCBA" name="instance" type="_-fu0616tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-0SvoF6tEd-H1py5kUvCBA" name="attachClean" visibility="public">
+              <ownedParameter xmi:id="_-0SvoV6tEd-H1py5kUvCBA" name="instance" type="_-fu0616tEd-H1py5kUvCBA"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_-0Svol6tEd-H1py5kUvCBA" name="getFromApplicationContext" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_-0Svo16tEd-H1py5kUvCBA" name="ctx" type="_-f3-3F6tEd-H1py5kUvCBA"/>
+              <ownedParameter xmi:id="_-0SvpF6tEd-H1py5kUvCBA" name="return" type="_-Snl8l6tEd-H1py5kUvCBA" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Sd0816tEd-H1py5kUvCBA" name="IAlbumDAO">
+          <ownedOperation xmi:id="_-gUqwF6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-gUqwV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-gUqwl6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-gUqw16tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-iaVcl6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-iaVc16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-iaVdF6tEd-H1py5kUvCBA" name="return" type="_-fu05F6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-iaVdV6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-iaVdl6tEd-H1py5kUvCBA" name="instance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-iaVd16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-iaVel6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-iaVe16tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-iaVfF6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-iaVfV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-iaVfl6tEd-H1py5kUvCBA" name="findByTitle" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-iaVf16tEd-H1py5kUvCBA" name="title" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-iaVgF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-iaVgV6tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-iaVgl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-iaVg16tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-iaVhF6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-iaVhV6tEd-H1py5kUvCBA" name="return" type="_-fu05F6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-iaVhl6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-iaVh16tEd-H1py5kUvCBA" name="instance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-ikGcF6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGcV6tEd-H1py5kUvCBA" name="instance" type="_-fu05F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Snl8V6tEd-H1py5kUvCBA" name="IPictureDAO">
+          <ownedOperation xmi:id="_-jTtYF6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtYV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtYl6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtY16tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtZF6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtZV6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jTtZl6tEd-H1py5kUvCBA" name="return" type="_-fu06l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jTtZ16tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jTtaF6tEd-H1py5kUvCBA" name="instance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jTtaV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jc3QF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3QV6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-jc3Ql6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jc3Q16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jc3RF6tEd-H1py5kUvCBA" name="findByIntroduction" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3RV6tEd-H1py5kUvCBA" name="introduction" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jc3Rl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jc3R16tEd-H1py5kUvCBA" name="findByPath" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3SF6tEd-H1py5kUvCBA" name="path" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jc3SV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jc3Sl6tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3S16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jc3TF6tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3TV6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jc3Tl6tEd-H1py5kUvCBA" name="return" type="_-fu06l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jc3T16tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3UF6tEd-H1py5kUvCBA" name="instance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jc3UV6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3Ul6tEd-H1py5kUvCBA" name="instance" type="_-fu06l6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Sd09V6tEd-H1py5kUvCBA" name="IAdminDAO">
+          <ownedOperation xmi:id="_-ikGjF6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-ikGjV6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQYF6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQYV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQYl6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQY16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-itQZF6tEd-H1py5kUvCBA" name="return" type="_-fu05l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQZV6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQZl6tEd-H1py5kUvCBA" name="instance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-itQZ16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQaF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQaV6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-itQal6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-itQa16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQbF6tEd-H1py5kUvCBA" name="findByUsername" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQbV6tEd-H1py5kUvCBA" name="username" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-itQbl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQb16tEd-H1py5kUvCBA" name="findByPassword" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQcF6tEd-H1py5kUvCBA" name="password" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-itQcV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQcl6tEd-H1py5kUvCBA" name="findByRealName" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQc16tEd-H1py5kUvCBA" name="realName" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-itQdF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQdV6tEd-H1py5kUvCBA" name="findByPhone" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQdl6tEd-H1py5kUvCBA" name="phone" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-itQd16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-itQeF6tEd-H1py5kUvCBA" name="findByEmail" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-itQeV6tEd-H1py5kUvCBA" name="email" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-itQel6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-i3BYF6tEd-H1py5kUvCBA" name="findByAddress" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-i3BYV6tEd-H1py5kUvCBA" name="address" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-i3BYl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-i3BY16tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-i3BZF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-i3BZV6tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-i3BZl6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-i3BZ16tEd-H1py5kUvCBA" name="return" type="_-fu05l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-i3BaF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-i3BaV6tEd-H1py5kUvCBA" name="instance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-i3Bal6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-i3Ba16tEd-H1py5kUvCBA" name="instance" type="_-fu05l6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Sd0916tEd-H1py5kUvCBA" name="IItemDAO">
+          <ownedOperation xmi:id="_-jALZl6tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALZ16tEd-H1py5kUvCBA" name="transientInstance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALaF6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALaV6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALal6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALa16tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jALbF6tEd-H1py5kUvCBA" name="return" type="_-fu06F6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jALbV6tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jALbl6tEd-H1py5kUvCBA" name="instance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jALb16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jJ8UF6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8UV6tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-jJ8Ul6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jJ8U16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jJ8VF6tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8VV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jJ8Vl6tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8V16tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jJ8WF6tEd-H1py5kUvCBA" name="return" type="_-fu06F6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jJ8WV6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8Wl6tEd-H1py5kUvCBA" name="instance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jJ8W16tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jJ8XF6tEd-H1py5kUvCBA" name="instance" type="_-fu06F6tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_-Snl8l6tEd-H1py5kUvCBA" name="IPlacardDAO">
+          <ownedOperation xmi:id="_-jc3U16tEd-H1py5kUvCBA" name="save" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3VF6tEd-H1py5kUvCBA" name="transientInstance" type="_-fu0616tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jc3VV6tEd-H1py5kUvCBA" name="delete" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jc3Vl6tEd-H1py5kUvCBA" name="persistentInstance" type="_-fu0616tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoQF6tEd-H1py5kUvCBA" name="findById" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoQV6tEd-H1py5kUvCBA" name="id" type="_-iaVcV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jmoQl6tEd-H1py5kUvCBA" name="return" type="_-fu0616tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoQ16tEd-H1py5kUvCBA" name="findByExample" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoRF6tEd-H1py5kUvCBA" name="instance" type="_-fu0616tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jmoRV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoRl6tEd-H1py5kUvCBA" name="findByProperty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoR16tEd-H1py5kUvCBA" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_-jmoSF6tEd-H1py5kUvCBA" name="value" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jmoSV6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoSl6tEd-H1py5kUvCBA" name="findByTitle" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoS16tEd-H1py5kUvCBA" name="title" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jmoTF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoTV6tEd-H1py5kUvCBA" name="findByContent" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoTl6tEd-H1py5kUvCBA" name="content" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jmoT16tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoUF6tEd-H1py5kUvCBA" name="findByPublish" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoUV6tEd-H1py5kUvCBA" name="publish" type="_-iaVeV6tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jmoUl6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoU16tEd-H1py5kUvCBA" name="findAll" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoVF6tEd-H1py5kUvCBA" name="return" type="_-fu04l6tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoVV6tEd-H1py5kUvCBA" name="merge" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoVl6tEd-H1py5kUvCBA" name="detachedInstance" type="_-fu0616tEd-H1py5kUvCBA"/>
+            <ownedParameter xmi:id="_-jmoV16tEd-H1py5kUvCBA" name="return" type="_-fu0616tEd-H1py5kUvCBA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoWF6tEd-H1py5kUvCBA" name="attachDirty" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoWV6tEd-H1py5kUvCBA" name="instance" type="_-fu0616tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_-jmoWl6tEd-H1py5kUvCBA" name="attachClean" visibility="public" isAbstract="true">
+            <ownedParameter xmi:id="_-jmoW16tEd-H1py5kUvCBA" name="instance" type="_-fu0616tEd-H1py5kUvCBA"/>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_-fu0416tEd-H1py5kUvCBA" name="model">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu05F6tEd-H1py5kUvCBA" name="Album"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu05V6tEd-H1py5kUvCBA" name="Statement"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu05l6tEd-H1py5kUvCBA" name="Admin"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu0516tEd-H1py5kUvCBA" name="Friends"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu06F6tEd-H1py5kUvCBA" name="Item"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu06V6tEd-H1py5kUvCBA" name="Reply"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu06l6tEd-H1py5kUvCBA" name="Picture"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu0616tEd-H1py5kUvCBA" name="Placard"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-fu07F6tEd-H1py5kUvCBA" name="Gossip"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-f3-0F6tEd-H1py5kUvCBA" name="Blog"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-f3-0V6tEd-H1py5kUvCBA" name="User"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_-gBv1l6tEd-H1py5kUvCBA" name="flex">
+          <packagedElement xmi:type="uml:DataType" xmi:id="_-gBv116tEd-H1py5kUvCBA" name="FAlbum"/>
+          <packagedElement xmi:type="uml:DataType" xmi:id="_-gBv2F6tEd-H1py5kUvCBA" name="FItem"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_-gBv2V6tEd-H1py5kUvCBA" name="service">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-gBv2l6tEd-H1py5kUvCBA" name="IUserService"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-fu04F6tEd-H1py5kUvCBA" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_-fu04V6tEd-H1py5kUvCBA" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_-fu04l6tEd-H1py5kUvCBA" name="List"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_-gBv0F6tEd-H1py5kUvCBA" name="sql">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_-gBv0V6tEd-H1py5kUvCBA" name="Timestamp"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_-iaVcF6tEd-H1py5kUvCBA" name="lang">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_-iaVcV6tEd-H1py5kUvCBA" name="Integer"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-f3-0l6tEd-H1py5kUvCBA" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_-f3-016tEd-H1py5kUvCBA" name="apache">
+      <packagedElement xmi:type="uml:Package" xmi:id="_-f3-1F6tEd-H1py5kUvCBA" name="commons">
+        <packagedElement xmi:type="uml:Package" xmi:id="_-f3-1V6tEd-H1py5kUvCBA" name="logging">
+          <packagedElement xmi:type="uml:DataType" xmi:id="_-f3-1l6tEd-H1py5kUvCBA" name="Log"/>
+          <packagedElement xmi:type="uml:DataType" xmi:id="_-f3-116tEd-H1py5kUvCBA" name="LogFactory"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_-f3-2F6tEd-H1py5kUvCBA" name="hibernate">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_-f3-2V6tEd-H1py5kUvCBA" name="LockMode"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_-gBv0l6tEd-H1py5kUvCBA" name="Query"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_-gBv016tEd-H1py5kUvCBA" name="Session"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_-f3-2l6tEd-H1py5kUvCBA" name="springframework">
+      <packagedElement xmi:type="uml:Package" xmi:id="_-f3-216tEd-H1py5kUvCBA" name="context">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_-f3-3F6tEd-H1py5kUvCBA" name="ApplicationContext"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_-gBv1F6tEd-H1py5kUvCBA" name="support">
+          <packagedElement xmi:type="uml:DataType" xmi:id="_-gBv1V6tEd-H1py5kUvCBA" name="ClassPathXmlApplicationContext"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_-f3-3V6tEd-H1py5kUvCBA" name="orm">
+        <packagedElement xmi:type="uml:Package" xmi:id="_-f3-3l6tEd-H1py5kUvCBA" name="hibernate3">
+          <packagedElement xmi:type="uml:Package" xmi:id="_-f3-316tEd-H1py5kUvCBA" name="support">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_-f3-4F6tEd-H1py5kUvCBA" name="HibernateDaoSupport"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_-iaVeV6tEd-H1py5kUvCBA" name="Object"/>
+</uml:Model>

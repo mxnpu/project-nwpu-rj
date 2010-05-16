@@ -3,16 +3,17 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.goodfriend.model">
-    <class name="Gossip" table="gossip" catalog="goodfriend">
+    <class name="Gossip" table="gossip" catalog="goodfriend" 
+    		dynamic-insert="true" dynamic-update="true">
         <id name="idGossip" type="java.lang.Integer">
             <column name="id_gossip" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="item" class="Item" fetch="select" cascade="all">
+        <many-to-one name="item" class="Item" fetch="select" cascade="all" lazy="false">
             <column name="item_id" not-null="true" />
         </many-to-one>
-        <many-to-one name="user" class="User" fetch="select" cascade="all">
-            <column name="from" not-null="true" />
+        <many-to-one name="user" class="User" fetch="select" cascade="all" lazy="false">
+            <column name="from_id" not-null="true" />
         </many-to-one>
         <property name="content" type="java.lang.String">
             <column name="content" length="250" />

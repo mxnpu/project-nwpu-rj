@@ -28,6 +28,10 @@
 		<action name="isNameExist" class="registerAction" method="validateName">
 			<result name="success" type="stream"></result>
 		</action>
+		<!-- 文件上传请求的Action -->
+		<action name="fileUpload" class="fileUploadAction" method="upload">
+			<result name="success" type="stream"></result>
+		</action>
 		<!-- Random验证码 -->
 		<action name="random" class="randomNumberAction"
 					method="execute">

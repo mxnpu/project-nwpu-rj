@@ -72,8 +72,6 @@
 			<ref local="sessionFactory"/>
 		</property>
 	</bean>
-	
-	<tx:annotation-driven/>
 
 	<!-- Configure the transaction propagation behavior -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
@@ -169,6 +167,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<!-- the end of DAO bean configuration. -->
 	
 	<!-- The Service bean manager -->
 	<bean id="albumService"
@@ -218,11 +217,23 @@
 		<property name="gossipDao">
 			<ref bean="gossipDAO"/>
 		</property>
+		<property name="itemDao">
+			<ref bean="itemDAO"/>
+		</property>
+		<property name="userDao">
+			<ref bean="userDAO"/>
+		</property>
 	</bean>
 	<bean id="replyService"
 			class="com.goodfriend.service.impl.ReplyService">
 		<property name="replyDao">
 			<ref bean="replyDAO"/>
+		</property>
+		<property name="itemDao">
+			<ref bean="itemDAO"/>
+		</property>
+		<property name="userDao">
+			<ref bean="userDAO"/>
 		</property>
 	</bean>
 	<bean id="statementService"
@@ -230,7 +241,15 @@
 		<property name="statementDao">
 			<ref bean="statementDAO"/>
 		</property>
+		<property name="itemDao">
+			<ref bean="itemDAO"/>
+		</property>
+		<property name="userDao">
+			<ref bean="userDAO"/>
+		</property>
 	</bean>
+	<!--the end of service bean configuration.  -->
+	
 	
 	<!-- The struts action bean manager -->
 	<bean id="loginAction" class="com.goodfriend.action.LoginAction"
@@ -260,7 +279,13 @@
 			<ref bean="userService"/>
 		</property>
 	</bean>
+
+	<bean id="fileUploadAction" class="com.goodfriend.action.FileUploadAction"
+			scope="prototype">
+	</bean>
 	
+
+	<!-- 
 	<bean id="showAllBlogsAction" class="com.goodfriend.action.ShowAllBlogsAction"
 			scope="prototype">
 		<property name="blogService">
@@ -277,6 +302,6 @@
 			<ref bean="userService"/>
 		</property>
 	</bean>
-	
+ -->
 	<import resource="applicationContext-admin.xml"/>
 </beans>
