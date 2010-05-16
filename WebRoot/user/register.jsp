@@ -66,8 +66,10 @@
             <tr>
               <th width="100"><label>性　别</label></th>
               <td>
-                <input type="radio" name="gender" id="male" value="male" tabindex="6" checked="checked"/><label for="male">男</label>
-				<input type="radio" name="gender" id="female" value="female" tabindex="7"/><label for="female">女</label>
+              	<div onclick="FormUtil.changePhoto();">
+                <input type="radio" name="gender" id="gender" value="male" tabindex="6" checked="checked"/><label for="male">男</label>
+				<input type="radio" name="gender" id="gender" value="female" tabindex="7"/><label for="female">女</label>
+				</div>
               </td>
             </tr>
             <tr>
@@ -114,6 +116,29 @@
           </tbody>
         </table>
       </form>
+      
+      <div id="photoDiv">
+      	<form action="fileUpload.action" method="post" enctype="multipart/form-data">
+      	<table>
+      		<tr>
+      			<td><label >默认头像:</label><br/></td>
+      			<td></td>
+      		</tr>
+      		<tr>
+      			<td></td>
+      			<td><img id="photo" alt="默认头像" src="../pictures/default/default_male.png"><br></td>
+      		</tr>
+      		<tr>
+      			<td>上传自己的头像</td>
+      			<td>
+      				<input type="file" name="photoFile" id="uploadFile"/>
+      				<input type="button" value="上传" 
+      				onclick ="myFileUploadAjax.upload(Form.Element.getValue('uploadFile'));"/>
+      			</td>
+      		</tr>
+      	</table>
+      	</form>
+      </div>
     </div>
     
      <div id="footer">

@@ -11,9 +11,9 @@ import com.goodfriend.model.Gossip;
  * Last modify time : 2010.05.12 
  */
 public interface IGossipService {
-	public void addGossip(Gossip gossip);
+	public void addGossip(Gossip gossip, Integer userId, Integer fromUserId);
 	public Gossip getGossip(Integer id);
-	public List<Gossip> getGossips(String userId);
+	public List<Gossip> getGossips(Integer userId);
 	public void updateGossip(Gossip gossip);
 	public void deleteGossip(Gossip gossip);
 }

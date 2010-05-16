@@ -38,7 +38,10 @@
         <property name="photo" type="java.lang.String">
             <column name="photo" length="150" />
         </property>
-        <set name="items" inverse="true" cascade="all">
+        <property name="lastLogoutTime" type="java.sql.Timestamp">
+            <column name="last_logout_time" length="0" />
+        </property>
+        <set name="items" inverse="true" cascade="all" lazy="false">
             <key>
                 <column name="user" not-null="true" />
             </key>
@@ -62,9 +65,9 @@
             </key>
             <one-to-many class="Friends" />
         </set>
-        <set name="gossips" inverse="true" cascade="all">
+        <set name="gossips" inverse="true" cascade="all" lazy="false" >
             <key>
-                <column name="from" not-null="true" />
+                <column name="from_id" not-null="true" />
             </key>
             <one-to-many class="Gossip" />
         </set>

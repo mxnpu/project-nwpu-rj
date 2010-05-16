@@ -266,5 +266,11 @@ caption p {
 }
 
 #navigator li{
-	 display:inline;
+	display:inline;
+}
+
+#photoDiv {
+	position: absolute;
+	left : 500px;
+	top : 135px;
 }

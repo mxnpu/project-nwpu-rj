@@ -12,9 +12,9 @@ import com.goodfriend.model.Statement;
  * Last modify time : 2010.05.12 
  */
 public interface IStatementService {
-	public void addGossip(Statement statement);
+	public void addStatement(Statement statement, Integer userId);
 	public Statement getStatement(Integer id);
-	public List<Statement> getStatements(String userId);
-	public void updateGossip(Statement statement);
-	public void deleteGossip(Statement statement);
+	public List<Statement> getStatements(Integer userId);
+	public void updateStatement(Statement statement);
+	public void deleteStatement(Statement statement);
 }

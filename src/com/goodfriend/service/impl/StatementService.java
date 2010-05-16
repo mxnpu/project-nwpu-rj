@@ -1,38 +1,103 @@
 package com.goodfriend.service.impl;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import com.goodfriend.dao.IItemDAO;
 import com.goodfriend.dao.IStatementDAO;
+import com.goodfriend.dao.IUserDAO;
+import com.goodfriend.model.Item;
 import com.goodfriend.model.Statement;
+import com.goodfriend.model.User;
 import com.goodfriend.service.IStatementService;
 
+/**
+ * Offer the service for the user's statement.
+ * 
+ * @author xurunhua
+ * @time : 2010.05.14
+ */
 public class StatementService implements IStatementService {
-	
+
 	private IStatementDAO statementDao;
-
-	public void addGossip(Statement statement) {
-		// TODO Auto-generated method stub
-
+	private IItemDAO itemDao;
+	private IUserDAO userDao;
+	
+	/**
+	 * Save a Statement to database.
+	 * 
+	 * @param statement the statement you wanted to be store
+	 * @param userId the statement belong to who
+	 */
+	public void addStatement(Statement statement, Integer userId) {
+		// Get a user whom the statement belong to
+	    User user = userDao.findById(userId);
+	    Item item = new Item();
+	    item.setUser(user);
+	    item.setRecordTime(new Timestamp(new Date().getTime()));
+	    item.getStatements().add(statement);
+	    statement.setItem(item);
+		
+	    statementDao.save(statement);
 	}
 
-	public void deleteGossip(Statement statement) {
-		// TODO Auto-generated method stub
-
+	/**
+	 * Delete a statement from the database.
+	 * 
+	 * @param statement the statement which user want to delete.
+	 */
+	public void deleteStatement(Statement statement) {
+	    statement = getStatement(statement.getId());
+	    Item item = statement.getItem();
+	    item.setUser(null);
+	    itemDao.delete(item);
 	}
 
+	/**
+	 * Get a statement from the database by the statement's id.
+	 * 
+	 * @param id the statement's id you wanted.
+	 */
 	public Statement getStatement(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	    Statement statement = null;
+	    statement = statementDao.findById(id);
+	    return statement;
 	}
 
-	public List<Statement> getStatements(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Get a user's all statements.
+	 * 
+	 * @param userId the user's id.
+	 */
+	public List<Statement> getStatements(Integer userId) {
+	    List<Statement> statements = new ArrayList<Statement>();
+	    List<Statement> allStatements = statementDao.findAll();
+	    for(Statement temp : allStatements) {
+		Integer id = temp.getItem().getUser().getIdUser();
+		if (id.equals(userId)) {
+		    statements.add(temp);
+		}
+	    }
+	    return statements;
 	}
 
-	public void updateGossip(Statement statement) {
-		// TODO Auto-generated method stub
+	/**
+	 * Update a statement.
+	 * 
+	 * @param the statement you want to update.
+	 */
+	public void updateStatement(Statement statement) {
+	    statementDao.attachDirty(statement);
+	}
 
+	public void setItemDao(IItemDAO itemDao) {
+		this.itemDao = itemDao;
+	}
+
+	public IItemDAO getItemDao() {
+		return itemDao;
 	}
 
 	public void setStatementDao(IStatementDAO statementDao) {
@@ -41,6 +106,14 @@ public class StatementService implements IStatementService {
 
 	public IStatementDAO getStatementDao() {
 		return statementDao;
+	}
+
+	public void setUserDao(IUserDAO userDao) {
+		this.userDao = userDao;
+	}
+
+	public IUserDAO getUserDao() {
+		return userDao;
 	}
 
 }

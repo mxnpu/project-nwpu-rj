@@ -129,6 +129,18 @@ FormUtil.focusOnFirst = function() {
 		}
 	}
 }
+/**
+ * 根据用户选填的性别，更改默认头像
+ */
+FormUtil.changePhoto = function () {
+	var gender = Form.Element.getValue("gender");
+	if (gender == "male") {
+		$("photo").src = "../pictures/default/default_male.png";
+	}
+	else {
+		$("photo").src = "../pictures/default/default_female.png";
+	}
+}
 
 /**
  * 异步验证用户名是否已经注册.
@@ -155,5 +167,23 @@ var myNameValidateAjax = {
 	},
 	showResponse : function(request) {
 		$("userNameError").innerHTML = request.responseText;
+	}
+}
+
+var myFileUploadAjax = {
+	url : "fileUpload.action",
+	params : "",
+	upload : function () {
+		this.params = Form.Element.serialize("uploadFile");
+		var myAjax = new Ajax.Request(this.url, {
+			method : 'post',
+			contentType : 'multipart/form-data',
+			parameters : this.params,
+			onComplete : this.processResponse,
+			asynchronous : true
+		});
+	},
+	processResponse : function (request) {
+		
 	}
 }
