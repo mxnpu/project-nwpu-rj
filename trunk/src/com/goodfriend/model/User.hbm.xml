@@ -55,7 +55,7 @@
         </set>
         <set name="replies" inverse="true" cascade="all">
             <key>
-                <column name="from" not-null="true" />
+                <column name="from_id" not-null="true" />
             </key>
             <one-to-many class="Reply" />
         </set>

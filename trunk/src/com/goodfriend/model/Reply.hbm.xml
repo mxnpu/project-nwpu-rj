@@ -8,11 +8,13 @@
             <column name="id_reply" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="item" class="Item" fetch="select" cascade="all">
+        <many-to-one name="item" class="Item" fetch="select" cascade="save-update"
+             lazy="false">
             <column name="item_id" not-null="true" />
         </many-to-one>
-        <many-to-one name="user" class="User" fetch="select" cascade="all">
-            <column name="from" not-null="true" />
+        <many-to-one name="user" class="User" fetch="select" cascade="save-update"
+             lazy="false">
+            <column name="from_id" not-null="true" />
         </many-to-one>
         <property name="content" type="java.lang.String">
             <column name="content" length="250" not-null="true" />

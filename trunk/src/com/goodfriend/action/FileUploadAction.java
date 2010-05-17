@@ -10,15 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemFactory;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.struts2.ServletActionContext;
 
 /**
@@ -45,43 +37,7 @@ public class FileUploadAction {
      * @throws Exception
      */
     public String upload() throws Exception {
-
-	HttpServletRequest request = ServletActionContext.getRequest();
-	boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-
-	if (isMultipart == true) {
-	    FileItemFactory factory = new DiskFileItemFactory();
-	    ServletFileUpload upload = new ServletFileUpload(factory);
-
-	    List<FileItem> fileItems = upload.parseRequest(request);
-	    Iterator<FileItem> iter = fileItems.iterator();
-
-	    // 依次处理每个表单域
-	    while (iter.hasNext()) {
-		FileItem item = (FileItem) iter.next();
-
-		if (item.isFormField()) {
-		    // 如果 item是正常的表单域
-		    String name = item.getFieldName();
-		    String value = item.getString();
-		    System.out.print("表单域名为:" + name + "表单域值为:" + value);
-		} else {
-		    // 如果item是文件上传表单域
-
-		    // 获得文件名及路径
-		    String fileName = item.getName();
-		    System.out.println(fileName);
-		    if (fileName != null) {
-			File fullFile = new File(item.getName());
-			// 如果文件存在则上传
-			if (fullFile.exists()) {
-
-			}
-		    }
-		}
-	    }
-	}
-
+	
 	String newFileName = null;
 	/* get a time as the new file name */
 	long now = new Date().getTime();

@@ -9,10 +9,10 @@
             <column name="id" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="album" class="Album" fetch="select">
+        <many-to-one name="album" class="Album" fetch="select" lazy="false">
             <column name="album_id" />
         </many-to-one>
-        <many-to-one name="item" class="Item" fetch="select">
+        <many-to-one name="item" class="Item" fetch="select" lazy="false">
             <column name="item_id" not-null="true" />
         </many-to-one>
         <property name="introduction" type="java.lang.String">

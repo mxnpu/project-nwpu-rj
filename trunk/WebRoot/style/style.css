@@ -274,3 +274,6 @@ caption p {
 	left : 500px;
 	top : 135px;
 }
+
+.errorMsg {
+	color: #ff0000;
