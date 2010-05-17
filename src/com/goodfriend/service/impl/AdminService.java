@@ -7,18 +7,21 @@ import com.goodfriend.model.Admin;
 import com.goodfriend.service.IAdminService;
 
 /**
+ * The service module for the administrator.
  * 
- * 
- * @author xurunhua 
+ * @author xurunhua
+ * @CreateTime 2010.05.03
+ * @LastModifyTime 2010.05.12
  */
 public class AdminService implements IAdminService {
 
 	private IAdminDAO adminDao;
-	
+
 	/**
 	 * Add a administrator to database
 	 * 
-	 * @param admin the administrator wanted to be added.
+	 * @param admin
+	 *            the administrator wanted to be added.
 	 */
 	public void addAdmin(Admin admin) {
 		adminDao.save(admin);
@@ -26,17 +29,19 @@ public class AdminService implements IAdminService {
 
 	/**
 	 * Delete a administrator from database
-	 * @param admin the administrator wanted to be deleted.
+	 * 
+	 * @param admin
+	 *            the administrator wanted to be deleted.
 	 */
 	public void deleteUser(Admin admin) {
 		adminDao.delete(admin);
 	}
 
 	/**
-	 * Get a administrator from the database
-	 * by the Id.
+	 * Get a administrator from the database by the Id.
 	 * 
-	 * @param id the id of the administrator in database.
+	 * @param id
+	 *            the id of the administrator in database.
 	 * @return the Administrator which you queried.
 	 */
 	public Admin getAdmin(Integer id) {
@@ -45,10 +50,10 @@ public class AdminService implements IAdminService {
 	}
 
 	/**
-	 * Get a administrator form the database 
-	 * by the administator's user name 
+	 * Get a administrator form the database by the administator's user name
 	 * 
-	 * @param adminName the name which you want query.
+	 * @param adminName
+	 *            the name which you want query.
 	 * @return the administrator which you queried.
 	 */
 	public Admin getAdmin(String adminName) {
@@ -73,7 +78,8 @@ public class AdminService implements IAdminService {
 	/**
 	 * Judge the administrator is exist or not by user name.
 	 * 
-	 * @param the adminName the user name of the administrator.
+	 * @param the
+	 *            adminName the user name of the administrator.
 	 * @return true if the name is exist, or false.
 	 */
 	public boolean isAdminExist(String adminName) {
@@ -89,9 +95,10 @@ public class AdminService implements IAdminService {
 	}
 
 	/**
-	 * Update the administrator 
+	 * Update the administrator
 	 * 
-	 * @param admin the administrator you want to update.
+	 * @param admin
+	 *            the administrator you want to update.
 	 */
 	public void updateAdmin(Admin admin) {
 		adminDao.attachDirty(admin);

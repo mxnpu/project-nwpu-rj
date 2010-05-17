@@ -41,6 +41,10 @@
 
 
           <tbody style="display:;">
+          	<tr>
+            	<td></td>
+            	<td><div class="errorMsg">${requestScope.errorMsg }</div></td>
+            </tr>
             <tr>
               <th width="100"><label for="username">用户名</label></th>
               <td><input type="text" name="username" id="username" class="t_input" tabindex="2" maxlength="16" 
@@ -128,14 +132,7 @@
       			<td></td>
       			<td><img id="photo" alt="默认头像" src="../pictures/default/default_male.png"><br></td>
       		</tr>
-      		<tr>
-      			<td>上传自己的头像</td>
-      			<td>
-      				<input type="file" name="photoFile" id="uploadFile"/>
-      				<input type="button" value="上传" 
-      				onclick ="myFileUploadAjax.upload(Form.Element.getValue('uploadFile'));"/>
-      			</td>
-      		</tr>
+
       	</table>
       	</form>
       </div>

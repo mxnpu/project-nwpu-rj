@@ -17,7 +17,8 @@ import com.goodfriend.service.IStatementService;
  * Offer the service for the user's statement.
  * 
  * @author xurunhua
- * @time : 2010.05.14
+ * @CreateTime : 2010.05.14
+ * @LastModifyTime : 2010.05.17
  */
 public class StatementService implements IStatementService {
 

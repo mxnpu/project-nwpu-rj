@@ -33,15 +33,18 @@
   	
   	
     <div id="wrap">
-    <s:property value="#session.getAttribute('errorMsg')"/>
       <form id="loginform" name="loginform" action="login" method="post" class="c_form">
         <table cellpadding="0" cellspacing="0" class="formtable">
           <caption>
             <h2>用GoodFriend帐号登录</h2>
-            <p>如果您在本站已拥有帐号，请使用已有的帐号信息直接进行登录即可，不需重复注册。</p>
+            <p>如果您在本站已拥有帐号，请使用已有的帐号信息直接进行登录即可，不需重复注册。</p>   
           </caption>
-
+			
           <tbody style="display:;">
+            <tr>
+            	<td></td>
+            	<td><div class="errorMsg">${requestScope.errorMsg }</div></td>
+            </tr>
             <tr>
               <th width="100"><label for="username">用户名</label></th>
               <td><input type="text" name="username" id="username" class="t_input" tabindex="2" onBlur="Validate.required(this,4,16,'用户名需要','userNameError');"></td>

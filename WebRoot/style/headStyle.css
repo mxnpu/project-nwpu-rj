@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+* {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+body,th,td,input,select,textarea,button {
+	font: 12px/ 1.5em Verdana, "Lucida Grande", Arial, Helvetica, sans-serif
+		;
+}
+
+body,h1,h2,h3,h4,h5,h6,p,ul,dl,dt,dd,form,fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 1em;
+}
+
+ul li {
+	list-style: none;
+}
+
+select {
+	margin-right: 2px;
+}
+
+a img {
+	border: none;
+}
+
+/*************************************************HEADER***/
+#header {
+	margin: 0 0 20px;
+}
+
+.headerwarp {
+	margin: 0 auto;
+	padding: 0 20px 0 20px;
+	width: 930px;
+	height: 40px;
+	background: url(image/vc_header_bg.gif);
+}
+
+.headerwarp .logo {
+	float: left;
+}
+
+.headerwarp .global_nav {
+	float: left;
+	margin: 0 13 0 13
+}
+
+.headerwarp .nav_account {
+	float: right;
+	white-space: nowrap;
+}

@@ -9,7 +9,7 @@
             <column name="id_album" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="item" class="Item" fetch="select" cascade="all">
+        <many-to-one name="item" class="Item" fetch="select" cascade="all" lazy="false">
             <column name="item_id" not-null="true" />
         </many-to-one>
         <property name="title" type="java.lang.String">
