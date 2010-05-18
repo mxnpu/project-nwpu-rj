@@ -3,8 +3,7 @@
      position: relative;  
      margin: 0;  
      padding: 0; 
-	 background-image:url(image/no_flicker.jpg); /*some browsers are to slow when aligning the menu items via jQuery and so the background shines through, this prevents this flickering*/
-
+	 background-image:url(image/no_flicker.png); /*some browsers are to slow when aligning the menu items via jQuery and so the background shines through, this prevents this flickering*/
  }  
  .kwicks li{  
     display: block;  
@@ -15,7 +14,7 @@
 	width: 125px;
 	height: 40px;
 	margin-right: 0px;
-	background-image:url(image/kwicks_sprite.jpg);
+	background-image:url(image/kwicks_sprite.png);
 	background-repeat:no-repeat;
 }
 .kwicks a{
@@ -64,7 +63,7 @@
 }
 
 #kwick1 a{
-	background-image:url(image/end.jpg);
+	background-image:url(image/end.png);
 	background-repeat:no-repeat;
 	background-position: left 0px;
 }
@@ -74,7 +73,7 @@
 }
 
 #kwick6 a{
-	background-image:url(image/end.jpg);
+	background-image:url(image/end.png);
 	background-repeat:no-repeat;
 	background-position: right -40px;
 }

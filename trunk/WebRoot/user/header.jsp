@@ -23,6 +23,17 @@
 					<a href="#"> <img src="<%=basePath%>/style/image/bf_logo.png" alt="Good Friend" />
 					</a>
 				</h1>
+				<div class="nav_account">
+					欢迎您
+					<s:if test="#session.currentUser.userName != null">
+						, <s:property value="#session.currentUser.userName"/>
+					</s:if>
+					<a href="<%=basePath%>/user/login.jsp">登录</a> |
+					<a href="<%=basePath%>/user/register.jsp">注册</a>
+					<s:if test="#session.currentUser.userName != null">
+						| <a href="<%=basePath%>/user/logout.action">退出</a>
+					</s:if> 
+				</div>
 				<div class="global_nav">
 					<ul class="kwicks">
 						<li id="kwick1">
@@ -44,18 +55,6 @@
 							<a href="#">个人信息</a>
 						</li>
 					</ul>
-				</div>
-				<div class="nav_account">
-					欢迎您
-					<s:if test="#session.currentUser.userName != null">
-						, <s:property value="#session.currentUser.userName"/>
-					</s:if>
-					<br>
-					<a href="<%=basePath%>/user/login.jsp">登录</a> |
-					<a href="<%=basePath%>/user/register.jsp">注册</a>
-					<s:if test="#session.currentUser.userName != null">
-						| <a href="<%=basePath%>/user/logout.action">退出</a>
-					</s:if> 
 				</div>
 			</div>
 		</div>

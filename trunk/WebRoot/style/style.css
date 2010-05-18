@@ -40,10 +40,9 @@ select {
 
 .headerwarp {
 	margin: 0 auto;
-	padding: 0 20px;
 	width: 930px;
-	height: 40px;
-	background: #FF8E00 url(image/vc_header_bg.gif);
+	height: 80px;
+	background: #FF8E00 url(image/bf_header_bg.png);
 	color: #FFF;
 }
 
@@ -272,7 +271,7 @@ caption p {
 #photoDiv {
 	position: absolute;
 	left : 500px;
-	top : 135px;
+	top : 187px;
 }
 
 .errorMsg {

@@ -20,11 +20,12 @@
 							alt="Good Friend" /> </a>
 				</h1>
 				<div class="nav_account">
+					<br/>
 					欢迎您
 					<s:if test="#session.currentUser.userName != null">
 						, <s:property value="#session.currentUser.userName"/>
 					</s:if>
-					<br>
+					<br/>
 					<a href="login.jsp">登录</a> |
 					<a href="register.jsp">注册</a>
 				</div>
@@ -121,8 +122,7 @@
         </table>
       </form>
       
-      <div id="photoDiv">
-      	<form action="fileUpload.action" method="post" enctype="multipart/form-data">
+      <div id="photoDiv">      	
       	<table>
       		<tr>
       			<td><label >默认头像:</label><br/></td>
@@ -134,7 +134,6 @@
       		</tr>
 
       	</table>
-      	</form>
       </div>
     </div>
     
