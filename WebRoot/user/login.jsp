@@ -20,11 +20,12 @@
 							alt="Good Friend" /> </a>
 				</h1>
 				<div class="nav_account">
+					<br>
 					欢迎您
 					<s:if test="#session.currentUser.userName != null">
 						, <s:property value="#session.currentUser.userName"/>
 					</s:if>
-					<br>
+					<br>      
 					<a href="login.jsp">登录</a> |
 					<a href="register.jsp">注册</a>
 				</div>

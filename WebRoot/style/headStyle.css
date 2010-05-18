@@ -37,11 +37,12 @@ a img {
 }
 
 .headerwarp {
+	
 	margin: 0 auto;
-	padding: 0 20px 0 20px;
+	padding: 0 0px 0 20px;
 	width: 930px;
-	height: 40px;
-	background: url(image/vc_header_bg.gif);
+	height: 80px;
+	background: url(image/bf_header_bg.png);
 }
 
 .headerwarp .logo {
@@ -49,11 +50,15 @@ a img {
 }
 
 .headerwarp .global_nav {
+	position : relative;
+	top : 50 px;
 	float: left;
-	margin: 0 13 0 13
 }
 
 .headerwarp .nav_account {
+	position : relative;
 	float: right;
+	width : 200 px;
 	white-space: nowrap;
+	padding: 0px 15px 10px 0px;
 }

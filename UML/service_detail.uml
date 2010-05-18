@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_VGKsMGJREd-hPcLPnhR1dQ">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_VKCfyWJREd-hPcLPnhR1dQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <elementImport xmi:id="_VKCfzWJREd-hPcLPnhR1dQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_VKCf12JREd-hPcLPnhR1dQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_VKCf_2JREd-hPcLPnhR1dQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_VGKsMWJREd-hPcLPnhR1dQ" name="com">
+    <packagedElement xmi:type="uml:Package" xmi:id="_VGKsMmJREd-hPcLPnhR1dQ" name="goodfriend">
+      <packagedElement xmi:type="uml:Package" xmi:id="_VGKsM2JREd-hPcLPnhR1dQ" name="service">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGKsNGJREd-hPcLPnhR1dQ" name="IFriendService">
+          <ownedOperation xmi:id="_VJcCvmJREd-hPcLPnhR1dQ" name="addFriend" visibility="public">
+            <ownedParameter xmi:id="_VJcCv2JREd-hPcLPnhR1dQ" name="friend" type="_VJcCoWJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VJcCwGJREd-hPcLPnhR1dQ" name="getFriends" visibility="public">
+            <ownedParameter xmi:id="_VJcCwWJREd-hPcLPnhR1dQ" name="owner" type="_VJcComJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VJcCwmJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VJcCw2JREd-hPcLPnhR1dQ" name="updateFriend" visibility="public">
+            <ownedParameter xmi:id="_VJcCxGJREd-hPcLPnhR1dQ" name="friend" type="_VJcCoWJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VJcCxWJREd-hPcLPnhR1dQ" name="deleteFriend" visibility="public">
+            <ownedParameter xmi:id="_VJcCxmJREd-hPcLPnhR1dQ" name="friend" type="_VJcCoWJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGKsNWJREd-hPcLPnhR1dQ" name="IUserService">
+          <ownedComment xmi:id="_VGKsNmJREd-hPcLPnhR1dQ">
+            <body>/** 
+ * The the service component for the user
+ * @author xurunhua
+ * @version 
+ * Last modify time : 2010.05.03 
+ */
+</body>
+          </ownedComment>
+          <ownedOperation xmi:id="_VJcCx2JREd-hPcLPnhR1dQ" name="addUser" visibility="public">
+            <ownedParameter xmi:id="_VJcCyGJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCfymJREd-hPcLPnhR1dQ" name="getUser" visibility="public">
+            <ownedParameter xmi:id="_VKCfy2JREd-hPcLPnhR1dQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCfzGJREd-hPcLPnhR1dQ" name="return" type="_VJcComJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCfzmJREd-hPcLPnhR1dQ" name="getUser" visibility="public">
+            <ownedParameter xmi:id="_VKCfz2JREd-hPcLPnhR1dQ" name="userName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCf0GJREd-hPcLPnhR1dQ" name="return" type="_VJcComJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf0WJREd-hPcLPnhR1dQ" name="getUsers" visibility="public">
+            <ownedParameter xmi:id="_VKCf0mJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf02JREd-hPcLPnhR1dQ" name="updateUser" visibility="public">
+            <ownedParameter xmi:id="_VKCf1GJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf1WJREd-hPcLPnhR1dQ" name="deleteUser" visibility="public">
+            <ownedParameter xmi:id="_VKCf1mJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf2GJREd-hPcLPnhR1dQ" name="isUserExist" visibility="public">
+            <ownedParameter xmi:id="_VKCf2WJREd-hPcLPnhR1dQ" name="username">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCf2mJREd-hPcLPnhR1dQ" name="return" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGKsN2JREd-hPcLPnhR1dQ" name="IPictureService">
+          <ownedOperation xmi:id="_VKCf22JREd-hPcLPnhR1dQ" name="addPicture" visibility="public">
+            <ownedParameter xmi:id="_VKCf3GJREd-hPcLPnhR1dQ" name="picture" type="_VJcCpGJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf3WJREd-hPcLPnhR1dQ" name="getPicture" visibility="public">
+            <ownedParameter xmi:id="_VKCf3mJREd-hPcLPnhR1dQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCf32JREd-hPcLPnhR1dQ" name="return" type="_VJcCpGJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf4GJREd-hPcLPnhR1dQ" name="getAllPictures" visibility="public">
+            <ownedParameter xmi:id="_VKCf4WJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf4mJREd-hPcLPnhR1dQ" name="getAlbumPictures" visibility="public">
+            <ownedParameter xmi:id="_VKCf42JREd-hPcLPnhR1dQ" name="album" type="_VJcCo2JREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKCf5GJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf5WJREd-hPcLPnhR1dQ" name="deletePicture" visibility="public">
+            <ownedParameter xmi:id="_VKCf5mJREd-hPcLPnhR1dQ" name="picture" type="_VJcCpGJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf52JREd-hPcLPnhR1dQ" name="updatePicture" visibility="public">
+            <ownedParameter xmi:id="_VKCf6GJREd-hPcLPnhR1dQ" name="picture" type="_VJcCpGJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGT2IGJREd-hPcLPnhR1dQ" name="IStatementService">
+          <ownedComment xmi:id="_VGT2IWJREd-hPcLPnhR1dQ">
+            <body>/** 
+ * The the service component for the statement.
+ * @author xurunhua
+ * @version 
+ * Last modify time : 2010.05.12 
+ */
+</body>
+          </ownedComment>
+          <ownedOperation xmi:id="_VKCf6WJREd-hPcLPnhR1dQ" name="addStatement" visibility="public">
+            <ownedParameter xmi:id="_VKCf6mJREd-hPcLPnhR1dQ" name="statement" type="_VJcCpWJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKCf62JREd-hPcLPnhR1dQ" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf7GJREd-hPcLPnhR1dQ" name="getStatement" visibility="public">
+            <ownedParameter xmi:id="_VKCf7WJREd-hPcLPnhR1dQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCf7mJREd-hPcLPnhR1dQ" name="return" type="_VJcCpWJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf72JREd-hPcLPnhR1dQ" name="getStatements" visibility="public">
+            <ownedParameter xmi:id="_VKCf8GJREd-hPcLPnhR1dQ" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCf8WJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf8mJREd-hPcLPnhR1dQ" name="updateStatement" visibility="public">
+            <ownedParameter xmi:id="_VKCf82JREd-hPcLPnhR1dQ" name="statement" type="_VJcCpWJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf9GJREd-hPcLPnhR1dQ" name="deleteStatement" visibility="public">
+            <ownedParameter xmi:id="_VKCf9WJREd-hPcLPnhR1dQ" name="statement" type="_VJcCpWJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGT2ImJREd-hPcLPnhR1dQ" name="IBlogService">
+          <ownedComment xmi:id="_VGT2I2JREd-hPcLPnhR1dQ">
+            <body>/** 
+ * @author Miao Xin
+ * 创建时间：2010/05/12 
+ * 最后修改时间：2010/05/13
+ */
+</body>
+          </ownedComment>
+          <ownedOperation xmi:id="_VKCf9mJREd-hPcLPnhR1dQ" name="addBlog" visibility="public">
+            <ownedParameter xmi:id="_VKCf92JREd-hPcLPnhR1dQ" name="blog" type="_VJcCpmJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKCf-GJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf-WJREd-hPcLPnhR1dQ" name="deleteBlog" visibility="public">
+            <ownedParameter xmi:id="_VKCf-mJREd-hPcLPnhR1dQ" name="blog" type="_VJcCpmJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf-2JREd-hPcLPnhR1dQ" name="updateBlog" visibility="public">
+            <ownedParameter xmi:id="_VKCf_GJREd-hPcLPnhR1dQ" name="blog" type="_VJcCpmJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCf_WJREd-hPcLPnhR1dQ" name="getAllBlogs" visibility="public">
+            <ownedParameter xmi:id="_VKCf_mJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCgAGJREd-hPcLPnhR1dQ" name="getBlogsByPage" visibility="public">
+            <ownedParameter xmi:id="_VKCgAWJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKCgAmJREd-hPcLPnhR1dQ" name="index">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCgA2JREd-hPcLPnhR1dQ" name="pageSize">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCgBGJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCgBmJREd-hPcLPnhR1dQ" name="getBlogByProperty" visibility="public">
+            <ownedParameter xmi:id="_VKCgB2JREd-hPcLPnhR1dQ" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCgCGJREd-hPcLPnhR1dQ" name="value" type="_VKCgBWJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKCgCWJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCgCmJREd-hPcLPnhR1dQ" name="getTotalPage" visibility="public">
+            <ownedParameter xmi:id="_VKCgC2JREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKCgDGJREd-hPcLPnhR1dQ" name="pageSize">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKCgDWJREd-hPcLPnhR1dQ" name="return" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGT2JGJREd-hPcLPnhR1dQ" name="IAlbumService">
+          <ownedOperation xmi:id="_VKCgDmJREd-hPcLPnhR1dQ" name="addAlbum" visibility="public">
+            <ownedParameter xmi:id="_VKCgD2JREd-hPcLPnhR1dQ" name="album" type="_VJcCo2JREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCgEGJREd-hPcLPnhR1dQ" name="deleteAlbum" visibility="public">
+            <ownedParameter xmi:id="_VKCgEWJREd-hPcLPnhR1dQ" name="album" type="_VJcCo2JREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCgEmJREd-hPcLPnhR1dQ" name="updateAlbum" visibility="public">
+            <ownedParameter xmi:id="_VKCgE2JREd-hPcLPnhR1dQ" name="album" type="_VJcCo2JREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKCgFGJREd-hPcLPnhR1dQ" name="getAllAlbums" visibility="public">
+            <ownedParameter xmi:id="_VKCgFWJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQkGJREd-hPcLPnhR1dQ" name="getAlbumByProperty" visibility="public">
+            <ownedParameter xmi:id="_VKMQkWJREd-hPcLPnhR1dQ" name="propertyName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQkmJREd-hPcLPnhR1dQ" name="value" type="_VKCgBWJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKMQk2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGT2JWJREd-hPcLPnhR1dQ" name="IPlacardService">
+          <ownedOperation xmi:id="_VKMQlGJREd-hPcLPnhR1dQ" name="addPlacard" visibility="public">
+            <ownedParameter xmi:id="_VKMQlWJREd-hPcLPnhR1dQ" name="placard" type="_VJcCp2JREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQlmJREd-hPcLPnhR1dQ" name="getPlacard" visibility="public">
+            <ownedParameter xmi:id="_VKMQl2JREd-hPcLPnhR1dQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQmGJREd-hPcLPnhR1dQ" name="return" type="_VJcCp2JREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQmWJREd-hPcLPnhR1dQ" name="getPlacard" visibility="public">
+            <ownedParameter xmi:id="_VKMQmmJREd-hPcLPnhR1dQ" name="title">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQm2JREd-hPcLPnhR1dQ" name="return" type="_VJcCp2JREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQnGJREd-hPcLPnhR1dQ" name="getPlacards" visibility="public">
+            <ownedParameter xmi:id="_VKMQnWJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQnmJREd-hPcLPnhR1dQ" name="updateUser" visibility="public">
+            <ownedParameter xmi:id="_VKMQn2JREd-hPcLPnhR1dQ" name="placard" type="_VJcCp2JREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQoGJREd-hPcLPnhR1dQ" name="deleteUser" visibility="public">
+            <ownedParameter xmi:id="_VKMQoWJREd-hPcLPnhR1dQ" name="placard" type="_VJcCp2JREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGT2JmJREd-hPcLPnhR1dQ" name="IGossipService">
+          <ownedComment xmi:id="_VGT2J2JREd-hPcLPnhR1dQ">
+            <body>/** 
+ * The the service component for the gossip.
+ * @author xurunhua
+ * @version 
+ * Last modify time : 2010.05.12 
+ */
+</body>
+          </ownedComment>
+          <ownedOperation xmi:id="_VKMQomJREd-hPcLPnhR1dQ" name="addGossip" visibility="public">
+            <ownedParameter xmi:id="_VKMQo2JREd-hPcLPnhR1dQ" name="gossip" type="_VJcCqGJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKMQpGJREd-hPcLPnhR1dQ" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQpWJREd-hPcLPnhR1dQ" name="fromUserId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQpmJREd-hPcLPnhR1dQ" name="getGossip" visibility="public">
+            <ownedParameter xmi:id="_VKMQp2JREd-hPcLPnhR1dQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQqGJREd-hPcLPnhR1dQ" name="return" type="_VJcCqGJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQqWJREd-hPcLPnhR1dQ" name="getGossips" visibility="public">
+            <ownedParameter xmi:id="_VKMQqmJREd-hPcLPnhR1dQ" name="userId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQq2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQrGJREd-hPcLPnhR1dQ" name="updateGossip" visibility="public">
+            <ownedParameter xmi:id="_VKMQrWJREd-hPcLPnhR1dQ" name="gossip" type="_VJcCqGJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQrmJREd-hPcLPnhR1dQ" name="deleteGossip" visibility="public">
+            <ownedParameter xmi:id="_VKMQr2JREd-hPcLPnhR1dQ" name="gossip" type="_VJcCqGJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGT2KmJREd-hPcLPnhR1dQ" name="IAdminService">
+          <ownedOperation xmi:id="_VKMQvmJREd-hPcLPnhR1dQ" name="addAdmin" visibility="public">
+            <ownedParameter xmi:id="_VKMQv2JREd-hPcLPnhR1dQ" name="admin" type="_VJcCqmJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQwGJREd-hPcLPnhR1dQ" name="getAdmin" visibility="public">
+            <ownedParameter xmi:id="_VKMQwWJREd-hPcLPnhR1dQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQwmJREd-hPcLPnhR1dQ" name="return" type="_VJcCqmJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQw2JREd-hPcLPnhR1dQ" name="getAdmin" visibility="public">
+            <ownedParameter xmi:id="_VKMQxGJREd-hPcLPnhR1dQ" name="adminName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQxWJREd-hPcLPnhR1dQ" name="return" type="_VJcCqmJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQxmJREd-hPcLPnhR1dQ" name="getAdmins" visibility="public">
+            <ownedParameter xmi:id="_VKMQx2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQyGJREd-hPcLPnhR1dQ" name="updateAdmin" visibility="public">
+            <ownedParameter xmi:id="_VKMQyWJREd-hPcLPnhR1dQ" name="admin" type="_VJcCqmJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQymJREd-hPcLPnhR1dQ" name="deleteUser" visibility="public">
+            <ownedParameter xmi:id="_VKMQy2JREd-hPcLPnhR1dQ" name="admin" type="_VJcCqmJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQzGJREd-hPcLPnhR1dQ" name="isAdminExist" visibility="public">
+            <ownedParameter xmi:id="_VKMQzWJREd-hPcLPnhR1dQ" name="adminName">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQzmJREd-hPcLPnhR1dQ" name="return" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_VGT2K2JREd-hPcLPnhR1dQ" name="impl">
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGT2LGJREd-hPcLPnhR1dQ" name="PictureService" clientDependency="_VKMQz2JREd-hPcLPnhR1dQ">
+            <ownedAttribute xmi:id="_VKMQ0GJREd-hPcLPnhR1dQ" name="pictureDao" visibility="private" type="_VJcCrGJREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VKMQz2JREd-hPcLPnhR1dQ" name="IPictureService" supplier="_VGKsN2JREd-hPcLPnhR1dQ" client="_VGT2LGJREd-hPcLPnhR1dQ" contract="_VGKsN2JREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VKMQ0WJREd-hPcLPnhR1dQ" name="addPicture" visibility="public">
+              <ownedParameter xmi:id="_VKMQ0mJREd-hPcLPnhR1dQ" name="picture" type="_VJcCpGJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKMQ02JREd-hPcLPnhR1dQ" name="deletePicture" visibility="public">
+              <ownedParameter xmi:id="_VKMQ1GJREd-hPcLPnhR1dQ" name="picture" type="_VJcCpGJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKVagGJREd-hPcLPnhR1dQ" name="getAlbumPictures" visibility="public">
+              <ownedParameter xmi:id="_VKVagWJREd-hPcLPnhR1dQ" name="album" type="_VJcCo2JREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VKVagmJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKVag2JREd-hPcLPnhR1dQ" name="getAllPictures" visibility="public">
+              <ownedParameter xmi:id="_VKVahGJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKVahWJREd-hPcLPnhR1dQ" name="getPicture" visibility="public">
+              <ownedParameter xmi:id="_VKVahmJREd-hPcLPnhR1dQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VKVah2JREd-hPcLPnhR1dQ" name="return" type="_VJcCpGJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKVaiGJREd-hPcLPnhR1dQ" name="updatePicture" visibility="public">
+              <ownedParameter xmi:id="_VKVaiWJREd-hPcLPnhR1dQ" name="picture" type="_VJcCpGJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKVaimJREd-hPcLPnhR1dQ" name="setPictureDao" visibility="public">
+              <ownedParameter xmi:id="_VKVai2JREd-hPcLPnhR1dQ" name="pictureDao" type="_VJcCrGJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKVajGJREd-hPcLPnhR1dQ" name="getPictureDao" visibility="public">
+              <ownedParameter xmi:id="_VKVajWJREd-hPcLPnhR1dQ" name="return" type="_VJcCrGJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGT2LWJREd-hPcLPnhR1dQ" name="BlogService" clientDependency="_VKVajmJREd-hPcLPnhR1dQ">
+            <ownedComment xmi:id="_VGT2LmJREd-hPcLPnhR1dQ">
+              <body>/** 
+ * Blog的数据库操作类 
+ * @author Miao Xin
+ * 创建时间：2010/05/12
+ * 最后修改时间：2010/05/13
+ */
+</body>
+            </ownedComment>
+            <ownedAttribute xmi:id="_VKVaj2JREd-hPcLPnhR1dQ" name="blogDao" visibility="private" type="_VJcCsGJREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VKVajmJREd-hPcLPnhR1dQ" name="IBlogService" supplier="_VGT2ImJREd-hPcLPnhR1dQ" client="_VGT2LWJREd-hPcLPnhR1dQ" contract="_VGT2ImJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VKVakGJREd-hPcLPnhR1dQ" name="getBlogDao" visibility="public">
+              <ownedParameter xmi:id="_VKVakWJREd-hPcLPnhR1dQ" name="return" type="_VJcCsGJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKVakmJREd-hPcLPnhR1dQ" name="setBlogDao" visibility="public">
+              <ownedParameter xmi:id="_VKVak2JREd-hPcLPnhR1dQ" name="blogDao" type="_VJcCsGJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKfLgGJREd-hPcLPnhR1dQ" name="addBlog" visibility="public">
+              <ownedParameter xmi:id="_VKfLgWJREd-hPcLPnhR1dQ" name="blog" type="_VJcCpmJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VKfLgmJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKfLg2JREd-hPcLPnhR1dQ" name="deleteBlog" visibility="public">
+              <ownedParameter xmi:id="_VKfLhGJREd-hPcLPnhR1dQ" name="blog" type="_VJcCpmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKfLhWJREd-hPcLPnhR1dQ" name="getAllBlogs" visibility="public">
+              <ownedParameter xmi:id="_VKfLhmJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKfLh2JREd-hPcLPnhR1dQ" name="getBlogsByPage" visibility="public">
+              <ownedParameter xmi:id="_VKfLiGJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VKfLiWJREd-hPcLPnhR1dQ" name="index">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VKfLimJREd-hPcLPnhR1dQ" name="pageSize">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VKfLi2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKfLjGJREd-hPcLPnhR1dQ" name="getBlogByProperty" visibility="public">
+              <ownedParameter xmi:id="_VKfLjWJREd-hPcLPnhR1dQ" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VKfLjmJREd-hPcLPnhR1dQ" name="value" type="_VKCgBWJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VKfLj2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKfLkGJREd-hPcLPnhR1dQ" name="updateBlog" visibility="public">
+              <ownedParameter xmi:id="_VKfLkWJREd-hPcLPnhR1dQ" name="blog" type="_VJcCpmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKfLkmJREd-hPcLPnhR1dQ" name="getTotalPage" visibility="public">
+              <ownedParameter xmi:id="_VKfLk2JREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VKfLlGJREd-hPcLPnhR1dQ" name="pageSize">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VKfLlWJREd-hPcLPnhR1dQ" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGT2L2JREd-hPcLPnhR1dQ" name="AlbumService" clientDependency="_VKfLlmJREd-hPcLPnhR1dQ">
+            <ownedAttribute xmi:id="_VKfLl2JREd-hPcLPnhR1dQ" name="albumDao" visibility="private" type="_VJcCsmJREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VKfLlmJREd-hPcLPnhR1dQ" name="IAlbumService" supplier="_VGT2JGJREd-hPcLPnhR1dQ" client="_VGT2L2JREd-hPcLPnhR1dQ" contract="_VGT2JGJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VKoVcGJREd-hPcLPnhR1dQ" name="addAlbum" visibility="public">
+              <ownedParameter xmi:id="_VKoVcWJREd-hPcLPnhR1dQ" name="album" type="_VJcCo2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKoVcmJREd-hPcLPnhR1dQ" name="deleteAlbum" visibility="public">
+              <ownedParameter xmi:id="_VKoVc2JREd-hPcLPnhR1dQ" name="album" type="_VJcCo2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKoVdGJREd-hPcLPnhR1dQ" name="getAlbumByProperty" visibility="public">
+              <ownedParameter xmi:id="_VKoVdWJREd-hPcLPnhR1dQ" name="propertyName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VKoVdmJREd-hPcLPnhR1dQ" name="value" type="_VKCgBWJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VKoVd2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKoVeGJREd-hPcLPnhR1dQ" name="getAllAlbums" visibility="public">
+              <ownedParameter xmi:id="_VKoVeWJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKyGcGJREd-hPcLPnhR1dQ" name="updateAlbum" visibility="public">
+              <ownedParameter xmi:id="_VKyGcWJREd-hPcLPnhR1dQ" name="album" type="_VJcCo2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKyGcmJREd-hPcLPnhR1dQ" name="setAlbumDao" visibility="public">
+              <ownedParameter xmi:id="_VKyGc2JREd-hPcLPnhR1dQ" name="albumDao" type="_VJcCsmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKyGdGJREd-hPcLPnhR1dQ" name="getAlbumDao" visibility="public">
+              <ownedParameter xmi:id="_VKyGdWJREd-hPcLPnhR1dQ" name="return" type="_VJcCsmJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGT2MGJREd-hPcLPnhR1dQ" name="PlacardService" clientDependency="_VKyGdmJREd-hPcLPnhR1dQ">
+            <ownedComment xmi:id="_VGT2MWJREd-hPcLPnhR1dQ">
+              <body>/** 
+ * The service module of placard service.
+ * @author xurunhua
+ * @CreateTime 2010.05.03
+ * @LastModifyTime 2010.05.12
+ */
+</body>
+            </ownedComment>
+            <ownedAttribute xmi:id="_VKyGd2JREd-hPcLPnhR1dQ" name="placrdDao" visibility="private" type="_VJcCs2JREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VKyGdmJREd-hPcLPnhR1dQ" name="IPlacardService" supplier="_VGT2JWJREd-hPcLPnhR1dQ" client="_VGT2MGJREd-hPcLPnhR1dQ" contract="_VGT2JWJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VKyGeGJREd-hPcLPnhR1dQ" name="addPlacard" visibility="public">
+              <ownedComment xmi:id="_VKyGemJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Add a placard.
+ * @param placardthe placard you want to add.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VKyGeWJREd-hPcLPnhR1dQ" name="placard" type="_VJcCp2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKyGe2JREd-hPcLPnhR1dQ" name="deleteUser" visibility="public">
+              <ownedComment xmi:id="_VKyGfWJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Delete a placard.
+ * @param placardthe placard you want to delete.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VKyGfGJREd-hPcLPnhR1dQ" name="placard" type="_VJcCp2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKyGfmJREd-hPcLPnhR1dQ" name="getPlacard" visibility="public">
+              <ownedComment xmi:id="_VKyGgWJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get a placard.
+ * @param idthe of the placard you want to get.
+ * @return the placard you want.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VKyGf2JREd-hPcLPnhR1dQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VKyGgGJREd-hPcLPnhR1dQ" name="return" type="_VJcCp2JREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VKyGgmJREd-hPcLPnhR1dQ" name="getPlacard" visibility="public">
+              <ownedComment xmi:id="_VK73cGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get the placards by title.
+ * @param titlethe title of placard you want to add.
+ * @return the placard you want.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VKyGg2JREd-hPcLPnhR1dQ" name="title">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VKyGhGJREd-hPcLPnhR1dQ" name="return" type="_VJcCp2JREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VK73cWJREd-hPcLPnhR1dQ" name="getPlacards" visibility="public">
+              <ownedComment xmi:id="_VK73c2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get all placards by title.
+ * @return the list of placards you want.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VK73cmJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VK73dGJREd-hPcLPnhR1dQ" name="updateUser" visibility="public">
+              <ownedParameter xmi:id="_VK73dWJREd-hPcLPnhR1dQ" name="placard" type="_VJcCp2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VK73dmJREd-hPcLPnhR1dQ" name="setPlacrdDao" visibility="public">
+              <ownedParameter xmi:id="_VK73d2JREd-hPcLPnhR1dQ" name="placrdDao" type="_VJcCs2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VK73eGJREd-hPcLPnhR1dQ" name="getPlacrdDao" visibility="public">
+              <ownedParameter xmi:id="_VK73eWJREd-hPcLPnhR1dQ" name="return" type="_VJcCs2JREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGT2MmJREd-hPcLPnhR1dQ" name="GossipService" clientDependency="_VK73emJREd-hPcLPnhR1dQ">
+            <ownedComment xmi:id="_VGdnIGJREd-hPcLPnhR1dQ">
+              <body>/** 
+ * Give the service for the user's gossip.
+ * @author xurunhua
+ * @time 2010.05.15
+ */
+</body>
+            </ownedComment>
+            <ownedAttribute xmi:id="_VK73e2JREd-hPcLPnhR1dQ" name="gossipDao" visibility="private" type="_VJcCtWJREd-hPcLPnhR1dQ"/>
+            <ownedAttribute xmi:id="_VK73fGJREd-hPcLPnhR1dQ" name="itemDao" visibility="private" type="_VJcCtmJREd-hPcLPnhR1dQ"/>
+            <ownedAttribute xmi:id="_VLFBYGJREd-hPcLPnhR1dQ" name="userDao" visibility="private" type="_VJcCt2JREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VK73emJREd-hPcLPnhR1dQ" name="IGossipService" supplier="_VGT2JmJREd-hPcLPnhR1dQ" client="_VGT2MmJREd-hPcLPnhR1dQ" contract="_VGT2JmJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VLFBYWJREd-hPcLPnhR1dQ" name="addGossip" visibility="public">
+              <ownedComment xmi:id="_VLFBZWJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Add a gossip to the user.
+ * @param gossip the gossip which you give.
+ * @param userId the user who give the gossip.
+ * @param toUserId the user you give the gossip to.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLFBYmJREd-hPcLPnhR1dQ" name="gossip" type="_VJcCqGJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VLFBY2JREd-hPcLPnhR1dQ" name="userId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VLFBZGJREd-hPcLPnhR1dQ" name="fromUserId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLFBZmJREd-hPcLPnhR1dQ" name="deleteGossip" visibility="public">
+              <ownedComment xmi:id="_VLFBaGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Delete a gossip from the database.
+ * @param the gossip you want to delete.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLFBZ2JREd-hPcLPnhR1dQ" name="gossip" type="_VJcCqGJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLFBaWJREd-hPcLPnhR1dQ" name="getGossip" visibility="public">
+              <ownedComment xmi:id="_VLFBbGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get a gossip from the database by the gossip's id
+ * @param the gossip you want to get.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLFBamJREd-hPcLPnhR1dQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VLFBa2JREd-hPcLPnhR1dQ" name="return" type="_VJcCqGJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLFBbWJREd-hPcLPnhR1dQ" name="getGossips" visibility="public">
+              <ownedComment xmi:id="_VLFBcGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get a user's all gossips.
+ * @param userId the user who you want to display the gossip list.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLFBbmJREd-hPcLPnhR1dQ" name="userId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VLFBb2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLFBcWJREd-hPcLPnhR1dQ" name="updateGossip" visibility="public">
+              <ownedComment xmi:id="_VLFBc2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Update a gossip.
+ * @param the gossip you want to update.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLFBcmJREd-hPcLPnhR1dQ" name="gossip" type="_VJcCqGJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLOyYGJREd-hPcLPnhR1dQ" name="setGossipDao" visibility="public">
+              <ownedParameter xmi:id="_VLOyYWJREd-hPcLPnhR1dQ" name="gossipDao" type="_VJcCtWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLOyYmJREd-hPcLPnhR1dQ" name="getGossipDao" visibility="public">
+              <ownedParameter xmi:id="_VLOyY2JREd-hPcLPnhR1dQ" name="return" type="_VJcCtWJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLOyZGJREd-hPcLPnhR1dQ" name="setItemDao" visibility="public">
+              <ownedComment xmi:id="_VLOyZmJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @param itemDao the itemDao to set
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLOyZWJREd-hPcLPnhR1dQ" name="itemDao" type="_VJcCtmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLOyZ2JREd-hPcLPnhR1dQ" name="getItemDao" visibility="public">
+              <ownedComment xmi:id="_VLOyaWJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @return the itemDao
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLOyaGJREd-hPcLPnhR1dQ" name="return" type="_VJcCtmJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLOyamJREd-hPcLPnhR1dQ" name="setUserDao" visibility="public">
+              <ownedComment xmi:id="_VLOybGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @param userDao the userDao to set
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLOya2JREd-hPcLPnhR1dQ" name="userDao" type="_VJcCt2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLOybWJREd-hPcLPnhR1dQ" name="getUserDao" visibility="public">
+              <ownedComment xmi:id="_VLOyb2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @return the userDao
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLOybmJREd-hPcLPnhR1dQ" name="return" type="_VJcCt2JREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGdnIWJREd-hPcLPnhR1dQ" name="StatementService" clientDependency="_VLOycGJREd-hPcLPnhR1dQ">
+            <ownedComment xmi:id="_VGdnImJREd-hPcLPnhR1dQ">
+              <body>/** 
+ * Offer the service for the user's statement.
+ * @author xurunhua
+ * @CreateTime : 2010.05.14
+ * @LastModifyTime : 2010.05.17
+ */
+</body>
+            </ownedComment>
+            <ownedAttribute xmi:id="_VLYjYGJREd-hPcLPnhR1dQ" name="statementDao" visibility="private" type="_VJcCuGJREd-hPcLPnhR1dQ"/>
+            <ownedAttribute xmi:id="_VLYjYWJREd-hPcLPnhR1dQ" name="itemDao" visibility="private" type="_VJcCtmJREd-hPcLPnhR1dQ"/>
+            <ownedAttribute xmi:id="_VLYjYmJREd-hPcLPnhR1dQ" name="userDao" visibility="private" type="_VJcCt2JREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VLOycGJREd-hPcLPnhR1dQ" name="IStatementService" supplier="_VGT2IGJREd-hPcLPnhR1dQ" client="_VGdnIWJREd-hPcLPnhR1dQ" contract="_VGT2IGJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VLYjY2JREd-hPcLPnhR1dQ" name="addStatement" visibility="public">
+              <ownedComment xmi:id="_VLYjZmJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Save a Statement to database.
+ * @param statement the statement you wanted to be store
+ * @param userId the statement belong to who
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLYjZGJREd-hPcLPnhR1dQ" name="statement" type="_VJcCpWJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VLYjZWJREd-hPcLPnhR1dQ" name="userId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLYjZ2JREd-hPcLPnhR1dQ" name="deleteStatement" visibility="public">
+              <ownedComment xmi:id="_VLYjaWJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Delete a statement from the database.
+ * @param statement the statement which user want to delete.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLYjaGJREd-hPcLPnhR1dQ" name="statement" type="_VJcCpWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLYjamJREd-hPcLPnhR1dQ" name="getStatement" visibility="public">
+              <ownedComment xmi:id="_VLhtUGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get a statement from the database by the statement's id.
+ * @param id the statement's id you wanted.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLYja2JREd-hPcLPnhR1dQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VLYjbGJREd-hPcLPnhR1dQ" name="return" type="_VJcCpWJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLhtUWJREd-hPcLPnhR1dQ" name="getStatements" visibility="public">
+              <ownedComment xmi:id="_VLhtVGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get a user's all statements.
+ * @param userId the user's id.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLhtUmJREd-hPcLPnhR1dQ" name="userId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VLhtU2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLhtVWJREd-hPcLPnhR1dQ" name="updateStatement" visibility="public">
+              <ownedComment xmi:id="_VLhtV2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Update a statement.
+ * @param the statement you want to update.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLhtVmJREd-hPcLPnhR1dQ" name="statement" type="_VJcCpWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLhtWGJREd-hPcLPnhR1dQ" name="setItemDao" visibility="public">
+              <ownedParameter xmi:id="_VLhtWWJREd-hPcLPnhR1dQ" name="itemDao" type="_VJcCtmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLhtWmJREd-hPcLPnhR1dQ" name="getItemDao" visibility="public">
+              <ownedParameter xmi:id="_VLhtW2JREd-hPcLPnhR1dQ" name="return" type="_VJcCtmJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLhtXGJREd-hPcLPnhR1dQ" name="setStatementDao" visibility="public">
+              <ownedParameter xmi:id="_VLhtXWJREd-hPcLPnhR1dQ" name="statementDao" type="_VJcCuGJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLhtXmJREd-hPcLPnhR1dQ" name="getStatementDao" visibility="public">
+              <ownedParameter xmi:id="_VLhtX2JREd-hPcLPnhR1dQ" name="return" type="_VJcCuGJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLhtYGJREd-hPcLPnhR1dQ" name="setUserDao" visibility="public">
+              <ownedParameter xmi:id="_VLhtYWJREd-hPcLPnhR1dQ" name="userDao" type="_VJcCt2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLreUGJREd-hPcLPnhR1dQ" name="getUserDao" visibility="public">
+              <ownedParameter xmi:id="_VLreUWJREd-hPcLPnhR1dQ" name="return" type="_VJcCt2JREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGdnI2JREd-hPcLPnhR1dQ" name="AdminService" clientDependency="_VLreUmJREd-hPcLPnhR1dQ">
+            <ownedComment xmi:id="_VGdnJGJREd-hPcLPnhR1dQ">
+              <body>/** 
+ * The service module for the administrator.
+ * @author xurunhua
+ * @CreateTime 2010.05.03
+ * @LastModifyTime 2010.05.12
+ */
+</body>
+            </ownedComment>
+            <ownedAttribute xmi:id="_VLreU2JREd-hPcLPnhR1dQ" name="adminDao" visibility="private" type="_VJcCuWJREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VLreUmJREd-hPcLPnhR1dQ" name="IAdminService" supplier="_VGT2KmJREd-hPcLPnhR1dQ" client="_VGdnI2JREd-hPcLPnhR1dQ" contract="_VGT2KmJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VLreVGJREd-hPcLPnhR1dQ" name="addAdmin" visibility="public">
+              <ownedComment xmi:id="_VLreVmJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Add a administrator to database
+ * @param adminthe administrator wanted to be added.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLreVWJREd-hPcLPnhR1dQ" name="admin" type="_VJcCqmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLreV2JREd-hPcLPnhR1dQ" name="deleteUser" visibility="public">
+              <ownedComment xmi:id="_VLreWWJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Delete a administrator from database
+ * @param adminthe administrator wanted to be deleted.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLreWGJREd-hPcLPnhR1dQ" name="admin" type="_VJcCqmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VLreWmJREd-hPcLPnhR1dQ" name="getAdmin" visibility="public">
+              <ownedComment xmi:id="_VL0oQGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get a administrator from the database by the Id.
+ * @param idthe id of the administrator in database.
+ * @return the Administrator which you queried.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VLreW2JREd-hPcLPnhR1dQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VLreXGJREd-hPcLPnhR1dQ" name="return" type="_VJcCqmJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL0oQWJREd-hPcLPnhR1dQ" name="getAdmin" visibility="public">
+              <ownedComment xmi:id="_VL0oRGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get a administrator form the database by the administator's user name
+ * @param adminNamethe name which you want query.
+ * @return the administrator which you queried.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VL0oQmJREd-hPcLPnhR1dQ" name="adminName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VL0oQ2JREd-hPcLPnhR1dQ" name="return" type="_VJcCqmJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL0oRWJREd-hPcLPnhR1dQ" name="getAdmins" visibility="public">
+              <ownedComment xmi:id="_VL0oR2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get all the administrators.
+ * @return all the administrators.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VL0oRmJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL0oSGJREd-hPcLPnhR1dQ" name="isAdminExist" visibility="public">
+              <ownedComment xmi:id="_VL0oS2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Judge the administrator is exist or not by user name.
+ * @param theadminName the user name of the administrator.
+ * @return true if the name is exist, or false.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VL0oSWJREd-hPcLPnhR1dQ" name="adminName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VL0oSmJREd-hPcLPnhR1dQ" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL0oTGJREd-hPcLPnhR1dQ" name="updateAdmin" visibility="public">
+              <ownedComment xmi:id="_VL0oTmJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Update the administrator
+ * @param adminthe administrator you want to update.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VL0oTWJREd-hPcLPnhR1dQ" name="admin" type="_VJcCqmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL0oT2JREd-hPcLPnhR1dQ" name="setAdminDao" visibility="public">
+              <ownedParameter xmi:id="_VL0oUGJREd-hPcLPnhR1dQ" name="adminDao" type="_VJcCuWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL0oUWJREd-hPcLPnhR1dQ" name="getAdminDao" visibility="public">
+              <ownedParameter xmi:id="_VL0oUmJREd-hPcLPnhR1dQ" name="return" type="_VJcCuWJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGdnJWJREd-hPcLPnhR1dQ" name="UserService" clientDependency="_VL0oU2JREd-hPcLPnhR1dQ">
+            <ownedAttribute xmi:id="_VL0oVGJREd-hPcLPnhR1dQ" name="userDao" visibility="private" type="_VJcCt2JREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VL0oU2JREd-hPcLPnhR1dQ" name="IUserService" supplier="_VGKsNWJREd-hPcLPnhR1dQ" client="_VGdnJWJREd-hPcLPnhR1dQ" contract="_VGKsNWJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VL-ZQGJREd-hPcLPnhR1dQ" name="addUser" visibility="public">
+              <ownedParameter xmi:id="_VL-ZQWJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL-ZQmJREd-hPcLPnhR1dQ" name="deleteUser" visibility="public">
+              <ownedParameter xmi:id="_VL-ZQ2JREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL-ZRGJREd-hPcLPnhR1dQ" name="getUser" visibility="public">
+              <ownedParameter xmi:id="_VL-ZRWJREd-hPcLPnhR1dQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VL-ZRmJREd-hPcLPnhR1dQ" name="return" type="_VJcComJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL-ZR2JREd-hPcLPnhR1dQ" name="getUser" visibility="public">
+              <ownedParameter xmi:id="_VL-ZSGJREd-hPcLPnhR1dQ" name="userName">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VL-ZSWJREd-hPcLPnhR1dQ" name="return" type="_VJcComJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL-ZSmJREd-hPcLPnhR1dQ" name="getUsers" visibility="public">
+              <ownedParameter xmi:id="_VL-ZS2JREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL-ZTGJREd-hPcLPnhR1dQ" name="updateUser" visibility="public">
+              <ownedParameter xmi:id="_VL-ZTWJREd-hPcLPnhR1dQ" name="user" type="_VJcComJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL-ZTmJREd-hPcLPnhR1dQ" name="setUserDao" visibility="public">
+              <ownedParameter xmi:id="_VL-ZT2JREd-hPcLPnhR1dQ" name="userDao" type="_VJcCt2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL-ZUGJREd-hPcLPnhR1dQ" name="getUserDao" visibility="public">
+              <ownedParameter xmi:id="_VL-ZUWJREd-hPcLPnhR1dQ" name="return" type="_VJcCt2JREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VL-ZUmJREd-hPcLPnhR1dQ" name="isUserExist" visibility="public">
+              <ownedParameter xmi:id="_VL-ZU2JREd-hPcLPnhR1dQ" name="username">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VL-ZVGJREd-hPcLPnhR1dQ" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGdnJmJREd-hPcLPnhR1dQ" name="ReplyService" clientDependency="_VL-ZVWJREd-hPcLPnhR1dQ">
+            <ownedComment xmi:id="_VGdnJ2JREd-hPcLPnhR1dQ">
+              <body>/** 
+ * The reply service module of the system.
+ * @author xurunhua
+ * @CreateTime 2010.05.14
+ * @LastModifyTime 2010.05.17
+ */
+</body>
+            </ownedComment>
+            <ownedAttribute xmi:id="_VMIKQGJREd-hPcLPnhR1dQ" name="replyDao" visibility="private" type="_VJcCu2JREd-hPcLPnhR1dQ"/>
+            <ownedAttribute xmi:id="_VMIKQWJREd-hPcLPnhR1dQ" name="itemDao" visibility="private" type="_VJcCtmJREd-hPcLPnhR1dQ"/>
+            <ownedAttribute xmi:id="_VMIKQmJREd-hPcLPnhR1dQ" name="userDao" visibility="private" type="_VJcCt2JREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VL-ZVWJREd-hPcLPnhR1dQ" name="IReplyService" supplier="_VGT2KGJREd-hPcLPnhR1dQ" client="_VGdnJmJREd-hPcLPnhR1dQ" contract="_VGT2KGJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VMIKQ2JREd-hPcLPnhR1dQ" name="addReply" visibility="public">
+              <ownedComment xmi:id="_VMIKR2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Add a reply.
+ * @param replythe reply you want to add.
+ * @param itemidthe item your reply want to add.
+ * @param fromUserIdthe reply who replied.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMIKRGJREd-hPcLPnhR1dQ" name="reply" type="_VJcCqWJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VMIKRWJREd-hPcLPnhR1dQ" name="itemid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VMIKRmJREd-hPcLPnhR1dQ" name="fromUserId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMIKSGJREd-hPcLPnhR1dQ" name="deleteReply" visibility="public">
+              <ownedComment xmi:id="_VMIKSmJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Delete a reply.
+ * @param replythe reply you want to delete.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMIKSWJREd-hPcLPnhR1dQ" name="reply" type="_VJcCqWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMIKS2JREd-hPcLPnhR1dQ" name="getReplies" visibility="public">
+              <ownedComment xmi:id="_VMRUMGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get all replies you want by the item id.
+ * @param itemIdthe item id which you want get all the replies.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMIKTGJREd-hPcLPnhR1dQ" name="itemId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VMIKTWJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMRUMWJREd-hPcLPnhR1dQ" name="getReply" visibility="public">
+              <ownedComment xmi:id="_VMRUNGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Get a reply from the database by the id.
+ * @param idthe id of the reply you want.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMRUMmJREd-hPcLPnhR1dQ" name="id">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_VMRUM2JREd-hPcLPnhR1dQ" name="return" type="_VJcCqWJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMRUNWJREd-hPcLPnhR1dQ" name="updateReply" visibility="public">
+              <ownedComment xmi:id="_VMRUN2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * Update a reply.
+ * @param replythe reply you want to update.
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMRUNmJREd-hPcLPnhR1dQ" name="reply" type="_VJcCqWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMRUOGJREd-hPcLPnhR1dQ" name="setReplyDao" visibility="public">
+              <ownedComment xmi:id="_VMRUOmJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @param replyDaothe replyDao to set
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMRUOWJREd-hPcLPnhR1dQ" name="replyDao" type="_VJcCu2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMRUO2JREd-hPcLPnhR1dQ" name="getReplyDao" visibility="public">
+              <ownedComment xmi:id="_VMRUPWJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @return the replyDao
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMRUPGJREd-hPcLPnhR1dQ" name="return" type="_VJcCu2JREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMRUPmJREd-hPcLPnhR1dQ" name="setItemDao" visibility="public">
+              <ownedComment xmi:id="_VMRUQGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @param itemDaothe itemDao to set
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMRUP2JREd-hPcLPnhR1dQ" name="itemDao" type="_VJcCtmJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMRUQWJREd-hPcLPnhR1dQ" name="getItemDao" visibility="public">
+              <ownedComment xmi:id="_VMRUQ2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @return the itemDao
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMRUQmJREd-hPcLPnhR1dQ" name="return" type="_VJcCtmJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMRURGJREd-hPcLPnhR1dQ" name="setUserDao" visibility="public">
+              <ownedComment xmi:id="_VMbFMGJREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @param userDaothe userDao to set
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMRURWJREd-hPcLPnhR1dQ" name="userDao" type="_VJcCt2JREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMbFMWJREd-hPcLPnhR1dQ" name="getUserDao" visibility="public">
+              <ownedComment xmi:id="_VMbFM2JREd-hPcLPnhR1dQ">
+                <body>/** 
+ * @return the userDao
+ */
+</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_VMbFMmJREd-hPcLPnhR1dQ" name="return" type="_VJcCt2JREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_VGdnKGJREd-hPcLPnhR1dQ" name="FriendService" clientDependency="_VMbFNGJREd-hPcLPnhR1dQ">
+            <ownedAttribute xmi:id="_VMbFNWJREd-hPcLPnhR1dQ" name="friendDao" visibility="private" type="_VJcCvWJREd-hPcLPnhR1dQ"/>
+            <interfaceRealization xmi:id="_VMbFNGJREd-hPcLPnhR1dQ" name="IFriendService" supplier="_VGKsNGJREd-hPcLPnhR1dQ" client="_VGdnKGJREd-hPcLPnhR1dQ" contract="_VGKsNGJREd-hPcLPnhR1dQ"/>
+            <ownedOperation xmi:id="_VMbFNmJREd-hPcLPnhR1dQ" name="addFriend" visibility="public">
+              <ownedParameter xmi:id="_VMbFN2JREd-hPcLPnhR1dQ" name="friend" type="_VJcCoWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMbFOGJREd-hPcLPnhR1dQ" name="deleteFriend" visibility="public">
+              <ownedParameter xmi:id="_VMbFOWJREd-hPcLPnhR1dQ" name="friend" type="_VJcCoWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMbFOmJREd-hPcLPnhR1dQ" name="getFriends" visibility="public">
+              <ownedParameter xmi:id="_VMbFO2JREd-hPcLPnhR1dQ" name="owner" type="_VJcComJREd-hPcLPnhR1dQ"/>
+              <ownedParameter xmi:id="_VMbFPGJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMbFPWJREd-hPcLPnhR1dQ" name="updateFriend" visibility="public">
+              <ownedParameter xmi:id="_VMbFPmJREd-hPcLPnhR1dQ" name="friend" type="_VJcCoWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMbFP2JREd-hPcLPnhR1dQ" name="setFriendDao" visibility="public">
+              <ownedParameter xmi:id="_VMbFQGJREd-hPcLPnhR1dQ" name="friendDao" type="_VJcCvWJREd-hPcLPnhR1dQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_VMbFQWJREd-hPcLPnhR1dQ" name="getFriendDao" visibility="public">
+              <ownedParameter xmi:id="_VMbFQmJREd-hPcLPnhR1dQ" name="return" type="_VJcCvWJREd-hPcLPnhR1dQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_VGT2KGJREd-hPcLPnhR1dQ" name="IReplyService">
+          <ownedComment xmi:id="_VGT2KWJREd-hPcLPnhR1dQ">
+            <body>/** 
+ * The the service module for the reply.
+ * @author xurunhua
+ * @version 
+ * Last modify time : 2010.05.12 
+ */
+</body>
+          </ownedComment>
+          <ownedOperation xmi:id="_VKMQsGJREd-hPcLPnhR1dQ" name="addReply" visibility="public">
+            <ownedParameter xmi:id="_VKMQsWJREd-hPcLPnhR1dQ" name="reply" type="_VJcCqWJREd-hPcLPnhR1dQ"/>
+            <ownedParameter xmi:id="_VKMQsmJREd-hPcLPnhR1dQ" name="itemId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQs2JREd-hPcLPnhR1dQ" name="fromUserId">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQtGJREd-hPcLPnhR1dQ" name="getReply" visibility="public">
+            <ownedParameter xmi:id="_VKMQtWJREd-hPcLPnhR1dQ" name="id">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQtmJREd-hPcLPnhR1dQ" name="return" type="_VJcCqWJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQt2JREd-hPcLPnhR1dQ" name="getReplies" visibility="public">
+            <ownedParameter xmi:id="_VKMQuGJREd-hPcLPnhR1dQ" name="itemid">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_VKMQuWJREd-hPcLPnhR1dQ" name="return" type="_VJS4smJREd-hPcLPnhR1dQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQumJREd-hPcLPnhR1dQ" name="updateReply" visibility="public">
+            <ownedParameter xmi:id="_VKMQu2JREd-hPcLPnhR1dQ" name="reply" type="_VJcCqWJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_VKMQvGJREd-hPcLPnhR1dQ" name="deleteReply" visibility="public">
+            <ownedParameter xmi:id="_VKMQvWJREd-hPcLPnhR1dQ" name="reply" type="_VJcCqWJREd-hPcLPnhR1dQ"/>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_VJcCoGJREd-hPcLPnhR1dQ" name="model">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCoWJREd-hPcLPnhR1dQ" name="Friends"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcComJREd-hPcLPnhR1dQ" name="User"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCo2JREd-hPcLPnhR1dQ" name="Album"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCpGJREd-hPcLPnhR1dQ" name="Picture"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCpWJREd-hPcLPnhR1dQ" name="Statement"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCpmJREd-hPcLPnhR1dQ" name="Blog"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCp2JREd-hPcLPnhR1dQ" name="Placard"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCqGJREd-hPcLPnhR1dQ" name="Gossip"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCqWJREd-hPcLPnhR1dQ" name="Reply"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCqmJREd-hPcLPnhR1dQ" name="Admin"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCsWJREd-hPcLPnhR1dQ" name="Item"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_VJcCq2JREd-hPcLPnhR1dQ" name="dao">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCrGJREd-hPcLPnhR1dQ" name="IPictureDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCsGJREd-hPcLPnhR1dQ" name="IBlogDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCsmJREd-hPcLPnhR1dQ" name="IAlbumDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCs2JREd-hPcLPnhR1dQ" name="IPlacardDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCtWJREd-hPcLPnhR1dQ" name="IGossipDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCtmJREd-hPcLPnhR1dQ" name="IItemDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCt2JREd-hPcLPnhR1dQ" name="IUserDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCuGJREd-hPcLPnhR1dQ" name="IStatementDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCuWJREd-hPcLPnhR1dQ" name="IAdminDAO"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCu2JREd-hPcLPnhR1dQ" name="IReplyDAO"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_VJcCvGJREd-hPcLPnhR1dQ" name="impl">
+          <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCvWJREd-hPcLPnhR1dQ" name="FriendsDAO"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_VJS4sGJREd-hPcLPnhR1dQ" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_VJS4sWJREd-hPcLPnhR1dQ" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_VJS4smJREd-hPcLPnhR1dQ" name="List"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCr2JREd-hPcLPnhR1dQ" name="Date"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCtGJREd-hPcLPnhR1dQ" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCumJREd-hPcLPnhR1dQ" name="Set"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_VJcCrWJREd-hPcLPnhR1dQ" name="sql">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_VJcCrmJREd-hPcLPnhR1dQ" name="Timestamp"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_VKCgBWJREd-hPcLPnhR1dQ" name="Object"/>
+</uml:Model>

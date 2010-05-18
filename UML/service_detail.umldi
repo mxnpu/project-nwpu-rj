@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_VSFoUGJREd-hPcLPnhR1dQ" activeDiagram="_VSFoUWJREd-hPcLPnhR1dQ">
+  <model href="service_detail.uml#_VGKsMGJREd-hPcLPnhR1dQ"/>
+  <diagrams xmi:id="_VSFoUWJREd-hPcLPnhR1dQ" position="0,0" size="100,100" name="service_detail" viewport="984,1180">
+    <property xmi:id="_VabsAGJREd-hPcLPnhR1dQ" key="pageFormatName" value=""/>
+    <property xmi:id="_VabsAWJREd-hPcLPnhR1dQ" key="diagramWidth" value="2220"/>
+    <property xmi:id="_VabsAmJREd-hPcLPnhR1dQ" key="diagramHeight" value="3112"/>
+    <property xmi:id="_VabsA2JREd-hPcLPnhR1dQ" key="pageMarginName" value="A4"/>
+    <property xmi:id="_VabsBGJREd-hPcLPnhR1dQ" key="diagramTopMargin" value="20"/>
+    <property xmi:id="_VabsBWJREd-hPcLPnhR1dQ" key="diagramBottomMargin" value="20"/>
+    <property xmi:id="_VabsBmJREd-hPcLPnhR1dQ" key="diagramLeftMargin" value="20"/>
+    <property xmi:id="_VabsB2JREd-hPcLPnhR1dQ" key="diagramRightMargin" value="20"/>
+    <property xmi:id="_VabsCGJREd-hPcLPnhR1dQ" key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VSFoUmJREd-hPcLPnhR1dQ" presentation="org.topcased.modeler.uml.classdiagram">
+      <element href="service_detail.uml#_VGKsMGJREd-hPcLPnhR1dQ"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" xmi:id="_VffyMGJREd-hPcLPnhR1dQ" position="35,35" size="1858,2751">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VffyMWJREd-hPcLPnhR1dQ" presentation="default">
+        <element href="service_detail.uml#_VGKsMWJREd-hPcLPnhR1dQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_VffyMmJREd-hPcLPnhR1dQ" position="15,11" size="1809,2691">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VffyM2JREd-hPcLPnhR1dQ" presentation="default">
+          <element href="service_detail.uml#_VGKsMmJREd-hPcLPnhR1dQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_VfpjMGJREd-hPcLPnhR1dQ" position="15,11" size="1758,2612">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfpjMWJREd-hPcLPnhR1dQ" presentation="default">
+            <element href="service_detail.uml#_VGKsM2JREd-hPcLPnhR1dQ"/>
+          </semanticModel>
+          <contained xsi:type="di:GraphNode" xmi:id="_VfpjMmJREd-hPcLPnhR1dQ" position="38,1979" size="271,-1">
+            <anchorage xmi:id="_Vk2zY2JREd-hPcLPnhR1dQ" graphEdge="_Vk2zZGJREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfpjM2JREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGKsNGJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfpjNGJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfpjNWJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfpjNmJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGKsNGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfpjN2JREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfpjOGJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfpjOWJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGKsNGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgFoGmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgFoG2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VJcCvmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgFoHGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgFoHWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VJcCwGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgPZEGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgPZEWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VJcCw2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgPZEmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgPZE2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VJcCxWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_VfpjOmJREd-hPcLPnhR1dQ" position="1197,2184" size="334,-1">
+            <anchorage xmi:id="_Vk2zWWJREd-hPcLPnhR1dQ" graphEdge="_Vk2zWmJREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfpjO2JREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGKsNWJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfpjPGJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfpjPWJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfpjPmJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGKsNWJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfpjP2JREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfpjQGJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfpjQWJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGKsNWJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgPZFGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgPZFWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VJcCx2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgPZFmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgPZF2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCfymJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgPZGGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgPZGWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCfzmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgPZGmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgPZG2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf0WJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgPZHGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgPZHWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf02JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgZKEGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgZKEWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf1WJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgZKEmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgZKE2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf2GJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_VfytIGJREd-hPcLPnhR1dQ" position="1224,155" size="320,-1">
+            <anchorage xmi:id="_Vkj4YWJREd-hPcLPnhR1dQ" graphEdge="_Vkj4YmJREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytIWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGKsN2JREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfytImJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfytI2JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytJGJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGKsN2JREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfytJWJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfytJmJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytJ2JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGKsN2JREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgZKFGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgZKFWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf22JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgZKFmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgZKF2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf3WJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgZKGGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgZKGWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf4GJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgZKGmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgZKG2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf4mJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgiUAGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgiUAWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf5WJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgiUAmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgiUA2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf52JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_VfytKGJREd-hPcLPnhR1dQ" position="1197,1759" size="411,-1">
+            <anchorage xmi:id="_VktpcGJREd-hPcLPnhR1dQ" graphEdge="_Vk2zUGJREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytKWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGT2IGJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfytKmJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfytK2JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytLGJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2IGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfytLWJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfytLmJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytL2JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2IGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgiUBGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgiUBWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf6WJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgiUBmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgiUB2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf7GJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgiUCGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgiUCWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf72JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgiUCmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgiUC2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf8mJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgsFAGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgsFAWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf9GJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_VfytMGJREd-hPcLPnhR1dQ" position="1211,427" size="495,-1">
+            <anchorage xmi:id="_Vkj4ZmJREd-hPcLPnhR1dQ" graphEdge="_Vkj4Z2JREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytMWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGT2ImJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfytMmJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfytM2JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytNGJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2ImJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfytNWJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfytNmJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytN2JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2ImJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgsFAmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgsFA2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf9mJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgsFBGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgsFBWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf-WJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgsFBmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgsFB2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf-2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgsFCGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgsFCWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCf_WJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VgsFCmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgsFC2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCgAGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg12AGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg12AWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCgBmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg12AmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg12A2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCgCmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_VfytOGJREd-hPcLPnhR1dQ" position="1197,767" size="502,-1">
+            <anchorage xmi:id="_VktpYWJREd-hPcLPnhR1dQ" graphEdge="_VktpYmJREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytOWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGT2JGJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfytOmJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfytO2JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytPGJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2JGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_VfytPWJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VfytPmJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VfytP2JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2JGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg12BGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg12BWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCgDmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg12BmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg12B2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCgEGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg12CGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg12CWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCgEmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg12CmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg12C2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKCgFGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg12DGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg12DWJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQkGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_Vf8eIGJREd-hPcLPnhR1dQ" position="1219,1075" size="306,-1">
+            <anchorage xmi:id="_VktpZmJREd-hPcLPnhR1dQ" graphEdge="_VktpZ2JREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eIWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGT2JWJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vf8eImJREd-hPcLPnhR1dQ">
+              <property xmi:id="_Vf8eI2JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eJGJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2JWJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vf8eJWJREd-hPcLPnhR1dQ">
+              <property xmi:id="_Vf8eJmJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eJ2JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2JWJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg-_8GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg-_8WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQlGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg-_8mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg-_82JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQlmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg-_9GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg-_9WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQmWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg-_9mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg-_92JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQnGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg-_-GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg-_-WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQnmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vg-_-mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vg-_-2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQoGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_Vf8eKGJREd-hPcLPnhR1dQ" position="1200,1551" size="502,-1">
+            <anchorage xmi:id="_Vktpa2JREd-hPcLPnhR1dQ" graphEdge="_VktpbGJREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eKWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGT2JmJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vf8eKmJREd-hPcLPnhR1dQ">
+              <property xmi:id="_Vf8eK2JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eLGJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2JmJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vf8eLWJREd-hPcLPnhR1dQ">
+              <property xmi:id="_Vf8eLmJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eL2JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2JmJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhIw8GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhIw8WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQomJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhIw8mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhIw82JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQpmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhIw9GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhIw9WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQqWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhIw9mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhIw92JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQrGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhIw-GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhIw-WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQrmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_VgFoEGJREd-hPcLPnhR1dQ" position="1201,1961" size="348,-1">
+            <anchorage xmi:id="_Vk2zVGJREd-hPcLPnhR1dQ" graphEdge="_Vk2zVWJREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgFoEWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGT2KmJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_VgFoEmJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VgFoE2JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgFoFGJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2KmJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_VgFoFWJREd-hPcLPnhR1dQ">
+              <property xmi:id="_VgFoFmJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgFoF2JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2KmJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhR66GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhR66WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQvmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhR66mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhR662JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQwGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhbr4GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhbr4WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQw2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhbr4mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhbr42JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQxmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhbr5GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhbr5WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQyGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhbr5mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhbr52JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQymJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhbr6GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhbr6WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQzGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_VgFoGGJREd-hPcLPnhR1dQ" position="35,13" size="1120,2521">
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VgFoGWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGT2K2JREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vhbr6mJREd-hPcLPnhR1dQ" position="62,44" size="320,-1">
+              <anchorage xmi:id="_Vkj4YGJREd-hPcLPnhR1dQ" graphEdge="_Vkj4YmJREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhbr62JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2LGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhbr7GJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhbr7WJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhbr7mJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2LGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vh4X4GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vh4X4WJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKMQ0GJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhbr72JREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhbr8GJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhbr8WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2LGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vh4X4mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vh4X42JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKMQ0WJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViCI0GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViCI0WJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKMQ02JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViCI0mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViCI02JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVagGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViCI1GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViCI1WJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVag2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViCI1mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViCI12JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVahWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViCI2GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViCI2WJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVaiGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViCI2mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViCI22JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVaimJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViCI3GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViLSwGJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVajGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vhlc4GJREd-hPcLPnhR1dQ" position="63,322" size="495,-1">
+              <anchorage xmi:id="_Vkj4ZWJREd-hPcLPnhR1dQ" graphEdge="_Vkj4Z2JREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc4WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2LWJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhlc4mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhlc42JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc5GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2LWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViLSwWJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViLSwmJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVaj2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhlc5WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhlc5mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc52JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2LWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViLSw2JREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViLSxGJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVakGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViLSxWJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViLSxmJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKVakmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViLSx2JREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViLSyGJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKfLgGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViLSyWJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViLSymJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKfLg2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViLSy2JREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViLSzGJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKfLhWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViVDwGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViVDwWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKfLh2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViVDwmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViVDw2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKfLjGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViVDxGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViVDxWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKfLkGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViVDxmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViVDx2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKfLkmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vhlc6GJREd-hPcLPnhR1dQ" position="64,617" size="502,-1">
+              <anchorage xmi:id="_VktpYGJREd-hPcLPnhR1dQ" graphEdge="_VktpYmJREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc6WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2L2JREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhlc6mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhlc62JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc7GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2L2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_ViVDyGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ViVDyWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKfLl2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhlc7WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhlc7mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc72JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2L2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VieNsGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VieNsWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKoVcGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VieNsmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VieNs2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKoVcmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VieNtGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VieNtWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKoVdGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VieNtmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VieNt2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKoVeGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VieNuGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VieNuWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKyGcGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VieNumJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VieNu2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKyGcmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VieNvGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VieNvWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKyGdGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vhlc8GJREd-hPcLPnhR1dQ" position="65,862" size="306,-1">
+              <anchorage xmi:id="_VktpZWJREd-hPcLPnhR1dQ" graphEdge="_VktpZ2JREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc8WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2MGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhlc8mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhlc82JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc9GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2MGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vin-sGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vin-sWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKyGd2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhlc9WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhlc9mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhlc92JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2MGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vin-smJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vin-s2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKyGeGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vin-tGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vin-tWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKyGe2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vin-tmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vin-t2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKyGfmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vin-uGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vin-uWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VKyGgmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vin-umJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vin-u2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VK73cWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VixvsGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VixvsWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VK73dGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VixvsmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vixvs2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VK73dmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VixvtGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VixvtWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VK73eGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vhum0GJREd-hPcLPnhR1dQ" position="60,1128" size="502,-1">
+              <anchorage xmi:id="_VktpamJREd-hPcLPnhR1dQ" graphEdge="_VktpbGJREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum0WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2MmJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhum0mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhum02JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum1GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2MmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VixvtmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vixvt2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VK73e2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VixvuGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VixvuWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VK73fGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VixvumJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vixvu2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLFBYGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhum1WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhum1mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum12JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGT2MmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vi65oGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vi65oWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLFBYWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vi65omJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vi65o2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLFBZmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vi65pGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vi65pWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLFBaWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vi65pmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vi65p2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLFBbWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vi65qGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vi65qWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLFBcWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vi65qmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vi65q2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLOyYGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vi65rGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vi65rWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLOyYmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjEqoGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjEqoWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLOyZGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjEqomJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjEqo2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLOyZ2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjEqpGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjEqpWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLOyamJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjEqpmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjEqp2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLOybWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vhum2GJREd-hPcLPnhR1dQ" position="69,1509" size="411,-1">
+              <anchorage xmi:id="_Vktpb2JREd-hPcLPnhR1dQ" graphEdge="_Vk2zUGJREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum2WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGdnIWJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhum2mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhum22JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum3GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnIWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjEqqGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjEqqWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLYjYGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjEqqmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjEqq2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLYjYWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjOboGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjOboWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLYjYmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhum3WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhum3mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum32JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnIWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjObomJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjObo2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLYjY2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjObpGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjObpWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLYjZ2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjObpmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjObp2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLYjamJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjObqGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjObqWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLhtUWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjObqmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjObq2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLhtVWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjXlkGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjXlkWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLhtWGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjXlkmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjXlk2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLhtWmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjXllGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjXllWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLhtXGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjXllmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjXll2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLhtXmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjXlmGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjXlmWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLhtYGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjXlmmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjXlm2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLreUGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vhum4GJREd-hPcLPnhR1dQ" position="500,1904" size="348,-1">
+              <anchorage xmi:id="_Vk2zU2JREd-hPcLPnhR1dQ" graphEdge="_Vk2zVWJREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum4WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGdnI2JREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhum4mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhum42JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum5GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnI2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjhWkGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjhWkWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLreU2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhum5WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhum5mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum52JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnI2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjhWkmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjhWk2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLreVGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjhWlGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjhWlWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLreV2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjhWlmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjhWl2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VLreWmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjhWmGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjhWmWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL0oQWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjhWmmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjhWm2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL0oRWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjhWnGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjhWnWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL0oSGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjqggGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjqggWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL0oTGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjqggmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vjqgg2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL0oT2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjqghGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjqghWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL0oUWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vhum6GJREd-hPcLPnhR1dQ" position="603,2212" size="334,-1">
+              <anchorage xmi:id="_Vk2zWGJREd-hPcLPnhR1dQ" graphEdge="_Vk2zWmJREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum6WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGdnJWJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhum6mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhum62JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum7GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnJWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjqghmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vjqgh2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL0oVGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vhum7WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vhum7mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vhum72JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnJWJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjqgiGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VjqgiWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZQGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VjqgimJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vjqgi2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZQmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj0RgGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj0RgWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZRGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj0RgmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj0Rg2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZR2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj0RhGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj0RhWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZSmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj0RhmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj0Rh2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZTGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj0RiGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj0RiWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZTmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj0RimJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj0Ri2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZUGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj0RjGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj0RjWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VL-ZUmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vh4X0GJREd-hPcLPnhR1dQ" position="74,2176" size="481,-1">
+              <anchorage xmi:id="_Vk2zXWJREd-hPcLPnhR1dQ" graphEdge="_Vk2zX2JREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vh4X0WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGdnJmJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vh4X0mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vh4X02JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vh4X1GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnJmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj-CgGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj-CgWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMIKQGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj-CgmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj-Cg2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMIKQWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj-ChGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj-ChWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMIKQmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vh4X1WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vh4X1mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vh4X12JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnJmJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj-ChmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj-Ch2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMIKQ2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj-CiGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj-CiWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMIKSGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_Vj-CimJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vj-Ci2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMIKS2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkHMcGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkHMcWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMRUMWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkHMcmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkHMc2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMRUNWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkHMdGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkHMdWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMRUOGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkHMdmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkHMd2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMRUO2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkHMeGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkHMeWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMRUPmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkHMemJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkHMe2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMRUQWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkQ9cGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkQ9cWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMRURGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkQ9cmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkQ9c2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMbFMWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vh4X2GJREd-hPcLPnhR1dQ" position="126,1906" size="292,-1">
+              <anchorage xmi:id="_Vk2zYmJREd-hPcLPnhR1dQ" graphEdge="_Vk2zZGJREd-hPcLPnhR1dQ"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vh4X2WJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGdnKGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vh4X2mJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vh4X22JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vh4X3GJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnKGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkQ9dGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkQ9dWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMbFNWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_Vh4X3WJREd-hPcLPnhR1dQ">
+                <property xmi:id="_Vh4X3mJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="47"/>
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vh4X32JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VGdnKGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkQ9dmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkQ9d2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMbFNmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkQ9eGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkQ9eWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMbFOGJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkQ9emJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkQ9e2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMbFOmJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkaucGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkaucWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMbFPWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkaucmJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vkauc2JREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMbFP2JREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+                <contained xsi:type="di:GraphNode" xmi:id="_VkaudGJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                  <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VkaudWJREd-hPcLPnhR1dQ" presentation="default">
+                    <element href="service_detail.uml#_VMbFQWJREd-hPcLPnhR1dQ"/>
+                  </semanticModel>
+                </contained>
+              </contained>
+            </contained>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_Vkj4YmJREd-hPcLPnhR1dQ" anchor="_Vkj4YGJREd-hPcLPnhR1dQ _Vkj4YWJREd-hPcLPnhR1dQ">
+            <property xmi:id="_VpxvkGJREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vkj4Y2JREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VKMQz2JREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Vkj4ZGJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_Vkj4Z2JREd-hPcLPnhR1dQ" anchor="_Vkj4ZWJREd-hPcLPnhR1dQ _Vkj4ZmJREd-hPcLPnhR1dQ">
+            <property xmi:id="_VpxvkWJREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vkj4aGJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VKVajmJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Vkj4aWJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_VktpYmJREd-hPcLPnhR1dQ" anchor="_VktpYGJREd-hPcLPnhR1dQ _VktpYWJREd-hPcLPnhR1dQ">
+            <property xmi:id="_VpxvkmJREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VktpY2JREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VKfLlmJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_VktpZGJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_VktpZ2JREd-hPcLPnhR1dQ" anchor="_VktpZWJREd-hPcLPnhR1dQ _VktpZmJREd-hPcLPnhR1dQ">
+            <property xmi:id="_Vpxvk2JREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VktpaGJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VKyGdmJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_VktpaWJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_VktpbGJREd-hPcLPnhR1dQ" anchor="_VktpamJREd-hPcLPnhR1dQ _Vktpa2JREd-hPcLPnhR1dQ">
+            <property xmi:id="_VpxvlGJREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VktpbWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VK73emJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_VktpbmJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_Vk2zUGJREd-hPcLPnhR1dQ" anchor="_Vktpb2JREd-hPcLPnhR1dQ _VktpcGJREd-hPcLPnhR1dQ">
+            <property xmi:id="_VpxvlWJREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vk2zUWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VLOycGJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Vk2zUmJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_Vk2zVWJREd-hPcLPnhR1dQ" anchor="_Vk2zU2JREd-hPcLPnhR1dQ _Vk2zVGJREd-hPcLPnhR1dQ">
+            <property xmi:id="_VpxvlmJREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vk2zVmJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VLreUmJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Vk2zV2JREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_Vk2zWmJREd-hPcLPnhR1dQ" anchor="_Vk2zWGJREd-hPcLPnhR1dQ _Vk2zWWJREd-hPcLPnhR1dQ">
+            <property xmi:id="_Vpxvl2JREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vk2zW2JREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VL0oU2JREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Vk2zXGJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_Vk2zX2JREd-hPcLPnhR1dQ" anchor="_Vk2zXWJREd-hPcLPnhR1dQ _Vk2zXmJREd-hPcLPnhR1dQ">
+            <property xmi:id="_VpxvmGJREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vk2zYGJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VL-ZVWJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Vk2zYWJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphEdge" xmi:id="_Vk2zZGJREd-hPcLPnhR1dQ" anchor="_Vk2zYmJREd-hPcLPnhR1dQ _Vk2zY2JREd-hPcLPnhR1dQ">
+            <property xmi:id="_VpxvmWJREd-hPcLPnhR1dQ" key="router" value="Automatic"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VlAkUGJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VMbFNGJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:EdgeObjectOffset" xmi:id="_VlAkUWJREd-hPcLPnhR1dQ" id="stereotypeEdgeObject"/>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_Vf8eMGJREd-hPcLPnhR1dQ" position="1194,2402" size="481,-1">
+            <anchorage xmi:id="_Vk2zXmJREd-hPcLPnhR1dQ" graphEdge="_Vk2zX2JREd-hPcLPnhR1dQ"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eMWJREd-hPcLPnhR1dQ" presentation="default">
+              <element href="service_detail.uml#_VGT2KGJREd-hPcLPnhR1dQ"/>
+            </semanticModel>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vf8eMmJREd-hPcLPnhR1dQ">
+              <property xmi:id="_Vf8eM2JREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="37"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eNGJREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2KGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+            </contained>
+            <contained xsi:type="di:GraphNode" xmi:id="_Vf8eNWJREd-hPcLPnhR1dQ">
+              <property xmi:id="_Vf8eNmJREd-hPcLPnhR1dQ" key="eStructuralFeatureID" value="38"/>
+              <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Vf8eN2JREd-hPcLPnhR1dQ" presentation="default">
+                <element href="service_detail.uml#_VGT2KGJREd-hPcLPnhR1dQ"/>
+              </semanticModel>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhIw-mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhIw-2JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQsGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhR64GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhR64WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQtGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhR64mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhR642JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQt2JREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhR65GJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhR65WJREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQumJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+              <contained xsi:type="di:GraphNode" xmi:id="_VhR65mJREd-hPcLPnhR1dQ" position="0,0" size="-1,-1">
+                <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VhR652JREd-hPcLPnhR1dQ" presentation="default">
+                  <element href="service_detail.uml#_VKMQvGJREd-hPcLPnhR1dQ"/>
+                </semanticModel>
+              </contained>
+            </contained>
+          </contained>
+        </contained>
+      </contained>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

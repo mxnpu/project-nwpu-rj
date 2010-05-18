@@ -32,6 +32,10 @@
 		<action name="fileUpload" class="fileUploadAction" method="upload">
 			<result name="success" type="stream"></result>
 		</action>
+		<!-- 用户头像编辑请求Action -->
+		<action name="editPhoto" class="">
+			<result></result>
+		</action>
 		<!-- Random验证码 -->
 		<action name="random" class="randomNumberAction"
 					method="execute">
