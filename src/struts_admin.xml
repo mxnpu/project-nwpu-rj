@@ -5,22 +5,28 @@
 
 
 <struts>
+    <constant name="struts.devMode" value="true" />
     <package name="admin" extends="struts-default" namespace="/admin">
+
         
         <action name="login" class="adminLoginAction" method="login">
             <result name="index">/admin/index.jsp</result>
-            <result name="login_success">/admin/login_success.jsp</result>
+            <result name="login_success">/admin/Admin_index.jsp</result>
         </action>
         
         <action name="logout" class="com.goodfriend.admin.action.LoginAction" method="logout">
 			<result name="logout" type="redirect">/admin/logout_success.jsp</result>
         </action>
         
-        <action name="add" class="com.goodfriend.admin.action.ManagerAdminAction" method="add">
-			<result name="success" type="redirect">/admin/add_success.jsp</result>
-			<result name="failed" type="redirect">/admin/add_failed.jsp</result>
-		</action>
-		
+        <action name="*_*" class="com.goodfriend.admin.action.ManagerAdminAction" method="{2}">
+       		<result name="add_success">/admin/Admin_add.jsp</result>
+       		<result name="Admin_list">/admin/Admin_list.jsp</result>
+       		<result name="del_success">/admin/Admin_delete.jsp</result>
+       		<result name="update_input">/admin/Admin_updateInput.jsp</result>      		
+       		<result name="update_success">/admin/Admin_update.jsp</result>
+       </action>
+
+    
     </package>
 
     <!-- Add packages here -->

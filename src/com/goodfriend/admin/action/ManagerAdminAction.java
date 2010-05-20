@@ -1,5 +1,10 @@
 package com.goodfriend.admin.action;
 
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.goodfriend.admin.dto.AdminDTO;
 import com.goodfriend.model.Admin;
 import com.goodfriend.service.IAdminService;
@@ -9,27 +14,61 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author haiqian
  * Last modify:2010.5.9
  */
-public class ManagerAdminAction extends ActionSupport {
+public class ManagerAdminAction extends ActionSupport implements SessionAware{
 		
 	private static final long serialVersionUID = 1L;
-	private static final String SUCCESS = "success";
 	private static final String FAILED = "failed";
+	private Map<String, Object> session;
 
-	private AdminDTO adminDTO;
+//	private static final String 
 
- 
+	private AdminDTO adminDTO;	//在注册的时候用传输类，这样就不会有垃圾信息的问题，如密码验证
 	private IAdminService adminService;
-
-
-
+	private List<Admin> adminLists;
+	private int id;
+	private Admin admin;	//update的时候用
 	
-	public String add() throws Exception {
+	/**
+	 * 显示管理员列表
+	 * @return
+	 */
+	public String list() {
 		
-//System.out.println(adminDTO.getUsername());
-//for(Admin a : adminDaoManager.getAdmins()) {
-//	
-//	System.out.println(a.getUsername());
-//}
+		adminLists = adminService.getAdmins();
+		return "Admin_list";
+	}
+	
+	/**
+	 * 删除管理员
+	 * @return
+	 */
+	public String delete() {
+		
+		adminService.deleteUser(adminService.getAdmin(id));
+		return "del_success";
+	}
+	
+	/**
+	 * 更新管理员信息输入表项
+	 * @return
+	 */
+	public String updateInput() {
+		
+		admin = adminService.getAdmin(id);
+		return "update_input";
+	}
+	
+	/**
+	 * 更新管理员信息
+	 * @return
+	 */
+	public String update() {
+		
+		adminService.updateAdmin(admin);
+		return "update_success";
+	}
+	public String addInput() throws Exception {
+		
 		if (!adminService.isAdminExist(adminDTO.getUsername())) {
 			Admin admin = new Admin();
 			if (adminDTO.getUsername() != null && !adminDTO.getUsername().equals("")) {
@@ -70,7 +109,7 @@ public class ManagerAdminAction extends ActionSupport {
 			System.out.println("添加管理员： " + admin.getUsername() + " 成功");
 
 		}
-		return SUCCESS;
+		return "add_success";
 	}
 
 
@@ -83,18 +122,40 @@ public class ManagerAdminAction extends ActionSupport {
 		this.adminDTO = adminDTO;
 	}
 
-
 	public IAdminService getAdminService() {
-
 		return adminService;
-
 	}
 
 
 	public void setAdminService(IAdminService adminService) {
 		this.adminService = adminService;
+	}
+	public List<Admin> getAdminLists() {
+		return adminLists;
+	}
+	public void setAdminLists(List<Admin> adminLists) {
+		this.adminLists = adminLists;
+	}
 
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		
+		this.session = session;
 	}
 
 
