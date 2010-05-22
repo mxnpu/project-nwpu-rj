@@ -5,7 +5,7 @@ package com.goodfriend.model;
  * @author 
  */
 
-public class Blog implements java.io.Serializable {
+public class Blog implements java.io.Serializable, Comparable<Blog>{
 
 	// Fields
 
@@ -67,6 +67,17 @@ public class Blog implements java.io.Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public int compareTo(Blog blog) {
+		// TODO Auto-generated method stub
+		//从大到小排序
+		if (this.getItem().getRecordTime().after(blog.getItem().getRecordTime())){
+			return -1;
+		}else{
+			return 1;
+		}
+		
 	}
 
 }

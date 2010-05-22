@@ -10,4 +10,8 @@ public interface IFriendService {
 	public List<User> getFriends(User owner);
 	public void updateFriend(Friends friend);
 	public void deleteFriend(Friends friend);
+	
+	public List<User> getFriendsByPage(User owner, int pageNow, int pageSize);
+	
+	public int getTotalPage(User owner, int pageSize);
 }

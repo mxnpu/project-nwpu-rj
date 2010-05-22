@@ -3,22 +3,22 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.goodfriend.model">
-    <class name="Friends" table="friends" catalog="goodfriend">
+    <class name="Friends" table="friends">
         <id name="idFriends" type="java.lang.Integer">
             <column name="id_friends" />
             <generator class="increment" />
         </id>
-        <many-to-one name="userFriend" class="User" fetch="select" cascade="all">
+        <many-to-one name="userFriend" class="User" lazy="false" fetch="select" cascade="all">
             <column name="friend_id" not-null="true" />
         </many-to-one>
-        <many-to-one name="user" class="User" fetch="select" cascade="all">
+        <many-to-one name="user" class="User" lazy="false" fetch="select" cascade="all">
             <column name="user_id" not-null="true" />
         </many-to-one>
         <property name="success" type="java.lang.String">
             <column name="success" length="2" />
         </property>
         <property name="group" type="java.lang.String">
-            <column name="group" length="50" />
+            <column name="group_name" length="50" />
         </property>
     </class>
 </hibernate-mapping>

@@ -62,10 +62,22 @@ public class BlogService implements IBlogService {
 
 	public void updateBlog(Blog blog) {
 		// TODO Auto-generated method stub
-
+		blogDao.attachDirty(blog);
+	}
+	
+	public void updateBlog(int id, String title, String content){
+		Blog blog = blogDao.findById(id);
+		blog.setTitle(title);
+		blog.setContent(content);
+		blogDao.attachDirty(blog);
 	}
 	
 	public int getTotalPage(User user, int pageSize){
 		return blogDao.getTotalPage(user, pageSize);
+	}
+
+	public Blog getBlog(int id) {
+		
+		return blogDao.findById(id);
 	}
 }

@@ -9,7 +9,7 @@ import java.util.Set;
  * User entity. @author MyEclipse Persistence Tools
  */
 
-public class User implements java.io.Serializable {
+public class User implements java.io.Serializable, Comparable<User>{
 
 	// Fields
 
@@ -201,4 +201,15 @@ public class User implements java.io.Serializable {
 	    return lastLogoutTime;
 	}
 
+	public boolean equals(User tempUser){
+		if (this.getUserName().equals(tempUser.getUserName())){
+			return true;
+		}
+		return false;
+	}
+
+	public int compareTo(User user) {
+		// TODO Auto-generated method stub
+		return this.userName.compareToIgnoreCase(user.getUserName());
+	}
 }

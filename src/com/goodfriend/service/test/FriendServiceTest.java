@@ -1,65 +1,46 @@
 package com.goodfriend.service.test;
 
+import static org.junit.Assert.fail;
+
 import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.goodfriend.model.Blog;
+import com.goodfriend.model.User;
 import com.goodfriend.service.IBlogService;
+import com.goodfriend.service.IFriendService;
 import com.goodfriend.service.IUserService;
 
-public class BlogServiceTest {
+public class FriendServiceTest {
+
 	ApplicationContext ctx;
-	IBlogService blogService;
 	IUserService userService;
+	IFriendService friendService;
 	
-	Blog blog;
 	
 	@Before
 	public void setUp() throws Exception {
 		ctx = new ClassPathXmlApplicationContext("beans-test.xml");
-		blogService = (IBlogService) ctx.getBean("blogService");
+		friendService = (IFriendService) ctx.getBean("friendService");
 		userService = (IUserService)ctx.getBean("userService");
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		ctx = null;
-		blogService = null;
+		friendService = null;
 		userService = null;
-		blog = null;
-	}
-
-	@Test
-	public void testAddBlog() {
-//		blog = new Blog();
-//		blog.setTitle("title");
-//		blog.setContent("content");
-//		
-//		blogService.addBlog(blog, userService.getUser(1));
-	}
-
-	@Test
-	public void testGetBlogsByPage(){
-		List<Blog> list = blogService.getBlogsByPage(userService.getUser(1), 1, 2);
-
 	}
 	
 	@Test
-	public void testUpdateBlog(){
-		Blog blog = blogService.getBlog(1);
-		blog.setContent("123");
-		blogService.updateBlog(blog);
+	public void testGetFriends(){
+		User user = userService.getUser(1);
+		List<User> list = friendService.getFriends(user);
 	}
-	
-	@Test
-	public void testDeleteBlog(){
-//		fail("");
-	}
-	
-	
 }

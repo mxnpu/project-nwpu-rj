@@ -47,16 +47,30 @@
 		
 		<!-- 发布blog -->
 		<action name="publishBlog" class="publishBlogAction" method="publish">
-			<result name="success" type="redirect">blog/publish_success.jsp</result>
+			<result name="success" type="redirect">showAllBlogs</result>
 		</action>
 		
 		<!-- 查看某一页的blog -->
 		<action name="showAllBlogs" class="showAllBlogsAction" method="showBlogs">
-			<result name="success" >blog/all_blogs.jsp</result>
+			<result name="success" >all_blogs.jsp</result>
 		</action>
+		
+		<!-- 查看某一篇自己的blog -->
+		<action name="showBlog" class="showBlogAction" method="showBlog">
+			<result name="success">modify_blog.jsp</result>
+		</action>
+		<!--  -->
+		<action name="updateBlog" class="updateBlogAction" method="updateBlog">
+			<result name="success" type="redirect">showAllBlogs</result>
+		</action>
+		
 		
 		<action name="personalInfo" class="personalInfoAction" method="showPersonalInfo">
 			<result name="success" type="redirect">personal_info.jsp</result>
+		</action>
+		
+		<action name="showFriends" class="friendAction" method="showFriends">
+			<result name="success">friend.jsp</result>
 		</action>
 	</package>
 
