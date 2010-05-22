@@ -26,20 +26,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <form action="modifyInfoAction" >
     	<table width="400">
     		<tr>
+    			<td><label>头像：</label></td>
+    			<td><img src="${session.currentUser.photo}"/></td>
+    			<td><button>更改头像</button></td>
+    		</tr>
+    		<tr>
     			<td><label>用户名：</label></td>
     			<td><input type="text" value="${session.currentUser.userName }"/></td>
     		</tr>
     		<tr>
     			<td><label>密码：</label></td>
-    			<td><input type="text" value="#session.currentUser.password"/></td>
+    			<td><input name="password" id="password" type="text" value="#session.currentUser.password"/></td>
     		</tr>
     		<tr>
     			<td><label>真实姓名：</label></td>
-    			<td><input type="text"/></td>
+    			<td><input name="realName" id="realName" type="text"/></td>
     		</tr>
     		<tr>
     			<td><label>E-mail：</label></td>
-    			<td><input type="text"/></td>
+    			<td><input name="email" id="email" type="text"/></td>
     		</tr>
     		<tr>
     			<td><label>性别：</label></td>
@@ -52,11 +57,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</tr>
     		<tr>
     			<td><label>联系电话：</label></td>
-    			<td><input type="text"/></td>
+    			<td><input name="phone" id="phone" type="text" value="${session.currentUser.phone }"/></td>
     		</tr>
     		<tr>
     			<td><label>爱好：</label></td>
-    			<td><textarea></textarea></td>
+    			<td><textarea name="hobby" id="hobby">${session.currentUser.hobby }</textarea></td>
     		</tr>
     	</table>
     	<button type="submit">提交</button><button type="reset">重置</button>

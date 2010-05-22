@@ -9,34 +9,8 @@ select { margin-right: 2px; }
 a img { border: none; }
 
 /*************************************************HEADER***/
-
-#header {
-	margin: 0 0 20px;
-}
-
-.headerwarp {
-	
-	margin: 0 auto;
-	padding: 0 0px 0 20px;
-	width: 930px;
-	height: 80px;
-	background: url(image/bf_header_bg.png);
-}
-
-.headerwarp .logo {
-	float: left;
-}
-
-.headerwarp .global_nav {
-	position : relative;
-	top : 50 px;
-	float: left;
-}
-
-.headerwarp .nav_account {
-	position : relative;
-	float: right;
-	width : 200 px;
-	white-space: nowrap;
-	padding: 0px 15px 10px 0px;
-}
+#header { margin: 0 0 20px; }
+  .headerwarp { margin: 0 auto; padding: 0 20px 0 20px; width: 930px; height: 80px; background: url(image/bf_header_bg.png);}
+  .headerwarp .logo { float: left; }
+  .headerwarp .global_nav { float: left; }
+  .headerwarp .nav_account { float: right;  white-space:nowrap; padding:10px 0px 10px 20px}

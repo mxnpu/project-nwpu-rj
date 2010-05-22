@@ -11,6 +11,51 @@
 	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+<!--  
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/goodfriend">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="xurunhua"></property>
+	</bean>
+ 
+ 	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+				org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResource">
+			<list>
+				<value>com/goodfriend/model/Placard.hbm.xml</value>
+				<value>com/goodfriend/model/Statement.hbm.xml</value>
+				<value>com/goodfriend/model/Gossip.hbm.xml</value>
+				<value>com/goodfriend/model/Item.hbm.xml</value>
+				<value>com/goodfriend/model/Album.hbm.xml</value>
+				<value>com/goodfriend/model/Blog.hbm.xml</value>
+				<value>com/goodfriend/model/User.hbm.xml</value>
+				<value>com/goodfriend/model/Picture.hbm.xml</value>
+				<value>com/goodfriend/model/Reply.hbm.xml</value>
+				<value>com/goodfriend/model/Friends.hbm.xml</value>
+				<value>com/goodfriend/model/Admin.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+ -->
  
  	<!-- Create the hibernate session factory -->
 	<bean id="sessionFactory"
@@ -37,7 +82,7 @@
 			<tx:method name="get*" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
-	
+	 
 	<!-- The method which participate the transaction -->
 	<aop:config>
 		<aop:pointcut id="userServicePointcut" 
@@ -122,6 +167,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<!-- the end of DAO bean configuration. -->
 	
 	<!-- The Service bean manager -->
 	<bean id="albumService"
@@ -142,11 +188,12 @@
 			<ref bean="userDAO"/>
 		</property>
 	</bean> 
-	<bean id="friendsService"
+	<bean id="friendService"
 			class="com.goodfriend.service.impl.FriendService">
 		<property name="friendDao">
 			<ref bean="friendsDAO"/>
 		</property>
+
 	</bean> 
 	<bean id="adminService"
 			class="com.goodfriend.service.impl.AdminService">
@@ -201,5 +248,81 @@
 		<property name="userDao">
 			<ref bean="userDAO"/>
 		</property>
-	</bean>	
+	</bean>
+	<!--the end of service bean configuration.  -->
+	
+	
+	<!-- The struts action bean manager -->
+	<bean id="loginAction" class="com.goodfriend.action.LoginAction"
+			scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+		<property name="adminService">
+			<ref bean="adminService"/>
+		</property>
+	</bean>
+	<bean id="registerAction" class="com.goodfriend.action.RegisterAction"
+			scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	<bean id="randomNumberAction" class="com.goodfriend.action.RandomNumberAction"
+			scope="prototype">
+	</bean>
+	<bean id="publishBlogAction" class="com.goodfriend.action.PublishBlogAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+
+	<bean id="fileUploadAction" class="com.goodfriend.action.FileUploadAction"
+			scope="prototype">
+	</bean>
+	
+
+	
+	<bean id="showAllBlogsAction" class="com.goodfriend.action.ShowAllBlogsAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<bean id="personalInfoAction" class="com.goodfriend.action.PersonalInfoAction"
+			scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+ 
+	<bean id="showBlogAction" class="com.goodfriend.action.ShowBlogAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+	</bean>
+	
+	<bean id="updateBlogAction" class="com.goodfriend.action.UpdateBlogAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+	</bean>
+	
+	<bean id="friendAction" class="com.goodfriend.action.FriendAction"
+			scope="prototype">
+		<property name="friendService">
+			<ref bean="friendsService"/>
+		</property>
+	</bean>
+
 </beans>

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.goodfriend.model">
-    <class name="Blog" table="blog" catalog="goodfriend">
+    <class name="Blog" table="blog" >
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="increment"></generator>
