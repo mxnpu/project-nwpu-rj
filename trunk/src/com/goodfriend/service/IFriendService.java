@@ -6,12 +6,17 @@ import com.goodfriend.model.Friends;
 import com.goodfriend.model.User;
 
 public interface IFriendService {
-	public void addFriend(Friends friend);
-	public List<User> getFriends(User owner);
-	public void updateFriend(Friends friend);
-	public void deleteFriend(Friends friend);
-	
-	public List<User> getFriendsByPage(User owner, int pageNow, int pageSize);
-	
-	public int getTotalPage(User owner, int pageSize);
+    public void addFriend(Friends friend);
+
+    public List<User> getFriends(User owner);
+
+    public void updateFriend(Friends friend);
+
+    public void deleteFriend(Friends friend);
+
+    public Friends getFriend(Integer id);
+
+    public List<User> getFriendsByPage(User owner, int pageNow, int pageSize);
+
+    public int getTotalPage(User owner, int pageSize);
 }

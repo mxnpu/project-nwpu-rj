@@ -79,7 +79,7 @@
             </tr>
             <tr>
               <th width="100"><label for="email">Email</label></th>
-              <td><input type="text" name="email" id="email" class="t_input" tabindex="8" maxlength="16" onBlur="Validate.email(this, 'validateEmailError')"></td>
+              <td><input type="text" name="email" id="email" class="t_input" tabindex="8" onBlur="Validate.email(this, 'validateEmailError')"></td>
               <td><div class="errorMsg" id="validateEmailError"></div></td>
             </tr>
             <tr>

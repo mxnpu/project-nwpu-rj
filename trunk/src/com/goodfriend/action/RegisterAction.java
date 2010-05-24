@@ -28,7 +28,7 @@ public class RegisterAction {
     private String birthday;
     private String phone;
     private String email;
-    private String hoby;
+    private String hobby;
     private String validateCode;
 
     private InputStream inputStream;
@@ -122,17 +122,17 @@ public class RegisterAction {
 		    user.setEmail("");
 		}
 
-		/* validate the hoby. */
-		if (hoby != null) {
-		    user.setHoby(hoby);
+		/* validate the hobby. */
+		if (hobby != null) {
+		    user.setHoby(hobby);
 		} else {
 		    user.setHoby("");
 		}
 
 		if (gender != null && gender.equals("male")) {
-		    user.setPhoto("pictures\\default\\default_male.png");
+		    user.setPhoto("../pictures/default/default_male.png");
 		} else {
-		    user.setPhoto("pictures\\default\\default_female.png");
+		    user.setPhoto("../pictures/default/default_female.png");
 		}
 
 		userService.addUser(user);
@@ -249,14 +249,6 @@ public class RegisterAction {
 	this.email = email;
     }
 
-    public String getHoby() {
-	return hoby;
-    }
-
-    public void setHoby(String hoby) {
-	this.hoby = hoby;
-    }
-
     public void setValidateCode(String validateCode) {
 	this.validateCode = validateCode;
     }
@@ -279,5 +271,19 @@ public class RegisterAction {
 
     public InputStream getInputStream() {
 	return inputStream;
+    }
+
+    /**
+     * @param hobby the hobby to set
+     */
+    public void setHobby(String hobby) {
+	this.hobby = hobby;
+    }
+
+    /**
+     * @return the hobby
+     */
+    public String getHobby() {
+	return hobby;
     }
 }

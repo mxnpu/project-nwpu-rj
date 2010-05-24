@@ -1,5 +1,6 @@
 package com.goodfriend.service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.goodfriend.model.Statement;
@@ -9,7 +10,8 @@ import com.goodfriend.model.Statement;
  * 
  * @author xurunhua
  * @version 
- * Last modify time : 2010.05.12 
+ * @CreateTime : 2010.05.12 
+ * @LastModifyTime : 2010.05.23 
  */
 public interface IStatementService {
 	public void addStatement(Statement statement, Integer userId);
@@ -17,4 +19,6 @@ public interface IStatementService {
 	public List<Statement> getStatements(Integer userId);
 	public void updateStatement(Statement statement);
 	public void deleteStatement(Statement statement);
+	public Statement getLatestStatement(Integer userId);
+	public List<Statement> getStatementsByDeadline(Integer userId, Timestamp deadline);
 }

@@ -1,21 +1,42 @@
 @charset "utf-8";
 
-* { word-wrap: break-word; word-break: break-all; }
-body, th, td, input, select, textarea, button { font: 12px/1.5em Verdana, "Lucida Grande", Arial, Helvetica, sans-serif; }
-body, h1, h2, h3, h4, h5, h6, p, ul, dl, dt, dd, form, fieldset { margin: 0; padding: 0; }
-h1, h2, h3, h4, h5, h6 { font-size: 1em; }
-ul li { list-style: none; }
-select { margin-right: 2px; }
-a img { border: none; }
+* {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+body,th,td,input,select,textarea,button {
+	font: 12px/ 1.5em Verdana, "Lucida Grande", Arial, Helvetica, sans-serif
+		;
+}
+
+body,h1,h2,h3,h4,h5,h6,p,ul,dl,dt,dd,form,fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 1em;
+}
+
+ul li {
+	list-style: none;
+}
+
+select {
+	margin-right: 2px;
+}
+
+a img {
+	border: none;
+}
 
 /*************************************************HEADER***/
-
 #header {
 	margin: 0 0 20px;
 }
 
 .headerwarp {
-	
 	margin: 0 auto;
 	padding: 0 0px 0 20px;
 	width: 930px;
@@ -28,15 +49,15 @@ a img { border: none; }
 }
 
 .headerwarp .global_nav {
-	position : relative;
-	top : 50 px;
+	position: relative;
+	top: 50 px;
 	float: left;
 }
 
 .headerwarp .nav_account {
-	position : relative;
+	position: relative;
 	float: right;
-	width : 200 px;
+	width: 200 px;
 	white-space: nowrap;
 	padding: 0px 15px 10px 0px;
 }
