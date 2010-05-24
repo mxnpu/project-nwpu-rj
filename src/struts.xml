@@ -7,7 +7,7 @@
 	<constant name="struts.objectFactory" value="spring" />
 
 	<package name="user" namespace="/user" extends="struts-default">
-	
+
 		<!-- 用户登录请求处理Action -->
 		<action name="login" class="loginAction" method="login">
 			<result name="admin" type="redirect">/admin/login_success.jsp</result>
@@ -30,31 +30,43 @@
 		</action>
 		<!-- 文件上传请求的Action -->
 		<action name="fileUpload" class="fileUploadAction" method="upload">
-			<result name="success" type="stream"></result>
+			<param name="uploadDir">/pictures/default</param>
+			<result name="success">index.jsp</result>
 		</action>
 		<!-- 用户头像编辑请求Action -->
-		<action name="editPhoto" class="">
-			<result></result>
+		<action name="editPhoto" class="photoEditAction" method="editPhoto">
+			<result name="edit">photo_edit.jsp</result>
 		</action>
 		<!-- Random验证码 -->
-		<action name="random" class="randomNumberAction"
-					method="execute">
+		<action name="random" class="randomNumberAction" method="execute">
 			<result name="success" type="stream">
 				<param name="contentType">image/jpeg</param>
 				<param name="inputName">inputStream</param>
 			</result>
 		</action>
-		
+		<!-- 异步更新用户状态 -->
+		<action name="changeStmt" class="statementAction" method="updateStatement">
+			<result name="success" type="stream"></result>
+		</action>
+		<!-- 异步获得用户最新的一条状态信息 -->
+		<action name="getNewStmt" class="statementAction" method="getLatestStatement">
+			<result name="success" type="stream"></result>
+		</action>
+		<!-- 异步获得用户好友新鲜事 -->
+		<action name="latestMsg" class="latestMsgAction" method="getLatestMsg">
+			<result name="success" type="stream"></result>
+		</action>
+
 		<!-- 发布blog -->
 		<action name="publishBlog" class="publishBlogAction" method="publish">
 			<result name="success" type="redirect">showAllBlogs</result>
 		</action>
-		
+
 		<!-- 查看某一页的blog -->
 		<action name="showAllBlogs" class="showAllBlogsAction" method="showBlogs">
 			<result name="success" >all_blogs.jsp</result>
 		</action>
-		
+
 		<!-- 查看某一篇自己的blog -->
 		<action name="showBlog" class="showBlogAction" method="showBlog">
 			<result name="success">modify_blog.jsp</result>

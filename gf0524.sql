@@ -1,4 +1,4 @@
-﻿-- MySQL dump 10.11
+-- MySQL dump 10.11
 --
 -- Host: localhost    Database: goodfriend
 -- ------------------------------------------------------
@@ -6,7 +6,6 @@
 
 create database if not exists `goodfriend`;
 USE `goodfriend`;
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -115,13 +114,13 @@ CREATE TABLE `friends` (
   `id_friends` int(10) unsigned NOT NULL auto_increment,
   `friend_id` int(10) unsigned NOT NULL,
   `success` varchar(2) default NULL,
-  `group` varchar(50) default NULL,
+  `group_name` varchar(50) default NULL,
   `user_id` int(10) unsigned NOT NULL,
   PRIMARY KEY  (`id_friends`),
   KEY `FK_friends_user` (`friend_id`),
   KEY `FK_friends_user2` (`user_id`),
-  CONSTRAINT `FK_friends_user2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_friends_user` FOREIGN KEY (`friend_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_friends_user` FOREIGN KEY (`friend_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_friends_user2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -150,9 +149,9 @@ CREATE TABLE `gossip` (
   PRIMARY KEY  (`id_gossip`),
   KEY `FK_gossip_item` (`item_id`),
   KEY `FK_gossip_user` (`from_id`),
-  CONSTRAINT `FK_gossip_user` FOREIGN KEY (`from_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_gossip_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  CONSTRAINT `FK_gossip_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_gossip_user` FOREIGN KEY (`from_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -161,7 +160,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `gossip` WRITE;
 /*!40000 ALTER TABLE `gossip` DISABLE KEYS */;
-INSERT INTO `gossip` VALUES (1,15,2,'这是1条留言测试'),(2,16,2,'这是2条留言测试'),(3,17,2,'这是3条留言测试'),(4,18,2,'这是4条留言测试'),(5,19,2,'这是5条留言测试');
+INSERT INTO `gossip` VALUES (1,15,2,'这是1条留言测试--更新过'),(2,16,2,'这是2条留言测试'),(3,17,2,'这是3条留言测试'),(4,18,2,'这是4条留言测试');
 /*!40000 ALTER TABLE `gossip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,7 +178,7 @@ CREATE TABLE `item` (
   PRIMARY KEY  (`id_item`),
   KEY `FK_item_user` (`user`),
   CONSTRAINT `FK_item_user` FOREIGN KEY (`user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -188,7 +187,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `item` WRITE;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
-INSERT INTO `item` VALUES (1,'2005-10-11 00:00:00',1),(2,'2010-05-05 22:46:19',1),(3,'2010-05-05 22:47:19',1),(4,'2010-05-05 22:47:53',1),(5,'2010-05-15 15:28:10',1),(6,'2010-05-15 15:28:10',1),(7,'2010-05-15 15:28:10',1),(8,'2010-05-15 15:28:10',1),(9,'2010-05-15 15:28:10',1),(10,'2010-05-15 15:30:11',2),(11,'2010-05-15 15:30:11',2),(12,'2010-05-15 15:30:11',2),(13,'2010-05-15 15:30:11',2),(14,'2010-05-15 15:30:11',2),(15,'2010-05-15 17:15:44',1),(16,'2010-05-15 17:15:44',1),(17,'2010-05-15 17:15:45',1),(18,'2010-05-15 17:15:45',1),(19,'2010-05-15 17:15:45',1);
+INSERT INTO `item` VALUES (1,'2005-10-11 00:00:00',1),(2,'2010-05-05 22:46:19',1),(3,'2010-05-05 22:47:19',1),(4,'2010-05-05 22:47:53',1),(5,'2010-05-15 15:28:10',1),(6,'2010-05-15 15:28:10',1),(7,'2010-05-15 15:28:10',1),(8,'2010-05-15 15:28:10',1),(9,'2010-05-15 15:28:10',1),(10,'2010-05-15 15:30:11',2),(11,'2010-05-15 15:30:11',2),(12,'2010-05-15 15:30:11',2),(13,'2010-05-15 15:30:11',2),(14,'2010-05-15 15:30:11',2),(15,'2010-05-15 17:15:44',1),(16,'2010-05-15 17:15:44',1),(17,'2010-05-15 17:15:45',1),(18,'2010-05-15 17:15:45',1),(19,'2010-05-23 23:09:11',1),(20,'2010-05-23 23:09:54',1),(21,'2010-05-23 23:15:57',1),(22,'2010-05-23 23:16:08',1),(23,'2010-05-24 00:17:59',1),(24,'2010-05-24 00:35:29',16),(25,'2010-05-24 00:36:45',16);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,8 +207,8 @@ CREATE TABLE `picture` (
   PRIMARY KEY  (`id`),
   KEY `FK_picture_item` (`item_id`),
   KEY `FK_picture_album` (`album_id`),
-  CONSTRAINT `FK_picture_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_picture_album` FOREIGN KEY (`album_id`) REFERENCES `album` (`id_album`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_picture_album` FOREIGN KEY (`album_id`) REFERENCES `album` (`id_album`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_picture_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -259,13 +258,13 @@ SET character_set_client = utf8;
 CREATE TABLE `reply` (
   `id_reply` int(10) unsigned NOT NULL auto_increment,
   `item_id` int(10) unsigned NOT NULL,
-  `from` int(10) unsigned NOT NULL,
+  `from_id` int(10) unsigned NOT NULL,
   `content` varchar(250) NOT NULL,
   PRIMARY KEY  (`id_reply`),
   KEY `FK_reply_item` (`item_id`),
-  KEY `FK_reply_user` (`from`),
-  CONSTRAINT `FK_reply_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_reply_user` FOREIGN KEY (`from`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_reply_user` (`from_id`),
+  CONSTRAINT `FK_reply_user` FOREIGN KEY (`from_id`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_reply_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -292,7 +291,7 @@ CREATE TABLE `statement` (
   PRIMARY KEY  (`id`),
   KEY `FK_statement_item` (`item_id`),
   CONSTRAINT `FK_statement_item` FOREIGN KEY (`item_id`) REFERENCES `item` (`id_item`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -301,7 +300,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `statement` WRITE;
 /*!40000 ALTER TABLE `statement` DISABLE KEYS */;
-INSERT INTO `statement` VALUES (1,5,'xurunhua第1条状态信息'),(2,6,'xurunhua第2条状态信息'),(3,7,'xurunhua第3条状态信息'),(4,8,'xurunhua第4条状态信息'),(5,9,'xurunhua第5条状态信息'),(6,10,'xiaoxu第0个状态信息'),(7,11,'xiaoxu第1个状态信息'),(8,12,'xiaoxu第2个状态信息'),(9,13,'xiaoxu第3个状态信息'),(10,14,'xiaoxu第4个状态信息');
+INSERT INTO `statement` VALUES (1,5,'xurunhua第1条状态信息'),(2,6,'xurunhua第2条状态信息'),(3,7,'xurunhua第3条状态信息'),(4,8,'xurunhua第4条状态信息'),(5,9,'xurunhua第5条状态信息'),(6,10,'xiaoxu第0个状态信息'),(7,11,'xiaoxu第1个状态信息'),(8,12,'xiaoxu第2个状态信息'),(9,13,'xiaoxu第3个状态信息'),(10,14,'xiaoxu第4个状态信息'),(11,19,'测试一条新状态'),(12,20,'测试第二条新状态'),(13,21,'测试第3条新状态'),(14,22,'测试第4条新状态'),(15,23,'xurunhua更新了一条状态'),(16,24,'测试更新一条状态信息，哈哈'),(17,25,'这是最新的一条信息哦');
 /*!40000 ALTER TABLE `statement` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -325,7 +324,7 @@ CREATE TABLE `user` (
   `photo` varchar(150) default NULL,
   `last_logout_time` datetime default NULL,
   PRIMARY KEY  (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -334,7 +333,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'xurunhua','xurunhua','xurunhua',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'xiaoxu','xiaoxu','xiaoxu',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,'xiaorun','xiaorun','xiaorun',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'xiaohua','xiaohua','xiaohua',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'testSave','testSave','testSave',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(6,'testSaved','testSaved','testSaved',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(7,'dddd','dddd','dddd','M','1990-01-11','dada','dsadsa','dasd','Default psth',NULL),(8,'username2','username2','username2',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(9,'username3','username3','username3',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(10,'username1','username1','username1',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(11,'aaaa','aaaa','aaaa','M','1990-01-11','12312341234','aaaa@aaaa.com','book','Default psth',NULL),(12,'ffffff','fffff','fffffff','M','2010-05-11','','','','Default psth',NULL),(13,'eviloctal','eviloctal','eviloctal','M','2010-05-10','','','','Default psth',NULL);
+INSERT INTO `user` VALUES (1,'xurunhua','xurunhua','xurunhua',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(2,'xiaoxu','xiaoxu','xiaoxu',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(3,'xiaorun','xiaorun','xiaorun',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(4,'xiaohua','xiaohua','xiaohua',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(5,'testSave','testSave','testSave',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(6,'testSaved','testSaved','testSaved',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(7,'dddd','dddd','dddd','M','1990-01-11','dada','dsadsa','dasd','../pictures/default/default_male.png',NULL),(8,'username2','username2','username2',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(9,'username3','username3','username3',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(10,'username1','username1','username1',NULL,NULL,NULL,NULL,NULL,'../pictures/default/default_male.png',NULL),(11,'aaaa','aaaa','aaaa','M','1990-01-11','12312341234','aaaa@aaaa.com','book','../pictures/default/default_male.png',NULL),(12,'ffffff','fffff','fffffff','M','2010-05-11','','','','../pictures/default/default_male.png',NULL),(13,'eviloctal','eviloctal','eviloctal','M','2010-05-10','','','','../pictures/default/default_male.png',NULL),(14,'xiaoyang','xiaoyang','洋','F','2010-05-11','2324432432','yang@yang.com','','../pictures/default/default_female.png',NULL),(15,'yangyang','yangyang','洋洋','F','2010-04-27','13311112222','yang@yang.com','爱好阿和算法回复按回复撒回复','..\\pictures\\default\\default_female.png',NULL),(16,'yuyang','yuyang','洋','F','2010-05-04','158','yuyang@yuyang.com','爱好\r\n爱好\r\n爱好\r\n爱好','../pictures/default/default_female.png',NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -347,4 +346,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-05-15  9:16:56
+-- Dump completed on 2010-05-24 15:13:10

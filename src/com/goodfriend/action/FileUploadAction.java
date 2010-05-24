@@ -10,25 +10,34 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.goodfriend.model.User;
+import com.goodfriend.service.IUserService;
+import com.opensymphony.xwork2.ActionContext;
+
 /**
- * 
+ * Process the request of the file upload.
  * 
  * @author xurunhua
- * @time
+ * @CreateTime 2010.05.18
+ * @LastModifyTime 2010.05.20
  */
 public class FileUploadAction {
     /* the file to upload */
-    private File file;
+    private File photo;
     /* the name of the file to upload */
-    private String fileName;
+    private String photoFileName;
     /* the MIME type of the file to upload */
-    private String fileContentType;
+    private String photoContentType;
 
     /* the path of the file in the server system. */
     private String uploadDir;
+    
+    private IUserService userService;
+    private Map<String, Object> session;
 
     /**
      * The method to process the file upload action.
@@ -50,10 +59,10 @@ public class FileUploadAction {
 	    dir.mkdir();
 	}
 
-	int index = fileName.lastIndexOf('.');
+	int index = photoFileName.lastIndexOf('.');
 	/* judge the file has the extentance name. */
 	if (index != -1) {
-	    newFileName = now + fileName.substring(index);
+	    newFileName = now + photoFileName.substring(index);
 	} else {
 	    newFileName = Long.toString(now);
 	}
@@ -62,7 +71,7 @@ public class FileUploadAction {
 	BufferedInputStream bis = null;
 
 	try {
-	    FileInputStream fis = new FileInputStream(file);
+	    FileInputStream fis = new FileInputStream(photo);
 	    bis = new BufferedInputStream(fis);
 	    FileOutputStream fos = new FileOutputStream(new File(dir,
 		    newFileName));
@@ -91,53 +100,18 @@ public class FileUploadAction {
 		e.printStackTrace();
 	    }
 	}
+	
+	// Update the current user's photo address
+	session = ActionContext.getContext().getSession();
+	User currentUser = (User) session.get("currentUser");
+	String photo = ".." + uploadDir + "/" + newFileName;
+	User user = userService.getUser(currentUser.getUserName());
+	user.setPhoto(photo);
+	userService.updateUser(user);
+	session.put("currentUser", user);
+	
 
 	return "success";
-    }
-
-    /**
-     * @param file
-     *            the file to set
-     */
-    public void setFile(File file) {
-	this.file = file;
-    }
-
-    /**
-     * @return the file
-     */
-    public File getFile() {
-	return file;
-    }
-
-    /**
-     * @param fileName
-     *            the fileName to set
-     */
-    public void setFileName(String fileName) {
-	this.fileName = fileName;
-    }
-
-    /**
-     * @return the fileName
-     */
-    public String getFileName() {
-	return fileName;
-    }
-
-    /**
-     * @param fileContentType
-     *            the fileContentType to set
-     */
-    public void setFileContentType(String fileContentType) {
-	this.fileContentType = fileContentType;
-    }
-
-    /**
-     * @return the fileContentType
-     */
-    public String getFileContentType() {
-	return fileContentType;
     }
 
     /**
@@ -153,6 +127,62 @@ public class FileUploadAction {
      */
     public String getUploadDir() {
 	return uploadDir;
+    }
+
+    /**
+     * @param photo the photo to set
+     */
+    public void setPhoto(File photo) {
+	this.photo = photo;
+    }
+
+    /**
+     * @return the photo
+     */
+    public File getPhoto() {
+	return photo;
+    }
+
+    /**
+     * @param photoFileName the photoFileName to set
+     */
+    public void setPhotoFileName(String photoFileName) {
+	this.photoFileName = photoFileName;
+    }
+
+    /**
+     * @return the photoFileName
+     */
+    public String getPhotoFileName() {
+	return photoFileName;
+    }
+
+    /**
+     * @param photoContentType the photoContentType to set
+     */
+    public void setPhotoContentType(String photoContentType) {
+	this.photoContentType = photoContentType;
+    }
+
+    /**
+     * @return the photoContentType
+     */
+    public String getPhotoContentType() {
+	return photoContentType;
+    }
+
+    /**
+     * @param userService the userService to set
+     */
+    public void setUserService(IUserService userService) {
+	this.userService = userService;
+    }
+
+    /**
+     * @return the userService
+     */
+    public IUserService getUserService() {
+	return userService;
     }
 
 }

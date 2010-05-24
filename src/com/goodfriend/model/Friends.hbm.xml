@@ -8,10 +8,10 @@
             <column name="id_friends" />
             <generator class="increment" />
         </id>
-        <many-to-one name="userFriend" class="User" lazy="false" fetch="select" cascade="all">
+        <many-to-one name="userFriend" class="User" lazy="false" fetch="select" cascade="save-update">
             <column name="friend_id" not-null="true" />
         </many-to-one>
-        <many-to-one name="user" class="User" lazy="false" fetch="select" cascade="all">
+        <many-to-one name="user" class="User" lazy="false" fetch="select" cascade="save-update">
             <column name="user_id" not-null="true" />
         </many-to-one>
         <property name="success" type="java.lang.String">
