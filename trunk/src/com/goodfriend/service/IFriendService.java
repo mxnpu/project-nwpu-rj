@@ -19,4 +19,12 @@ public interface IFriendService {
     public List<User> getFriendsByPage(User owner, int pageNow, int pageSize);
 
     public int getTotalPage(User owner, int pageSize);
+	
+	public List<User> searchFriendsByPage(User owner, String userName, int pageNow, int pageSize);
+	
+	public int getSearchedTotalPage(User owner, String userName, int pageSize);
+	
+	public void deleteFriend(User user, int friendID);
+	
+	public void addFriend(User user, int friendID);
 }

@@ -193,7 +193,9 @@
 		<property name="friendDao">
 			<ref bean="friendsDAO"/>
 		</property>
-
+		<property name="userDao">
+			<ref bean="userDAO"/>
+		</property>
 	</bean> 
 	<bean id="adminService"
 			class="com.goodfriend.service.impl.AdminService">
@@ -321,8 +323,9 @@
 	<bean id="friendAction" class="com.goodfriend.action.FriendAction"
 			scope="prototype">
 		<property name="friendService">
-			<ref bean="friendsService"/>
+			<ref bean="friendService"/>
 		</property>
 	</bean>
+	
 
 </beans>

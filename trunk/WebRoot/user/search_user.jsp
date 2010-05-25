@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     
-    <title>我的好友</title>
+    <title>搜索用户</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -36,16 +36,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	</div>
    </form>
    <div id="main" align="center">
-   		<s:iterator value="friends" var="user">
+   		<s:iterator value="users" var="user">
    			<img src="<s:property value="#user.photo" />"></img>
    			<a href=""><s:property value="#user.userName" /></a>
-   			<a href="deleteFriend?friendId=<s:property value="#user.idUser" />">删除好友</a>
+   			<a href="addFriend?friendId=<s:property value="#user.idUser" />">添加好友</a>
    			<br>
    		</s:iterator>
    		
    		<div>	
 			<s:iterator var="i" begin="1" end="%{totalPage}" step="1">
-				<a href="<s:url action="getFriendsByPage"><s:param name="userName" value="%{userName }"></s:param><s:param name="totalPage" value="%{totalPage }"></s:param><s:param name="pageAction" value="%{pageAction }"></s:param><s:param name="pageNow" value="#i"></s:param></s:url>"><s:property value="#i"/></a>
+				<a href="<s:url action="searchUser"><s:param name="userName" value="%{userName }"></s:param><s:param name="totalPage" value="%{totalPage }"></s:param><s:param name="pageAction" value="%{pageAction }"></s:param><s:param name="pageNow" value="#i"></s:param></s:url>"><s:property value="#i"/></a>
 			</s:iterator>
 			
 		</div>

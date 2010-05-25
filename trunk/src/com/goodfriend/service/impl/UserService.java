@@ -1,5 +1,6 @@
 package com.goodfriend.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.goodfriend.dao.IUserDAO;
@@ -65,4 +66,43 @@ public class UserService implements IUserService {
 		return false;
 	}
 
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		return userDao.findAll();
+	}
+
+	public List<User> searchUser(String userName){
+		List<User> allUsers = userDao.findAll();
+		List<User> result = new ArrayList<User>();
+		
+		for(int i = 0; i < allUsers.size(); i++){
+			if (allUsers.get(i).getUserName().contains(userName)){
+				result.add(allUsers.get(i));
+			}
+		}
+		
+		return result;
+	}
+
+	public int getTotalPage(String userName, int pageSize) {
+	
+		List<User> users = searchUser(userName);
+		return (int)Math.ceil(users.size() / (double)pageSize);
+	}
+
+	public List<User> searchUserByPage(String userName, int pageNow,
+			int pageSize) {
+		// TODO Auto-generated method stub
+		List<User> users = searchUser(userName);
+		if (pageNow * pageSize - pageSize > users.size()){
+			return users;
+		}else if (pageNow * pageSize > users.size()){
+			return users.subList(pageNow * pageSize - pageSize, users.size());
+		}else{
+			return users.subList(pageNow * pageSize - pageSize, pageNow * pageSize);
+		}
+		
+	}
+	
+	
 }
