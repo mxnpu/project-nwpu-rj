@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		</s:if>
   		<s:else>
   			<input id="userName" name="userName" type="text" /><br>
-  			<input type="radio" name="scope" id="scope" value="fromFriends" checked="checked"/>好友  <input type="radio" name="scope" id="scope" value="fromAll"/>全部 <button type="submit">搜索</button>
+  			<input type="radio" name="scope" id="scope" value="fromFriends" />好友  <input type="radio" name="scope" id="scope" value="fromAll" checked="checked"/>全部 <button type="submit">搜索</button>
   		</s:else>
   	</div>
    </form>
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		
    		<div>	
 			<s:iterator var="i" begin="1" end="%{totalPage}" step="1">
-				<a href="<s:url action="searchUser"><s:param name="userName" value="%{userName }"></s:param><s:param name="totalPage" value="%{totalPage }"></s:param><s:param name="pageAction" value="%{pageAction }"></s:param><s:param name="pageNow" value="#i"></s:param></s:url>"><s:property value="#i"/></a>
+				<a href="<s:url action="searchUser"><s:param name="userName" value="%{userName }"></s:param><s:param name="totalPage" value="%{totalPage }"></s:param><s:param name="pageNow" value="#i"></s:param></s:url>"><s:property value="#i"/></a>
 			</s:iterator>
 			
 		</div>
