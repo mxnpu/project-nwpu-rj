@@ -164,11 +164,17 @@
 			<ref bean="userDAO" />
 		</property>
 	</bean>
-	<bean id="friendsService" class="com.goodfriend.service.impl.FriendService">
+	<bean id="friendService" class="com.goodfriend.service.impl.FriendService">
+
 		<property name="friendDao">
 			<ref bean="friendsDAO" />
 		</property>
-	</bean>
+
+		<property name="userDao">
+			<ref bean="userDAO"/>
+		</property>
+	</bean> 
+
 	<bean id="adminService" class="com.goodfriend.service.impl.AdminService">
 		<property name="adminDao">
 			<ref bean="adminDAO" />
@@ -219,7 +225,7 @@
 	</bean>
 	<bean id="latestMsgService" class="com.goodfriend.service.impl.LatestMsgService">
 		<property name="friendService">
-			<ref bean="friendsService"/>
+			<ref bean="friendService"/>
 		</property>
 		<property name="statementService">
 			<ref bean="statementService"/>
@@ -262,8 +268,19 @@
 	<bean id="photoEditAction" class="com.goodfriend.action.PhotoEditAction"
 		scope="prototype">
 	</bean>
+
+	
+
+	
+	<bean id="showAllBlogsAction" class="com.goodfriend.action.ShowAllBlogsAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+    </bean>
 	<bean id="fileUploadAction" class="com.goodfriend.action.FileUploadAction"
 		scope="prototype">
+
 		<property name="userService">
 			<ref bean="userService" />
 		</property>
@@ -274,11 +291,39 @@
 			<ref bean="statementService" />
 		</property>
 	</bean>
+
+ 
+	<bean id="showBlogAction" class="com.goodfriend.action.ShowBlogAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+	</bean>
+	
+	<bean id="updateBlogAction" class="com.goodfriend.action.UpdateBlogAction"
+			scope="prototype">
+		<property name="blogService">
+			<ref bean="blogService"/>
+		</property>
+	</bean>
+	
+	<bean id="friendAction" class="com.goodfriend.action.FriendAction"
+			scope="prototype">
+		<property name="friendService">
+			<ref bean="friendService"/>
+		</property>
+	</bean>
+	
 	<bean id="latestMsgAction" class="com.goodfriend.action.LatestMessageAction"
 		scope="prototype">
 		
 	</bean>
-
+	<bean id="userAction" class="com.goodfriend.action.UserAction"
+		scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
 
 	<!--
 		<bean id="showAllBlogsAction"
@@ -291,4 +336,5 @@
 		</bean>
 	-->
 	<import resource="applicationContext-admin.xml" />
+
 </beans>

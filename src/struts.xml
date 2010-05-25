@@ -84,6 +84,28 @@
 		<action name="showFriends" class="friendAction" method="showFriends">
 			<result name="success">friend.jsp</result>
 		</action>
+		
+		<action name="searchFriends" class="friendAction" method="searchFriends">
+			<result name="success">friend.jsp</result>
+			<result name="searchUser">
+			searchUser?userName=${userName}</result>
+		</action>
+		
+		<action name="deleteFriend" class="friendAction" method="deleteFriend">
+			<result name="success">showFriends</result>
+		</action>
+		
+		<action name="addFriend" class="friendAction" method="addFriend">
+			<result name="success">showFriends</result>
+		</action>
+		
+		<action name="getFriendsByPage" class="friendAction" method="getFriendsByPage">
+			<result name="success">friend.jsp</result>
+		</action>
+		
+		<action name="searchUser" class="userAction" method="searchUser">
+			<result name="success">search_user.jsp</result>
+		</action>
 	</package>
 
 	<include file="struts_admin.xml" />
