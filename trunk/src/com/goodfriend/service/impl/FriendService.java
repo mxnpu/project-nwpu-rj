@@ -39,10 +39,13 @@ public class FriendService implements IFriendService {
 		User userFriend = userDao.findById(friendID);
 		Friends friend = new Friends();
 		friend.setGroup("");
-		friend.setSuccess("N");
+		//暂时不需要对方同意
+		friend.setSuccess("Y");
+		
 		friend.setUserFriend(userFriend);
 		friend.setUser(user);
-		addFriend(friend);
+
+		friendDao.merge(friend);
 	}
 	
 	//删除user和friend之间的好友关系
@@ -98,7 +101,7 @@ public class FriendService implements IFriendService {
 		User tempUser;
 		
 		while(friendsIt1.hasNext()){
-			System.out.println("friendsIt1");
+
 			tempFriend = friendsIt1.next();
 //			System.out.println(tempFriend.get);
 			//双方已经同意建立好友关系

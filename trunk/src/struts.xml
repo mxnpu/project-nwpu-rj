@@ -87,16 +87,16 @@
 		
 		<action name="searchFriends" class="friendAction" method="searchFriends">
 			<result name="success">friend.jsp</result>
-			<result name="searchUser">
-			searchUser?userName=${userName}</result>
+			<result name="searchUser" type="redirect">
+			searchUser?userName=%{userName}</result>
 		</action>
 		
 		<action name="deleteFriend" class="friendAction" method="deleteFriend">
-			<result name="success">showFriends</result>
+			<result name="success" type="redirectAction">showFriends</result>
 		</action>
 		
 		<action name="addFriend" class="friendAction" method="addFriend">
-			<result name="success">showFriends</result>
+			<result name="success" type="redirectAction">showFriends</result>
 		</action>
 		
 		<action name="getFriendsByPage" class="friendAction" method="getFriendsByPage">

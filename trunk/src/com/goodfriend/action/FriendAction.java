@@ -42,6 +42,7 @@ public class FriendAction implements ServletRequestAware {
 		User user = (User) ActionContext.getContext().getSession().get(
 		"currentUser");
 		int friendID = Integer.parseInt(request.getParameter("friendId"));
+
 		friendService.addFriend(user, friendID);
 		
 		return "success";
@@ -80,7 +81,8 @@ public class FriendAction implements ServletRequestAware {
 			totalPage = friendService.getSearchedTotalPage(user, userName,
 					pageSize);
 		}else if (scope.equals("fromAll")){
-			return "redirect";
+			System.out.println(userName);
+			return "searchUser";
 		}
 
 		pageAction = "searchFriends";
