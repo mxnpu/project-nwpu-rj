@@ -256,28 +256,20 @@
 	<bean id="randomNumberAction" class="com.goodfriend.action.RandomNumberAction"
 		scope="prototype">
 	</bean>
-	<bean id="publishBlogAction" class="com.goodfriend.action.PublishBlogAction"
-		scope="prototype">
-		<property name="blogService">
-			<ref bean="blogService" />
-		</property>
-		<property name="userService">
-			<ref bean="userService" />
-		</property>
-	</bean>
+	
 	<bean id="photoEditAction" class="com.goodfriend.action.PhotoEditAction"
 		scope="prototype">
 	</bean>
 
 	
-
-	
-	<bean id="showAllBlogsAction" class="com.goodfriend.action.ShowAllBlogsAction"
+	<bean id="blogAction" class="com.goodfriend.action.BlogAction"
 			scope="prototype">
 		<property name="blogService">
 			<ref bean="blogService"/>
 		</property>
     </bean>
+	
+	
 	<bean id="fileUploadAction" class="com.goodfriend.action.FileUploadAction"
 		scope="prototype">
 
@@ -289,21 +281,6 @@
 		scope="prototype">
 		<property name="statementService">
 			<ref bean="statementService" />
-		</property>
-	</bean>
-
- 
-	<bean id="showBlogAction" class="com.goodfriend.action.ShowBlogAction"
-			scope="prototype">
-		<property name="blogService">
-			<ref bean="blogService"/>
-		</property>
-	</bean>
-	
-	<bean id="updateBlogAction" class="com.goodfriend.action.UpdateBlogAction"
-			scope="prototype">
-		<property name="blogService">
-			<ref bean="blogService"/>
 		</property>
 	</bean>
 	

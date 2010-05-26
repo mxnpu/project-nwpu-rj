@@ -58,21 +58,21 @@
 		</action>
 
 		<!-- 发布blog -->
-		<action name="publishBlog" class="publishBlogAction" method="publish">
+		<action name="publishBlog" class="blogAction" method="publish">
 			<result name="success" type="redirect">showAllBlogs</result>
 		</action>
 
 		<!-- 查看某一页的blog -->
-		<action name="showAllBlogs" class="showAllBlogsAction" method="showBlogs">
+		<action name="showAllBlogs" class="blogAction" method="showBlogs">
 			<result name="success" >all_blogs.jsp</result>
 		</action>
 
 		<!-- 查看某一篇自己的blog -->
-		<action name="showBlog" class="showBlogAction" method="showBlog">
+		<action name="showBlog" class="blogAction" method="showBlog">
 			<result name="success">modify_blog.jsp</result>
 		</action>
-		<!--  -->
-		<action name="updateBlog" class="updateBlogAction" method="updateBlog">
+		
+		<action name="updateBlog" class="blogAction" method="updateBlog">
 			<result name="success" type="redirect">showAllBlogs</result>
 		</action>
 		
