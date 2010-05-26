@@ -1,7 +1,9 @@
 package com.goodfriend.service;
 
 import java.sql.Timestamp;
-import java.util.Map;
+import java.util.List;
+
+import com.goodfriend.model.Message;
 
 /**
  * The service module interface 
@@ -12,5 +14,5 @@ import java.util.Map;
  * @LastModifiedtime 2010.05.24
  */
 public interface ILatestMsgService {
-    public Map<String, Object> getLastestMsg(Integer userId, Timestamp deadline);
+    public List<Message> getLastestMsg(Integer userId, Timestamp deadline);
 }
