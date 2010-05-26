@@ -46,7 +46,7 @@
    </key>
    <one-to-many class="Item"/>
   </set>
-  <set cascade="all" inverse="true" lazy="false" name="friends" sort="unsorted">
+  <set inverse="true" lazy="false" name="friends" sort="unsorted">
    <key>
     <column name="friend_id" not-null="true"/>
    </key>
@@ -58,7 +58,7 @@
    </key>
    <one-to-many class="Reply"/>
   </set>
-  <set cascade="all" inverse="true" lazy="false" name="friendsForOther" sort="unsorted">
+  <set inverse="true" lazy="false" name="friendsForOther" sort="unsorted">
    <key>
     <column name="user_id" not-null="true"/>
    </key>

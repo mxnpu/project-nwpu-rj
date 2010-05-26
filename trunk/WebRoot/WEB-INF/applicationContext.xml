@@ -189,6 +189,9 @@
 		<property name="blogDao">
 			<ref bean="blogDAO" />
 		</property>
+		<property name="userDao">
+			<ref bean="userDAO"/>
+		</property>
 	</bean>
 	<bean id="gossipService" class="com.goodfriend.service.impl.GossipService">
 		<property name="gossipDao">
@@ -232,6 +235,9 @@
 		</property>
 		<property name="blogService">
 			<ref bean="blogService"/>
+		</property>
+		<property name="userService">
+			<ref bean="userService"/>
 		</property>
 	</bean>
 	<!--the end of service bean configuration.  -->
@@ -293,12 +299,8 @@
 	
 	<bean id="latestMsgAction" class="com.goodfriend.action.LatestMessageAction"
 		scope="prototype">
-		
-	</bean>
-	<bean id="userAction" class="com.goodfriend.action.UserAction"
-		scope="prototype">
-		<property name="userService">
-			<ref bean="userService"/>
+		<property name="latestMsgService">
+			<ref bean="latestMsgService"/>
 		</property>
 	</bean>
 

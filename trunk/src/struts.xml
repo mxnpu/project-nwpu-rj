@@ -52,9 +52,9 @@
 		<action name="getNewStmt" class="statementAction" method="getLatestStatement">
 			<result name="success" type="stream"></result>
 		</action>
-		<!-- 异步获得用户好友新鲜事 -->
+		<!-- 获得用户好友新鲜事 -->
 		<action name="latestMsg" class="latestMsgAction" method="getLatestMsg">
-			<result name="success" type="stream"></result>
+			<result name="success" type="dispatcher">index.jsp</result>
 		</action>
 
 		<!-- 发布blog -->
@@ -89,6 +89,7 @@
 			<result name="success">friend.jsp</result>
 			<result name="searchUser" type="redirect">
 			searchUser?userName=%{userName}</result>
+
 		</action>
 		
 		<action name="deleteFriend" class="friendAction" method="deleteFriend">
@@ -101,10 +102,6 @@
 		
 		<action name="getFriendsByPage" class="friendAction" method="getFriendsByPage">
 			<result name="success">friend.jsp</result>
-		</action>
-		
-		<action name="searchUser" class="userAction" method="searchUser">
-			<result name="success">search_user.jsp</result>
 		</action>
 	</package>
 
