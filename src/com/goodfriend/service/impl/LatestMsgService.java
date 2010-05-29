@@ -7,11 +7,13 @@ import java.util.List;
 
 import com.goodfriend.model.Blog;
 import com.goodfriend.model.Message;
+import com.goodfriend.model.Reply;
 import com.goodfriend.model.Statement;
 import com.goodfriend.model.User;
 import com.goodfriend.service.IBlogService;
 import com.goodfriend.service.IFriendService;
 import com.goodfriend.service.ILatestMsgService;
+import com.goodfriend.service.IReplyService;
 import com.goodfriend.service.IStatementService;
 import com.goodfriend.service.IUserService;
 
@@ -28,6 +30,7 @@ public class LatestMsgService implements ILatestMsgService {
     IStatementService statementService;
     IBlogService blogService;
     IUserService userService;
+    IReplyService replyService;
     
     /**
      * Get the latest message of the current user's friends.
@@ -65,7 +68,12 @@ public class LatestMsgService implements ILatestMsgService {
 	    msg.setTitle("");
 	    msg.setContent(stmt.getContent());
 	    msg.setOwner(stmt.getItem().getUser());
+	    msg.setItem(stmt.getItem());
 	    msg.setRecordTime(stmt.getItem().getRecordTime());
+	    
+	    // Get the message's reply list
+	    List<Reply> replies = replyService.getReplies(stmt.getItem().getIdItem());
+	    msg.setReplies(replies);
 	    
 	    latestMsg.add(msg);
 	}
@@ -76,7 +84,12 @@ public class LatestMsgService implements ILatestMsgService {
 	    msg.setTitle(blog.getTitle());
 	    msg.setContent(blog.getContent());
 	    msg.setOwner(blog.getItem().getUser());
+	    msg.setItem(blog.getItem());
 	    msg.setRecordTime(blog.getItem().getRecordTime());
+	    
+	    // Get the message's reply list
+	    List<Reply> replies = replyService.getReplies(blog.getItem().getIdItem());
+	    msg.setReplies(replies);
 	    
 	    latestMsg.add(msg);
 	}
@@ -143,4 +156,19 @@ public class LatestMsgService implements ILatestMsgService {
         this.userService = userService;
     }
 
+    /**
+     * @return the replyService
+     */
+    public IReplyService getReplyService() {
+        return replyService;
+    }
+
+    /**
+     * @param replyService the replyService to set
+     */
+    public void setReplyService(IReplyService replyService) {
+        this.replyService = replyService;
+    }
+    
+    
 }

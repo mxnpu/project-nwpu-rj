@@ -52,7 +52,7 @@
    </key>
    <one-to-many class="Friends"/>
   </set>
-  <set cascade="all" inverse="true" name="replies" sort="unsorted">
+  <set inverse="true" name="replies" sort="unsorted">
    <key>
     <column name="from_id" not-null="true"/>
    </key>

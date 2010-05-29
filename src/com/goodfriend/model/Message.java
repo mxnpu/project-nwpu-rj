@@ -4,13 +4,14 @@
 package com.goodfriend.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * The message model for the latest message service module.
  * 
  * @author xurunhua
  * @CreateTime 2010.05.26
- * @LastModifiedtime 2010.05.26
+ * @LastModifiedtime 2010.05.28
  */
 public class Message implements Comparable<Message> {
 
@@ -19,6 +20,8 @@ public class Message implements Comparable<Message> {
     private String content;
     private User owner;
     private Timestamp recordTime;
+    private Item item;
+    private List<Reply> replies;
 
     /**
      * @return the type
@@ -112,6 +115,42 @@ public class Message implements Comparable<Message> {
 	} else {
 	    return 0;
 	}
+    }
+
+    /**
+     * @param item the item to set
+     */
+    public void setItem(Item item) {
+	this.item = item;
+    }
+
+    /**
+     * @return the item
+     */
+    public Item getItem() {
+	return item;
+    }
+
+    /**
+     * @return the time
+     */
+    @SuppressWarnings("deprecation")
+    public String getTime() {
+	return this.getRecordTime().toLocaleString();
+    }
+
+    /**
+     * @param replies the replies to set
+     */
+    public void setReplies(List<Reply> replies) {
+	this.replies = replies;
+    }
+
+    /**
+     * @return the replies
+     */
+    public List<Reply> getReplies() {
+	return replies;
     }
 
 }

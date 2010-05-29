@@ -5,14 +5,12 @@
 		    + request.getServerName() + ":" + request.getServerPort()
 		    + request.getContextPath();
 %>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="<%=basePath%>/style/headStyle.css" />
 		<link rel="stylesheet" href="<%=basePath%>/style/navStyle.css" type="text/css"
 			media="screen" />
-		<script type='text/javascript' src='<%=basePath%>/js/jquery-1.2.6.min.js'></script>
+		<script type='text/javascript' src='<%=basePath%>/js/jquery-1.3.2.min.js'></script>
 		<script type='text/javascript' src='<%=basePath%>/js/kwicks.js'></script>
 		<script type='text/javascript' src='<%=basePath%>/js/custom.js'></script>
 	</head>
@@ -37,7 +35,7 @@
 				<div class="global_nav">
 					<ul class="kwicks">
 						<li id="kwick1">
-							<a href="<%=basePath%>/user/index.jsp">首页</a>
+							<a href="<%=basePath%>/user/index.action">首页</a>
 						</li>
 						<li id="kwick2">
 							<a href="#">个人主页</a>

@@ -33,5 +33,7 @@ public interface IBlogService {
 	
 	public void updateBlog(int id, String title, String content);
 	
+	public List<Blog> getBlogsByUser(Integer userId);
+	
 	public List<Blog> getBlogsByDeadline(Integer userId, Timestamp deadline);
 }

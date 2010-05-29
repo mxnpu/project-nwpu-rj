@@ -9,7 +9,7 @@ public class RandomNumberAction {
 	private static final long serialVersionUID = 1L;
 	private ByteArrayInputStream inputStream;
 
-	public String execute() throws Exception {
+	public String random() throws Exception {
 		RandomNumberUtil randomNumUtil = RandomNumberUtil.getInstance();
 		this.setInputStream(randomNumUtil.getImage());// 取得带有随机字符串的图片
 		ActionContext.getContext().getSession().put("random", randomNumUtil.getString());// 取得随机字符串放入HttpSession

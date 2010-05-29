@@ -51,7 +51,7 @@ public class ReplyServiceTest {
 
 	@Test
 	public void testDeleteReply() {
-		Reply reply = replyService.getReply(8);
+		Reply reply = replyService.getReply(18);
 		replyService.deleteReply(reply);
 	}
 

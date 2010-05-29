@@ -54,10 +54,13 @@ public class ReplyService implements IReplyService {
 	 */
 	public void deleteReply(Reply reply) {
 		reply = getReply(reply.getIdReply());
-		Set<Reply> replys = reply.getItem().getReplies();
-		replys.remove(reply);
+//		Integer itemId = reply.getItem().getIdItem();
 		reply.setItem(null);
-
+		reply.setUser(null);
+//		Item item = itemDao.findById(itemId);
+//		Set<Reply> replys = item.getReplies();
+//		replys.remove(reply);
+		
 		replyDao.delete(reply);
 	}
 

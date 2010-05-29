@@ -1,0 +1,23 @@
+.content {
+	width: 500px;
+	height: 100px;
+	overflow: hidden;
+}
+
+textarea .reply {
+	overflow-y: auto;
+	height: 52px;
+	color: rgb(136, 136, 136);
+}
+
+div .replyDiv {
+	display: none;
+}
+
+div .replyList {
+	display: none;
+}
+
+div .replySelf {
+	display: none;
+}

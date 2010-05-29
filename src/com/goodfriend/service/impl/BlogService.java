@@ -62,6 +62,27 @@ public class BlogService implements IBlogService {
 	blog.setContent(content);
 	blogDao.attachDirty(blog);
     }
+    
+    /**
+     * Get one user's all blogs.
+     * 
+     * @param userId the blogs own to.
+     * @return the list of the one user's blog which are wanted.
+     */
+    public List<Blog> getBlogsByUser(Integer userId) {
+	List<Blog> blogs = new ArrayList<Blog>();
+	
+	List<Blog> allBlogs = getAllBlogs();
+	for (Blog temp : allBlogs) {
+	    Integer id = temp.getItem().getUser().getIdUser();
+	    
+	    if (id.equals(userId)) {
+		blogs.add(temp);
+	    }
+	}
+	
+	return blogs;
+    }
 
     /**
      * Get the blogs of the user by the deadline
@@ -74,7 +95,7 @@ public class BlogService implements IBlogService {
     public List<Blog> getBlogsByDeadline(Integer userId, Timestamp deadline) {
 	List<Blog> blogs = new ArrayList<Blog>();
 
-	List<Blog> allBlogs = getAllBlogs();
+	List<Blog> allBlogs = getBlogsByUser(userId);
 	long deadlineTime = deadline.getTime();
 
 	if (allBlogs != null && allBlogs.size() > 0) {
