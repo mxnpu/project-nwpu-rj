@@ -28,6 +28,20 @@
 
     	<button type="submit">发布</button>
      	</form>
+     	<br>
+     	<div id="replies">
+     		<form action="addBlogReply?id=<s:property value="blog.id" />" method="post">
+     		<textarea id="replyContent" name="replyContent" rows="5" cols="100"></textarea><br>
+     		<button type="submit">回复</button><br>
+     		</form>
+     		<label>所有回复：</label>
+     		<s:iterator value="replyList" var="reply">
+     			<div id="reply">
+     				<a href=""><s:property value="#reply.user.userName" /></a>:
+     				<s:property value="#reply.content" /><br>
+     			</div>
+     		</s:iterator>
+     	</div>
     </div>
    <div id="footer">
    </div>

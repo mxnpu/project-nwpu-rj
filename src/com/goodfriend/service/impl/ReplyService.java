@@ -45,6 +45,10 @@ public class ReplyService implements IReplyService {
 
 		replyDao.save(reply);
 	}
+	
+	public void addReply(Reply reply){
+		
+	}
 
 	/**
 	 * Delete a reply.

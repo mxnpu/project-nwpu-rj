@@ -1,0 +1,82 @@
+.content_tab_header {
+	height: 30px;
+	clear: both;
+	overflow: hidden;
+	padding: 10px 10px 0px 10px;
+}
+
+.content_tab_header ul.content_tab li a,.content_tab_header ul.content_tab li a span
+	{
+	background: url(image/tab_bg.png) no-repeat;
+	display: block;
+	color: #000;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.content_tab_header ul.content_tab {
+	position: absolute;
+	z-index: 10;
+}
+
+.content_tab_header ul.content_tab li {
+	float: left;
+	margin: 0 2px 0 0px;
+	display: inline;
+}
+
+.content_tab_header ul.content_tab li a {
+	float: left;
+	padding: 0 0 0 10px;
+	height: 30px;
+}
+
+.content_tab_header ul.content_tab li a span {
+	padding: 9px 10px 7px 0;
+	font-size: 14px;
+	line-height: 14px;
+}
+
+.content_tab_header ul.content_tab li.content_tab_active a {
+	float: left;
+	padding: 0 0 0 10px;
+	height: 30px;
+	background: url(image/tab_bg_active.png) no-repeat;
+	color: #000;
+	display: block;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.content_tab_header ul.content_tab li.content_tab_active a span {
+	padding: 9px 10px 7px 0;
+	background: url(image/tab_bg_active.png) no-repeat;
+	line-height: 14px;
+	display: block;
+	color: #54A7E3;
+	border-radius: 5px 5px 0px 0px;
+}
+
+#mainPanel {
+	margin: 0 auto;
+	width: 970px;
+}
+
+#content_bg {
+	float: right;
+	clear: right;
+	width: 700px;
+	padding-bottom: 10;
+	background-image: url(image/content_border.png)
+}
+
+#content_bg #load {
+	margin: 0px 0px 0px 610px;
+	background-image: url(image/content_border.png);
+}
+
+#content_bg #load a {
+	color: 54a7e3;
+}
+
+#footer{
+	
+}

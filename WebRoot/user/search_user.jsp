@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		<s:iterator value="users" var="user">
    			<img src="<s:property value="#user.photo" />"></img>
    			<a href=""><s:property value="#user.userName" /></a>
-   			<a href="addFriend?friendId=<s:property value="#user.idUser" />">添加好友</a>
+   			<a href="addFriendToRequestList?friendId=<s:property value="#user.idUser" />">添加好友</a>
    			<br>
    		</s:iterator>
    		
@@ -50,6 +50,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 		</div>
    </div>
+   
+   <div id="request" align="right">
+   		<label>好友请求：</label><br>
+   		<s:iterator value="requestList" var="user">
+   			<a href="" /><s:property value="#user.userName"/></a>请求加你为好友。 <a href="addFriend?friendId=<s:property value="#user.idUser" />">同意</a> <a href="refuseFriend?friendId=<s:property value="#user.idUser" />">拒绝</a><br>
+   		</s:iterator>
+   </div>
+   
   </body>
    <jsp:include page="footer.jsp"></jsp:include>
 </html>

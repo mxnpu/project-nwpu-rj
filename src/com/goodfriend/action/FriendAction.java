@@ -31,20 +31,49 @@ public class FriendAction implements ServletRequestAware {
 
 	// 表示点击分页链接后要将请求发送到哪个action
 	private String pageAction;
-
-
+	//保存请求添加你为好友的用户
+	private List<User> requestList;
+	
 	// 表示要搜索的范围 是从自己的好友里搜索还是从所有用户里搜索
 	private String scope;
 
 	private HttpServletRequest request;
 	
+	/**
+	 * 添加一个好友请求
+	 * @return
+	 */
+	public String addFriendToRequestList(){
+		User user = (User) ActionContext.getContext().getSession().get(
+		"currentUser");
+		int friendID = Integer.parseInt(request.getParameter("friendId"));
+		friendService.addFriendToRequest(user, friendID);
+		
+		return "success";
+	}
+	/**
+	 * 确定好友关系
+	 * @return
+	 */
 	public String addFriend(){
 		User user = (User) ActionContext.getContext().getSession().get(
 		"currentUser");
 		int friendID = Integer.parseInt(request.getParameter("friendId"));
-
 		friendService.addFriend(user, friendID);
-		
+
+		return "success";
+	}
+	
+	/**
+	 * 拒绝一个用户的好友申请
+	 * @return
+	 */
+	public String refuseFriend(){
+		User user = (User) ActionContext.getContext().getSession().get(
+		"currentUser");
+		int friendID = Integer.parseInt(request.getParameter("friendId"));
+		friendService.refuseFriend(user, friendID);
+
 		return "success";
 	}
 
@@ -59,6 +88,8 @@ public class FriendAction implements ServletRequestAware {
 		Collections.sort(friends);
 
 		totalPage = friendService.getTotalPage(user, pageSize);
+		
+		requestList = friendService.getFriends(user, "N");
 
 		pageAction = "showFriends";
 
@@ -70,7 +101,7 @@ public class FriendAction implements ServletRequestAware {
 
 		User user = (User) ActionContext.getContext().getSession().get(
 				"currentUser");
-
+		requestList = friendService.getFriends(user, "N");
 		if (scope.equals("fromFriends")) {
 
 			friends = friendService.searchFriendsByPage(user, userName,
@@ -94,6 +125,7 @@ public class FriendAction implements ServletRequestAware {
 	public String getFriendsByPage() {
 		User user = (User) ActionContext.getContext().getSession().get(
 				"currentUser");
+		requestList = friendService.getFriends(user, "N");
 		if (pageAction.equals("searchFriends")) {
 			friends = friendService.searchFriendsByPage(user, userName,
 					pageNow, pageSize);
@@ -106,6 +138,7 @@ public class FriendAction implements ServletRequestAware {
 	public String deleteFriend() {
 		User user = (User) ActionContext.getContext().getSession().get(
 				"currentUser");
+		requestList = friendService.getFriends(user, "N");
 		int friendID = Integer.parseInt(request.getParameter("friendId"));
 		friendService.deleteFriend(user, friendID);
 
@@ -180,6 +213,14 @@ public class FriendAction implements ServletRequestAware {
 
 	public void setScope(String scope) {
 		this.scope = scope;
+	}
+
+	public List<User> getRequestList() {
+		return requestList;
+	}
+
+	public void setRequestList(List<User> requestList) {
+		this.requestList = requestList;
 	}
 
 }

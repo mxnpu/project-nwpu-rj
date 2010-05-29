@@ -22,29 +22,56 @@ public class FriendService implements IFriendService {
 	private UserDAO userDao;
 
 
-	public void addFriend(Friends friend) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public void deleteFriend(Friends friend) {
 		// TODO Auto-generated method stub
 
 		friendDao.delete(friend);
 	}
 	
-	//添加id为friendID的用户为好友
-	public void addFriend(User user, int friendID){
+	//添加id为friendID的用户为好友到好友请求队列
+	public void addFriendToRequest(User user, int friendID){
 		User userFriend = userDao.findById(friendID);
 		Friends friend = new Friends();
 		friend.setGroup("");
-		//暂时不需要对方同意
-		friend.setSuccess("Y");
+		friend.setSuccess("N");
 		
 		friend.setUserFriend(userFriend);
 		friend.setUser(user);
 
 		friendDao.merge(friend);
+	}
+	//添加id为friendID的用户为好友
+	public void addFriend(User user, int friendID) {
+		Iterator<Friends> friendsIt2 = friendDao.findByProperty("userFriend", user).iterator();
+		Friends tempFriend;
+		while(friendsIt2.hasNext()){
+			
+			tempFriend = friendsIt2.next();
+			if (tempFriend.getUser().getIdUser() == friendID){
+				tempFriend.setSuccess("Y");
+				friendDao.attachDirty(tempFriend);
+				return;
+			}
+		}
+	}
+	
+	/**
+	 * 拒绝一个用户的好友申请
+	 * @param user
+	 * @param friendID
+	 */
+	public void refuseFriend(User user, int friendID){
+		Iterator<Friends> friendsIt2 = friendDao.findByProperty("userFriend", user).iterator();
+		Friends tempFriend;
+		while(friendsIt2.hasNext()){
+			
+			tempFriend = friendsIt2.next();
+			if (tempFriend.getUser().getIdUser() == friendID){
+				friendDao.delete(tempFriend);
+				return;
+			}
+		}
+
 	}
 	
 	//删除user和friend之间的好友关系
@@ -84,8 +111,11 @@ public class FriendService implements IFriendService {
 
 	/**
 	 * 获得该用户的所有好友
+	 * @param owner 获得哪个用户的好友
+	 * @param state “Y”表示获得已经是好友关系的用户  
+	 * 				“N”表示获得已经发出好友请求但对方还未统一的用户
 	 */
-	public List<User> getFriends(User owner) {
+	public List<User> getFriends(User owner, String state) {
 		// TODO Auto-generated method stub		
 
 		Iterator<Friends> friendsIt1 = friendDao.findByProperty("user", owner).iterator();
@@ -99,12 +129,32 @@ public class FriendService implements IFriendService {
 		Friends tempFriend;
 		User tempUser;
 		
+		if (state == "N"){
+			while(friendsIt2.hasNext()){
+				
+				tempFriend = friendsIt2.next();
+				//双方已经同意建立好友关系
+				if (tempFriend.getSuccess().equals(state)){
+					tempUser = tempFriend.getUser();
+					tempUser.getUserName();
+					set.add(tempUser);
+					
+				}	
+			}
+			Iterator<User> it = set.iterator();
+			while(it.hasNext()){
+				friendList.add(it.next());
+			}
+			
+			return friendList;
+		}
+		
 		while(friendsIt1.hasNext()){
 
 			tempFriend = friendsIt1.next();
 //			System.out.println(tempFriend.get);
 			//双方已经同意建立好友关系
-			if (tempFriend.getSuccess().equals("Y")){
+			if (tempFriend.getSuccess().equals(state)){
 				tempUser = tempFriend.getUserFriend();
 				tempUser.getUserName();
 				set.add(tempUser);
@@ -116,7 +166,7 @@ public class FriendService implements IFriendService {
 			
 			tempFriend = friendsIt2.next();
 			//双方已经同意建立好友关系
-			if (tempFriend.getSuccess().equals("Y")){
+			if (tempFriend.getSuccess().equals(state)){
 				tempUser = tempFriend.getUser();
 				tempUser.getUserName();
 				set.add(tempUser);
@@ -134,6 +184,9 @@ public class FriendService implements IFriendService {
 		return friendList;
 	}
 	
+	public List<User> getFriends(User owner){
+		return getFriends(owner, "Y");
+	}
 
 	public void updateFriend(Friends friend) {
 		// TODO Auto-generated method stub
@@ -220,5 +273,7 @@ public class FriendService implements IFriendService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }
