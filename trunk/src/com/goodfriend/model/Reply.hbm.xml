@@ -19,5 +19,8 @@
         <property name="content" type="java.lang.String">
             <column name="content" length="250" not-null="true" />
         </property>
+        <property name="recordTime" type="java.sql.Timestamp">
+            <column name="record_time" length="0" />
+        </property>
     </class>
 </hibernate-mapping>

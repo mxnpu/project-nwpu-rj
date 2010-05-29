@@ -1,5 +1,7 @@
 package com.goodfriend.model;
 
+import java.sql.Timestamp;
+
 /**
  * Reply entity. 
  * @author 
@@ -14,6 +16,7 @@ public class Reply implements java.io.Serializable {
 	private Item item;
 	private User user;
 	private String content;
+	private Timestamp recordTime;
 
 	// Constructors
 
@@ -61,6 +64,28 @@ public class Reply implements java.io.Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	/**
+	 * @param recordTime the recordTime to set
+	 */
+	public void setRecordTime(Timestamp recordTime) {
+	    this.recordTime = recordTime;
+	}
+
+	/**
+	 * @return the recordTime
+	 */
+	public Timestamp getRecordTime() {
+	    return recordTime;
+	}
+	
+	/**
+	 * @return the time
+	 */
+	@SuppressWarnings("deprecation")
+	public String getTime() {
+	    return this.recordTime.toLocaleString();
 	}
 
 }

@@ -7,17 +7,35 @@
 	<constant name="struts.objectFactory" value="spring" />
 
 	<package name="user" namespace="/user" extends="struts-default">
+	
+		<!-- 配置用户权限检查 -->
+		<interceptors>
+			<interceptor name="authority" class="authorityIntceptor">
+				<param name="excludeMethods">login,register,validateName,random</param>
+			</interceptor>
+			<interceptor-stack name="myDefault">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="authority"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 
+		<default-interceptor-ref name="myDefault"></default-interceptor-ref>
+		 -->
+		<global-results>
+			<result name="login">login.jsp</result>
+		</global-results>
 
 		<!-- 用户登录请求处理Action -->
 		<action name="login" class="loginAction" method="login">
 			<result name="admin" type="redirect">/admin/login_success.jsp</result>
-			<result name="success" type="redirect">index.jsp</result>
+			<result name="success" type="redirectAction">index.action</result>
 			<result name="login">login.jsp</result>
 		</action>
 		<!-- 用户退出请求处理Action -->
 		<action name="logout" class="loginAction" method="logout">
 			<result name="login" type="redirect">login.jsp</result>
 			<result>login.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		<!-- 用户注册请求处理Action -->
 		<action name="register" class="registerAction" method="register">
@@ -32,13 +50,14 @@
 		<action name="fileUpload" class="fileUploadAction" method="upload">
 			<param name="uploadDir">/pictures/default</param>
 			<result name="success">index.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		<!-- 用户头像编辑请求Action -->
 		<action name="editPhoto" class="photoEditAction" method="editPhoto">
 			<result name="edit">photo_edit.jsp</result>
 		</action>
 		<!-- Random验证码 -->
-		<action name="random" class="randomNumberAction" method="execute">
+		<action name="random" class="randomNumberAction" method="random">
 			<result name="success" type="stream">
 				<param name="contentType">image/jpeg</param>
 				<param name="inputName">inputStream</param>
@@ -47,61 +66,85 @@
 		<!-- 异步更新用户状态 -->
 		<action name="changeStmt" class="statementAction" method="updateStatement">
 			<result name="success" type="stream"></result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		<!-- 异步获得用户最新的一条状态信息 -->
 		<action name="getNewStmt" class="statementAction" method="getLatestStatement">
 			<result name="success" type="stream"></result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		<!-- 获得用户好友新鲜事 -->
-		<action name="latestMsg" class="latestMsgAction" method="getLatestMsg">
-			<result name="success" type="dispatcher">index.jsp</result>
+		<action name="index" class="latestMsgAction" method="getLatestMsg">
+			<result name="success">index.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
+		<!-- 用户回复异步处理 -->
+		<action name="replyAjax" class="replyAction" method="replyAjax">
+			<result name="success" type="stream"></result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<!-- 删除用户的回复异步处理 -->
+		<action name="deleteReply" class="replyAction" method="deleteReply">
+			<result name="success" type="stream"></result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+
+
 
 		<!-- 发布blog -->
 		<action name="publishBlog" class="blogAction" method="publish">
 			<result name="success" type="redirect">showAllBlogs</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 
 		<!-- 查看某一页的blog -->
 		<action name="showAllBlogs" class="blogAction" method="showBlogs">
 			<result name="success" >all_blogs.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 
 		<!-- 查看某一篇自己的blog -->
 		<action name="showBlog" class="blogAction" method="showBlog">
 			<result name="success">modify_blog.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
 		<action name="updateBlog" class="blogAction" method="updateBlog">
 			<result name="success" type="redirect">showAllBlogs</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
 		
 		<action name="personalInfo" class="personalInfoAction" method="showPersonalInfo">
 			<result name="success" type="redirect">personal_info.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
 		<action name="showFriends" class="friendAction" method="showFriends">
 			<result name="success">friend.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
 		<action name="searchFriends" class="friendAction" method="searchFriends">
 			<result name="success">friend.jsp</result>
 			<result name="searchUser" type="redirect">
 			searchUser?userName=%{userName}</result>
-
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
 		<action name="deleteFriend" class="friendAction" method="deleteFriend">
 			<result name="success" type="redirectAction">showFriends</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
 		<action name="addFriend" class="friendAction" method="addFriend">
 			<result name="success" type="redirectAction">showFriends</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
 		<action name="getFriendsByPage" class="friendAction" method="getFriendsByPage">
 			<result name="success">friend.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 	</package>
 

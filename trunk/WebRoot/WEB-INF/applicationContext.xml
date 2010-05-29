@@ -239,6 +239,9 @@
 		<property name="userService">
 			<ref bean="userService"/>
 		</property>
+		<property name="replyService">
+			<ref bean="replyService"/>
+		</property>
 	</bean>
 	<!--the end of service bean configuration.  -->
 
@@ -303,17 +306,27 @@
 			<ref bean="latestMsgService"/>
 		</property>
 	</bean>
-
-	<!--
-		<bean id="showAllBlogsAction"
-		class="com.goodfriend.action.ShowAllBlogsAction" scope="prototype">
-		<property name="blogService"> <ref bean="blogService"/> </property>
-		<property name="userService"> <ref bean="userService"/> </property>
-		</bean> <bean id="personalInfoAction"
-		class="com.goodfriend.action.PersonalInfoAction" scope="prototype">
-		<property name="userService"> <ref bean="userService"/> </property>
-		</bean>
-	-->
+	
+	<bean id="replyAction" class="com.goodfriend.action.ReplyAction"
+		scope="prototype">
+		<property name="replyService">
+			<ref bean="replyService"/>
+		</property>
+	</bean>
+	
+	<bean id="userAction" class="com.goodfriend.action.UserAction"
+		scope="prototype">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+ 
+ 
+ 	<!-- The intercepter -->
+	<bean id="authorityIntceptor" class="com.goodfriend.interceptor.AuthorizationInterceptor"
+		scope="prototype">
+	</bean>
+	
 	<import resource="applicationContext-admin.xml" />
 
 </beans>
