@@ -276,6 +276,9 @@
 		<property name="blogService">
 			<ref bean="blogService"/>
 		</property>
+		<property name="replyService">
+			<ref bean="replyService"/>
+		</property>
     </bean>
 	
 	

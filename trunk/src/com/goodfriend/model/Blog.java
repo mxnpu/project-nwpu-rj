@@ -68,6 +68,10 @@ public class Blog implements java.io.Serializable, Comparable<Blog>{
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	public boolean equals(Blog tempBlog){
+		return this.getId() == tempBlog.getId();
+	}
 
 	public int compareTo(Blog blog) {
 		// TODO Auto-generated method stub

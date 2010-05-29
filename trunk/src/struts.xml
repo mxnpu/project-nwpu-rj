@@ -114,6 +114,13 @@
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
+		<action name="deleteBlog" class="blogAction" method="deleteBlog">
+			<result name="success" type="redirect">showAllBlogs</result>
+		</action>
+		
+		<action name="addBlogReply" class="blogAction" method="addBlogReply">
+			<result name="success">#</result>
+		</action>
 		
 		<action name="personalInfo" class="personalInfoAction" method="showPersonalInfo">
 			<result name="success" type="redirect">personal_info.jsp</result>
@@ -140,6 +147,14 @@
 		<action name="addFriend" class="friendAction" method="addFriend">
 			<result name="success" type="redirectAction">showFriends</result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		
+		<action name="addFriendToRequestList" class="friendAction" method="addFriendToRequestList">
+			<result name="success" type="redirectAction">showFriends</result>
+		</action>
+		
+		<action name="refuseFriend" class="friendAction" method="refuseFriend">
+			<result name="success" type="redirectAction">showFriends</result>
 		</action>
 		
 		<action name="getFriendsByPage" class="friendAction" method="getFriendsByPage">

@@ -43,18 +43,23 @@ public class BlogServiceTest {
 //		blogService.addBlog(blog, userService.getUser(1));
 	}
 
-	@Test
-	public void testGetBlogsByPage(){
-		List<Blog> list = blogService.getBlogsByPage(userService.getUser(1), 1, 2);
+//	@Test
+//	public void testGetBlogsByPage(){
+//		List<Blog> list = blogService.getBlogsByPage(userService.getUser(1), 1, 2);
+//
+//	}
 
-	}
-	
 	@Test
-	public void testUpdateBlog(){
-		Blog blog = blogService.getBlog(1);
-		blog.setContent("123");
-		blogService.updateBlog(blog);
+	public void testGetReply(){
+		Blog blog = blogService.getBlog(2);
+		System.out.println(blog.getItem().getReplies().size());
 	}
+//	@Test
+//	public void testUpdateBlog(){
+//		Blog blog = blogService.getBlog(1);
+//		blog.setContent("123");
+//		blogService.updateBlog(blog);
+//	}
 	
 	@Test
 	public void testDeleteBlog(){

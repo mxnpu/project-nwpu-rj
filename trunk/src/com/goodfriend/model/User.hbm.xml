@@ -40,7 +40,7 @@
   <property generated="never" lazy="false" name="lastLogoutTime" type="java.sql.Timestamp">
    <column length="0" name="last_logout_time"/>
   </property>
-  <set cascade="all" inverse="true" lazy="false" name="items" sort="unsorted">
+  <set inverse="true" lazy="false" name="items" sort="unsorted">
    <key>
     <column name="user" not-null="true"/>
    </key>

@@ -6,9 +6,10 @@ import com.goodfriend.model.Friends;
 import com.goodfriend.model.User;
 
 public interface IFriendService {
-    public void addFriend(Friends friend);
 
     public List<User> getFriends(User owner);
+
+    public List<User> getFriends(User owner, String state);
 
     public void updateFriend(Friends friend);
 
@@ -26,5 +27,9 @@ public interface IFriendService {
 	
 	public void deleteFriend(User user, int friendID);
 	
+	public void refuseFriend(User user, int friendID);
+	
+	public void addFriendToRequest(User user, int friendID);
+	 
 	public void addFriend(User user, int friendID);
 }
