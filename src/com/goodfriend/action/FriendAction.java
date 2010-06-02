@@ -1,5 +1,6 @@
 package com.goodfriend.action;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,14 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import com.goodfriend.model.Friends;
+import com.goodfriend.model.Mail;
 import com.goodfriend.model.User;
 import com.goodfriend.service.IFriendService;
+import com.goodfriend.service.IMailService;
 import com.goodfriend.service.IUserService;
 import com.opensymphony.xwork2.ActionContext;
 
 public class FriendAction implements ServletRequestAware {
 
 	private IFriendService friendService;
+	
+	private IMailService mailService;
 
 	private List<User> friends;
 
@@ -40,7 +45,7 @@ public class FriendAction implements ServletRequestAware {
 	private HttpServletRequest request;
 	
 	/**
-	 * 添加一个好友请求
+	 * 添加一个好友请求,向对方发送一封站内信
 	 * @return
 	 */
 	public String addFriendToRequestList(){
@@ -48,6 +53,8 @@ public class FriendAction implements ServletRequestAware {
 		"currentUser");
 		int friendID = Integer.parseInt(request.getParameter("friendId"));
 		friendService.addFriendToRequest(user, friendID);
+		System.out.println("asd");
+		mailService.addFriendRequest(friendID, user);
 		
 		return "success";
 	}
@@ -153,6 +160,12 @@ public class FriendAction implements ServletRequestAware {
 		this.friendService = friendService;
 	}
 
+	public IMailService getMailService() {
+		return mailService;
+	}
+	public void setMailService(IMailService mailService) {
+		this.mailService = mailService;
+	}
 	public List<User> getFriends() {
 		return friends;
 	}

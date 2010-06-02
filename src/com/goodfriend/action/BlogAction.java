@@ -65,12 +65,18 @@ public class BlogAction implements ServletRequestAware{
 	public String showBlog(){
 		int id = Integer.parseInt(request.getParameter("id"));
 		blog = blogService.getBlog(id);
-		Iterator<Reply> it = blog.getItem().getReplies().iterator();
-		replyList.clear();
-		while(it.hasNext()){
-			replyList.add(it.next());
+		
+		if (request.getParameter("state").equals("show")){
+			Iterator<Reply> it = blog.getItem().getReplies().iterator();
+			replyList.clear();
+			while(it.hasNext()){
+				replyList.add(it.next());
+			}
+			return "showBlog";
+		}else if (request.getParameter("state").equals("edit")){
+			return "editBlog";
 		}
-		return "success";
+		return "fail";
 	}
 	
 	//发布一篇新日志
