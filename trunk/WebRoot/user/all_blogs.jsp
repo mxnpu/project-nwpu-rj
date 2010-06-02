@@ -61,15 +61,18 @@
 									<img src="<%=basePath%>/style/image/icon_blog.png" />
 								</li>
 								<li>
-									<s:a href="showBlog?id=%{#blog.id}">编辑</s:a>
+									<s:a href="showBlog?id=%{#blog.id}&state=edit">编辑</s:a>
 								</li>
 								<li>
 									<s:a href="deleteBlog?id=%{#blog.id}">删除</s:a>
 								</li>
 							</ul>
 							<span> <label>
-									<s:property value="#blog.title" />
-								</label> <br> <s:property value="#blog.content" /> </span>
+									<s:a href="showBlog?id=%{#blog.id}&state=show"><s:property value="#blog.title" /></s:a>
+								</label> <br> 
+								<s:property value="#blog.content" /> 
+								
+								</span>
 						</li>
 						
 						
