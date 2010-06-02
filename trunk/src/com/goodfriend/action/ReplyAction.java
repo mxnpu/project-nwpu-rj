@@ -105,6 +105,9 @@ public class ReplyAction {
 	    responseBuffer.append("_");
 	    String recordTime = replyList.get(i).getTime();
 	    responseBuffer.append(recordTime);
+	    responseBuffer.append("_");
+	    String userId = replyList.get(i).getUser().getIdUser().toString();
+	    responseBuffer.append(userId);
 	    if (i != replyList.size()-1) {
 		responseBuffer.append("@");
 	    }

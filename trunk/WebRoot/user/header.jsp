@@ -38,7 +38,8 @@
 							<a href="<%=basePath%>/user/index.action">首页</a>
 						</li>
 						<li id="kwick2">
-							<a href="#">个人主页</a>
+							<a href="<%=basePath%>/user/home.action?userId=${session.currentUser.idUser}">
+							个人主页</a>
 						</li>
 						<li id="kwick3">
 							<a href="showAllBlogs">日志</a>
@@ -47,7 +48,9 @@
 							<a href="showFriends">好友</a>
 						</li>
 						<li id="kwick5">
-							<a href="#">留言板</a>
+							<a href='<s:url action="allGossip.action">
+							<s:param name="userId" value="#session.currentUser.idUser"></s:param>
+							</s:url>'>留言板</a>
 						</li>
 						<li id="kwick6">
 							<a href="#">个人信息</a>

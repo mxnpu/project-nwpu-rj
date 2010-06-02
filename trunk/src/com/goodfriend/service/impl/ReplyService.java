@@ -2,7 +2,6 @@ package com.goodfriend.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import com.goodfriend.dao.IItemDAO;
 import com.goodfriend.dao.IReplyDAO;
@@ -58,12 +57,8 @@ public class ReplyService implements IReplyService {
 	 */
 	public void deleteReply(Reply reply) {
 		reply = getReply(reply.getIdReply());
-//		Integer itemId = reply.getItem().getIdItem();
 		reply.setItem(null);
 		reply.setUser(null);
-//		Item item = itemDao.findById(itemId);
-//		Set<Reply> replys = item.getReplies();
-//		replys.remove(reply);
 		
 		replyDao.delete(reply);
 	}

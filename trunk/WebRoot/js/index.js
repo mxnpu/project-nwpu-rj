@@ -173,12 +173,14 @@ var replyAjax = {
 					var replyId = replies[1];
 					var content = replies[2];
 					var recordTime = replies[3];
+					var userId = replies[4];
 
 					var oLI = document.createElement("li");
 					var oReplyDiv = document.createElement("div");
 					oReplyDiv.setAttribute("id", "li_reply_" + replyId);
 					var oA = document.createElement("a");
-					oA.setAttribute("href", "");
+					oA.setAttribute("href", "home.action?userId=" + userId);
+					oA.setAttribute("target","_blank");
 					oA.innerHTML = user;
 					oReplyDiv.appendChild(oA);
 					var oSpan1 = document.createElement("span");
@@ -256,12 +258,14 @@ var replyDelAjax = {
 					var replyId = replies[1];
 					var content = replies[2];
 					var recordTime = replies[3];
+					var userId = replies[4];
 
 					var oLI = document.createElement("li");
 					var oReplyDiv = document.createElement("div");
 					oReplyDiv.setAttribute("id", "li_reply_" + replyId);
 					var oA = document.createElement("a");
-					oA.setAttribute("href", "");
+					oA.setAttribute("href", "home.action?userId=" + userId);
+					oA.setAttribute("target","_blank");
 					oA.innerHTML = user;
 					oReplyDiv.appendChild(oA);
 					var oSpan1 = document.createElement("span");

@@ -6,6 +6,8 @@
 	
 		<title>Good Friend 互动社区</title>
 		<script type="text/javascript" src="../js/prototype-1.6.0.3.js"></script>
+		<script type="text/javascript" src="../js/detect.js"></script>
+		<script type="text/javascript" src="../js/eventutil.js"></script>
 		<script type="text/javascript" src="../js/formUtils.js"></script> 
 		<link rel="stylesheet" type="text/css" href="../style/style.css"/>
 	</head>
@@ -48,12 +50,15 @@
             </tr>
             <tr>
               <th width="100"><label for="username">用户名</label></th>
-              <td><input type="text" name="username" id="username" class="t_input" tabindex="2" onBlur="Validate.required(this,4,16,'用户名需要','userNameError');"></td>
+              <td><input type="text" name="username" id="username" class="t_input" tabindex="2" 
+		              onBlur="Validate.required(this,4,16,'用户名需要','userNameError');"></td>
               <td><div class="errorMsg" id="userNameError"></div></td>
             </tr>
             <tr>
               <th width="100"><label for="password">密　码</label></th>
-              <td><input type="password" name="password" id="password" class="t_input" tabindex="3" onBlur="Validate.required(this,4,16,'密码需要','userPasswordError')"></td>
+              <td><input type="password" name="password" id="password" class="t_input" tabindex="3" 
+              		onBlur="Validate.required(this,4,16,'密码需要','userPasswordError')"
+              		></td>
               <td><div class="errorMsg" id="userPasswordError"></div></td>
             </tr>
             <tr>

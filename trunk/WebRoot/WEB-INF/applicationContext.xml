@@ -211,6 +211,9 @@
 		<property name="userDao">
 			<ref bean="userDAO" />
 		</property>
+		<property name="replyService">
+			<ref bean="replyService"/>
+		</property>
 	</bean>
 	<bean id="replyService" class="com.goodfriend.service.impl.ReplyService">
 		<property name="replyDao">
@@ -250,6 +253,9 @@
 		<property name="replyService">
 			<ref bean="replyService"/>
 		</property>
+		<property name="gossipService">
+			<ref bean="gossipService"/> 
+		</property>
 	</bean>
 	<bean id="mailService" class="com.goodfriend.service.impl.MailService">
 		<property name="mailDao"> 
@@ -272,16 +278,18 @@
 			<ref bean="adminService" />
 		</property>
 	</bean>
+	
 	<bean id="registerAction" class="com.goodfriend.action.RegisterAction"
 		scope="prototype">
 		<property name="userService">
 			<ref bean="userService" />
 		</property>
 	</bean>
+	
 	<bean id="randomNumberAction" class="com.goodfriend.action.RandomNumberAction"
 		scope="prototype">
 	</bean>
-	
+		
 	<bean id="photoEditAction" class="com.goodfriend.action.PhotoEditAction"
 		scope="prototype">
 	</bean>
@@ -300,11 +308,11 @@
 	
 	<bean id="fileUploadAction" class="com.goodfriend.action.FileUploadAction"
 		scope="prototype">
-
 		<property name="userService">
 			<ref bean="userService" />
 		</property>
 	</bean>
+	
 	<bean id="statementAction" class="com.goodfriend.action.StatementAction"
 		scope="prototype">
 		<property name="statementService">
@@ -342,7 +350,32 @@
 			<ref bean="userService"/>
 		</property>
 	</bean>
- 
+	 
+ 	<bean id="homeAction" class="com.goodfriend.action.HomeAction"
+ 		scope="prototype"> 
+ 		<property name="userService">
+ 			<ref bean="userService"/>
+ 		</property>
+ 		<property name="messageService">
+ 			<ref bean="latestMsgService"/>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean id="gossipAction" class="com.goodfriend.action.GossipAction"
+ 		scope="prototype">
+ 		<property name="gossipService">
+ 			<ref bean="gossipService"/>
+ 		</property>
+ 		<property name="userService">
+ 			<ref bean="userService"/>
+ 		</property>
+ 		<property name="messageService">
+ 			<ref bean="latestMsgService"/>
+ 		</property>
+ 		<property name="replyService">
+ 			<ref bean="replyService"/>
+ 		</property>
+ 	</bean>
  
  	<!-- The intercepter -->
 	<bean id="authorityIntceptor" class="com.goodfriend.interceptor.AuthorizationInterceptor"

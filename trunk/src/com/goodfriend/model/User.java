@@ -6,7 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * User entity. @author MyEclipse Persistence Tools
+ * User entity. 
+ * @author 
  */
 
 public class User implements java.io.Serializable, Comparable<User>{

@@ -123,4 +123,8 @@ public class Item implements java.io.Serializable {
 		this.albums = albums;
 	}
 
+	@SuppressWarnings("deprecation")
+	public String getTime() {
+	    return this.recordTime.toLocaleString();
+	}
 }
