@@ -15,4 +15,5 @@ import com.goodfriend.model.Message;
  */
 public interface ILatestMsgService {
     public List<Message> getLastestMsg(Integer userId, Timestamp deadline);
+    public List<Message> getHomeMsg(Integer userId);
 }

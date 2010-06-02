@@ -88,8 +88,57 @@
 			<result name="success" type="stream"></result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
-
-
+		<!-- 访问个人主页的请求处理 -->
+		<action name="home" class="homeAction" method="home">
+			<result name="success">home.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<!-- 异步获得用户的最近的几条留言 -->
+		<action name="getGossipReplies" class="gossipAction" method="getGossipReplies">
+			<result name="success" type="stream"></result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<!-- 异步添加用户留言 -->
+		<action name="addGossip" class="gossipAction" method="addGossip">
+			<result name="success" type="stream"></result>
+			<result name="getReplies" type="stream"></result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<!-- 异步删除用户留言 -->
+		<action name="delGossip" class="gossipAction" method="delGossip">
+			<result name="success" type="stream"></result>
+		</action>
+		<!-- 异步删除用户留言的回复 -->
+		<action name="delGossipReply" class="gossipAction" method="delGossipReply">
+			<result name="success" type="stream"></result>
+		</action>
+		<!-- 获得用户所有的留言 -->
+		<action name="allGossip" class="gossipAction" method="getAllGossip">
+			<result name="success">gossip.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<!-- 获得分页留言 -->
+		<action name="getGossipByPage" class="gossipAction" method="getGossipByPage">
+			<result name="success">gossip.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<!-- 同步添加用户的留言 -->
+		<action name="addGossipCommon" class="gossipAction" method="addGossipCommon">
+			<result name="success">gossip.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<!-- 同步删除用户留言 -->
+		<action name="delGossipCommon" class="gossipAction" method="delGossipCommon">
+			<result name="success">gossip.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<action name="delGossipReplyCommon" class="gossipAction" method="delGossipReplyCommon">
+			<result name="success">gossip.jsp</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		
+		
+		
 
 		<!-- 发布blog -->
 		<action name="publishBlog" class="blogAction" method="publish">
@@ -131,11 +180,17 @@
 			<result name="success">friend.jsp</result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
+
 		
 		<action name="searchFriends" class="friendAction" method="searchFriends">
 			<result name="success">friend.jsp</result>
 			<result name="searchUser" type="redirect">
 			searchUser?userName=%{userName}</result>
+			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		
+		<action name="searchUser" class="userAction" method="searchUser">
+			<result name="success">search_user.jsp</result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		

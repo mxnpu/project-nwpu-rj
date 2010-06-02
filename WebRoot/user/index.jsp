@@ -39,7 +39,9 @@
   	  				<img alt="Photo" src="<s:property value="#message.owner.photo"/>" />
   	  			</div>
   	  			<h3>
-  	  				<a href=""><s:property value="#message.owner.userName"/></a>:
+  	  				<a href='<s:url action="home.action" namespace="/user">
+  	  						<s:param name="userId" value="#message.owner.idUser"></s:param></s:url>'
+  	  				 target="_blank"><s:property value="#message.owner.userName"/></a>:
   		  			<s:property value="#message.content"/><br/>
   	  			</h3>
   	  			<div class="details">
@@ -58,7 +60,11 @@
   	  							<s:iterator value="#message.replies" var="reply">
   	  								<li>
   	  								<div id='li_reply_<s:property value="#reply.idReply"/>'>
-  	  									<a href=''><s:property value="#reply.user.userName"/></a>
+  	  									<a href='<s:url action="home.action" namespace="/user">
+  	  										<s:param name="userId" value="#reply.user.idUser"></s:param>
+  	  									</s:url>' target="_blank">
+  	  									<s:property value="#reply.user.userName"/>
+  	  									</a>
   	  									<span>:<s:property value="#reply.content"/></span><br>
   	  									<span><s:property value="#reply.time"/></span> | 
   	  									<label id='label_<s:property value="#reply.idReply"/>_<s:property value="#message.item.idItem"/>'
@@ -84,7 +90,9 @@
   	  				<img alt="Photo" src="<s:property value="#message.owner.photo"/>" />
   	  			</div>
   	  			<h3>
-  	  				<a href=""><s:property value="#message.owner.userName"/></a>:发表日志
+  	  				<a href='<s:url action="home.action" namespace="/user">
+  	  						<s:param name="userId" value="#message.owner.idUser"></s:param></s:url>'
+  	  				 target="_blank"><s:property value="#message.owner.userName"/></a>:发表日志
   	  				<a href=""><s:property value="#message.title"/></a>
   	  			</h3>
   	  			<div class="content">
@@ -106,7 +114,9 @@
   	  							<s:iterator value="#message.replies" var="reply">
   	  								<li>
   	  								<div id='li_reply_<s:property value="#reply.idReply"/>'>
-  	  									<a href=''><s:property value="#reply.user.userName"/></a>
+  	  									<a href='<s:url action="home.action" namespace="/user">
+  	  										<s:param name="userId" value="#reply.user.idUser"></s:param>
+  	  									</s:url>' target="_blank"><s:property value="#reply.user.userName"/></a>
   	  									<span>:<s:property value="#reply.content"/></span><br>
   	  									<span><s:property value="#reply.time"/></span> | 
   	  									<label id='label_<s:property value="#reply.idReply"/>_<s:property value="#message.item.idItem"/>'

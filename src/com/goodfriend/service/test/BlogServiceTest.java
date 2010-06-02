@@ -36,18 +36,20 @@ public class BlogServiceTest {
 
 	@Test
 	public void testAddBlog() {
-//		blog = new Blog();
-//		blog.setTitle("title");
-//		blog.setContent("content");
-//		
-//		blogService.addBlog(blog, userService.getUser(1));
+		blog = new Blog();
+		blog.setTitle("title");
+		blog.setContent("content");
+		
+		blogService.addBlog(blog, userService.getUser(1));
 	}
 
-//	@Test
-//	public void testGetBlogsByPage(){
-//		List<Blog> list = blogService.getBlogsByPage(userService.getUser(1), 1, 2);
-//
-//	}
+	@Test
+	public void testGetBlogsByPage(){
+		List<Blog> list = blogService.getBlogsByPage(userService.getUser(1), 1, 2);
+		list.size();
+
+	}
+		
 
 	@Test
 	public void testGetReply(){

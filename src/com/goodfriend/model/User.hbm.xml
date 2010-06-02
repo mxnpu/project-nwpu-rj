@@ -64,7 +64,7 @@
    </key>
    <one-to-many class="Friends"/>
   </set>
-  <set cascade="all" inverse="true" lazy="false" name="gossips" sort="unsorted">
+  <set inverse="true" lazy="false" name="gossips" sort="unsorted">
    <key>
     <column name="from_id" not-null="true"/>
    </key>

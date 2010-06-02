@@ -1,0 +1,10 @@
+.content {
+	width: 500px;
+	height: 100px;
+	overflow: hidden;
+}
+textarea .gossip {
+	overflow-y: auto;
+	height: 52px;
+	color: rgb(136, 136, 136);
+}

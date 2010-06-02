@@ -6,12 +6,14 @@ import java.util.Collections;
 import java.util.List;
 
 import com.goodfriend.model.Blog;
+import com.goodfriend.model.Gossip;
 import com.goodfriend.model.Message;
 import com.goodfriend.model.Reply;
 import com.goodfriend.model.Statement;
 import com.goodfriend.model.User;
 import com.goodfriend.service.IBlogService;
 import com.goodfriend.service.IFriendService;
+import com.goodfriend.service.IGossipService;
 import com.goodfriend.service.ILatestMsgService;
 import com.goodfriend.service.IReplyService;
 import com.goodfriend.service.IStatementService;
@@ -31,6 +33,7 @@ public class LatestMsgService implements ILatestMsgService {
     IBlogService blogService;
     IUserService userService;
     IReplyService replyService;
+    IGossipService gossipService;
     
     /**
      * Get the latest message of the current user's friends.
@@ -100,6 +103,39 @@ public class LatestMsgService implements ILatestMsgService {
 	return latestMsg;
     }
 
+
+    /**
+     * Get the gossip message and their replies for the home page.
+     * 
+     * @param userId the gossip of who,
+     * @return the user's gossip list include the reply.
+     */
+    public List<Message> getHomeMsg(Integer userId) {
+	List<Message> messages = new ArrayList<Message>();
+	
+	List<Gossip> gossips = gossipService.getLatestGossips(userId);
+	for (Gossip temp : gossips) {
+	    Message message = new Message();
+	    message.setTitle(temp.getIdGossip().toString());
+	    message.setContent(temp.getContent());
+	    message.setOwner(temp.getUser());
+	    message.setType("gossip");
+	    message.setRecordTime(temp.getItem().getRecordTime());
+	    message.setItem(temp.getItem());
+	    
+	    List<Reply> replies = replyService.getReplies(temp.getItem().getIdItem());
+	    message.setReplies(replies);
+	    
+	    messages.add(message);
+	}
+	
+	// sort the message by the record time.
+	Collections.sort(messages);
+	
+	return messages;
+    }
+    
+    
     /**
      * @return the friendService
      */
@@ -169,6 +205,22 @@ public class LatestMsgService implements ILatestMsgService {
     public void setReplyService(IReplyService replyService) {
         this.replyService = replyService;
     }
+
+
+    /**
+     * @return the gossipService
+     */
+    public IGossipService getGossipService() {
+        return gossipService;
+    }
+
+
+    /**
+     * @param gossipService the gossipService to set
+     */
+    public void setGossipService(IGossipService gossipService) {
+        this.gossipService = gossipService;
+    } 
     
     
 }

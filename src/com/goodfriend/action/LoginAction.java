@@ -15,102 +15,103 @@ import com.opensymphony.xwork2.ActionContext;
  * @author xurunhua Last Modified time 2010.05.12
  */
 public class LoginAction {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private IUserService userService;
-	private IAdminService adminService;
-	private String username;
-	private String password;
-	private String purview;
-	private String validateCode;
-	private Map<String, Object> session;
+    private IUserService userService;
+    private IAdminService adminService;
+    private String username;
+    private String password;
+    private String purview;
+    private String validateCode;
+    private Map<String, Object> session;
 
-	public String login() throws Exception {
+    public String login() throws Exception {
 
-		if (purview.equals("user")) {
-			User dbUser = userService.getUser(username);
-			// 判断用户名和密码
-			if (dbUser != null && dbUser.getPassword().equals(password)) {
-				session = (Map<String, Object>) ActionContext.getContext()
-						.getSession();
-				if (session == null) {
-					session = new HashMap<String, Object>();
-				}
-				session.put("currentUser", dbUser);
-				return "success";
-			} else {
-				ActionContext.getContext().put("errorMsg", "用户名或密码错误");
-			}
-		} else {
-			Admin dbAdmin = adminService.getAdmin(username);
-			if (dbAdmin != null && dbAdmin.getPassword().equals(password)) {
-				session = (Map<String, Object>) ActionContext.getContext()
-						.getSession();
-				if (session == null) {
-					session = new HashMap<String, Object>();
-				}
-				session.put("currentAdmin", dbAdmin);
-				return "admin";
-			} else {
-				ActionContext.getContext().put("errorMsg", "管理员账户名或密码错误");
-			}
-
+	if (purview.equals("user")) {
+	    User dbUser = userService.getUser(username);
+	    // 判断用户名和密码
+	    if (dbUser != null && dbUser.getPassword().equals(password)) {
+		session = (Map<String, Object>) ActionContext.getContext()
+			.getSession();
+		if (session == null) {
+		    session = new HashMap<String, Object>();
 		}
-		return "login";
-	}
+		session.put("currentUser", dbUser);
+		session.put("user", dbUser);
+		return "success";
+	    } else {
+		ActionContext.getContext().put("errorMsg", "用户名或密码错误");
+	    }
+	} else {
+	    Admin dbAdmin = adminService.getAdmin(username);
+	    if (dbAdmin != null && dbAdmin.getPassword().equals(password)) {
+		session = (Map<String, Object>) ActionContext.getContext()
+			.getSession();
+		if (session == null) {
+		    session = new HashMap<String, Object>();
+		}
+		session.put("currentAdmin", dbAdmin);
+		return "admin";
+	    } else {
+		ActionContext.getContext().put("errorMsg", "管理员账户名或密码错误");
+	    }
 
-	public String logout() throws Exception {
-		session = (Map<String, Object>) ActionContext.getContext().getSession();
-		session.remove("currentUser");
-		return "login";
 	}
+	return "login";
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public String logout() throws Exception {
+	session = (Map<String, Object>) ActionContext.getContext().getSession();
+	session.remove("currentUser");
+	return "login";
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public void setUsername(String username) {
+	this.username = username;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getUsername() {
+	return username;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setPassword(String password) {
+	this.password = password;
+    }
 
-	public void setValidateCode(String validateCode) {
-		this.validateCode = validateCode;
-	}
+    public String getPassword() {
+	return password;
+    }
 
-	public String getValidateCode() {
-		return validateCode;
-	}
+    public void setValidateCode(String validateCode) {
+	this.validateCode = validateCode;
+    }
 
-	public void setUserService(IUserService userService) {
-		this.userService = userService;
-	}
+    public String getValidateCode() {
+	return validateCode;
+    }
 
-	public IUserService getUserService() {
-		return userService;
-	}
+    public void setUserService(IUserService userService) {
+	this.userService = userService;
+    }
 
-	public void setPurview(String purview) {
-		this.purview = purview;
-	}
+    public IUserService getUserService() {
+	return userService;
+    }
 
-	public String getPurview() {
-		return purview;
-	}
+    public void setPurview(String purview) {
+	this.purview = purview;
+    }
 
-	public void setAdminService(IAdminService adminService) {
-		this.adminService = adminService;
-	}
+    public String getPurview() {
+	return purview;
+    }
 
-	public IAdminService getAdminService() {
-		return adminService;
-	}
+    public void setAdminService(IAdminService adminService) {
+	this.adminService = adminService;
+    }
+
+    public IAdminService getAdminService() {
+	return adminService;
+    }
 
 }

@@ -18,7 +18,7 @@ import com.goodfriend.model.Mail;
  * of transaction control.
  * 
  * @see com.goodfriend.model.Mail
- * @author MyEclipse Persistence Tools
+ * @author 
  */
 
 public class MailDAO extends HibernateDaoSupport {

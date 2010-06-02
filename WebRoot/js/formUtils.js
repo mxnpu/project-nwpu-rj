@@ -129,6 +129,17 @@ FormUtil.focusOnFirst = function() {
 		}
 	}
 }
+//var target = $("password");
+//EventUtil.addEventHandler(target, "keyup", function(){
+//	var oEvent = EventUtil.getEvent();
+//	var key = oEvent.keyCode;
+//	var oForm = document.getElementById("loginform");
+//	// 回车键按下
+//	if (key == 13) {
+//		oForm.submit();
+//	}
+//});
+
 /**
  * 根据用户选填的性别，更改默认头像
  */

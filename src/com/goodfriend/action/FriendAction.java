@@ -1,5 +1,6 @@
 package com.goodfriend.action;
 
+
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
 
-import com.goodfriend.model.Friends;
 import com.goodfriend.model.Mail;
 import com.goodfriend.model.User;
 import com.goodfriend.service.IFriendService;
@@ -55,7 +55,6 @@ public class FriendAction implements ServletRequestAware {
 		friendService.addFriendToRequest(user, friendID);
 		System.out.println("asd");
 		mailService.addFriendRequest(friendID, user);
-		
 		return "success";
 	}
 	/**
