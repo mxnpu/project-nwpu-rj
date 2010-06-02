@@ -80,6 +80,8 @@
 			expression="execution(* com.goodfriend.service.impl.ReplyService.*(..))" />
 		<aop:pointcut id="statementServicePointcut"
 			expression="execution(* com.goodfriend.service.impl.StatementService.*(..))" />
+		<aop:pointcut id="mailServicePointcut"
+			expression="execution(* com.goodfriend.service.impl.MailService.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="userServicePointcut" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="friendServicePointcut" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="adminServicePointcut" />
@@ -88,6 +90,7 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="gossipServicePointcut" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="replyServicePointcut" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="statementServicePointcut" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="mailServicePointcut" />
 	</aop:config>
 
 	<!-- The DAO bean configuration -->
@@ -142,6 +145,11 @@
 		</property>
 	</bean>
 	<bean id="adminDAO" class="com.goodfriend.dao.impl.AdminDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+		<bean id="mailDAO" class="com.goodfriend.dao.impl.MailDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -243,6 +251,14 @@
 			<ref bean="replyService"/>
 		</property>
 	</bean>
+	<bean id="mailService" class="com.goodfriend.service.impl.MailService">
+		<property name="mailDao"> 
+			<ref bean="mailDAO" />
+		</property>
+		<property name="userDao">
+			<ref bean="userDAO" />
+		</property>
+	</bean>
 	<!--the end of service bean configuration.  -->
 
 
@@ -300,6 +316,9 @@
 			scope="prototype">
 		<property name="friendService">
 			<ref bean="friendService"/>
+		</property>
+		<property name="mailService">
+			<ref bean="mailService"/>
 		</property>
 	</bean>
 	
