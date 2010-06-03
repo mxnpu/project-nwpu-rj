@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="project-nwpu-rj"
+  name="WebProject"
   id="myeclipse.1272722562281"
   context-root="/GoodFriend"
   j2ee-spec="5.0"
-  archive="project-nwpu-rj.war">
+  archive="WebProject.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>

@@ -8,10 +8,10 @@
             <column name="id" />
             <generator class="increment" />
         </id>
-        <many-to-one name="userByFromUser" class="com.goodfriend.model.User" fetch="select">
+        <many-to-one name="fromUser" class="com.goodfriend.model.User" fetch="select" cascade="save-update">
             <column name="from_user" />
         </many-to-one>
-        <many-to-one name="userByToUser" class="com.goodfriend.model.User" fetch="select">
+        <many-to-one name="toUser" class="com.goodfriend.model.User" fetch="select" cascade="save-update">
             <column name="to_user" not-null="true" />
         </many-to-one>
         <property name="time" type="java.sql.Timestamp">
