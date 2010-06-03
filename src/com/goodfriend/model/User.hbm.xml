@@ -70,5 +70,17 @@
    </key>
    <one-to-many class="Gossip"/>
   </set>
+  <set inverse="true" lazy="false" name="mailFromUser">
+  	<key>
+  		<column name="from_user" />
+  	</key>
+  	<one-to-many class="Mail"/>
+  </set>
+  <set inverse="true" lazy="false" name="mailToUser">
+  	<key>
+  		<column name="to_user" not-null="true" />
+  	</key>
+  	<one-to-many class="Mail"/>
+  </set>
  </class>
 </hibernate-mapping>

@@ -1,28 +1,25 @@
 package com.goodfriend.model;
 
-import java.util.Date;
-import java.sql.Time;
+import java.io.Serializable;
 import java.sql.Timestamp;
-import java.text.DateFormat;
-
+import java.util.Date;
 
 /**
  * Mail entity. @author MyEclipse Persistence Tools
  */
 
-public class Mail  implements java.io.Serializable {
+public class Mail implements Serializable {
 
+    // Fields
 
-    // Fields    
-
-     private Integer id;
-     private User userByFromUser;
-     private User userByToUser;
-     private Timestamp time = new Timestamp(new Date().getTime());
-     private String title;
-     private String content;
-     private Boolean opened = false;
-
+    private static final long serialVersionUID = 1L;
+    private Integer id;
+    private User fromUser;
+    private User toUser;
+    private Timestamp time = new Timestamp(new Date().getTime());
+    private String title;
+    private String content;
+    private Boolean opened = false;
 
     // Constructors
 
@@ -30,88 +27,92 @@ public class Mail  implements java.io.Serializable {
     public Mail() {
     }
 
-	/** minimal constructor */
+    /** minimal constructor */
     public Mail(User userByToUser, Timestamp time, Boolean opened) {
-        this.userByToUser = userByToUser;
-        this.time = time;
-        this.opened = opened;
-    }
-    
-    /** full constructor */
-    public Mail(User userByFromUser, User userByToUser, Timestamp time, String title, String content, Boolean opened) {
-        this.userByFromUser = userByFromUser;
-        this.userByToUser = userByToUser;
-        this.time = time;
-        this.title = title;
-        this.content = content;
-        this.opened = opened;
+	this.toUser = userByToUser;
+	this.time = time;
+	this.opened = opened;
     }
 
-   
+    /** full constructor */
+    public Mail(User userByFromUser, User userByToUser, Timestamp time,
+	    String title, String content, Boolean opened) {
+	this.fromUser = userByFromUser;
+	this.toUser = userByToUser;
+	this.time = time;
+	this.title = title;
+	this.content = content;
+	this.opened = opened;
+    }
+
     // Property accessors
 
     public Integer getId() {
-        return this.id;
+	return this.id;
     }
-    
+
     public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public User getUserByFromUser() {
-        return this.userByFromUser;
-    }
-    
-    public void setUserByFromUser(User userByFromUser) {
-        this.userByFromUser = userByFromUser;
-    }
-
-    public User getUserByToUser() {
-        return this.userByToUser;
-    }
-    
-    public void setUserByToUser(User userByToUser) {
-        this.userByToUser = userByToUser;
+	this.id = id;
     }
 
     public Timestamp getTime() {
-        return this.time;
+	return this.time;
     }
-    
+
     public void setTime(Timestamp time) {
-        this.time = time;
+	this.time = time;
     }
 
     public String getTitle() {
-        return this.title;
+	return this.title;
     }
-    
+
     public void setTitle(String title) {
-        this.title = title;
+	this.title = title;
     }
 
     public String getContent() {
-        return this.content;
+	return this.content;
     }
-    
+
     public void setContent(String content) {
-        this.content = content;
+	this.content = content;
     }
 
     public Boolean getOpened() {
-        return this.opened;
+	return this.opened;
     }
-    
+
     public void setOpened(Boolean opened) {
-        this.opened = opened;
+	this.opened = opened;
     }
-   
 
+    /**
+     * @param toUser the toUser to set
+     */
+    public void setToUser(User toUser) {
+	this.toUser = toUser;
+    }
 
+    /**
+     * @return the toUser
+     */
+    public User getToUser() {
+	return toUser;
+    }
 
+    /**
+     * @param fromUser the fromUser to set
+     */
+    public void setFromUser(User fromUser) {
+	this.fromUser = fromUser;
+    }
 
-
-
-
+    /**
+     * @return the fromUser
+     */
+    public User getFromUser() {
+	return fromUser;
+    }
 
 }

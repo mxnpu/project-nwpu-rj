@@ -40,7 +40,7 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-agent.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-aop.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-aspects.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-beans.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-beans.jar" sourcepath="C:/Documents and Settings/lenovo/.m2/repository/org/springframework/spring-beans/2.5.6/spring-beans-2.5.6-sources.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-context.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-core.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-jdbc.jar"/>

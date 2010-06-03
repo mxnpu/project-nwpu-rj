@@ -13,7 +13,6 @@ import java.util.Set;
 public class User implements java.io.Serializable, Comparable<User>{
 
 	// Fields
-
 	private static final long serialVersionUID = 1L;
 	private Integer idUser;
 	private String userName;
@@ -35,7 +34,9 @@ public class User implements java.io.Serializable, Comparable<User>{
 	// the users who the current user belong to
 	private Set<Friends> friendsForOther = new HashSet<Friends>(0);
 	// the gossips which the user to his friend.
-	private Set<Gossip> gossips = new HashSet<Gossip>(0);	
+	private Set<Gossip> gossips = new HashSet<Gossip>(0);
+	private Set<User> mailFromUser = new HashSet<User>(0);
+	private Set<User> mailToUser = new HashSet<User>(0);
 	
 	// Constructors
 
@@ -212,5 +213,33 @@ public class User implements java.io.Serializable, Comparable<User>{
 	public int compareTo(User user) {
 		// TODO Auto-generated method stub
 		return this.userName.compareToIgnoreCase(user.getUserName());
+	}
+
+	/**
+	 * @param mailFromUser the mailFromUser to set
+	 */
+	public void setMailFromUser(Set<User> mailFromUser) {
+	    this.mailFromUser = mailFromUser;
+	}
+
+	/**
+	 * @return the mailFromUser
+	 */
+	public Set<User> getMailFromUser() {
+	    return mailFromUser;
+	}
+
+	/**
+	 * @param mailToUser the mailToUser to set
+	 */
+	public void setMailToUser(Set<User> mailToUser) {
+	    this.mailToUser = mailToUser;
+	}
+
+	/**
+	 * @return the mailToUser
+	 */
+	public Set<User> getMailToUser() {
+	    return mailToUser;
 	}
 }

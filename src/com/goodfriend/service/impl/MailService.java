@@ -23,8 +23,8 @@ public class MailService implements IMailService {
 	public void addFriendRequest(int toUser, User fromUser) {
 		Mail mail = new Mail();
 		User user = userDao.findById(toUser);
-		mail.setUserByFromUser(fromUser);
-		mail.setUserByToUser(user);
+		mail.setFromUser(fromUser);
+		mail.setToUser(user);
 		mail.setTitle("好友请求");
 		mail.setContent("用户<a href='#'>" + fromUser.getUserName() + "</a>请求添加您为好友。");
 		mailDao.save(mail);
