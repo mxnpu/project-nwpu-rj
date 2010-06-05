@@ -1,6 +1,7 @@
 package com.goodfriend.dao.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -12,6 +13,9 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.goodfriend.dao.IBlogDAO;
 import com.goodfriend.model.Blog;
 import com.goodfriend.model.User;
+import com.goodfriend.util.BlogComparator;
+
+import edu.emory.mathcs.backport.java.util.Collections;
 
 /**
  * A data access object (DAO) providing persistence and search support for Blog
@@ -171,6 +175,8 @@ public class BlogDAO extends HibernateDaoSupport implements IBlogDAO {
 	public List<Blog> findByPage(User user, int index, int size) {
 		// TODO Auto-generated method stub
 		List<Blog> allBlogs = findAll();
+		//将日志按时间排序
+		Collections.sort(allBlogs, new BlogComparator());
 		List<Blog> tempList = new ArrayList<Blog>();
 		List<Blog> result = new ArrayList<Blog>();
 		for (int i = 0; i < allBlogs.size(); i++){

@@ -81,7 +81,12 @@ public class Friends implements java.io.Serializable {
 	}
 	
 	public boolean equals(Friends friend){
-		return this.idFriends == friend.getIdFriends();
+		if (this.getUser().equals(friend.getUser()) && this.getUserFriend().equals(friend.getUserFriend())){
+			return true;
+		}else if (this.getUser().equals(friend.getUserFriend()) && this.getUserFriend().equals(friend.getUser())){
+			return true;
+		}
+		return false;
 	}
 
 }

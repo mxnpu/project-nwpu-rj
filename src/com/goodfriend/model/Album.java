@@ -16,8 +16,7 @@ public class Album implements java.io.Serializable {
 	private Integer idAlbum;
 	private Item item;
 	private String title;
-	private Set<Picture> pictures = new HashSet<Picture>(0);
-	private String cover;
+	private String path;
 	private String description;
 
 	// Constructors
@@ -32,10 +31,9 @@ public class Album implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Album(Item item, String title, Set<Picture> pictures) {
+	public Album(Item item, String title) {
 		this.item = item;
 		this.title = title;
-		this.pictures = pictures;
 	}
 
 	// Property accessors
@@ -65,20 +63,12 @@ public class Album implements java.io.Serializable {
 		this.title = title;
 	}
 
-	public Set<Picture> getPictures() {
-		return this.pictures;
+	public String getPath() {
+		return path;
 	}
 
-	public void setPictures(Set<Picture> pictures) {
-		this.pictures = pictures;
-	}
-
-	public String getCover() {
-		return cover;
-	}
-
-	public void setCover(String cover) {
-		this.cover = cover;
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 	public String getDescription() {
@@ -92,7 +82,7 @@ public class Album implements java.io.Serializable {
 	
 	@Override
 	public String toString(){
-		return "cover:" + cover + "\ndescription:" + description + "\nrecordTime:" + item.getRecordTime();
+		return "path:" + path + "\ndescription:" + description + "\nrecordTime:" + item.getRecordTime();
 	}
 	
 }

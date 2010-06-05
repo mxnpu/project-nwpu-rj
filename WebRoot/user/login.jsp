@@ -56,9 +56,11 @@
             </tr>
             <tr>
               <th width="100"><label for="password">密　码</label></th>
+
               <td><input type="password" name="password" id="password" class="t_input" tabindex="3" 
               		onBlur="Validate.required(this,4,16,'密码需要','userPasswordError')"
               		></td>
+
               <td><div class="errorMsg" id="userPasswordError"></div></td>
             </tr>
             <tr>

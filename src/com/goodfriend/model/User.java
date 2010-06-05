@@ -38,6 +38,8 @@ public class User implements java.io.Serializable, Comparable<User>{
 	private Set<User> mailFromUser = new HashSet<User>(0);
 	private Set<User> mailToUser = new HashSet<User>(0);
 	
+	private Set<Mail> mails = new HashSet<Mail>(0);
+	
 	// Constructors
 
 	/** default constructor */
@@ -201,6 +203,14 @@ public class User implements java.io.Serializable, Comparable<User>{
 
 	public Timestamp getLastLogoutTime() {
 	    return lastLogoutTime;
+	}
+
+	public Set<Mail> getMails() {
+		return mails;
+	}
+
+	public void setMails(Set<Mail> mails) {
+		this.mails = mails;
 	}
 
 	public boolean equals(User tempUser){

@@ -37,7 +37,7 @@ public class FriendAction implements ServletRequestAware {
 	// 表示点击分页链接后要将请求发送到哪个action
 	private String pageAction;
 	//保存请求添加你为好友的用户
-	private List<User> requestList;
+	private List<Mail> requestList;
 	
 	// 表示要搜索的范围 是从自己的好友里搜索还是从所有用户里搜索
 	private String scope;
@@ -52,8 +52,9 @@ public class FriendAction implements ServletRequestAware {
 		User user = (User) ActionContext.getContext().getSession().get(
 		"currentUser");
 		int friendID = Integer.parseInt(request.getParameter("friendId"));
-		friendService.addFriendToRequest(user, friendID);
+//		friendService.addFriendToRequest(user, friendID);
 		System.out.println("asd");
+		//给用户发送站内信通知请求
 		mailService.addFriendRequest(friendID, user);
 		return "success";
 	}
@@ -95,7 +96,7 @@ public class FriendAction implements ServletRequestAware {
 
 		totalPage = friendService.getTotalPage(user, pageSize);
 		
-		requestList = friendService.getFriends(user, "N");
+		requestList = mailService.getFriendRequest(user);
 
 		pageAction = "showFriends";
 
@@ -107,7 +108,7 @@ public class FriendAction implements ServletRequestAware {
 
 		User user = (User) ActionContext.getContext().getSession().get(
 				"currentUser");
-		requestList = friendService.getFriends(user, "N");
+		requestList = mailService.getFriendRequest(user);
 		if (scope.equals("fromFriends")) {
 
 			friends = friendService.searchFriendsByPage(user, userName,
@@ -131,7 +132,7 @@ public class FriendAction implements ServletRequestAware {
 	public String getFriendsByPage() {
 		User user = (User) ActionContext.getContext().getSession().get(
 				"currentUser");
-		requestList = friendService.getFriends(user, "N");
+		requestList = mailService.getFriendRequest(user);
 		if (pageAction.equals("searchFriends")) {
 			friends = friendService.searchFriendsByPage(user, userName,
 					pageNow, pageSize);
@@ -144,7 +145,7 @@ public class FriendAction implements ServletRequestAware {
 	public String deleteFriend() {
 		User user = (User) ActionContext.getContext().getSession().get(
 				"currentUser");
-		requestList = friendService.getFriends(user, "N");
+		requestList = mailService.getFriendRequest(user);
 		int friendID = Integer.parseInt(request.getParameter("friendId"));
 		friendService.deleteFriend(user, friendID);
 
@@ -227,11 +228,11 @@ public class FriendAction implements ServletRequestAware {
 		this.scope = scope;
 	}
 
-	public List<User> getRequestList() {
+	public List<Mail> getRequestList() {
 		return requestList;
 	}
 
-	public void setRequestList(List<User> requestList) {
+	public void setRequestList(List<Mail> requestList) {
 		this.requestList = requestList;
 	}
 
