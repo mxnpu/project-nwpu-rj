@@ -21,31 +21,31 @@
             </key>
             <one-to-many class="Gossip" />
         </set>
-        <set name="pictures" inverse="true" cascade="all">
+        <set name="pictures" inverse="true" cascade="all" lazy="false">
             <key>
                 <column name="item_id" not-null="true" />
             </key>
             <one-to-many class="Picture" />
         </set>
-        <set name="statements" inverse="true" cascade="all">
+        <set name="statements" inverse="true" cascade="all" lazy="false">
             <key>
                 <column name="item_id" not-null="true" />
             </key>
             <one-to-many class="Statement" />
         </set>
-        <set name="blogs" inverse="true" cascade="all">
+        <set name="blogs" inverse="true" cascade="all" lazy="false">
             <key>
                 <column name="item_id" not-null="true" />
             </key>
             <one-to-many class="Blog" />
         </set>
-        <set name="replies" inverse="true">
+        <set name="replies" inverse="true" cascade="all" lazy="false">
             <key>
                 <column name="item_id" not-null="true" />
             </key>
             <one-to-many class="Reply" />
         </set>
-        <set name="albums" inverse="true" cascade="all">
+        <set name="albums" inverse="true" cascade="all" lazy="false">
             <key>
                 <column name="item_id" not-null="true" />
             </key>

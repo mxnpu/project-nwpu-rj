@@ -88,6 +88,7 @@
 			<result name="success" type="stream"></result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
+
 		<!-- 访问个人主页的请求处理 -->
 		<action name="home" class="homeAction" method="home">
 			<result name="success">home.jsp</result>
@@ -154,7 +155,8 @@
 
 		<!-- 查看某一篇自己的blog -->
 		<action name="showBlog" class="blogAction" method="showBlog">
-			<result name="success">modify_blog.jsp</result>
+			<result name="editBlog">modify_blog.jsp</result>
+			<result name="showBlog">blog.jsp</result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		

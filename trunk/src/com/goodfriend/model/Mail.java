@@ -21,28 +21,26 @@ public class Mail implements Serializable {
     private String content;
     private Boolean opened = false;
 
-    // Constructors
 
     /** default constructor */
     public Mail() {
     }
 
     /** minimal constructor */
-    public Mail(User userByToUser, Timestamp time, Boolean opened) {
-	this.toUser = userByToUser;
-	this.time = time;
-	this.opened = opened;
+    public Mail(User toUser, Timestamp time, Boolean opened) {
+        this.toUser = toUser;
+        this.time = time;
+        this.opened = opened;
     }
 
     /** full constructor */
-    public Mail(User userByFromUser, User userByToUser, Timestamp time,
-	    String title, String content, Boolean opened) {
-	this.fromUser = userByFromUser;
-	this.toUser = userByToUser;
-	this.time = time;
-	this.title = title;
-	this.content = content;
-	this.opened = opened;
+    public Mail(User fromUser, User toUser, Timestamp time, String title, String content, Boolean opened) {
+        this.fromUser = fromUser;
+        this.toUser = toUser;
+        this.time = time;
+        this.title = title;
+        this.content = content;
+        this.opened = opened;
     }
 
     // Property accessors
@@ -56,9 +54,9 @@ public class Mail implements Serializable {
     }
 
     public Timestamp getTime() {
-	return this.time;
+        return this.time;
     }
-
+    
     public void setTime(Timestamp time) {
 	this.time = time;
     }
@@ -113,6 +111,11 @@ public class Mail implements Serializable {
      */
     public User getFromUser() {
 	return fromUser;
+    }
+    
+    
+    public boolean equals(Mail mail){
+    	return false;
     }
 
 }

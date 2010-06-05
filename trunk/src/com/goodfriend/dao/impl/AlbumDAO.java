@@ -1,6 +1,7 @@
 package com.goodfriend.dao.impl;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -15,6 +16,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.goodfriend.dao.IAlbumDAO;
 import com.goodfriend.model.Album;
 import com.goodfriend.model.Item;
+import com.goodfriend.model.User;
 import com.goodfriend.model.flex.FAlbum;
 import com.goodfriend.model.flex.FItem;
 import com.goodfriend.service.IUserService;
@@ -35,6 +37,10 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	private static final Log log = LogFactory.getLog(AlbumDAO.class);
 	// property constants
 	public static final String TITLE = "title";
+	
+	public static final String DEFAULT_ALBUM = "default album";
+	
+	private UserDAO userDAO;
 
 	protected void initDao() {
 		// do nothing
@@ -136,16 +142,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	@SuppressWarnings("unchecked")
 	public List<Album> findAll() {
 		log.debug("finding all Album instances");
-		Session session;
 		try {
-			session = getSessionFactory().openSession();
-			session.beginTransaction();
 			String queryString = "from Album";
-			List<Album> lists = (List<Album>) session.createQuery(queryString);
-			session.getTransaction().commit();
-			session.close();
-			
-			return lists;
+			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -205,7 +204,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		return (IAlbumDAO) ctx.getBean("AlbumDAO");
 	}
 	
+	
 	public void saveAlbumFlex(FAlbum fAlbum, FItem fItem){
+		
 		Album album = new Album();
 		Item item = new Item();
 		item.setRecordTime(new Timestamp(fItem.getRecordTime().getTime()));
@@ -215,9 +216,142 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		IUserService userService = (IUserService) ctx.getBean("userService");
 		item.setUser(userService.getUser(1));
 		album.setItem(item);
-		album.setCover(fAlbum.getCover());
+//		album.setCover(fAlbum.getCover());
 		album.setTitle(fAlbum.getTitle());
 		
 		save(album);
 	}
+	
+	//新建一个相册
+	public void createAlbum(int userID, String title){
+		Album album = new Album();
+		Item item = new Item();
+		User user = userDAO.findById(userID);
+		item.setUser(user);
+		album.setItem(item);
+		album.setTitle(title);
+		//创建相册的时候它的path属性为""
+		album.setPath("");
+		save(album);
+	}
+	
+	//获得一个用户的所有相册名称
+	public List<String> getAlbumTitles(int userID){		
+		List<Album> albums = findAll();
+		List<String> titles = new ArrayList<String>();
+		for (int i = 0; i < albums.size(); i++){
+			if (albums.get(i).getItem().getUser().getIdUser() == userID){
+				if (!titles.contains(albums.get(i).getTitle())){
+					titles.add(albums.get(i).getTitle());
+				}
+			}
+		}
+		return titles;
+	}
+	//保存一张图片到数据库
+	public void saveImage(int userID, String groupName, String path){
+		User user = userDAO.findById(userID);
+		
+		Album album = new Album();
+		Item item = new Item();
+		item.setUser(user);
+		album.setTitle(groupName);
+		album.setPath(path);
+		album.setItem(item);
+		album.setDescription("");
+		save(album);
+	}
+	
+	//根据相册名称返回相册中的所有图片
+	public List<Album> getImagesByAlbumName(int userID, String albumName){
+		List<Album> albums = findAll();
+		List<Album> result = new ArrayList<Album>();
+		for (int i = 0; i < albums.size(); i++){
+			if (albums.get(i).getItem().getUser().getIdUser() == userID){
+				if (albums.get(i).getTitle().equals(albumName) && !albums.get(i).getPath().equals("")){
+					result.add(albums.get(i));
+				}
+			}
+		}
+		return result;
+	}
+	
+	//根据相册名删除相册  把该相册下的所有图片转移到default album相册下
+	public void removeAlbum(int userID, String albumName){
+		List<Album> albums = this.findByProperty("title", albumName);
+		Album album;
+		for (int i = 0; i < albums.size(); i++){
+			album = albums.get(i);
+			if (album.getItem().getUser().getIdUser() == userID){
+				if (!albums.get(i).getPath().equals("")){
+					if (album.getTitle().equals(albumName)){
+						album.setTitle(DEFAULT_ALBUM);
+						attachDirty(album);
+					}
+				}else{
+					delete(album);
+				}
+			}
+		}
+	}
+	
+	//删除一张图片信息
+	public void deleteImage(int userID, String albumName, String path){
+		List<Album> albums = this.findByProperty("title", albumName);
+		Album album;
+		for (int i = 0; i < albums.size(); i++){
+			album = albums.get(i);
+			if (album.getItem().getUser().getIdUser() == userID){
+				//传递过来的path是完整路径  数据库中保存的只是文件名
+				if (path.contains(album.getPath())){
+					delete(album);
+					break;
+				}
+			}
+		}
+	}
+	
+	//更新图片描述
+	public void updateDescription(int userID, String albumName, String path, String description){
+		List<Album> albums = this.findByProperty("title", albumName);
+		Album album;
+		for (int i = 0; i < albums.size(); i++){
+			album = albums.get(i);
+			if (album.getItem().getUser().getIdUser() == userID){
+				//传递过来的path是完整路径  数据库中保存的只是文件名
+				if (path.contains(album.getPath())){
+					album.setDescription(description);
+					attachDirty(album);
+					break;
+				}
+			}
+		}
+	}
+	
+	//改变一张图片所属的相册
+	public void moveImage(int userID, String fromAlbum, String toAlbum, String path){
+		List<Album> albums = this.findByProperty("title", fromAlbum);
+		Album album;
+		for (int i = 0; i < albums.size(); i++){
+			album = albums.get(i);
+			if (album.getItem().getUser().getIdUser() == userID){
+				//传递过来的path是完整路径  数据库中保存的只是文件名
+				if (path.contains(album.getPath())){
+					album.setTitle(toAlbum);
+					attachDirty(album);
+					break;
+				}
+			}
+		}
+	}
+	
+	public UserDAO getUserDAO() {
+		return userDAO;
+	}
+
+	public void setUserDAO(UserDAO userDAO) {
+		this.userDAO = userDAO;
+	}
+	
+	
 }

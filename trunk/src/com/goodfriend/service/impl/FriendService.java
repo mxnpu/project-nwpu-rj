@@ -6,8 +6,10 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.goodfriend.dao.impl.FriendsDAO;
+import com.goodfriend.dao.impl.MailDAO;
 import com.goodfriend.dao.impl.UserDAO;
 import com.goodfriend.model.Friends;
+import com.goodfriend.model.Mail;
 import com.goodfriend.model.User;
 import com.goodfriend.service.IFriendService;
 /**
@@ -21,6 +23,7 @@ public class FriendService implements IFriendService {
 	
 	private UserDAO userDao;
 
+	private MailDAO mailDao;
 
 	public void deleteFriend(Friends friend) {
 		// TODO Auto-generated method stub
@@ -28,47 +31,65 @@ public class FriendService implements IFriendService {
 		friendDao.delete(friend);
 	}
 	
-	//添加id为friendID的用户为好友到好友请求队列
+	/**
+	 * 添加id为friendID的用户为好友到好友请求队列
+	 * 停止使用  该功能用mailService实现
+	 */
 	public void addFriendToRequest(User user, int friendID){
+//		User userFriend = userDao.findById(friendID);
+//		Friends friend = new Friends();
+//		friend.setGroup("");
+//		friend.setSuccess("N");
+//		
+//		friend.setUserFriend(userFriend);
+//		friend.setUser(user);
+//
+//		friendDao.merge(friend);
+	}
+	
+	//添加id为friendID的用户为好友
+	public void addFriend(User user, int friendID) {
 		User userFriend = userDao.findById(friendID);
 		Friends friend = new Friends();
 		friend.setGroup("");
-		friend.setSuccess("N");
-		
+		friend.setSuccess("Y");
 		friend.setUserFriend(userFriend);
 		friend.setUser(user);
-
 		friendDao.merge(friend);
-	}
-	//添加id为friendID的用户为好友
-	public void addFriend(User user, int friendID) {
-		Iterator<Friends> friendsIt2 = friendDao.findByProperty("userFriend", user).iterator();
-		Friends tempFriend;
-		while(friendsIt2.hasNext()){
-			
-			tempFriend = friendsIt2.next();
-			if (tempFriend.getUser().getIdUser() == friendID){
-				tempFriend.setSuccess("Y");
-				friendDao.attachDirty(tempFriend);
-				return;
-			}
-		}
+//		Iterator<Friends> friendsIt2 = friendDao.findByProperty("userFriend", user).iterator();
+//		Friends tempFriend;
+//		while(friendsIt2.hasNext()){
+//			
+//			tempFriend = friendsIt2.next();
+//			if (tempFriend.getUser().getIdUser() == friendID){
+//				tempFriend.setSuccess("Y");
+//				friendDao.attachDirty(tempFriend);
+//				return;
+//			}
+//		}
 	}
 	
 	/**
-	 * 拒绝一个用户的好友申请
+	 * 拒绝一个用户的好友申请  将好友请求站内信标记为已打开
 	 * @param user
 	 * @param friendID
 	 */
 	public void refuseFriend(User user, int friendID){
-		Iterator<Friends> friendsIt2 = friendDao.findByProperty("userFriend", user).iterator();
-		Friends tempFriend;
-		while(friendsIt2.hasNext()){
-			
-			tempFriend = friendsIt2.next();
-			if (tempFriend.getUser().getIdUser() == friendID){
-				friendDao.delete(tempFriend);
-				return;
+//		Iterator<Friends> friendsIt2 = friendDao.findByProperty("userFriend", user).iterator();
+//		Friends tempFriend;
+//		while(friendsIt2.hasNext()){
+//			
+//			tempFriend = friendsIt2.next();
+//			if (tempFriend.getUser().getIdUser() == friendID){
+//				friendDao.delete(tempFriend);
+//				return;
+//			}
+//		}
+		List<Mail> list = mailDao.findByProperty("fromUser", user);		
+		for(int i = 0; i < list.size(); i++){
+			if (list.get(i).getToUser().getIdUser() == friendID){
+				list.get(i).setOpened(true);
+				mailDao.attachDirty(list.get(i));
 			}
 		}
 
@@ -272,6 +293,14 @@ public class FriendService implements IFriendService {
 	public Friends getFriend(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public MailDAO getMailDao() {
+		return mailDao;
+	}
+
+	public void setMailDao(MailDAO mailDao) {
+		this.mailDao = mailDao;
 	}
 
 

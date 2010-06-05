@@ -114,9 +114,17 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<bean id="userDAO" class="com.goodfriend.dao.impl.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 	<bean id="albumDAO" class="com.goodfriend.dao.impl.AlbumDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
+		</property>
+		<property name="userDAO">
+			<ref bean="userDAO" />
 		</property>
 	</bean>
 	<bean id="blogDAO" class="com.goodfriend.dao.impl.BlogDAO">
@@ -124,11 +132,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="userDAO" class="com.goodfriend.dao.impl.UserDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
+
 	<bean id="pictureDAO" class="com.goodfriend.dao.impl.PictureDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -173,13 +177,14 @@
 		</property>
 	</bean>
 	<bean id="friendService" class="com.goodfriend.service.impl.FriendService">
-
 		<property name="friendDao">
 			<ref bean="friendsDAO" />
 		</property>
-
 		<property name="userDao">
 			<ref bean="userDAO"/>
+		</property>
+		<property name="mailDao">
+			<ref bean="mailDAO"/>
 		</property>
 	</bean> 
 

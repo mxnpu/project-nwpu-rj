@@ -1,6 +1,7 @@
 package com.goodfriend.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ public class Item implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer idItem;
 	private User user;
-	private Timestamp recordTime;
+	private Timestamp recordTime = new Timestamp(new Date().getTime());
 	private Set<Gossip> gossips = new HashSet<Gossip>(0);
 	private Set<Picture> pictures = new HashSet<Picture>(0);
 	private Set<Statement> statements = new HashSet<Statement>(0);
