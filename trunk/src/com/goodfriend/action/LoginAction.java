@@ -40,7 +40,7 @@ public class LoginAction {
 		session.put("user", dbUser);
 		return "success";
 	    } else {
-		ActionContext.getContext().put("errorMsg", "用户名或密码错误");
+		ActionContext.getContext().put("errorMsg", "Username or Password Error!");
 	    }
 	} else {
 	    Admin dbAdmin = adminService.getAdmin(username);
@@ -53,7 +53,7 @@ public class LoginAction {
 		session.put("currentAdmin", dbAdmin);
 		return "admin";
 	    } else {
-		ActionContext.getContext().put("errorMsg", "管理员账户名或密码错误");
+		ActionContext.getContext().put("errorMsg", "Admin account or Password Error!");
 	    }
 
 	}

@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>个人主页</title>
+    <title><s:text name="header.personal_homepage"/></title>
     <script type="text/javascript" src="../js/home.js"></script>
     <link rel="stylesheet" type="text/css" href="../style/home.css" />
   </head>
@@ -17,8 +17,8 @@
   	
   	<!-- 显示该用户当前的状态 -->
   	<div id="statementDiv">
-  		<span><s:property value="#session.user.realName"/></span> 最近状态 :
-  		<label id="showLastStmt"></label> | <span><a href="">所有状态</a></span>
+  		<span><s:property value="#session.user.realName"/></span> <s:text name="home_state"/>
+  		<label id="showLastStmt"></label> | <span><a href=""><s:text name="home_all_state"/></a></span>
   	  	<br/>
   	  	<br/>
   	</div>
@@ -27,18 +27,18 @@
   	<div id="personalityDiv">
   		<s:if test="#session.currentUser.idUser == #session.user.idUser">
   			<img alt="Photo" src="${session.currentUser.photo}" /><br/> 
-  			<span>姓名:<s:property value="#session.currentUser.realName"/></span><br>
-  			<span>生日:<s:property value="#session.currentUser.birthday"/></span><br>
-  			<span>爱好:<s:property value="#session.currentUser.hoby"/></span><br>
-  	  		<a href="editPhoto.action">换头像</a> | 
-  	  		<a href="">编辑我的资料</a>
+  			<span><s:text name="home_name"/><s:property value="#session.currentUser.realName"/></span><br>
+  			<span><s:text name="home_birth"/><s:property value="#session.currentUser.birthday"/></span><br>
+  			<span><s:text name="home_love"/><s:property value="#session.currentUser.hoby"/></span><br>
+  	  		<a href="editPhoto.action"><s:text name="home_change_photo"/></a> | 
+  	  		<a href=""><s:text name="home_edit"/></a>
   	  		<br/>
   		</s:if>
   		<s:else>
   			<img alt="Photo" src="${session.user.photo}" /><br/>
-  			<span>姓名:<s:property value="#session.user.realName"/></span><br>
-  			<span>生日:<s:property value="#session.user.birthday"/></span><br>
-  			<span>爱好:<s:property value="#session.user.hoby"/></span><br> 
+  			<span><s:text name="home_name"/><s:property value="#session.user.realName"/></span><br>
+  			<span><s:text name="home_birth"/><s:property value="#session.user.birthday"/></span><br>
+  			<span><s:text name="home_love"/><s:property value="#session.user.hoby"/></span><br> 
   	  		<br/>
   		</s:else>
   		<br/>
@@ -49,13 +49,14 @@
   	
   	
   	<div id="gossipDiv">
-  		<label>留言板</label> | 
+  		<label><s:text name="gossip_leave_message"/></label> | 
   		<span><a href='<s:url action="allGossip.action"><s:param name="userId" value="#session.user.idUser">
-  					</s:param></s:url>'>所有留言</a></span><br>
+  					</s:param></s:url>'><s:text name="home_all_leave_message"/></a></span><br>
   		<textarea rows="3" cols="80" id='textarea_gossip_<s:property value="#session.user.idUser"/>' 
-  				title="给他/她留言吧"  name="gossip" class="gossip"></textarea><br/>
+  				title="给他/她留言吧"  name="gossip" class="gossip" onkeypress="InputCheck.checkMaxInput(this.id)"></textarea><br/>
   	  	<input id='btn_gossip_<s:property value="#session.user.idUser"/>' 
   	  		type="button" value="留言" onclick="myGossipAjax.addGossip(this.id)" />
+  	  	<label id="gossip_remain_<s:property value="#session.user.idUser"/>">200</label>/200
   	</div>
   	
   	<div id="gossipListDiv">
@@ -72,18 +73,18 @@
   					<span>:<s:property value="#message.content"/> </span><br>
   					<span><s:property value="#message.time"/> |</span>
   					<label id='label_reply_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>'
-  						onclick="myGossipReplyAjax.showAllReplies(this.id)"> 查看 | </label>
+  						onclick="myGossipReplyAjax.showAllReplies(this.id)"> <s:text name="home_read"/></label>
   					<label id='label_reply_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>'
-  						onclick="myGossipReplyAjax.hiddenAllReplies(this.id)"> 收起 | </label>
+  						onclick="myGossipReplyAjax.hiddenAllReplies(this.id)"> <s:text name="home_stop"/></label>
   					<label id='label_reply_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>'
-  						onclick="myGossipAjax.addReply(this.id)"> 回复 </label>
+  						onclick="myGossipAjax.addReply(this.id)"> <s:text name="title.return"/> </label>
   					<s:if test="#session.currentUser.idUser == #session.user.idUser">
   						<label id='label_del_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>'
-  						onclick="myGossipAjax.delGossip(this.id)"> | 删除 </label>
+  						onclick="myGossipAjax.delGossip(this.id)"> <s:text name="gossip_delete"/> </label>
   					</s:if>
   					<s:elseif test="#session.currentUser.idUser == #message.owner.idUser">
   						<label id='label_del_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>'
-  						onclick="myGossipAjax.delGossip(this.id)"> | 删除 </label>
+  						onclick="myGossipAjax.delGossip(this.id)"> <s:text name="gossip_delete"/></label>
   					</s:elseif>
   					
   					<div id='gossip_reply_list' class="gossipReply">
@@ -100,11 +101,11 @@
   	  							<span><s:property value="#reply.time"/></span> 
   	  							<s:if test="#session.currentUser.idUser == #session.user.idUser">
 	  	  							<label id='label_reply_del_<s:property value="#reply.idReply"/>_<s:property value="#message.title"/>'
-  		  								onclick="myGossipReplyAjax.delReply(this.id)"> | 删除</label>
+  		  								onclick="myGossipReplyAjax.delReply(this.id)"><s:text name="gossip_delete"/></label>
   	  							</s:if>
   	  							<s:elseif test="#session.currentUser.idUser == #reply.user.idUser">
 	  	  							<label id='label_reply_del_<s:property value="#reply.idReply"/>_<s:property value="#message.title"/>'
-  		  								onclick="myGossipReplyAjax.delReply(this.id)"> | 删除</label>
+  		  								onclick="myGossipReplyAjax.delReply(this.id)"><s:text name="gossip_delete"/></label>
   	  							</s:elseif>
   	  						</div>
   							</li>
@@ -117,7 +118,7 @@
   			</s:iterator>
   		</ul>
   		<span><a href='<s:url action="allGossip.action"><s:param name="userId" value="#session.user.idUser">
-  					</s:param></s:url>'>所有留言</a></span><br>
+  					</s:param></s:url>'><s:text name="home_all_leave_message"/></a></span><br>
   	</div>
   	
   	<div id="friendDiv">

@@ -22,17 +22,36 @@ var myGossip = {
 		var userName = oA.innerHTML;
 
 		var oBtn = document.getElementById("btn_gossip_" + userId);
-		oBtn.value = "回复";
+		oBtn.value = "Reply";
 
 		var textareaId = "textarea_gossip_" + userId;
 		var oTextarea = document.getElementById(textareaId);
-		oTextarea.value = "回复 " + userName.trim() + " : ";
+		oTextarea.value = "Reply " + userName.trim() + " : ";
 		oTextarea.focus();
 
 	},
 	
 	delGossip : function (id) {
 		
+	}
+}
+
+
+var InputCheck = {
+	checkMaxInput : function (id) {
+		var args = id.split("_");
+		var userID = args[2];
+	
+		var maxLen = 200; 
+		var oText = document.getElementById(id);
+		var oRemain = document.getElementById("gossip_remain_"+userID);
+		
+		if (oText.value.length > maxLen) {
+			oText.value = oText.value.substring(0, maxLen);
+		}
+		else {
+			oRemain.innerHTML = maxLen - oText.value.length;
+		}
 	}
 }
 
@@ -46,7 +65,7 @@ $(function(){
 					autoOpen: false,
 					width: 400,
 					buttons: {
-						"确认": function() { 
+						"Confirm": function() { 
 							if (flag) {
 								var ids = gossipID.split("_");
 								var gossipId = ids[2];
@@ -65,7 +84,7 @@ $(function(){
 							
 							$(this).dialog("close");
 						}, 
-						"取消": function() { 
+						"Cancle": function() { 
 							$(this).dialog("close"); 
 						} 
 					}

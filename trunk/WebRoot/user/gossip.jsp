@@ -5,7 +5,7 @@
 <html>
 	<jsp:include page="header.jsp"></jsp:include>
 	<head>
-		<title>留言板</title>
+		<title><s:text name="gossip_leave_message"/></title>
 		<script type="text/javascript" src="../js/jquery-ui-1.7.2.custom.min.js"></script>
 		<script type="text/javascript" src="../js/gossip.js"></script>
 		<link type="text/css" href="../style/jquery-ui-1.7.2.custom.css" rel="stylesheet" />	
@@ -15,29 +15,30 @@
 		<div id="personalityDiv">
 			<img alt="Photo" src="${session.currentUser.photo}" />
 			<br />
-			<span>姓名:<s:property value="#session.currentUser.realName" />
+			<span><s:text name="gossip_name"/><s:property value="#session.currentUser.realName" />
 			</span>
 			<br>
 			<br>
 		</div>
 		
 		<div id="gossipDiv">
-  			<label>留言板</label><br/>
+  			<label><s:text name="gossip_leave_message"/></label><br/>
   			<form action="addGossipCommon.action" method="POST" id="gossipForm">
   				<input type="hidden" id="userIdHidden" name="userIdHidden"
   					 value='<s:property value="#session.user.idUser"/>'>
   				<input type="hidden" id="gossipIdHidden" name="gossipIdHidden" value=''>
   				<textarea rows="3" cols="80" id='textarea_gossip_<s:property value="#session.user.idUser"/>' 
-  					title="给他/她留言吧"  name="gossip" class="gossip"></textarea><br/>
+  					title='<s:text name="gossip_give_message"/>'  name="gossip" class="gossip" onkeypress="InputCheck.checkMaxInput(this.id)"></textarea><br/>
   	  			<input id='btn_gossip_<s:property value="#session.user.idUser"/>' 
-  	  				type="button" value="留言" onclick="myGossip.submit()" />
+  	  				type="button" value='<s:text name="gossip_message"/>' onclick="myGossip.submit()" />
+				<label id="gossip_remain_<s:property value="#session.user.idUser"/>">200</label>/200
   			</form>
   		</div>
 		
 		<div id="gossipList">
 			<ul id='ui_gossip_<s:property value="#session.user.idUser"/>'>
 			<s:iterator value="messages" var="message">
-				<span>回复内容</span>
+				<span><s:text name="gossip_return_message"/></span>
 				<li class="li_gossip">
   				<div id='li_gossip_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>' 
   						class="li_gossip_div">
@@ -51,14 +52,14 @@
   					<span>:<s:property value="#message.content"/> </span><br>
   					<span><s:property value="#message.time"/></span>
   					<label id='label_reply_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>'
-  						onclick="myGossip.addReply(this.id)">|回复</label>
+  						onclick="myGossip.addReply(this.id)"><s:text name="gossip_return"/></label>
   					<s:if test="#session.currentUser.idUser == #session.user.idUser">
   						<label id='label_del_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>'
-  							class="del_label" >|删除</label>
+  							class="del_label" ><s:text name="gossip_delete"/></label>
   					</s:if>
   					<s:elseif test="#session.currentUser.idUser == #message.owner.idUser">
   						<label id='label_del_<s:property value="#message.title"/>_<s:property value="#session.user.idUser"/>'
-  							class="del_label" ">|删除 </label>
+  							class="del_label" "><s:text name="gossip_delete"/></label>
   					</s:elseif>
   					
   					<div id='gossip_reply_list' class="gossipReply">
@@ -76,11 +77,11 @@
   	  							<span><s:property value="#reply.time"/></span> 
   	  							<s:if test="#session.currentUser.idUser == #session.user.idUser">
 	  	  							<label id='label_reply_del_<s:property value="#reply.idReply"/>_<s:property value="#message.title"/>'
-  		  								class="label_reply_del">|删除</label>
+  		  								class="label_reply_del"><s:text name="gossip_delete"/></label>
   	  							</s:if>
   	  							<s:elseif test="#session.currentUser.idUser == #reply.user.idUser">
 	  	  							<label id='label_reply_del_<s:property value="#reply.idReply"/>_<s:property value="#message.title"/>'
-  		  								class="label_reply_del">|删除</label>
+  		  								class="label_reply_del"><s:text name="gossip_delete"/></label>
   	  							</s:elseif>
   	  						</div>
   							</li>
@@ -105,8 +106,8 @@
 				</s:iterator>
 			</div>
 			<!-- UI-dialog -->
-			<div id="dialog" title="删除确认">
-				<p>你确定删除么?</p>
+			<div id="dialog" title='<s:text name="gossip_delete_confirm"/>'>
+				<p><s:text name="gossip_you_delete_confirm"/></p>
 			</div>
 		</div>
 	</div>

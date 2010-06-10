@@ -87,6 +87,9 @@ var myStmtAjax = {
 	 *            ayychronous 是否异步
 	 */
 	getNewStmt : function() {
+		var oText = document.getElementById("statement");
+		oText.value = "";
+		
 		
 		this.method = "GET";
 		this.url = "getNewStmt.action";
@@ -140,5 +143,33 @@ var myStmtAjax = {
 			}
 		}
 
+	},
+	
+	checkMaxInput : function () {
+		
+		// Define the max length of the textarea.
+		var maxLen = 150; 
+		var oText = document.getElementById("statement");
+		var oRemain = document.getElementById("remain");
+		
+		if (oText.value.length > maxLen) {
+			oText.value = oText.value.substring(0, maxLen);
+		}
+		else {
+			oRemain.innerHTML = maxLen - oText.value.length;
+		}
+	},
+	
+	replyCheckMaxInput : function(id) {
+		var maxLen = 150; 
+		var oText = document.getElementById(id);
+		var oRemain = document.getElementById("replyRemain_"+id);
+		
+		if (oText.value.length > maxLen) {
+			oText.value = oText.value.substring(0, maxLen);
+		}
+		else {
+			oRemain.innerHTML = maxLen - oText.value.length;
+		}
 	}
 }

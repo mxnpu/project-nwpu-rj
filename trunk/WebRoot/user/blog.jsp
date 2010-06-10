@@ -4,7 +4,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html> 
 	<head>
-		<title>查看日志</title>
+		<title><s:text name="title.read_blog"/></title>
 		<link rel="stylesheet" type="text/css" href="../style/style.css"/>
 		<script type="text/javascript" src="../js/kindeditor/kindeditor.js"></script>
 		<script type="text/javascript">
@@ -34,9 +34,9 @@
      	<div id="replies">
      		<form action="addBlogReply?id=<s:property value="blog.id" />" method="post">
      		<textarea id="replyContent" name="replyContent" rows="5" cols="100"></textarea><br>
-     		<button type="submit">回复</button><br>
+     		<button type="submit"><s:text name="title.return"/></button><br>
      		</form>
-     		<label>所有回复：</label>
+     		<label><s:text name="title.all_return"/></label>
      		<s:iterator value="replyList" var="reply">
      			<div id="reply">
      				<a href=""><s:property value="#reply.user.userName" /></a>:

@@ -67,7 +67,7 @@ Validate.required = function(element, s, e, message, showId) {
 
 		} else {
 			if (flag && value.length < s || value.length > e) {
-				var oText = document.createTextNode("长度范围" + s + "-" + e);
+				var oText = document.createTextNode("Length Scope" + s + "-" + e);
 				if ($(showId).firstChild != null) {
 					var child = $(showId).firstChild;
 					$(showId).removeChild(child);
@@ -97,7 +97,7 @@ Validate.email = function(emailElement, showId) {
 	var regEmail = /^(?:\w+\.?)*\w+@(?:\w+\.?)*\w+$/;
 	var flag = regEmail.test(emailElement.value);
 	if (!flag) {
-		var oText = document.createTextNode("邮件地址不合法");
+		var oText = document.createTextNode("Invalide Email Address");
 		if ($(showId).firstChild != null) {
 			var child = $(showId).firstChild;
 			$(showId).removeChild(child);

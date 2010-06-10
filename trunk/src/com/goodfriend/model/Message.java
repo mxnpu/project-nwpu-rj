@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class Message implements Comparable<Message> {
 
+    private String msgId;
     private String type;
     private String title;
     private String content;
@@ -151,6 +152,20 @@ public class Message implements Comparable<Message> {
      */
     public List<Reply> getReplies() {
 	return replies;
+    }
+
+    /**
+     * @param msgId the msgId to set
+     */
+    public void setMsgId(String msgId) {
+	this.msgId = msgId;
+    }
+
+    /**
+     * @return the msgId
+     */
+    public String getMsgId() {
+	return msgId;
     }
 
 }
