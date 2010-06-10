@@ -12,6 +12,13 @@
 var replyObject = {
 	// 展开一个用于回复的Div
 	show : function(oItemId) {
+		// set the remain show to the default.
+		var temp = oItemId.split("_");
+		var remainId = "replyRemain_reply_" + temp[1];
+		var oRemain = document.getElementById(remainId);
+		oRemain.innerHTML = "150";
+		
+		
 		// 获取单击的该Item的id号
 		var paras = oItemId.split("_");
 		var id = paras[1];
@@ -35,7 +42,7 @@ var replyObject = {
 
 		var textareaId = "reply_" + id;
 		var oReplyText = document.getElementById(textareaId);
-		oReplyText.value = "在这里回复";
+		oReplyText.value = "Reply Here :";
 		oReplyText.select();
 
 	},
@@ -193,7 +200,7 @@ var replyAjax = {
 					oReplyDiv.appendChild(oSpan2);
 					var oLabel = document.createElement("label");
 					oLabel.setAttribute("id", "label_"+replyId+"_"+itemId);
-					oLabel.innerHTML = "删除";
+					oLabel.innerHTML = "Delete";
 					oLabel.setAttribute("onclick", "replyDelAjax.deleteReply(this.id)");
 					oReplyDiv.appendChild(oLabel);
 
@@ -278,7 +285,7 @@ var replyDelAjax = {
 					oReplyDiv.appendChild(oSpan2);
 					var oLabel = document.createElement("label");
 					oLabel.setAttribute("id", "label_"+replyId+"_"+itemId);
-					oLabel.innerHTML = "删除";
+					oLabel.innerHTML = "Delete";
 					oLabel.setAttribute("onclick", "replyDelAjax.deleteReply(this.id)");
 					oReplyDiv.appendChild(oLabel);
 

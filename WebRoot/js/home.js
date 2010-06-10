@@ -166,7 +166,7 @@ var myGossipAjax = {
 		oTextarea.value = "";
 		var btnId = "btn_gossip_" + userId;
 		var oBtn = document.getElementById(btnId);
-		oBtn.value = "留言";
+		oBtn.value = "Gossip";
 
 		this.method = "POST";
 		this.url = "addGossip.action";
@@ -254,7 +254,7 @@ var myGossipAjax = {
 						var oLabelShow = document.createElement("label");
 						oLabelShow.setAttribute("id", "label_reply_" + gossipId + "_"
 										+ userId);
-						oLabelShow.innerHTML = "查看 |";
+						oLabelShow.innerHTML = "Show |";
 						oLabelShow.setAttribute("onclick",
 								"myGossipReplyAjax.showAllReplies(this.id)");
 						oGossipDiv.appendChild(oLabelShow);
@@ -262,7 +262,7 @@ var myGossipAjax = {
 						var oLabelHidden = document.createElement("label");
 						oLabelHidden.setAttribute("id", "label_reply_" + gossipId + "_"
 										+ userId);
-						oLabelHidden.innerHTML = "收起 |";
+						oLabelHidden.innerHTML = "Hidden |";
 						oLabelHidden.setAttribute("onclick",
 								"myGossipReplyAjax.hiddenAllReplies(this.id)");
 						oGossipDiv.appendChild(oLabelHidden);
@@ -270,7 +270,7 @@ var myGossipAjax = {
 						var oLabelReply = document.createElement("label");
 						oLabelReply.setAttribute("id", "label_reply_" + gossipId
 										+ "_" + userId);
-						oLabelReply.innerHTML = "回复 ";
+						oLabelReply.innerHTML = "Reply ";
 						oLabelReply.setAttribute("onclick", "myGossipAjax.addReply(this.id)");
 						oGossipDiv.appendChild(oLabelReply);
 
@@ -279,7 +279,7 @@ var myGossipAjax = {
 							var oLabelDel = document.createElement("label");
 							oLabelDel.setAttribute("id", "label_del_" + gossipId
 											+ "_" + userId);
-							oLabelDel.innerHTML = " | 删除";
+							oLabelDel.innerHTML = " | Delete";
 							oLabelDel.setAttribute("onclick", "myGossipAjax.delGossip(this.id)");
 							oGossipDiv.appendChild(oLabelDel);
 						}
@@ -344,7 +344,7 @@ var myGossipAjax = {
 							var oLabel = document.createElement("label");
 							oLabel.setAttribute("id", "label_" + replyId + "_"
 											+ gossipId);
-							oLabel.innerHTML = " | 删除";
+							oLabel.innerHTML = " | Delete";
 							oLabel.setAttribute("onclick", "");
 							oReplyDiv.appendChild(oLabel);
 						}
@@ -375,8 +375,8 @@ var myGossipAjax = {
 		var oText = document.getElementById(textareaId);
 		var oA = document.getElementById(aId);
 		var name = oA.innerHTML;
-		oText.value = "回复 " + name.trim() + ":";
-		oBtn.value = "回复";
+		oText.value = "Reply " + name.trim() + ":";
+		oBtn.value = "Reply";
 		oText.focus();
 	},
 	
@@ -521,7 +521,7 @@ var myGossipReplyAjax = {
 						var oLabel = document.createElement("label");
 						oLabel.setAttribute("id", "label_reply_del_" + replyId + "_"
 										+ gossipIdScope);
-						oLabel.innerHTML = " | 删除";
+						oLabel.innerHTML = " | Delete";
 						oLabel.setAttribute("onclick", "myGossipReplyAjax.delReply(this.id)");
 						oReplyDiv.appendChild(oLabel);
 					}
@@ -569,6 +569,25 @@ var myGossipReplyAjax = {
 			xmlreqGossipReply.send(null);
 		} else {
 			xmlreqGossipReply.send(this.parameter);
+		}
+	}
+}
+
+
+var InputCheck = {
+	checkMaxInput : function (id) {
+		var args = id.split("_");
+		var userID = args[2];
+	
+		var maxLen = 200; 
+		var oText = document.getElementById(id);
+		var oRemain = document.getElementById("gossip_remain_"+userID);
+		
+		if (oText.value.length > maxLen) {
+			oText.value = oText.value.substring(0, maxLen);
+		}
+		else {
+			oRemain.innerHTML = maxLen - oText.value.length;
 		}
 	}
 }

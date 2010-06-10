@@ -4,7 +4,7 @@
 <html>
 	<head>
 	
-		<title>Good Friend 互动社区</title>
+		<title><s:text name="title.login"></s:text></title>
 		<script type="text/javascript" src="../js/prototype-1.6.0.3.js"></script>
 		<script type="text/javascript" src="../js/detect.js"></script>
 		<script type="text/javascript" src="../js/eventutil.js"></script>
@@ -21,15 +21,35 @@
 					<a href="#"> <img src="../style/image/bf_logo.png"
 							alt="Good Friend" /> </a>
 				</h1>
-				<div class="nav_account">
+				<div class="nav_account" style="width: 250px;">
 					<br>
-					欢迎您
+					<s:text name="header.welcome"></s:text>
 					<s:if test="#session.currentUser.userName != null">
 						, <s:property value="#session.currentUser.userName"/>
 					</s:if>
 					<br>      
-					<a href="login.jsp">登录</a> |
-					<a href="register.jsp">注册</a>
+					<a href="tologin.action"><s:text name="header.login"></s:text></a> |
+					<a href="toregister.action"><s:text name="header.register"></s:text></a>
+					 
+					<s:set name="current_locale" 
+  							value="#session['WW_TRANS_I18N_LOCALE'] == null ? locale : #session['WW_TRANS_I18N_LOCALE']"/>
+  	
+  					<s:url id="chinese_url" value="select.action">
+  						<s:param name="request_locale" value="@java.util.Locale@CHINA"/>
+  					</s:url>
+  					<s:url id="english_url" value="select.action">
+  						<s:param name="request_locale" value="@java.util.Locale@US"/>
+  					</s:url>
+  	
+  					<s:if test="#current_locale.equals(@java.util.Locale@CHINA)">
+  						| <s:a href="%{#chinese_url}"><strong><s:text name="chinese"/></strong></s:a>
+  						<s:a href="%{#english_url}"><s:text name="english"/></s:a>
+  					</s:if>
+  					<s:else>
+  						| <s:a href="%{#chinese_url}"><s:text name="chinese"/></s:a>
+  						<s:a href="%{#english_url}"><strong><s:text name="english"/></strong></s:a>
+ 				 	</s:else>
+			 
 				</div>
 			</div>
 		</div>
@@ -39,8 +59,8 @@
       <form id="loginform" name="loginform" action="login" method="post" class="c_form">
         <table cellpadding="0" cellspacing="0" class="formtable">
           <caption>
-            <h2>用GoodFriend帐号登录</h2>
-            <p>如果您在本站已拥有帐号，请使用已有的帐号信息直接进行登录即可，不需重复注册。</p>   
+            <h2><s:text name="loginform.caption"></s:text></h2>
+            <p><s:text name="loginform.captiontips"></s:text></p>   
           </caption>
 			
           <tbody style="display:;">
@@ -49,16 +69,16 @@
             	<td><div class="errorMsg">${requestScope.errorMsg }</div></td>
             </tr>
             <tr>
-              <th width="100"><label for="username">用户名</label></th>
+              <th width="100"><label for="username"><s:text name="loginform.username"></s:text></label></th>
               <td><input type="text" name="username" id="username" class="t_input" tabindex="2" 
-		              onBlur="Validate.required(this,4,16,'用户名需要','userNameError');"></td>
+		              onBlur="Validate.required(this,4,16,'UserNameRequired','userNameError');"></td>
               <td><div class="errorMsg" id="userNameError"></div></td>
             </tr>
             <tr>
-              <th width="100"><label for="password">密　码</label></th>
+              <th width="100"><label for="password"><s:text name="loginform.password"></s:text></label></th>
 
               <td><input type="password" name="password" id="password" class="t_input" tabindex="3" 
-              		onBlur="Validate.required(this,4,16,'密码需要','userPasswordError')"
+              		onBlur="Validate.required(this,4,16,'PasswordRequired','userPasswordError')"
               		></td>
 
               <td><div class="errorMsg" id="userPasswordError"></div></td>
@@ -66,15 +86,16 @@
             <tr>
               <th width="100"></th>
               <td>
-              	<input type="radio" value="admin" name="purview"/>管理员
-              	<input type="radio" value="user" name="purview" checked="checked"/>用户
+              	<input type="radio" value="admin" name="purview"/><s:text name="loginform.admin"></s:text>
+              	<input type="radio" value="user" name="purview" checked="checked"/><s:text name="loginform.user"></s:text>
               </td>
               <td></td>
             </tr>
             <tr>
               <th width="100">&nbsp;</th>
               <td>
-                <input type="checkbox" id="cookietime" name="cookietime" style="margin-bottom: -2px;"><label for="cookietime">下次自动登录</label>
+                <input type="checkbox" id="cookietime" name="cookietime" style="margin-bottom: -2px;">
+                <label for="cookietime"><s:text name="loginform.autologin"></s:text></label>
               </td>
             </tr>
           </tbody>
@@ -82,7 +103,8 @@
             <tr>
             <th width="100">&nbsp;</th>
               <td>
-                <input type="button" id="loginsubmit" name="loginsubmit" value="登录" class="submit" tabindex="5" onClick="this.disabled=true;this.form.submit();">
+                <input type="button" id="loginsubmit" name="loginsubmit" value='<s:text name="loginform.loginbtn"></s:text>' class="submit" 
+                	tabindex="5" onClick="this.disabled=true;this.form.submit();">
               </td>
             </tr>
           </tbody>
@@ -92,14 +114,14 @@
       <div class="c_form">
         <table cellpadding="0" cellspacing="0" class="formtable">
           <caption>
-          <h2>还没有注册吗？</h2>
-          <p>如果还没有本站的通行帐号，请先注册一个属于自己的帐号吧。</p>
+          <h2><s:text name="bottom.tip" /></h2>
+          <p><s:text name="bottom.tipinfo" /></p>
           </caption>
           <tbody>
             <tr>
               <td>
-                <a href="register.jsp" target="_blank" id="register">
-                  <strong>立即注册</strong>
+                <a href="toregister.action" target="_blank" id="register">
+                  <strong><s:text name="bottom.registerbtn" /></strong>
                 </a>              
 			  </td>
             </tr>
@@ -115,7 +137,8 @@
         <p class="r_option">
           <a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP"><img src="../style/image/top.gif" alt="" style="padding: 5px 6px 6px;"></a>
         </p>
-        <p>交友乐园 - Good Friend 网友互动社区 - <a href="mailto:admin@gmail.com">联系我们</a>
+        <p><s:text name="footer.tip" />
+        	<a href="mailto:admin@gmail.com"><s:text name="footer.tipinfo" /></a>
       </div>
   </body>
 

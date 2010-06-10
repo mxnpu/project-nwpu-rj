@@ -59,12 +59,12 @@ public class RegisterAction {
 		if (username != null && !username.equals("")) {
 		    if (username.length() < 4 | username.length() > 16) {
 			ActionContext.getContext().put("errorMsg",
-				"用户名长度应在4-16");
+				"User Length 4-16");
 			return FAILED;
 		    }
 		    user.setUserName(username);
 		} else {
-		    ActionContext.getContext().put("errorMsg", "用户名不能为空");
+		    ActionContext.getContext().put("errorMsg", "User Name Not Null");
 		    return FAILED;
 		}
 
@@ -75,7 +75,7 @@ public class RegisterAction {
 		    user.setPassword(password);
 		} else {
 		    ActionContext.getContext().put("errorMsg",
-			    "密码不能为空或两次输入密码不一致");
+			    "Password Not Null Or Confirm Password different.");
 		    return FAILED;
 		}
 
@@ -83,7 +83,7 @@ public class RegisterAction {
 		if (realname != null && !realname.equals("")) {
 		    user.setRealName(realname);
 		} else {
-		    ActionContext.getContext().put("errorMsg", "真实用户名不能为空");
+		    ActionContext.getContext().put("errorMsg", "Real Name Not Null");
 		    return FAILED;
 		}
 
@@ -142,15 +142,15 @@ public class RegisterAction {
 			    user);
 		    return SUCCESS;
 		} else {
-		    ActionContext.getContext().put("errorMsg", "Sorry,服务器内部错误");
+		    ActionContext.getContext().put("errorMsg", "Sorry, Server Inner Error");
 		    return FAILED;
 		}
 
 	    } else {
-		ActionContext.getContext().put("errorMsg", "该用户名已被注册");
+		ActionContext.getContext().put("errorMsg", "The User Name Registered");
 	    }
 	} else {
-	    ActionContext.getContext().put("errorMsg", "验证码错误,请重新输入");
+	    ActionContext.getContext().put("errorMsg", "Validate Code Error, Reinput Please!");
 	}
 	return FAILED;
     }
@@ -167,9 +167,9 @@ public class RegisterAction {
 	String[] parameter = (String[]) parameters.get("valiName");
 	System.out.println(parameter[0]);
 	if (userService.isUserExist(parameter[0])) {
-	    toInStream("用户名已经存在");
+	    toInStream("Username Registered!");
 	} else {
-	    toInStream("可以注册");
+	    toInStream("Not be used!");
 	}
 	return SUCCESS;
     }

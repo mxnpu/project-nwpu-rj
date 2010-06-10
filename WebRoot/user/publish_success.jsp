@@ -23,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body> 
-    发布成功<br>
+    <s:text name="publish_success.submit_success"/><br>
   </body>
 </html>

@@ -5,15 +5,15 @@
 <html>
   <head>
     <title>
-    	注册成功</title>
+    	<s:text name="regiter_success.reg_suc"/></title>
   </head>
   
   <body> 
   		<div id="wrap">
-    	注册成功.欢迎<s:property value="#session.currentUser.userName"/>
-    	成为我们的会员，开始我们的Web旅行吧 <br>
+    	<s:text name="regiter_success.reg_suc_wel"/><s:property value="#session.currentUser.userName"/>
+    	<s:text name="regiter_success.reg_suc_wel_words"/> <br>
     	<br>
-    	<a href="index.jsp">主页</a>
+    	<a href="index.jsp"><s:text name="regiter_success.homepage"/></a>
     	</div>
   </body>
 </html>

@@ -75,7 +75,7 @@ public class GossipAction {
 	User currentUser = (User) session.get("currentUser");
 
 	// if it is the reply to a gossip.
-	if (content.indexOf(":") != -1 && content.startsWith("回复")) {
+	if (content.indexOf(":") != -1 && content.startsWith("Reply")) {
 	    int index = content.indexOf(":");
 	    content = content.substring(index + 1);
 
@@ -188,7 +188,7 @@ public class GossipAction {
 	String content = contents[0];
 
 	// if it is the reply to a gossip.
-	if (content.indexOf(":") != -1 && content.startsWith("回复")) {
+	if (content.indexOf(":") != -1 && content.startsWith("Reply")) {
 	    int index = content.indexOf(":");
 	    content = content.substring(index + 1);
 

@@ -13,10 +13,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <script type='text/javascript' src='jquery-1.2.6.min.js'></script>
         <script type='text/javascript' src='kwicks.js'></script>
         <script type='text/javascript' src='custom.js'></script>
-	</head>
+    </head>
 	<jsp:include page="header.jsp"></jsp:include>
 	<body>
-		
       <div id="mainPanel">
 <!--Global Toolbox-->
         <div id="global_toolbox">
@@ -26,10 +25,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <img src="image/test_amiao.png"/>
               </li>
               <li id="host_item_1">
-                积分：100
+                <s:text name="all_blog.score"/>：100
               </li>
               <li id="host_item_2">
-                来访：100
+                <s:text name="all_blog.visited"/>：100
               </li>
               <li id="host_item_3">
                 VIP
@@ -40,14 +39,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div id="content_bg">
           <div class="content_tab_header">
             <ul class="content_tab">
-              <li class="content_tab_active"><a href="#"><span>好友的日志</span></a></li>
-              <li><a href="#"><span>我的日志</span></a></li>
-              <li><a href="#"><span>我评论过的日志</span></a></li>
+              <li class="content_tab_active"><a href="#"><span><s:text name="all_blog.friend_blog"/></span></a></li>
+              <li><a href="#"><span><s:text name="all_blog.my_blog"/></span></a></li>
+              <li><a href="#"><span><s:text name="all_blog.my_blog_comment"/></span></a></li>
             </ul>
           </div>
           <div id="content">
-
-            <a href="write_blog.jsp">写日志</a>
+            <a href="write_blog.jsp"><span><s:text name="all_blog.write_blog"/></a>
 				<ul id="content_list">
 					<s:iterator value="blogs" var="blog">
 						<li class="content_item">
@@ -56,10 +54,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<img src="<%=basePath%>/style/image/icon_blog.png" />
 								</li>
 								<li>
-									<s:a href="showBlog?id=%{#blog.id}&state=edit">编辑</s:a>
+									<s:a href="showBlog?id=%{#blog.id}&state=edit"><s:text name="all_blog.edit"/></s:a>
 								</li>
 								<li>
-									<s:a href="deleteBlog?id=%{#blog.id}">删除</s:a>
+									<s:a href="deleteBlog?id=%{#blog.id}"><s:text name="all_blog.delete"/></s:a>
 								</li>
 							</ul>
 							<span> <label>
@@ -86,10 +84,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <p class="r_option">
             <a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP"><img src="image/top.gif" alt="" style="padding: 5px 6px 6px;"></a>
           </p>
-          <p>交友乐园 - Good Friend 网友互动社区 - <a href="mailto:admin@gmail.com">联系我们</a>
+          <p><s:text name="footer.tip"/><a href="mailto:admin@gmail.com"><s:text name="footer.tipinfo"/></a>
         </div>
         
       </div>
-      
 	</body>
 </html>

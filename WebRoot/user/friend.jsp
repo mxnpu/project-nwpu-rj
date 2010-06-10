@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     
-    <title>我的好友</title>
+    <title><s:text name="friend.myfriend"/></title>
     
 		<link rel="stylesheet" type="text/css"
 			href="<%=basePath%>/style/headStyle.css" />
@@ -37,16 +37,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<input id="userName" name="userName" type="text"
 								value="#username" />
 							<button type="submit">
-								搜索
+								<s:text name="friend.search"/>
 							</button>
 						</s:if>
 						<s:else>
 							<input id="userName" name="userName" type="text" />
 							<br>
-							<input type="radio" name="scope" id="scope" value="fromFriends" checked="checked" />好友  <input
+							<input type="radio" name="scope" id="scope" value="fromFriends" checked="checked" /><s:text name="friend.goodfriend"/><input
 								type="radio" name="scope" id="scope" value="fromAll"
-								/>全部 <button type="submit">
-								搜索
+								/><s:text name="friend.all"/><button type="submit">
+								<s:text name="friend.search"/>
 							</button>
 						</s:else>
 					</div>
@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		<s:iterator value="friends" var="user">
    			<img src="<s:property value="#user.photo" />"></img>
    			<a href="a.jsp"><s:property value="#user.userName" /></a>
-   			<a href="deleteFriend?friendId=<s:property value="#user.idUser" />">删除好友</a>
+   			<a href="deleteFriend?friendId=<s:property value="#user.idUser" />"><s:text name="friend.delete_friend"/></a>
    			<br>
    		</s:iterator>
    		
@@ -69,9 +69,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    </div>
    </div>
    <div id="request" align="right">
-   		<label>好友请求：</label><br>
+   		<label><s:text name="friend.friend_ask"/></label><br>
    		<s:iterator value="requestList" var="mail">
-   			<a href="a.jsp"><s:property value="#mail.fromUser.userName"/></a>请求加你为好友。 <a href="addFriend?friendId=<s:property value="#mail.fromUser.idUser" />">同意</a>  <a href="refuseFriend?friendId=<s:property value="#mail.fromUser.idUser" />">拒绝</a><br>
+   			<a href="a.jsp"><s:property value="#mail.fromUser.userName"/></a><s:text name="friend.ask_add_friend"/><a href="addFriend?friendId=<s:property value="#mail.fromUser.idUser" />"><s:text name="friend_allow"/></a>  <a href="refuseFriend?friendId=<s:property value="#mail.fromUser.idUser" />"><s:text name="friend_refuse"/></a><br>
    		</s:iterator>
    </div>
   </body>

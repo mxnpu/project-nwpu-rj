@@ -6,7 +6,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 	<head>
-		<title>头像编辑</title>
+		<title><s:text name="index.edit_photo"/></title>
 	</head>
 
 	<body>

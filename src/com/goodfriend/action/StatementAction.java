@@ -69,7 +69,7 @@ public class StatementAction {
 	    toInStream(latestStatement);
 	}
 	else {
-	    toInStream("这家伙很懒,什么都没有留下");
+	    toInStream("Lazy Person without any left.");
 	}
 	
 	return "success";

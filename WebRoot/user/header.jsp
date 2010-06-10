@@ -22,38 +22,39 @@
 					</a>
 				</h1>
 				<div class="nav_account">
-					欢迎您
+					<s:text name="header.welcome"/>
 					<s:if test="#session.currentUser.userName != null">
 						, <s:property value="#session.currentUser.userName"/>
-						 <a href="<%=basePath%>/user/logout.action">退出</a>
+						 <a href="<%=basePath%>/user/logout.action"><s:text name="header.quit"/></a>
 					</s:if> 
 					<s:else>
-						<a href="<%=basePath%>/user/login.jsp">登录</a> |
-						<a href="<%=basePath%>/user/register.jsp">注册</a>
-					</s:else>
+						<a href="<%=basePath%>/user/login.jsp"><s:text name="loginform.loginbtn"/></a> |
+						<a href="<%=basePath%>/user/register.jsp"><s:text name="header.register"/></a>
+					</s:else>		
+					
 				</div>
 				<div class="global_nav">
 					<ul class="kwicks">
 						<li id="kwick1">
-							<a href="<%=basePath%>/user/index.action">首页</a>
+							<a href="<%=basePath%>/user/index.action"><s:text name="header.homepage"/></a>
 						</li>
 						<li id="kwick2">
 							<a href="<%=basePath%>/user/home.action?userId=${session.currentUser.idUser}">
-							个人主页</a>
+							<s:text name="header.personal_homepage"/></a>
 						</li>
 						<li id="kwick3">
-							<a href="showAllBlogs">日志</a>
+							<a href="showAllBlogs"><s:text name="header.blog"/></a>
 						</li>
 						<li id="kwick4">
-							<a href="showFriends">好友</a>
+							<a href="showFriends"><s:text name="friend.goodfriend"/></a>
 						</li>
 						<li id="kwick5">
 							<a href='<s:url action="allGossip.action">
 							<s:param name="userId" value="#session.currentUser.idUser"></s:param>
-							</s:url>'>留言板</a>
+							</s:url>'><s:text name="gossip_leave_message"/></a>
 						</li>
 						<li id="kwick6">
-							<a href="#">个人信息</a>
+							<a href="#"><s:text name="header.personal_information"/></a>
 						</li>
 					</ul>
 				</div>

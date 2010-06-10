@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     
-    <title>我的相册</title>
+    <title><s:text name="album.title"/></title>
     
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">

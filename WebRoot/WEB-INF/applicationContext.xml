@@ -274,6 +274,10 @@
 
 
 	<!-- The struts action bean manager -->
+	<bean id="languageSelectAction" class="com.goodfriend.action.LanguageSelectAction"
+		scope="prototype">
+	</bean>
+	
 	<bean id="loginAction" class="com.goodfriend.action.LoginAction"
 		scope="prototype">
 		<property name="userService">

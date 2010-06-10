@@ -84,6 +84,7 @@ public class LatestMsgService implements ILatestMsgService {
 	for (Blog blog : blogs) {
 	    Message msg = new Message();
 	    msg.setType("blog");
+	    msg.setMsgId(blog.getId().toString());
 	    msg.setTitle(blog.getTitle());
 	    msg.setContent(blog.getContent());
 	    msg.setOwner(blog.getItem().getUser());

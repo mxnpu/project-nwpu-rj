@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <p class="r_option">
           <a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP"><img src="<%=basePath%>/style/image/top.gif" alt="" style="padding: 5px 6px 6px;"></a>
         </p>
-        <p>交友乐园 - Good Friend 网友互动社区 - <a href="mailto:admin@gmail.com">联系我们</a>
+        <p><s:text name="footer.tip"/><a href="mailto:admin@gmail.com"><s:text name="footer.tipinfo"/></a>
       </div>
   </body>
 </html>
