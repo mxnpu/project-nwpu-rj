@@ -49,6 +49,13 @@ public class FriendService implements IFriendService {
 	
 	//添加id为friendID的用户为好友
 	public void addFriend(User user, int friendID) {
+		List<Friends> friends = friendDao.findByProperty("user", user);
+		for (int i = 0; i < friends.size(); i++){
+			if (friends.get(i).getUserFriend().getIdUser() == friendID){
+				return;
+			}
+		}
+		
 		User userFriend = userDao.findById(friendID);
 		Friends friend = new Friends();
 		friend.setGroup("");

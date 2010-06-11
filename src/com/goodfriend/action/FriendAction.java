@@ -53,9 +53,10 @@ public class FriendAction implements ServletRequestAware {
 		"currentUser");
 		int friendID = Integer.parseInt(request.getParameter("friendId"));
 //		friendService.addFriendToRequest(user, friendID);
-		System.out.println("asd");
 		//给用户发送站内信通知请求
-		mailService.addFriendRequest(friendID, user);
+		if (friendID != user.getIdUser()){//不能添加自己为自己的好友
+			mailService.addFriendRequest(friendID, user);
+		}
 		return "success";
 	}
 	/**
@@ -67,6 +68,9 @@ public class FriendAction implements ServletRequestAware {
 		"currentUser");
 		int friendID = Integer.parseInt(request.getParameter("friendId"));
 		friendService.addFriend(user, friendID);
+		//修改mail表  表示该信息已经看过
+		int mailID = Integer.parseInt(request.getParameter("mailId"));
+		mailService.mailOpened(mailID);
 
 		return "success";
 	}
@@ -76,11 +80,12 @@ public class FriendAction implements ServletRequestAware {
 	 * @return
 	 */
 	public String refuseFriend(){
-		User user = (User) ActionContext.getContext().getSession().get(
-		"currentUser");
-		int friendID = Integer.parseInt(request.getParameter("friendId"));
-		friendService.refuseFriend(user, friendID);
-
+//		User user = (User) ActionContext.getContext().getSession().get(
+//		"currentUser");
+//		int friendID = Integer.parseInt(request.getParameter("friendId"));
+//		friendService.refuseFriend(user, friendID);
+		int mailID = Integer.parseInt(request.getParameter("mailId"));
+		mailService.mailOpened(mailID);
 		return "success";
 	}
 
