@@ -10,13 +10,15 @@
     <script type="text/javascript" src="../js/myAjax.js"></script>
     <script type="text/javascript" src="../js/statementAjax.js"></script>
     <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/image.js"></script>
     <link rel="stylesheet" type="text/css" href="../style/index.css" />
   </head>
   
   <body  id="indexBody" onload="myStmtAjax.getNewStmt()"> 
   <div id="wrap">
   	  <div id="photo">
-  	  	<img alt="Photo" src="${session.currentUser.photo}" /><br/> 
+  	  	<img alt="Photo" src="${session.currentUser.photo}" 
+  	  		onload="ImageObject.changImageSize(this, 125, 150)"/><br/> 
   	  	<a href="editPhoto.action"><s:text name="index.edit_photo"/></a>
   	  	<br/>
   	  </div>
@@ -36,10 +38,12 @@
   	  	<br>
   	  	<ul>
   	  	<s:iterator value="#session.msg" var="message">  
-  	  		<li>	  		
+  	  		<li>
+  	  		<hr>	  		
   	  		<s:if test="#message.type == 'statement'">
   	  			<div class="figure">
-  	  				<img alt="Photo" src="<s:property value="#message.owner.photo"/>" />
+  	  				<img alt="Photo" src="<s:property value="#message.owner.photo"/>" 
+  	  						onload="ImageObject.changImageSize(this, 50, 75)"/>
   	  			</div>
   	  			<h3>
   	  				<a href='<s:url action="home.action" namespace="/user">
@@ -90,7 +94,8 @@
   	  		</s:if>
   	  		<s:if test="#message.type == 'blog'">
   	  			<div class="figure">
-  	  				<img alt="Photo" src="<s:property value="#message.owner.photo"/>" />
+  	  				<img alt="Photo" src="<s:property value="#message.owner.photo"/>" 
+  	  					onload="ImageObject.changImageSize(this, 50, 75)"/>
   	  			</div>
   	  			<h3>
   	  				<a href='<s:url action="home.action" namespace="/user">

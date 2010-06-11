@@ -21,7 +21,6 @@ import com.opensymphony.xwork2.ActionContext;
 /**
  * Process the request of the file upload.
  * 
- * @author xurunhua
  * @CreateTime 2010.05.18
  * @LastModifyTime 2010.05.20
  */

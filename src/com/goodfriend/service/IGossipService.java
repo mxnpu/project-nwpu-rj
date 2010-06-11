@@ -7,7 +7,7 @@ import com.goodfriend.model.Message;
 /**
  * The the service component for the gossip.
  * 
- * @author xurunhua
+ * 
  * @version 
  * Last modify time : 2010.05.12 
  */

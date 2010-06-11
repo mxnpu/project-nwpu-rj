@@ -7,7 +7,7 @@ import com.goodfriend.model.User;
 /**
  * The the service component for the user
  * 
- * @author xurunhua miaoxin
+ * 
  * @version 
  * Last modify time : 2010.05.25 
  */

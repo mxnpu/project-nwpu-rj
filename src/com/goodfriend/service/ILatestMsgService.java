@@ -9,7 +9,7 @@ import com.goodfriend.model.Message;
  * The service module interface 
  * for the friends' latest message.
  * 
- * @author xurunhua
+ * 
  * @CreateTime 2010.05.24
  * @LastModifiedtime 2010.05.24
  */

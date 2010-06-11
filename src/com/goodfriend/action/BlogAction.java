@@ -19,7 +19,6 @@ import edu.emory.mathcs.backport.java.util.Collections;
 
 /**
  * 负责日志的添加 删除 和修改等操作
- * @author Miao Xin
  * 创建日期：2010/05/26
  */
 public class BlogAction implements ServletRequestAware{

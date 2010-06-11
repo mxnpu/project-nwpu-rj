@@ -14,7 +14,6 @@ import com.opensymphony.xwork2.ActionContext;
  * Latest Message Action Class Get the current user's friends latest message of
  * all, including the gossip, the statement, the blog.
  * 
- * @author xurunhua
  * @CreateTime 2010.05.24
  * @LastModifiedtime 2010.05.24
  */

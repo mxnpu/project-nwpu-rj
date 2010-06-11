@@ -20,7 +20,6 @@ import com.goodfriend.service.IReplyService;
 /**
  * Give the service for the user's gossip.
  * 
- * @author xurunhua
  * @time 2010.05.15
  */
 public class GossipService implements IGossipService {

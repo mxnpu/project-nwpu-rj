@@ -22,7 +22,6 @@ import com.goodfriend.service.IUserService;
 /**
  * The service module class for the friends' latest message.
  * 
- * @author xurunhua
  * @CreateTime 2010.05.24
  * @LastModifiedtime 2010.05.24
  */

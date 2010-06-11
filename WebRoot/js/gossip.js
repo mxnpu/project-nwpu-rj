@@ -66,7 +66,7 @@ $(function(){
 					autoOpen: false,
 					width: 400,
 					buttons: {
-						"Confirm": function() { 
+						"OK": function() { 
 							if (flag) {
 								var ids = gossipID.split("_");
 								var gossipId = ids[2];
