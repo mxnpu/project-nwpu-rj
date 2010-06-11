@@ -7,7 +7,7 @@ import com.goodfriend.model.Reply;
 /**
  * The the service module for the reply.
  * 
- * @author xurunhua
+ * 
  * @version 
  * Last modify time : 2010.05.12 
  */

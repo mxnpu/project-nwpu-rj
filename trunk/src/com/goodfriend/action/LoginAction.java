@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionContext;
 /**
  * 用户登录请求处理Action类
  * 
- * @author xurunhua Last Modified time 2010.05.12
+ * @LastModifiedTime 2010.05.12
  */
 public class LoginAction {
     private static final long serialVersionUID = 1L;

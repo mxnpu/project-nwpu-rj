@@ -9,7 +9,6 @@ import com.goodfriend.model.User;
 /**
  * 
  * 
- * @author Miao Xin
  * 创建时间：2010/05/12 
  * 最后修改时间：2010/05/15
  */

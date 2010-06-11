@@ -15,7 +15,6 @@ import com.opensymphony.xwork2.ActionContext;
 /**
  * 用户注册请求处理Action类
  * 
- * @author xurunhua
  * @CreateTime 2010.05.13
  * @LastModifiedtime 2010.05.13
  */

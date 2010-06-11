@@ -8,7 +8,7 @@ import com.goodfriend.model.Statement;
 /**
  * The the service component for the statement.
  * 
- * @author xurunhua
+ * 
  * @version 
  * @CreateTime : 2010.05.12 
  * @LastModifyTime : 2010.05.23 

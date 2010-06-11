@@ -9,7 +9,6 @@ import com.goodfriend.service.IAdminService;
 /**
  * The service module for the administrator.
  * 
- * @author xurunhua
  * @CreateTime 2010.05.03
  * @LastModifyTime 2010.05.12
  */

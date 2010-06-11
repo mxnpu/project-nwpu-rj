@@ -1,8 +1,6 @@
 package com.goodfriend.action;
 
 
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,7 +12,6 @@ import com.goodfriend.model.Mail;
 import com.goodfriend.model.User;
 import com.goodfriend.service.IFriendService;
 import com.goodfriend.service.IMailService;
-import com.goodfriend.service.IUserService;
 import com.opensymphony.xwork2.ActionContext;
 
 public class FriendAction implements ServletRequestAware {

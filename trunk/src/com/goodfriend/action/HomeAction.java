@@ -12,7 +12,6 @@ import com.opensymphony.xwork2.ActionContext;
 /**
  * The Home Action of the request.
  * 
- * @author xurunhua
  * @CreateTime 2010.05.29
  * @LastModifiedtime 2010.05.29
  */

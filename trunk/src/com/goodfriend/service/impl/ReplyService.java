@@ -14,7 +14,6 @@ import com.goodfriend.service.IReplyService;
 /**
  * The reply service module of the system.
  * 
- * @author xurunhua
  * @CreateTime 2010.05.14
  * @LastModifyTime 2010.05.17
  */

@@ -11,8 +11,7 @@ import com.opensymphony.xwork2.ActionContext;
 
 /**
  * Statement process Action Class
- * 
- * @author xurunhua
+ *
  * @CreateTime 2010.05.23
  * @LastModifiedtime 2010.05.23
  */

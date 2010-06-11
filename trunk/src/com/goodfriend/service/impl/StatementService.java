@@ -16,7 +16,6 @@ import com.goodfriend.service.IStatementService;
 /**
  * Offer the service for the user's statement.
  * 
- * @author xurunhua
  * @CreateTime : 2010.05.14
  * @LastModifyTime : 2010.05.17
  */
