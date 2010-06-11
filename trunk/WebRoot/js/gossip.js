@@ -34,6 +34,7 @@ var myGossip = {
 	delGossip : function (id) {
 		
 	}
+
 }
 
 

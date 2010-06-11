@@ -13,5 +13,7 @@ public interface IMailService {
 	
 	public List<Mail> getFriendRequest(User user);
 	
+	public void mailOpened(int mailID);
+	
 //	public Mail getById()
 }

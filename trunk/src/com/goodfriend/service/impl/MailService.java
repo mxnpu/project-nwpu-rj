@@ -28,12 +28,22 @@ public class MailService implements IMailService {
 	 * 向数据库中添加一个好友请求, 用户下次登录以后通知用户
 	 */
 	public void addFriendRequest(int toUser, User fromUser) {
+		//如果已经存在一个相同的请求  则不再向数据库添加
+		List<Mail> mails = mailDao.findByProperty("fromUser", fromUser);
+		for(int i = 0; i < mails.size(); i++){
+			if (mails.get(i).getToUser().getIdUser() == toUser && 
+					mails.get(i).getTitle().equals(FRIEND_REQUEST) &&
+					!mails.get(i).getOpened()){
+				return;
+			}
+		}
+		
 		Mail mail = new Mail();
 		User user = userDao.findById(toUser);
 		mail.setFromUser(fromUser);
 		mail.setToUser(user);
 		mail.setTitle(FRIEND_REQUEST);
-		mail.setContent("用户<a href='#'>" + fromUser.getUserName() + "</a>请求添加您为好友。");
+		mail.setContent("用户<a href='home?userId=" + fromUser.getIdUser() + "'>" + fromUser.getUserName() + "</a>请求添加您为好友。");
 		mailDao.merge(mail);
 	}
 	
@@ -53,6 +63,16 @@ public class MailService implements IMailService {
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * 修改某条站内信使它处于已打开的状态
+	 * @param mailID
+	 */
+	public void mailOpened(int mailID){
+		Mail mail = mailDao.findById(mailID);
+		mail.setOpened(true);
+		mailDao.attachDirty(mail);
 	}
 
 	public MailDAO getMailDao() {

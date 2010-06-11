@@ -111,56 +111,6 @@ public class GossipAction {
     }
 
     /**
-     * Delete the one user's gossip.
-     * 
-     * @return
-     */
-    public String delGossipCommon() {
-	Map<String, Object> arguments = ActionContext.getContext()
-		.getParameters();
-	String[] gossipIds = (String[]) arguments.get("gossipId");
-	Integer gossipId = Integer.parseInt(gossipIds[0]);
-	String[] userIds = (String[]) arguments.get("userId");
-	Integer userId = Integer.parseInt(userIds[0]);
-
-	// Get the gossip and delete it.
-	Gossip gossipDel = gossipService.getGossip(gossipId);
-	gossipService.deleteGossip(gossipDel);
-
-	// Get the one page's gossips.
-	setPageNow(1);
-	setMessages(gossipService.getGossipByPage(userId, pageNow, pageSize));
-	setTotalPage(gossipService.getTotalPage(userId, pageSize));
-
-	return "success";
-    }
-
-    /**
-     * Delete the reply of one user's gossip.
-     * 
-     * @return
-     */
-    public String delGossipReplyCommon() {
-	Map<String, Object> arguments = ActionContext.getContext()
-		.getParameters();
-	String[] replyIds = (String[]) arguments.get("replyId");
-	Integer replyId = Integer.parseInt(replyIds[0]);
-	String[] userIds = (String[]) arguments.get("userId");
-	Integer userId = Integer.parseInt(userIds[0]);
-	
-	// Get the reply in database and delete it.
-	Reply reply = replyService.getReply(replyId);
-	replyService.deleteReply(reply);
-
-	// Get the one page's gossips.
-	setPageNow(1);
-	setMessages(gossipService.getGossipByPage(userId, pageNow, pageSize));
-	setTotalPage(gossipService.getTotalPage(userId, pageSize));
-	
-	return "success";
-    }
-
-    /**
      * Get a user's all gossip by page.
      * 
      * @return

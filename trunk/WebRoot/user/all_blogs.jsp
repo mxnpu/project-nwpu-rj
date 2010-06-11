@@ -39,13 +39,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div id="content_bg">
           <div class="content_tab_header">
             <ul class="content_tab">
-              <li class="content_tab_active"><a href="#"><span><s:text name="all_blog.friend_blog"/></span></a></li>
-              <li><a href="#"><span><s:text name="all_blog.my_blog"/></span></a></li>
+              <li class="content_tab_active"><a href="#"><span><s:text name="all_blog.my_blog"/></span></a></li>
+              <li><a href="#"><span><s:text name="all_blog.friend_blog"/></span></a></li>
               <li><a href="#"><span><s:text name="all_blog.my_blog_comment"/></span></a></li>
             </ul>
           </div>
           <div id="content">
-            <a href="write_blog.jsp"><span><s:text name="all_blog.write_blog"/></a>
+
+            <a href="write_blog.jsp"><font color="0xFFFFFF"><s:text name="all_blog.write_blog"/></font></a>
 				<ul id="content_list">
 					<s:iterator value="blogs" var="blog">
 						<li class="content_item">
@@ -60,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<s:a href="deleteBlog?id=%{#blog.id}"><s:text name="all_blog.delete"/></s:a>
 								</li>
 							</ul>
-							<span> <label>
+							<span class="blog_item"> <label>
 									<s:a href="showBlog?id=%{#blog.id}&state=show">
 										<s:property value="#blog.title" />
 									</s:a>

@@ -55,6 +55,7 @@ public class AlbumServiceTest {
 			picture.setAlbum(album);
 		}
 		album.setItem(item1);
+
 		album.setPath("ttddy");
 		albumDaoManager.addAlbum(album);
 	}
@@ -62,7 +63,7 @@ public class AlbumServiceTest {
 	@Test
 	public void testDeleteAlbum() {
 		Album album_delete = albumDaoManager.getAllAlbums().get(0);
-		
+
 		albumDaoManager.deleteAlbum(album_delete);
 	}
 
@@ -85,7 +86,9 @@ public class AlbumServiceTest {
 		item2.setUser(userDaoManager.getUser(1));
 		itemDao.save(item2);
 		album.setItem(item2);
+
 		album.setPath("tty");
+
 		albumDaoManager.addAlbum(album);
 	}
 

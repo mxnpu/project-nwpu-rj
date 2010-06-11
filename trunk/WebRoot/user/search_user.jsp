@@ -70,11 +70,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="friend_item">
 									<ul>
 										<li class="friend_photo">
-											<!--啊苗头像URL-->
+											
 											<img src="<s:property value="#user.photo" />" />
 										</li>
 										<li class="friend_detail">
-											<span> <!--自由发挥--> <a href="a.jsp"><s:property
+											<span><a href="#user.idUser"><s:property
 														value="#user.userName" />
 											</a> <br> <a
 												href="addFriendToRequestList?friendId=<s:property value="#user.idUser" />"><s:text name="search_user.add"/></a>
@@ -99,12 +99,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<s:text name="friend.friend_ask"/>
 					</label>
 					<br>
-					<s:iterator value="requestList" var="user">
-						<a href="a.jsp" /><s:property value="#user.userName" />
+					<s:iterator value="requestList" var="mail">
+						<a href="home?userId=<s:property value="#mail.fromUser.idUser"/>" /><s:property value="#mail.fromUser.userName" />
+
 						</a><s:text name="friend.ask_add_friend"/> <a
-							href="addFriend?friendId=<s:property value="#user.idUser" />"><s:text name="friend_allow"/></a>
-						<a
-							href="refuseFriend?friendId=<s:property value="#user.idUser" />"><s:text name="friend_refuse"/></a>
+							href="addFriend?friendId=<s:property value="#mail.fromUser.idUser" />&mailId=<s:property value="#mail.id" />"><s:text name="friend_allow"/></a>
+
+						<a	href="refuseFriend?friendId=<s:property value="#mail.fromUser.idUser" />&mailId=<s:property value="#mail.id" />"><s:text name="friend_refuse"/></a>
 						<br>
 					</s:iterator>
 				</div>
