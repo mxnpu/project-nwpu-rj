@@ -1,59 +1,45 @@
-#content {
-     list-style: none;
-     position: relative;
-     margin: 0px 10px 10px 10px;
-     padding: 10px 10px 10px 10px;
-	 background-image:url(image/content_bg.png);
-}
+#content { list-style: none; position: relative; margin: 0px 10px 10px 10px; padding: 10px 10px 10px 10px; background-image:url(image/content_bg.png); float: left; clear: both; }
 
-#content_list {
-	margin: 10 0 10 0;
-	padding: 0 0 0 0;
-}
-	#content_list .content_item {
-		width: 640px;
-		height: 134px;
-		margin: 20 0 20 0;
-	}
-	#content_list .content_item img{
-		width: 55px;
-		height: 55px;
-		margin: 0 10 0 10;
-		float: left;
-		clear: both;
-	}
-	#content_list .content_item .blog_editor {
-		width: 55px;
-		height: 27px;
-		float:left;
-		margin: 0px;
-		padding: 0px;
-		list-style: none;
-	}
-	#content_list .content_item .blog_editor a{
-		text-align:center;
-		margin:0 0 0 24;
-		color:#54A7E3;
-	}
-	#content_list .content_item span{
-		display: block;
-		width: 545px;
-		height: 114px;
-		margin: 0 -10 0 0;
-		padding: 10 10 10 10;
-		border-radius: 5px 5px 5px 5px;
-		background-color: #CAD1DC;
-		float: right;
-		clear: right;
-	}
-#photolayer {
-    display: block;
-    overflow: hidden;
-    padding: 0;
-	float: left;
-	width: 245px;
-	height: 400px;
-	margin-right: 0px;
-	background-repeat:no-repeat;
-	background-image:url(image/photolayer.png);
-}
+#content_list {	margin: 0px; padding: 0px; float: left; clear: both; }
+	#content_list .content_item { display: block; width: 640px; height:auto; margin: 7 0 7 0; float:left; clear: both;}
+	#content_list .content_item img { width: 55px; height: 55px; margin: 0 0 0 0; float: left; clear: both; }
+
+	#content_list .content_item .blog_item { display: block; width: 551;  margin: 0px; padding: 10px; border-radius: 5px 5px 5px 5px; background-color: #CAD1DC; float: right; clear: right; text-align: left; }
+		#content_list .content_item .blog_editor { width: 65px; height: 90px; float:left; margin: 0px; padding: 0px; list-style: none; }
+		#content_list .content_item .blog_editor a { text-align:center; margin: 0px; color:#54A7E3; }
+		#content_list .content_item .blog_date { float: right; color:#33F; }
+
+	#content_list .content_item .friend_item { display: block; width: 551; margin: 0px; padding: 7px; border-radius: 5px 5px 5px 5px; background-color: #CAD1DC; float: right; clear: right; text-align: left; }
+		#content_list .content_item .addfriend_editor { width: 55px; height: 90px; float:left; margin: 0px; padding: 0px; list-style: none; }
+		#content_list .content_item .addfriend_editor a { text-align:center; margin:0px; color:#54A7E3; }
+		
+		#content_list .content_item .friend_photo { width: 107; height: 106; margin: 0px; background-image:url(image/photo_bg.png); float: left;}
+		#content_list .content_item .friend_photo img { width: 107; height: 106;  margin: 0px; }
+		#content_list .content_item .friend_detail { width: 420; height: 90; margin: 0px 0px 0px 7px; padding: 7px; float: left; border: thin dashed; }
+
+	#content_list .content_item .message_item { display: block; width: 560px; margin: 0px; padding: 5px; border-radius: 5px 5px 5px 5px; background-color: #CAD1DC; float: right; clear: right; }
+		#content_list .content_item .replayMessage_editor { width: 63px; height: 90px; float:left; margin: 0px; padding: 0px; list-style: none; text-align:center; }
+		#content_list .content_item .replayMessage_editor a { margin: 0px; color:#54A7E3; }
+
+		#content_list .content_item .message_detail { width: 551; margin: 0px; padding: 3px; float: left; border: thin dashed; }
+		#content_list .content_item .message_detail p{ padding: 0px 0px 0px 7px; float: left; }
+
+		#content_list .content_item .message_detail_replay { width: 537; margin: 0px 0px 0px 14px; padding: 3px; float: left; border: thin dashed; }
+		#content_list .content_item .message_detail_replay p{ padding: 0px 0px 0px 7px; float: left; }
+		#content_list .content_item .message_photo { width: 48; height: 48; margin: 0px; background-image:url(image/photo_bg_small.png); float: left;}
+		#content_list .content_item .message_photo img { width: 48; height: 48;  margin: 0px; }
+
+	#content_list .content_item .frontPage_item { display: block; width: 560px; margin: 0px; padding: 5px; border-radius: 5px 5px 5px 5px; background-color: #CAD1DC; float: right; clear: right; }
+		#content_list .content_list .content_item .frontPage_editor { width: 63px; height: 108px; float:left; margin: 0px; padding: 0px; list-style: none; text-align:center; }
+		#content_list .content_item .frontPage_editor a { margin: 0px; color:#54A7E3; }
+
+		#content_list .content_item .frontPage_detail { width: 551; margin: 0px; padding: 3px; float: left; border: thin dashed; text-align: left; }
+		#content_list .content_item .frontPage_detail p{ padding: 0px 0px 0px 7px; float: left; }
+
+		#content_list .content_item .frontPage_detail_replay { width: 537; margin: 0px 0px 0px 14px; padding: 3px; float: left; border: thin dashed; }
+		#content_list .content_item .frontPage_detail_replay p{ padding: 0px 0px 0px 7px; float: left; }
+		#content_list .content_item .frontPage_photo { width: 48; height: 48; margin: 0px; background-image:url(image/photo_bg_small.png); float: left;}
+		#content_list .content_item .frontPage_photo img { width: 48; height: 48;  margin: 0px; }
+
+#personal_state { float: left; }
+#all_state { float: right; }
