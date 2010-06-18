@@ -8,11 +8,18 @@
 body,th,td,input,select,textarea,button {
 	font: 12px/ 1.5em Verdana, "Lucida Grande", Arial, Helvetica, sans-serif
 		;
+	background-color: #34425c;
 }
 
 body,h1,h2,h3,h4,h5,h6,p,ul,dl,dt,dd,form,fieldset {
 	margin: 0;
 	padding: 0;
+}
+
+body {
+	margin: auto;
+	text-align: center;
+	display: table;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -27,37 +34,214 @@ select {
 	margin-right: 2px;
 }
 
+a {
+	color: #2C629E;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 a img {
 	border: none;
 }
 
 /*************************************************HEADER***/
 #header {
-	margin: 0 0 20px;
+	float: left;
+	clear: both;
+	margin: 0 auto 20 auto;
 }
 
 .headerwarp {
 	margin: 0 auto;
-	padding: 0 0px 0 20px;
-	width: 930px;
+	padding: 0px;
+	width: 970px;
 	height: 80px;
 	background: url(image/bf_header_bg.png);
 }
 
 .headerwarp .logo {
 	float: left;
+	margin: 0px 0px 0px 20px
 }
 
-.headerwarp .global_nav {
-	position: relative;
-	top: 50 px;
+.headerwarp .global_func_nav {
 	float: left;
 }
 
-.headerwarp .nav_account {
-	position: relative;
+.headerwarp .account_nav {
 	float: right;
-	width: 200 px;
 	white-space: nowrap;
-	padding: 0px 15px 10px 0px;
+	padding: 10px 0px 10px 20px;
+	margin: 0px 20px 0px auto
 }
+
+.headerwarp .account_nav a {
+	color: #54a7e3;
+}
+
+/*************************************************HEADER***/
+	/*************************************************MainPanel***/
+#mainPanel {
+	margin: 0 auto 0 auto;
+	width: 970px;
+	float: left;
+	clear: both;
+}
+
+/*************************************************global_toolbox***/
+#global_toolbox {
+	float: left;
+}
+
+#photolayer {
+	display: block;
+	overflow: hidden;
+	padding: 0px;
+	float: left;
+	width: 245px;
+	height: 400px;
+	margin-right: 0px;
+	background-repeat: no-repeat;
+	background-image: url(image/photolayer.png);
+}
+
+#userPhoto {
+	width: 107;
+	height: 106;
+	margin: 42px 69px 0px 69px;
+}
+
+#search_input {
+	border: none;
+	width: 146px;
+	height: 35px;
+	background-image: url(image/search_input.png);
+	margin: 100px 49px 0px 49px;
+}
+
+#search_button {
+	border-radius: 3px;
+	border-color: #34425c;
+	border-width: thin;
+	cursor: pointer;
+	background: none;
+	width: 107px;
+	height: 29px;
+	background-image: url(image/search_button.png);
+	margin: 0px 70px 0px 70px;
+}
+
+/*************************************************global_toolbox***/
+#host_item_1 {
+	margin: 104px 88px 0px 88px;
+	display: block;
+}
+
+#host_item_2 {
+	margin: 20px 88px 0px 88px;
+	display: block;
+}
+
+#host_item_3 {
+	margin: 20px 88px 0px 88px;
+	display: block;
+}
+
+.content_tab_header {
+	height: 30px;
+	clear: both;
+	overflow: hidden;
+	padding: 0px 10px 0px 10px;
+}
+
+.content_tab_header ul.content_tab li a,.content_tab_header ul.content_tab li a span
+	{
+	background: url(image/tab_bg.png) no-repeat;
+	display: block;
+	color: #000;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.content_tab_header ul.content_tab {
+	position: absolute;
+	z-index: 10;
+}
+
+.content_tab_header ul.content_tab li {
+	float: left;
+	margin: 0 2px 0 0px;
+	display: inline;
+}
+
+.content_tab_header ul.content_tab li a {
+	float: left;
+	padding: 0 0 0 10px;
+	height: 30px;
+}
+
+.content_tab_header ul.content_tab li a span {
+	padding: 9px 10px 7px 0;
+	font-size: 14px;
+	line-height: 14px;
+}
+
+.content_tab_header ul.content_tab li.content_tab_active a {
+	float: left;
+	padding: 0 0 0 10px;
+	height: 30px;
+	background: url(image/tab_bg_active.png) no-repeat;
+	color: #000;
+	display: block;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.content_tab_header ul.content_tab li.content_tab_active a span {
+	padding: 9px 10px 7px 0;
+	background: url(image/tab_bg_active.png) no-repeat;
+	line-height: 14px;
+	display: block;
+	color: #54A7E3;
+	border-radius: 5px 5px 0px 0px;
+}
+
+#content_bg {
+	float: right;
+	clear: right;
+	padding: 10px 0px 10px 0px;
+	background-image: url(image/content_border.png)
+}
+
+#content_bg #load {
+	margin: 0px 0px 0px 610px;
+	background-image: url(image/content_border.png);
+}
+
+#content_bg #load a {
+	color: 54a7e3;
+}
+
+/*************************************************Footer***/
+#footer {
+	float: left;
+	width: 970px;
+	margin: 10px 0px 0px 0px;
+	padding: 10px 0 10px 0;
+	border-top: 1px dashed #CAD1DC;
+	color: #CAD1DC;
+	text-align: center;
+	clear: both;
+}
+
+#footer a {
+	color: #CAD1DC;
+}
+
+.r_option {
+	float: right;
+	font-size: 14px;
+	font-weight: normal;
+}
+/*************************************************Footer***/
