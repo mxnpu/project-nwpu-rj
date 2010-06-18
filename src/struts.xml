@@ -190,7 +190,7 @@
 		</action>
 		
 		<action name="addBlogReply" class="blogAction" method="addBlogReply">
-			<result name="success">#</result>
+			<result name="success" type="stream"></result>
 		</action>
 		
 		<action name="personalInfo" class="personalInfoAction" method="showPersonalInfo">

@@ -7,10 +7,13 @@
 <html>
 	<head>
 		<title><s:text name="index.homepage" /></title>
-		<script type="text/javascript" src="../js/myAjax.js"></script>
 		<script type="text/javascript" src="../js/statementAjax.js"></script>
+		<script type="text/javascript" src="../js/jquery-ui-1.7.2.custom.min.js"></script>
 		<script type="text/javascript" src="../js/index.js"></script>
+		<script type="text/javascript" src="../js/image.js"></script>
 		<link rel="stylesheet" type="text/css" href="../style/mainStyle.css" />
+		<link type="text/css" href="../style/jquery-ui-1.7.2.custom.css"
+			rel="stylesheet" />
 		<link rel="stylesheet" href="../style/navStyle.css" type="text/css"
 			media="screen" />
 		<link rel="stylesheet" href="../style/frontPagePanelStyle.css"
@@ -209,9 +212,7 @@
 														</li>
 													</s:iterator>
 												</ul>
-											</div>
-										</ul> </span>
-									<div class="replySelf" style="display: none"
+												<div class="replySelf" style="display: none"
 										id='replySelf_<s:property value="#message.item.idItem"/>'>
 										<textarea
 											id='reply_<s:property value="#message.item.idItem"/>'
@@ -230,6 +231,9 @@
 										/150
 
 									</div>
+											</div>
+										</ul> </span>
+									
 								</s:if>
 								<s:if test="#message.type == 'blog'">
 									<ul class="replayMessage_editor">
