@@ -26,13 +26,12 @@
   	<!-- 显示用户个人信息 -->
   	<div id="personalityDiv">
   		<s:if test="#session.currentUser.idUser == #session.user.idUser">
-  			<img alt="Photo" src="${session.currentUser.photo}" width="150" height="200"
-						onload="ImageObject.changImageSize(this,150,200);"/><br/> 
+  			<img alt="Photo" src="${session.currentUser.photo}" width="150" height="200" /><br/> 
   			<span><s:text name="home_name"/><s:property value="#session.currentUser.realName"/></span><br>
   			<span><s:text name="home_birth"/><s:property value="#session.currentUser.birthday"/></span><br>
   			<span><s:text name="home_love"/><s:property value="#session.currentUser.hoby"/></span><br>
   	  		<a href="editPhoto.action"><s:text name="home_change_photo"/></a> | 
-  	  		<a href=""><s:text name="home_edit"/></a>
+  	  		<a href="topersonal_info.action"><s:text name="home_edit"/></a>
   	  		<br/>
   		</s:if>
   		<s:else>
@@ -47,6 +46,40 @@
   	</div>
   	
   	<div id="blogDiv">
+  		<span><s:text name="home_bloglist"></s:text></span> 
+  		<br>
+  		<ul>
+  		<s:iterator value="#session.blogMsg" var="msg">
+  			<li>
+  				<hr/>
+  				<div>
+  					<a href='<s:url action="showBlog.action">
+  								<s:param name="id" value="#msg.msgId"></s:param>
+  								<s:param name="state" value="'show'"></s:param>
+  							</s:url>'>
+  						<s:property value="#msg.title"/>
+  					</a>
+  					<br>
+  					<s:property value="#msg.content"/><br>
+  					<a href='<s:url action="showBlog.action">
+  								<s:param name="id" value="#msg.msgId"></s:param>
+  								<s:param name="state" value="'show'"></s:param>
+  							</s:url>'>
+  						<s:text name="home.blog.detail"></s:text>
+  					</a>
+  				</div>
+  			</li>
+  		</s:iterator>
+  		</ul>
+  		<span>
+  			<a href='<s:url action="showAllBlogs.action">
+  						<s:param name="userId" value="#session.user.idUser"></s:param>
+  					</s:url>'>
+  				<s:text name="home_allblogs"></s:text>
+  			</a>
+  		</span>
+  		<br>
+  		<br>
   	</div>
   	
   	
@@ -67,7 +100,7 @@
   				<li>
   				<div id='li_gossip_<s:property value="#message.title"/>'>
   					<img alt="Photo" src='<s:property value="#message.owner.photo"/>' 
-  							onload="ImageObject.changImageSize(this, 50, 75)"/>
+  							onload="ImageObject.changImageSize(this, 50, 65)"/>
 					<br />
   					<a href='<s:url action="home.action"><s:param name="userId" value="#message.owner.idUser">
   					</s:param></s:url>' target="_blank" id='href_<s:property value="#message.title"/>'>

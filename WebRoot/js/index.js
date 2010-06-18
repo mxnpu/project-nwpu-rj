@@ -17,8 +17,7 @@ var replyObject = {
 		var remainId = "replyRemain_reply_" + temp[1];
 		var oRemain = document.getElementById(remainId);
 		oRemain.innerHTML = "150";
-		
-		
+
 		// 获取单击的该Item的id号
 		var paras = oItemId.split("_");
 		var id = paras[1];
@@ -187,7 +186,7 @@ var replyAjax = {
 					oReplyDiv.setAttribute("id", "li_reply_" + replyId);
 					var oA = document.createElement("a");
 					oA.setAttribute("href", "home.action?userId=" + userId);
-					oA.setAttribute("target","_blank");
+					oA.setAttribute("target", "_blank");
 					oA.innerHTML = user;
 					oReplyDiv.appendChild(oA);
 					var oSpan1 = document.createElement("span");
@@ -199,9 +198,12 @@ var replyAjax = {
 					oSpan2.innerHTML = recordTime;
 					oReplyDiv.appendChild(oSpan2);
 					var oLabel = document.createElement("label");
-					oLabel.setAttribute("id", "label_"+replyId+"_"+itemId);
+					oLabel
+							.setAttribute("id", "label_" + replyId + "_"
+											+ itemId);
 					oLabel.innerHTML = "Delete";
-					oLabel.setAttribute("onclick", "replyDelAjax.deleteReply(this.id)");
+					oLabel.setAttribute("onclick",
+							"replyDelAjax.deleteReply(this.id)");
 					oReplyDiv.appendChild(oLabel);
 
 					oLI.appendChild(oReplyDiv);
@@ -212,7 +214,6 @@ var replyAjax = {
 	}
 
 }
-
 
 var replyDelAjax = {
 	url : "", // 请求地址
@@ -244,7 +245,7 @@ var replyDelAjax = {
 
 		}
 	},
-	
+
 	processReply : function() {
 		if (xmlrequest.readyState == 4) {
 			if (xmlrequest.status == 200) {
@@ -272,7 +273,7 @@ var replyDelAjax = {
 					oReplyDiv.setAttribute("id", "li_reply_" + replyId);
 					var oA = document.createElement("a");
 					oA.setAttribute("href", "home.action?userId=" + userId);
-					oA.setAttribute("target","_blank");
+					oA.setAttribute("target", "_blank");
 					oA.innerHTML = user;
 					oReplyDiv.appendChild(oA);
 					var oSpan1 = document.createElement("span");
@@ -284,9 +285,12 @@ var replyDelAjax = {
 					oSpan2.innerHTML = recordTime;
 					oReplyDiv.appendChild(oSpan2);
 					var oLabel = document.createElement("label");
-					oLabel.setAttribute("id", "label_"+replyId+"_"+itemId);
+					oLabel
+							.setAttribute("id", "label_" + replyId + "_"
+											+ itemId);
 					oLabel.innerHTML = "Delete";
-					oLabel.setAttribute("onclick", "replyDelAjax.deleteReply(this.id)");
+					oLabel.setAttribute("onclick",
+							"replyDelAjax.deleteReply(this.id)");
 					oReplyDiv.appendChild(oLabel);
 
 					oLI.appendChild(oReplyDiv);
@@ -301,7 +305,8 @@ var replyDelAjax = {
 		var replyId = para[1];
 		itemId = para[2];
 
-		this.url = "deleteReply.action?replyId="+replyId+"&&itemId="+itemId;
+		this.url = "deleteReply.action?replyId=" + replyId + "&&itemId="
+				+ itemId;
 		this.method = "GET";
 		// Create the XMLHttpRequest.
 		this.createXMLHttpRequest();
@@ -320,3 +325,126 @@ var replyDelAjax = {
 	}
 
 }
+
+var mailxmlrequest;
+var mailId;
+var mailObject = {
+	url : "", // 请求地址
+	method : "", // 请求方式
+	parameter : "", // 请求参数
+	asynchronous : true, // 是否异步
+	contentType : "application/x-www-form-urlencoded",
+
+	/**
+	 * 创建XHR对象
+	 */
+	createXMLHttpRequest : function() {
+
+		if (window.XMLHttpRequest) {
+			// DOM 2
+			mailxmlrequest = new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			try {
+				// IE
+				mailxmlrequest = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (e) {
+				try {
+					mailxmlrequest = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {
+
+				}
+			}
+
+		}
+	},
+
+	mail : function(id) {
+		var args = id.split("_");
+		var operation = args[0];
+		if (operation == "add") {
+			var friendId = args[1];
+			mailId = args[2];
+			this.url = "addFriend.action?friendId=" + friendId + "&&mailId="
+					+ mailId;
+		} else {
+			mailId = args[1];
+			this.url = "refuseFriend.action?mailId=" + mailId;
+		}
+		this.method = "GET";
+
+		this.createXMLHttpRequest();
+		// open a connection.
+		mailxmlrequest.open(this.method, this.url, this.asynchronous);
+		// set the request header.
+		mailxmlrequest.setRequestHeader("Content-Type", this.contentType);
+		// set the response function.
+		mailxmlrequest.onreadystatechange = this.process;
+		// send the request.
+		if (this.parameter == "") {
+			mailxmlrequest.send(null);
+		} else {
+			mailxmlrequest.send(this.parameter);
+		}
+	},
+
+	process : function() {
+		if (mailxmlrequest.readyState == 4) {
+			if (mailxmlrequest.status == 200) {
+				if (mailxmlrequest.responseText == "success") {
+					var liId = "li_" + mailId;
+					var oUL = document.getElementById("ul_mail");
+					var oLI = document.getElementById(liId);
+					oUL.removeChild(oLI);
+				}
+			}
+		}
+	}
+}
+
+var placardObject = {
+	show : function() {
+
+	}
+}
+
+$(function() {
+			var args;
+			// Dialog
+			$('#dialog1').dialog({
+						autoOpen : false,
+						width : 400,
+						buttons : {
+							"OK" : function() {
+								$(this).dialog("close");
+							}
+						}
+					});
+			$('#dialog2').dialog({
+						autoOpen : false,
+						width : 400,
+						buttons : {
+							"OK" : function() {
+								$(this).dialog("close");
+							}
+						}
+					});
+			$('#dialog3').dialog({
+						autoOpen : false,
+						width : 400,
+						buttons : {
+							"OK" : function() {
+								$(this).dialog("close");
+							}
+						}
+					});
+
+			// Dialog Link
+			$('.placard').click(function() {
+
+						args = $(this).parent(".div_placard").attr("id");
+						var id = args.split("_")[1];
+						$('#dialog' + id).dialog('open');
+						return false;
+					});
+
+		});

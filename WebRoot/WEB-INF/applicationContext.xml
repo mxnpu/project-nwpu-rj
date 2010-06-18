@@ -56,6 +56,8 @@
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="mail*" propagation="REQUIRED" />
 			<tx:method name="del*" propagation="REQUIRED" />
 			<tx:method name="update*" propagation="REQUIRED" />
 			<tx:method name="get*" read-only="true" />
@@ -312,6 +314,9 @@
 		<property name="replyService">
 			<ref bean="replyService"/>
 		</property>
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
     </bean>
 	
 	
@@ -343,6 +348,12 @@
 		scope="prototype">
 		<property name="latestMsgService">
 			<ref bean="latestMsgService"/>
+		</property>
+		<property name="mailService">
+			<ref bean="mailService"/>
+		</property>
+		<property name="placardService">
+			<ref bean="placardService"/>
 		</property>
 	</bean>
 	

@@ -5,7 +5,8 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 /**
- * Mail entity. @author MyEclipse Persistence Tools
+ * Mail entity. 
+ * @author 
  */
 
 public class Mail implements Serializable {

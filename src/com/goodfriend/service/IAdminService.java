@@ -12,4 +12,5 @@ public interface IAdminService {
 	public void updateAdmin(Admin admin);
 	public void deleteUser(Admin admin);
 	public boolean isAdminExist(String adminName);
+	public void updateAdmin(int id, Admin admin);
 }

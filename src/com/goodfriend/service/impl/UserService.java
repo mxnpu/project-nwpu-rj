@@ -47,6 +47,22 @@ public class UserService implements IUserService {
 	public void updateUser(User user) {
 		userDao.attachDirty(user);
 	}
+	
+	public void updateUser(Integer id, User user) {
+
+		User oldUser = userDao.findById(id);
+		oldUser.setUserName(user.getUserName());
+		oldUser.setRealName(user.getRealName());
+		oldUser.setGender(user.getGender());
+		oldUser.setBirthday(user.getBirthday());
+		oldUser.setPhone(user.getPhone());
+		oldUser.setEmail(user.getEmail());
+		oldUser.setHoby(user.getHoby());
+		oldUser.setPhoto(user.getPhoto());
+		oldUser.setLastLogoutTime(user.getLastLogoutTime());
+		userDao.attachDirty(oldUser);		
+	}
+
 
 	public void setUserDao(IUserDAO userDao) {
 		this.userDao = userDao;

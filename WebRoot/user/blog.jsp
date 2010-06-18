@@ -33,7 +33,7 @@
      	<br>
      	<div id="replies">
      		<form action="addBlogReply?id=<s:property value="blog.id" />" method="post">
-     		<textarea id="replyContent" name="replyContent" rows="5" cols="100"></textarea><br>
+     		<textarea id="replyContent" name="replyContent" rows="2" cols="100"></textarea><br>
      		<button type="submit"><s:text name="title.return"/></button><br>
      		</form>
      		<label><s:text name="title.all_return"/></label>

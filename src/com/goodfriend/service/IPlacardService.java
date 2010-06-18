@@ -9,6 +9,8 @@ public interface IPlacardService {
 	public Placard getPlacard(Integer id);
 	public Placard getPlacard(String title);
 	public List<Placard> getPlacards();
-	public void updateUser(Placard placard);
-	public void deleteUser(Placard placard);
+	public void updatePlacard(Placard placard);
+	public void deletePlacard(Placard placard);
+	public void updatePlacard(Integer integer, Placard placard);
+	public List<Placard> getLatestPlacards();
 }

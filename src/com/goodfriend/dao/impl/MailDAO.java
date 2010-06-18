@@ -7,6 +7,7 @@ import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.goodfriend.dao.IMailDAO;
 import com.goodfriend.model.Mail;
 
 /**
@@ -21,7 +22,7 @@ import com.goodfriend.model.Mail;
  * @author 
  */
 
-public class MailDAO extends HibernateDaoSupport {
+public class MailDAO extends HibernateDaoSupport implements IMailDAO {
 	private static final Log log = LogFactory.getLog(MailDAO.class);
 	// property constants
 	public static final String TITLE = "title";
@@ -31,6 +32,9 @@ public class MailDAO extends HibernateDaoSupport {
 		// do nothing
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#save(com.goodfriend.model.Mail)
+	 */
 	public void save(Mail transientInstance) {
 		log.debug("saving Mail instance");
 		try {
@@ -42,6 +46,9 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#delete(com.goodfriend.model.Mail)
+	 */
 	public void delete(Mail persistentInstance) {
 		log.debug("deleting Mail instance");
 		try {
@@ -53,6 +60,9 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#findById(java.lang.Integer)
+	 */
 	public Mail findById(java.lang.Integer id) {
 		log.debug("getting Mail instance with id: " + id);
 		try {
@@ -65,10 +75,14 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByExample(Mail instance) {
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#findByExample(com.goodfriend.model.Mail)
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Mail> findByExample(Mail instance) {
 		log.debug("finding Mail instance by example");
 		try {
-			List results = getHibernateTemplate().findByExample(instance);
+			List<Mail> results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
 					+ results.size());
 			return results;
@@ -78,7 +92,11 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByProperty(String propertyName, Object value) {
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#findByProperty(java.lang.String, java.lang.Object)
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Mail> findByProperty(String propertyName, Object value) {
 		log.debug("finding Mail instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
@@ -91,15 +109,25 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByTitle(Object title) {
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#findByTitle(java.lang.Object)
+	 */
+	public List<Mail> findByTitle(Object title) {
 		return findByProperty(TITLE, title);
 	}
 
-	public List findByContent(Object content) {
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#findByContent(java.lang.Object)
+	 */
+	public List<Mail> findByContent(Object content) {
 		return findByProperty(CONTENT, content);
 	}
 
-	public List findAll() {
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#findAll()
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Mail> findAll() {
 		log.debug("finding all Mail instances");
 		try {
 			String queryString = "from Mail";
@@ -110,6 +138,9 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#merge(com.goodfriend.model.Mail)
+	 */
 	public Mail merge(Mail detachedInstance) {
 		log.debug("merging Mail instance");
 		try {
@@ -122,6 +153,9 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#attachDirty(com.goodfriend.model.Mail)
+	 */
 	public void attachDirty(Mail instance) {
 		log.debug("attaching dirty Mail instance");
 		try {
@@ -133,6 +167,9 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IMailDAO#attachClean(com.goodfriend.model.Mail)
+	 */
 	public void attachClean(Mail instance) {
 		log.debug("attaching clean Mail instance");
 		try {
@@ -144,7 +181,7 @@ public class MailDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static MailDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (MailDAO) ctx.getBean("MailDAO");
+	public static IMailDAO getFromApplicationContext(ApplicationContext ctx) {
+		return (IMailDAO) ctx.getBean("MailDAO");
 	}
 }

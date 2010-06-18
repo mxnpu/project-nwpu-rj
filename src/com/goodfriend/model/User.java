@@ -252,4 +252,9 @@ public class User implements java.io.Serializable, Comparable<User>{
 	public Set<User> getMailToUser() {
 	    return mailToUser;
 	}
+	
+	@SuppressWarnings("deprecation")
+	public String getBirth() {
+	    return this.birthday.toLocaleString();
+	}
 }

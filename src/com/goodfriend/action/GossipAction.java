@@ -158,7 +158,7 @@ public class GossipAction {
 	gossipService.addGossip(gossip, userId, currentUser.getIdUser());
 
 	// get the latest gossip.
-	List<Message> latestGossips = messageService.getHomeMsg(userId);
+	List<Message> latestGossips = messageService.getHomeGossipMsg(userId);
 	String response = prepareData(latestGossips);
 
 	toInStream(response);
@@ -236,7 +236,7 @@ public class GossipAction {
 	gossipService.deleteGossip(gossipDel);
 
 	// get the latest gossip list.
-	List<Message> latestGossips = messageService.getHomeMsg(userId);
+	List<Message> latestGossips = messageService.getHomeGossipMsg(userId);
 	String response = prepareData(latestGossips);
 
 	toInStream(response);

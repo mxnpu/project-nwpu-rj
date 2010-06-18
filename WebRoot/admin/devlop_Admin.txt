@@ -23,3 +23,17 @@ update:
 ②在struts_admin.xml中相应增加action
 ③增加jsp:add_admin.jsp/add_failed.jsp/add_success.jsp
 ④同时在添加管理员的时候用了DTO，这样使add.action中的代码简洁一些，如果不用也可以
+
+
+
+5.21
+完成用戶的列表顯示，刪除，但更新有問題
+完成了placard的列表显示，增删查改，但更新有问题
+
+接下来的任务：
+①信息的正确验证;
+②登陆整合；
+③update的bug
+④主页整合
+⑤分页显示
+

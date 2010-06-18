@@ -29,8 +29,11 @@ public class HomeAction {
 	User user = userService.getUser(userId);	
 	session.put("user", user);
 	
-	List<Message> gossipMessage = messageService.getHomeMsg(userId);
+	List<Message> gossipMessage = messageService.getHomeGossipMsg(userId);
 	session.put("gossipMsg", gossipMessage);
+	
+	List<Message> blogMessages = messageService.getHomeBlogMsg(userId);
+	session.put("blogMsg", blogMessages);
 	
 	return "success";
     }
