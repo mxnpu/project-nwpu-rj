@@ -1,24 +1,24 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
 <jsp:include page="header.jsp"></jsp:include>
 <html>
   <head>
     <title><s:text name="index.homepage"/></title> 
+    <script type="text/javascript" src="../js/jquery-ui-1.7.2.custom.min.js"></script>
     <script type="text/javascript" src="../js/myAjax.js"></script>
     <script type="text/javascript" src="../js/statementAjax.js"></script>
     <script type="text/javascript" src="../js/index.js"></script>
     <script type="text/javascript" src="../js/image.js"></script>
     <link rel="stylesheet" type="text/css" href="../style/index.css" />
+    <link type="text/css" href="../style/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
   </head>
   
   <body  id="indexBody" onload="myStmtAjax.getNewStmt()"> 
   <div id="wrap">
   	  <div id="photo">
-  	  	<img alt="Photo" src="${session.currentUser.photo}" 
-  	  		onload="ImageObject.changImageSize(this, 125, 150)"/><br/> 
+  	  	<img alt="Photo" src="${session.currentUser.photo}" width="125" height="150" /><br/> 
   	  	<a href="editPhoto.action"><s:text name="index.edit_photo"/></a>
   	  	<br/>
   	  </div>
@@ -151,6 +151,50 @@
   	  	</s:iterator>
   	  	</ul>
   	  	<br>		
+  	  </div>
+  	  
+  	  <div>
+  	  	<s:text name="index.mail"></s:text><br>
+  	  	<ul id='ul_mail'>
+  	  		<s:iterator value="#session.mails" var="mail">
+  	  		<li id='li_<s:property value="#mail.id" />'>
+  	  			<s:if test="#mail.title == 'Friends Request'">
+  	  				<a href='home.action?userId=<s:property value="#mail.fromUser.idUser"/>'>
+  	  					<s:property value="#mail.fromUser.userName"/>
+  	  				</a>
+  	  				<span> <s:text name="index.addrequest"></s:text></span>
+  	  				<label id='add_<s:property value="#mail.fromUser.idUser"/>_<s:property value="#mail.id" />' onclick="mailObject.mail(this.id)">
+   					<s:text name="friend_allow"/></label>  
+   					<label id='refuse_<s:property value="#mail.id" />'	onclick="mailObject.mail(this.id)">
+   					<s:text name="friend_refuse"/></label>
+  	  			</s:if>
+  	  			<s:else>
+  	  				<span><s:property value="#mail.title"/></span>
+  	  				
+  	  			</s:else>
+  	  		</li>
+  	  		</s:iterator>
+  	  	</ul>
+  	  </div>
+  	  
+  	  <div>
+  	  	<s:text name="index.public"></s:text>
+  	  	<ul>
+  	  		<s:iterator value="#session.placards" var="placard" status="i">
+  	  		<li>
+  	  			<div id='placard_<s:property value="#placard.idPlacard"/>' class="div_placard">
+  	  				<label class="placard"  onclick="placardObject.show)" onmouseover="JavaScript:this.style.cursor='pointer'">
+  	  					<s:property value="#placard.title"/>
+  	  				</label>
+  	  			</div>
+  	  			<!-- UI-dialog -->
+				<div id='dialog<s:property value="#i.count"/>' title='<s:property value="#placard.title"/>'>
+					<p><s:property value="#placard.content"/></p><br>
+					<s:property value="#placard.time"/>
+				</div>	
+  	  		</li>
+  	  		</s:iterator>
+  	  	</ul>
   	  </div>
   </div>
   </body>

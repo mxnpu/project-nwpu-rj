@@ -15,5 +15,7 @@ public interface IMailService {
 	
 	public void mailOpened(int mailID);
 	
+	public List<Mail> getAllMails(User user);
+	
 //	public Mail getById()
 }

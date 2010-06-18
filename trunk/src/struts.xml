@@ -30,13 +30,14 @@
 			<interceptor-ref name="defaultStack"/>
 		</action>
 		<action name="to*" class="">
+			<interceptor-ref name="defaultStack"/>
 			<result>{1}.jsp</result>
 		</action>
 		<!-- 用户登录请求处理Action -->
 		<action name="login" class="loginAction" method="login">
 			<interceptor-ref name="defaultStack"/>
 			<result name="admin" type="redirect">/admin/login_success.jsp</result>
-			<result name="success" type="redirectAction">index.action</result>
+			<result name="success" type="redirectAction">first.action</result>
 			<result name="login">login.jsp</result>
 		</action>
 		<!-- 用户退出请求处理Action -->
@@ -50,6 +51,12 @@
 		<action name="register" class="registerAction" method="register">
 			<result name="success">register_success.jsp</result>
 			<result name="failed">register.jsp</result>
+		</action>
+		<!-- 修改信息 -->
+		<action name="modifyInfo" class="registerAction" method="modifyInfo">
+			<interceptor-ref name="myDefault"></interceptor-ref>
+			<result name="success">personal_info.jsp</result>
+			<result name="failed">personal_info.jsp</result>
 		</action>
 		<!-- 用户注册用户名是否存在验证AJAX请求处理Action -->
 		<action name="isNameExist" class="registerAction" method="validateName">
@@ -83,7 +90,7 @@
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		<!-- 获得用户好友新鲜事 -->
-		<action name="index" class="latestMsgAction" method="getLatestMsg">
+		<action name="first" class="latestMsgAction" method="getLatestMsg">
 			<result name="success">index.jsp</result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
@@ -142,9 +149,13 @@
 			<result name="success">gossip.jsp</result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
+		<!-- 同步删除用户留言中回复 -->
 		<action name="delGossipReplyCommon" class="gossipAction" method="delGossipReplyCommon">
 			<result name="success">gossip.jsp</result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
+		</action>
+		<!-- 编辑用户个人信息 -->
+		<action name="editPersonalInfo" >
 		</action>
 		
 		
@@ -211,16 +222,24 @@
 		</action>
 		
 		<action name="addFriend" class="friendAction" method="addFriend">
+			<!-- 
 			<result name="success" type="redirectAction">showFriends</result>
+			 -->
+			<result name="success" type="stream"></result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
 		
 		<action name="addFriendToRequestList" class="friendAction" method="addFriendToRequestList">
+			<interceptor-ref name="myDefault"></interceptor-ref>
 			<result name="success" type="redirectAction">showFriends</result>
 		</action>
 		
 		<action name="refuseFriend" class="friendAction" method="refuseFriend">
+			<interceptor-ref name="myDefault"></interceptor-ref>
+			<result name="success" type="stream"></result>
+			<!-- 
 			<result name="success" type="redirectAction">showFriends</result>
+			 -->
 		</action>
 		
 		<action name="getFriendsByPage" class="friendAction" method="getFriendsByPage">

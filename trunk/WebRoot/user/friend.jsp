@@ -6,7 +6,6 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<jsp:include page="header.jsp"></jsp:include>
   	<head>
@@ -70,11 +69,13 @@
    		<label><s:text name="friend.friend_ask"/></label>
    		<br>
    		<s:iterator value="requestList" var="mail">
-   			<a href="a.jsp"><s:property value="#mail.fromUser.userName"/></a>
+   			<a href='home.action?userId=<s:property value="#mail.fromUser.idUser"/>'>
+   			<s:property value="#mail.fromUser.userName"/></a>
    			<s:text name="friend.ask_add_friend"/>
-   			<a href="addFriend?friendId=<s:property value="#mail.fromUser.idUser" />">
+   			<a href="addFriend?friendId=<s:property value="#mail.fromUser.idUser" />
+   					&&mailId=<s:property value="#mail.id" />">
    			<s:text name="friend_allow"/></a>  
-   			<a href="refuseFriend?friendId=<s:property value="#mail.fromUser.idUser" />">
+   			<a href="refuseFriend?mailId=<s:property value="#mail.id" />">
    			<s:text name="friend_refuse"/></a>
    			<br>
    		</s:iterator>

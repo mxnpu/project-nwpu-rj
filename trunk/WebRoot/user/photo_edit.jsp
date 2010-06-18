@@ -6,19 +6,25 @@
 <jsp:include page="header.jsp"></jsp:include>
 <html>
 	<head>
-		<title><s:text name="index.edit_photo"/></title>
+		<title><s:text name="index.edit_photo" /></title>
+		<script type="text/javascript" src="../js/image.js"></script>
 	</head>
 
 	<body>
 		<div id="wrap">
 			<div id="photo">
-				<s:form action="fileUpload.action" method="post" enctype="multipart/form-data">
-					<img alt="Photo" src="${session.currentUser.photo}" />
+				<s:form action="fileUpload.action" method="post"
+					enctype="multipart/form-data">
+					<img id="photo" alt="Photo" src="${session.currentUser.photo}" 
+							width="150" height="200"/>
 					<br />
-					<s:file name="photo"></s:file>
+					<s:file id="uploadimg" name="photo" 
+						onchange="ImageObject.preViewImage(this.id, 'preview', 'more')"></s:file>
 					<s:submit type="submit" value="上传"></s:submit>
 				</s:form>
 			</div>
+			<!-- preview  panel -->
+			<div id="preview"></div> 
 		</div>
 	</body>
 </html>

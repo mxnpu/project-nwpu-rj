@@ -63,7 +63,8 @@ public class RegisterAction {
 		    }
 		    user.setUserName(username);
 		} else {
-		    ActionContext.getContext().put("errorMsg", "User Name Not Null");
+		    ActionContext.getContext().put("errorMsg",
+			    "User Name Not Null");
 		    return FAILED;
 		}
 
@@ -82,7 +83,8 @@ public class RegisterAction {
 		if (realname != null && !realname.equals("")) {
 		    user.setRealName(realname);
 		} else {
-		    ActionContext.getContext().put("errorMsg", "Real Name Not Null");
+		    ActionContext.getContext().put("errorMsg",
+			    "Real Name Not Null");
 		    return FAILED;
 		}
 
@@ -141,15 +143,201 @@ public class RegisterAction {
 			    user);
 		    return SUCCESS;
 		} else {
-		    ActionContext.getContext().put("errorMsg", "Sorry, Server Inner Error");
+		    ActionContext.getContext().put("errorMsg",
+			    "Sorry, Server Inner Error");
 		    return FAILED;
 		}
 
 	    } else {
-		ActionContext.getContext().put("errorMsg", "The User Name Registered");
+		ActionContext.getContext().put("errorMsg",
+			"The User Name Registered");
 	    }
 	} else {
-	    ActionContext.getContext().put("errorMsg", "Validate Code Error, Reinput Please!");
+	    ActionContext.getContext().put("errorMsg",
+		    "Validate Code Error, Reinput Please!");
+	}
+	return FAILED;
+    }
+
+    /**
+     * 处理用户注册请求的方法
+     * 
+     * @return
+     * @throws Exception
+     */
+    public String modifyInfo() throws Exception {
+
+	// 从session中取出RandomAction.java 中生成的验证码 random
+	String randomString = (String) (ActionContext.getContext().getSession()
+		.get("random"));
+	User user = (User) ActionContext.getContext().getSession().get(
+		"currentUser");
+	if (randomString.toLowerCase().equals(validateCode.toLowerCase())) {
+
+	    // 未改用户名
+	    if (user.getUserName().equals(username)) {
+		/* validate the pass word */
+		if (password != null && confirmPassword != null
+			&& !password.equals("")
+			&& password.equals(confirmPassword)) {
+		    user.setPassword(password);
+		} else {
+		    ActionContext.getContext().put("errorMsg",
+			    "Password Not Null Or Confirm Password different.");
+		    return FAILED;
+		}
+
+		/* validate the real name. */
+		if (realname != null && !realname.equals("")) {
+		    user.setRealName(realname);
+		} else {
+		    ActionContext.getContext().put("errorMsg",
+			    "Real Name Not Null");
+		    return FAILED;
+		}
+
+		/* validate the gender. */
+		if (gender != null && gender.equals("male")) {
+		    user.setGender("M");
+		} else if (gender != null && gender.equals("female")) {
+		    user.setGender("F");
+		} else {
+		    user.setGender("");
+		}
+
+		/* validate the birthday. */
+		if (birthday != null && !birthday.equals("")) {
+		    String[] pattern = new String[] { "yyyy-MM", "yyyyMM",
+			    "yyyy/MM", "yyyyMMdd", "yyyy-MM-dd", "yyyy/MM/dd",
+			    "yyyyMMddHHmmss", "yyyy-MM-dd HH:mm:ss",
+			    "yyyy/MM/dd HH:mm:ss" };
+		    Date date = DateUtils.parseDate(birthday, pattern);
+		    user.setBirthday(date);
+		} else {
+		    user.setBirthday(new Date());
+		}
+
+		/* validate the phone */
+		if (phone != null) {
+		    user.setPhone(phone);
+		} else {
+		    user.setPhone("");
+		}
+
+		/* validate the email */
+		if (email != null) {
+		    user.setEmail(email);
+		} else {
+		    user.setEmail("");
+		}
+
+		/* validate the hobby. */
+		if (hobby != null) {
+		    user.setHoby(hobby);
+		} else {
+		    user.setHoby("");
+		}
+	    } else { // 改了用户名
+		if (!userService.isUserExist(username)) {
+
+		    /* validate the user name */
+		    if (username != null && !username.equals("")) {
+			if (username.length() < 4 | username.length() > 16) {
+			    ActionContext.getContext().put("errorMsg",
+				    "User Length 4-16");
+			    return FAILED;
+			}
+			user.setUserName(username);
+		    } else {
+			ActionContext.getContext().put("errorMsg",
+				"User Name Not Null");
+			return FAILED;
+		    }
+
+		    /* validate the pass word */
+		    if (password != null && confirmPassword != null
+			    && !password.equals("")
+			    && password.equals(confirmPassword)) {
+			user.setPassword(password);
+		    } else {
+			ActionContext
+				.getContext()
+				.put("errorMsg",
+					"Password Not Null Or Confirm Password different.");
+			return FAILED;
+		    }
+
+		    /* validate the real name. */
+		    if (realname != null && !realname.equals("")) {
+			user.setRealName(realname);
+		    } else {
+			ActionContext.getContext().put("errorMsg",
+				"Real Name Not Null");
+			return FAILED;
+		    }
+
+		    /* validate the gender. */
+		    if (gender != null && gender.equals("male")) {
+			user.setGender("M");
+		    } else if (gender != null && gender.equals("female")) {
+			user.setGender("F");
+		    } else {
+			user.setGender("");
+		    }
+
+		    /* validate the birthday. */
+		    if (birthday != null && !birthday.equals("")) {
+			String[] pattern = new String[] { "yyyy-MM", "yyyyMM",
+				"yyyy/MM", "yyyyMMdd", "yyyy-MM-dd",
+				"yyyy/MM/dd", "yyyyMMddHHmmss",
+				"yyyy-MM-dd HH:mm:ss", "yyyy/MM/dd HH:mm:ss" };
+			Date date = DateUtils.parseDate(birthday, pattern);
+			user.setBirthday(date);
+		    } else {
+			user.setBirthday(new Date());
+		    }
+
+		    /* validate the phone */
+		    if (phone != null) {
+			user.setPhone(phone);
+		    } else {
+			user.setPhone("");
+		    }
+
+		    /* validate the email */
+		    if (email != null) {
+			user.setEmail(email);
+		    } else {
+			user.setEmail("");
+		    }
+
+		    /* validate the hobby. */
+		    if (hobby != null) {
+			user.setHoby(hobby);
+		    } else {
+			user.setHoby("");
+		    }
+
+		} else {
+		    ActionContext.getContext().put("errorMsg",
+			    "The User Name Registered");
+		}
+	    }
+
+	    userService.updateUser(user);
+	    if (userService.isUserExist(username)) {
+		ActionContext.getContext().getSession()
+			.put("currentUser", user);
+		return SUCCESS;
+	    } else {
+		ActionContext.getContext().put("errorMsg",
+			"Sorry, Server Inner Error");
+		return FAILED;
+	    }
+
+	} else {
+	    ActionContext.getContext().put("errorMsg",
+		    "Validate Code Error, Reinput Please!");
 	}
 	return FAILED;
     }
@@ -273,7 +461,8 @@ public class RegisterAction {
     }
 
     /**
-     * @param hobby the hobby to set
+     * @param hobby
+     *            the hobby to set
      */
     public void setHobby(String hobby) {
 	this.hobby = hobby;

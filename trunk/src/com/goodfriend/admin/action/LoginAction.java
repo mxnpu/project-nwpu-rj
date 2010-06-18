@@ -44,6 +44,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 				session = new HashMap<String, Object>();
 			}
 			session.put("currentAdmin", dbAdmin);
+			session.put("currentAdminId", dbAdmin.getIdAdmin());
 			return "login_success";
 		}
 		System.out.println("登陆失败");

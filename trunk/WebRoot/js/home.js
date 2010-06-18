@@ -230,6 +230,8 @@ var myGossipAjax = {
 						var oImg = document.createElement("img");
 						oImg.setAttribute("alt","Photo");
 						oImg.setAttribute("src",ownerPhoto);
+						oImg.setAttribute("width","50");
+						oImg.setAttribute("height","65");
 						oGossipDiv.appendChild(oImg);
 						
 						var oBr1 = document.createElement("br");

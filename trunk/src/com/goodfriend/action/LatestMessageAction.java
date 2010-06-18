@@ -5,9 +5,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import com.goodfriend.model.Mail;
 import com.goodfriend.model.Message;
+import com.goodfriend.model.Placard;
 import com.goodfriend.model.User;
 import com.goodfriend.service.ILatestMsgService;
+import com.goodfriend.service.IMailService;
+import com.goodfriend.service.IPlacardService;
 import com.opensymphony.xwork2.ActionContext;
 
 /**
@@ -20,6 +24,8 @@ import com.opensymphony.xwork2.ActionContext;
 public class LatestMessageAction {
 
     ILatestMsgService latestMsgService;
+    IMailService mailService;
+    IPlacardService placardService;
     
     List<Message> msgs;
 
@@ -45,6 +51,14 @@ public class LatestMessageAction {
 	
 	// put the message to the index page.
 	ActionContext.getContext().getSession().put("msg", msgs);
+	
+	List<Mail> latestMails = mailService.getAllMails(currentUser);
+	ActionContext.getContext().getSession().put("mails", latestMails);
+	
+	List<Placard> latestPlacards = placardService.getLatestPlacards();
+	ActionContext.getContext().getSession().put("placards", latestPlacards);
+	
+	
 	return "success";
     }
 
@@ -76,5 +90,35 @@ public class LatestMessageAction {
     public void setMsgs(List<Message> msgs) {
         this.msgs = msgs;
     }
+
+    /**
+     * @return the mailService
+     */
+    public IMailService getMailService() {
+        return mailService;
+    }
+
+    /**
+     * @param mailService the mailService to set
+     */
+    public void setMailService(IMailService mailService) {
+        this.mailService = mailService;
+    }
+
+    /**
+     * @return the placardService
+     */
+    public IPlacardService getPlacardService() {
+        return placardService;
+    }
+
+    /**
+     * @param placardService the placardService to set
+     */
+    public void setPlacardService(IPlacardService placardService) {
+        this.placardService = placardService;
+    }
+    
+    
 
 }

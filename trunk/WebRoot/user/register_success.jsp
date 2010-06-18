@@ -13,7 +13,7 @@
     	<s:text name="regiter_success.reg_suc_wel"/><s:property value="#session.currentUser.userName"/>
     	<s:text name="regiter_success.reg_suc_wel_words"/> <br>
     	<br>
-    	<a href="index.jsp"><s:text name="regiter_success.homepage"/></a>
+    	<a href="toindex.action"><s:text name="regiter_success.homepage"/></a>
     	</div>
   </body>
 </html>

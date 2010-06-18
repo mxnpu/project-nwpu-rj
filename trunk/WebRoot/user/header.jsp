@@ -36,7 +36,7 @@
 				<div class="global_nav">
 					<ul class="kwicks">
 						<li id="kwick1">
-							<a href="<%=basePath%>/user/index.action"><s:text name="header.homepage"/></a>
+							<a href="<%=basePath%>/user/first.action"><s:text name="header.homepage"/></a>
 						</li>
 						<li id="kwick2">
 							<a href="<%=basePath%>/user/home.action?userId=${session.currentUser.idUser}">

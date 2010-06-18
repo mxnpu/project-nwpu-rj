@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ManagerAdminAction extends ActionSupport implements SessionAware{
 		
 	private static final long serialVersionUID = 1L;
-	private static final String FAILED = "failed";
+	private static final String FAILED = "Admin_failed";
 	private Map<String, Object> session;
 
 //	private static final String 
@@ -55,7 +55,18 @@ public class ManagerAdminAction extends ActionSupport implements SessionAware{
 	public String updateInput() {
 		
 		admin = adminService.getAdmin(id);
+		session.put("idAdmin", id);
 		return "update_input";
+	}
+	/**
+	 * 查看管理员信息输入表项
+	 * @return
+	 */
+	public String viewAdminInfo() {
+		
+		admin = adminService.getAdmin(id);
+		session.put("idAdmin", id);
+		return "view_admin_info";
 	}
 	
 	/**
@@ -64,9 +75,23 @@ public class ManagerAdminAction extends ActionSupport implements SessionAware{
 	 */
 	public String update() {
 		
-		adminService.updateAdmin(admin);
+		adminService.updateAdmin((Integer)session.get("idAdmin"), admin);
+		//System.out.println(session.get("idAdmin").toString());
+		int tempId = (Integer)session.get("idAdmin");
+		int currentId = (Integer)session.get("currentAdminId");
+		if(tempId == currentId){
+			
+			session.put("currentAdmin", admin);
+		}
 		return "update_success";
+		//
 	}
+	
+	/**
+	 * 添加管理员
+	 * @return
+	 * @throws Exception
+	 */
 	public String addInput() throws Exception {
 		
 		if (!adminService.isAdminExist(adminDTO.getUsername())) {
@@ -157,7 +182,5 @@ public class ManagerAdminAction extends ActionSupport implements SessionAware{
 		
 		this.session = session;
 	}
-
-
 
 }

@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
+import com.goodfriend.dao.IMailDAO;
 import com.goodfriend.dao.impl.FriendsDAO;
-import com.goodfriend.dao.impl.MailDAO;
 import com.goodfriend.dao.impl.UserDAO;
 import com.goodfriend.model.Friends;
 import com.goodfriend.model.Mail;
@@ -23,7 +23,7 @@ public class FriendService implements IFriendService {
 	
 	private UserDAO userDao;
 
-	private MailDAO mailDao;
+	private IMailDAO mailDao;
 
 	public void deleteFriend(Friends friend) {
 		// TODO Auto-generated method stub
@@ -302,11 +302,11 @@ public class FriendService implements IFriendService {
 		return null;
 	}
 
-	public MailDAO getMailDao() {
+	public IMailDAO getMailDao() {
 		return mailDao;
 	}
 
-	public void setMailDao(MailDAO mailDao) {
+	public void setMailDao(IMailDAO mailDao) {
 		this.mailDao = mailDao;
 	}
 

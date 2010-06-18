@@ -9,6 +9,7 @@ import com.goodfriend.service.IAdminService;
 /**
  * The service module for the administrator.
  * 
+ * @author xurunhua
  * @CreateTime 2010.05.03
  * @LastModifyTime 2010.05.12
  */
@@ -103,6 +104,18 @@ public class AdminService implements IAdminService {
 		adminDao.attachDirty(admin);
 	}
 
+	public void updateAdmin(int id, Admin  admin) {
+		
+		Admin oldAdmin = adminDao.findById(id);
+		oldAdmin.setAddress(admin.getAddress());
+		oldAdmin.setEmail(admin.getEmail());
+		oldAdmin.setPassword(admin.getPassword());
+		oldAdmin.setPhone(admin.getPhone());
+		oldAdmin.setRealName(admin.getRealName());
+		oldAdmin.setUsername(admin.getUsername());
+		adminDao.attachDirty(oldAdmin);
+	}
+	
 	public void setAdminDao(IAdminDAO adminDao) {
 		this.adminDao = adminDao;
 	}
