@@ -6,30 +6,29 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ request.getContextPath();
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<jsp:include page="header.jsp"></jsp:include>
 <html>
 	<head>
 		<title><s:text name="gossip_leave_message" />
 		</title>
-		<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
-		<script type="text/javascript" src="jquery-ui-1.7.2.custom.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-ui-1.7.2.custom.min.js"></script>
 		<script type="text/javascript" src="../js/gossip.js"></script>
-		<link type="text/css" href="jquery-ui-1.7.2.custom.css"
+		<link type="text/css" href="../style/jquery-ui-1.7.2.custom.css"
 			rel="stylesheet" />
 		<link rel="stylesheet" type="text/css"
-			href="<%=basePath%>/style/headStyle.css" />
-		<link rel="stylesheet" href="<%=basePath%>/style/navStyle.css"
+			href="../style/headStyle.css" />
+		<link rel="stylesheet" href="../style/navStyle.css"
 			type="text/css" media="screen" />
-		<link rel="stylesheet" href="<%=basePath%>/style/toolboxStyle.css"
+		<link rel="stylesheet" href="../style/toolboxStyle.css"
 			type="text/css" media="screen" />
 	</head>
-	<jsp:include page="header.jsp"></jsp:include>
+	
 	<body>
 		<div id="mainPanel">
 
 			<div id="wrap">
 				<div id="personalityDiv">
-					<img alt="Photo" src="${session.currentUser.photo}" />
+					<img alt="Photo" src="${session.currentUser.photo}" width="150" height="200"/>
 					<br />
 					<span><s:text name="gossip_name" /> <s:property
 							value="#session.currentUser.realName" /> </span>

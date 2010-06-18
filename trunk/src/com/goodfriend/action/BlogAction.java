@@ -1,5 +1,8 @@
 package com.goodfriend.action;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -27,6 +30,7 @@ public class BlogAction implements ServletRequestAware {
     private IBlogService blogService;
     private IUserService userService;
     private IReplyService replyService;
+    private InputStream inputStream;
 
     // 当修改某一篇日志的时候使用下面三个对象
     private int id;
@@ -110,18 +114,68 @@ public class BlogAction implements ServletRequestAware {
 
     public String addBlogReply() {
 	int id = Integer.parseInt(request.getParameter("id"));
-
+	String content = request.getParameter("content");
 	Blog blog = blogService.getBlog(id);
 	Reply reply = new Reply();
-	reply.setContent(replyContent);
+	reply.setContent(content);
 	User user = (User) ActionContext.getContext().getSession().get(
 		"currentUser");
-	// reply.setUser(user);
-	// reply.setItem(blog.getItem());
+	
 	replyService.addReply(reply, blog.getItem().getIdItem(), user
 		.getIdUser());
-
+	
+	Integer itemId = blog.getItem().getIdItem();
+	String result = prepareData(itemId);
+	toInStream(result);
 	return "success";
+    }
+    
+    /**
+     * Prepare the data for the client.
+     * 
+     * @return
+     */
+    private String prepareData(Integer itemId) {
+	// Get the response to the client.
+	StringBuffer responseBuffer = new StringBuffer();
+	List<Reply> replyList = replyService.getReplies(itemId);
+	for (int i=0; i < replyList.size(); i++) {
+	    String username = replyList.get(i).getUser().getUserName();
+	    responseBuffer.append(username);
+	    responseBuffer.append("_&");
+	    String userid = replyList.get(i).getUser().getIdUser().toString();
+	    responseBuffer.append(userid);
+	    responseBuffer.append("_&");
+	    String photo = replyList.get(i).getUser().getPhoto();
+	    responseBuffer.append(photo);
+	    responseBuffer.append("_&");
+	    String replyCon = replyList.get(i).getContent();
+	    responseBuffer.append(replyCon);
+	    responseBuffer.append("_&");
+	    String recordTime = replyList.get(i).getTime();
+	    responseBuffer.append(recordTime);
+	    if (i != replyList.size()-1) {
+		responseBuffer.append("@&");
+	    }
+	}
+	
+	return responseBuffer.toString();
+    }
+    
+    /**
+     * Put the string into the input stream to the client.
+     * 
+     * @param str
+     */
+    private void toInStream(String str) {
+	try {
+
+	    setInputStream(new ByteArrayInputStream(str.getBytes("utf-8")));
+
+	} catch (UnsupportedEncodingException e) {
+	    e.printStackTrace();
+	}
+
     }
 
     // 更新一篇日志
@@ -243,6 +297,20 @@ public class BlogAction implements ServletRequestAware {
      */
     public void setUserService(IUserService userService) {
         this.userService = userService;
+    }
+
+    /**
+     * @param inputStream the inputStream to set
+     */
+    public void setInputStream(InputStream inputStream) {
+	this.inputStream = inputStream;
+    }
+
+    /**
+     * @return the inputStream
+     */
+    public InputStream getInputStream() {
+	return inputStream;
     }
 
 }
