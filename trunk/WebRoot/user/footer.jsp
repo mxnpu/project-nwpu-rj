@@ -3,10 +3,7 @@
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+ request.getContextPath();
 %>
 <html>
-  <head>
-  	<link rel="stylesheet" type="text/css" href="<%=basePath%>/style/style.css"/>
-  </head>
-  
+
   <body>
   <div id="footer">
         <p class="r_option">

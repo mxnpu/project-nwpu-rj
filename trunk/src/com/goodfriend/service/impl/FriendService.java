@@ -157,7 +157,7 @@ public class FriendService implements IFriendService {
 		Friends tempFriend;
 		User tempUser;
 		
-		if (state == "N"){
+		if (state.equals("N")){
 			while(friendsIt2.hasNext()){
 				
 				tempFriend = friendsIt2.next();

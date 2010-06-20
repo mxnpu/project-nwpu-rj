@@ -8,25 +8,32 @@
    	<script type="text/javascript" src="../js/datePicker/WdatePicker.js"></script>
    	<script type="text/javascript" src="../js/image.js"></script>
    	<script type="text/javascript" src="../js/personInfo.js"></script>
+   	<link type="text/css" rel="stylesheet" href="../style/personInfo.css" />	
   </head>
   
   <body onload="PersonInfo.ready();"> 
   <iframe src="about:blank" name="fileUploadFrame1" style="display:none;" >
   </iframe>
-  <div id="wrap">
-  	
-  	<s:form action="fileUpload.action" method="post" enctype="multipart/form-data" id="fileForm"
+  <div id="contentDiv">
+  
+  	<div id="photoFormDiv">
+  	<form action="fileUpload.action" method="post" enctype="multipart/form-data" id="fileForm"
   				target="fileUploadFrame1" >
-    	&nbsp;&nbsp;<img id="photo" alt="Photo" src="${session.currentUser.photo}" width="150" height="200" />	
-    	<s:file id="uploadimg" name="photo" 
-			onchange="ImageObject.preViewImage(this.id, 'photo', 'little');
+    	<img id="photo" alt="Photo" src="${session.currentUser.photo}" width="150" height="200" />
+    	<br>
+    	<div id="fileup">
+    		<s:file id="uploadimg" name="photo" 
+				onchange="ImageObject.preViewImage(this.id, 'photo', 'little');
 				document.getElementById('fileForm').submit();"></s:file>
-	</s:form>
-  	
+    	</div>	
+	</form>
+  	</div>
+  
+  	<div id="infoFormDiv">  	
     <form action="modifyInfo.action" method="post" id="infoForm">
     	<table width="400">
     		<tr>
-    			<td><label><s:text name="personal_info.username"/></label></td>
+    			<th><label><s:text name="personal_info.username"/></label></th>
     			<td>
     				<input type="text" value="${session.currentUser.userName }" id="username" name="username"
     					tabindex="1" maxlength="16" 
@@ -36,7 +43,7 @@
     			<td><div class="errorMsg" id="userNameError"></div></td>
     		</tr>
     		<tr>
-    			<td><label><s:text name="personal_info.password"/></label></td>
+    			<th><label><s:text name="personal_info.password"/></label></th>
     			<td><input name="password" id="password" type="password" 
     					value='<s:property value="#session.currentUser.password"/>'
     					tabindex="2" maxlength="16" 
@@ -45,7 +52,7 @@
     			<td><div class="errorMsg" id="passwordError"></div></td>
     		</tr>
     		<tr>
-              <th width="100"><label for="confirmPassword"><s:text name="registerform.passwordConf"/></label></th>
+              <th width="100"><label for="confirmPassword"><s:text name="registerform.passwordConf"/>:</label></th>
               <td><input type="password" name="confirmPassword" id="confirmPassword" 
               			value='<s:property value="#session.currentUser.password"/>'
               			class="t_input" tabindex="4" maxlength="16" 
@@ -53,7 +60,7 @@
               <td><div class="errorMsg" id="passwordComfirmError"></div></td>
             </tr>
     		<tr>
-    			<td><label><s:text name="personal_info.right_name"/></label></td>
+    			<th><label><s:text name="personal_info.right_name"/></label></th>
     			<td>
     				<input name="realname" id="realname" type="text"
     					value='<s:property value="#session.currentUser.realName"/>'
@@ -63,7 +70,7 @@
     			<td><div class="errorMsg" id="realNameError"></div></td>
     		</tr>
     		<tr>
-    			<td><label><s:text name="registerform.email"/></label></td>
+    			<th><label><s:text name="registerform.email"/></label></th>
     			<td>
     				<input name="email" id="email" type="text"
     					value='<s:property value="#session.currentUser.email"/>'
@@ -73,7 +80,7 @@
     			<td><div class="errorMsg" id="validateEmailError"></div></td>
     		</tr>
     		<tr>
-    			<td><label><s:text name="personal_info.sex"/></label></td>
+    			<th><label><s:text name="personal_info.sex"/></label></th>
     			<td>
     				<s:if test='#session.currentUser.gender == "M"'>
     					<input name="gender" type="radio" value="male" checked="checked" tabindex="5"/>
@@ -90,7 +97,7 @@
     			</td>
     		</tr>
     		<tr>
-    			<td><label><s:text name="home_birth"/></label></td>
+    			<th><label><s:text name="home_birth"/></label></th>
     			<td>
     				<input type="text" name="birthday" id="birthday" 
     					class="t_input" tabindex="7" maxlength="16" 
@@ -101,13 +108,13 @@
                 </td>
     		</tr>
     		<tr>
-    			<td><label><s:text name="personal_info.phone"/></label></td>
+    			<th><label><s:text name="personal_info.phone"/></label></th>
     			<td><input name="phone" id="phone" type="text" 
     					tabindex="8" maxlength="16" 
 						value='<s:property value="#session.currentUser.phone"/>'/></td>
     		</tr>
     		<tr>
-    			<td><label><s:text name="home_love"/></label></td>
+    			<th><label><s:text name="home_love"/></label></th>
     			<td>
     				<textarea name="hobby" id="hobby" 
     					tabindex="9"
@@ -117,11 +124,19 @@
     			</td>
     		</tr>
     		<tr>
-              <th width="100"><label for="validateCode"><s:text name="registerform.validateCode"/></label></th>
+    			<th>
+    			</th>
+    			<td>
+    				<p>
+                 	 <img src="random.action" onClick="Validate.changeCode(this)" title="Click to flush the random code"/>
+              	   </p>
+    			</td>
+    			<td>
+    			</td>
+    		</tr>
+    		<tr>
+              <th width="100"><label for="validateCode"><s:text name="registerform.validateCode"/>:</label></th>
               <td>
-                <p>
-                  <img src="random.action" onClick="Validate.changeCode(this)" title="Click to flush the random code"/>
-                </p>
                 <p>
                   <input type="text" name="validateCode" id="validateCode" 
                   		class="t_input" tabindex="10" maxlength="6" 
@@ -130,11 +145,21 @@
               </td>
               <td><div class="errorMsg" id="userValiCodeError"></div></td>
             </tr>
+            <tr>
+            	<th>
+            	</th>
+            	<td>
+            		<input type="button" value='<s:text name="personal_info.submit"/>' 
+    					onclick="document.getElementById('infoForm').submit();">
+    				<input type="reset" value='<s:text name="personal_info.reset"/>'>
+            	</td>
+            	<td>
+            	</td>
+            </tr>
     	</table>
-    	<input type="button" value='<s:text name="personal_info.submit"/>' 
-    		onclick="document.getElementById('infoForm').submit();">
-    	<input type="reset" value='<s:text name="personal_info.reset"/>'>
+    	
     </form>
+    </div>
   </div>
   </body>
   <jsp:include page="footer.jsp"></jsp:include>

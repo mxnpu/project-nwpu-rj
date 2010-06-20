@@ -5,9 +5,9 @@
 <html> 
 	<head>
 		<title><s:text name="title.read_blog"/></title>
-		<link rel="stylesheet" type="text/css" href="../style/style.css"/>
 		<script type="text/javascript" src="../js/kindeditor/kindeditor.js"></script>
 		<script type="text/javascript" src="../js/blog.js"></script>
+		<link type="text/css" rel="stylesheet" href="../style/writeBlog.css" />	
 		<script type="text/javascript">
     	KE.show({
         	id : 'content'
@@ -21,10 +21,7 @@
   </head>
   
   <body> 
-  	<div id="header">
-  	</div>
-  	
-  	<div id="wrap">
+  	<div id="contentPanel">
   		<br><br>
   		<form action="updateBlog" method="post">
   		<input id="id" name="id" style="display:none" value="<s:property value="blog.id" />">

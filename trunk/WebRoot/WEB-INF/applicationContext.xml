@@ -395,6 +395,9 @@
  		<property name="replyService">
  			<ref bean="replyService"/>
  		</property>
+ 		<property name="mailService">
+ 			<ref bean="mailService"/>
+ 		</property>
  	</bean>
  
  	<!-- The intercepter -->

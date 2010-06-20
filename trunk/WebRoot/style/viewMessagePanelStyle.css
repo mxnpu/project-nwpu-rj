@@ -1,0 +1,119 @@
+#content {
+	list-style: none;
+	position: relative;
+	margin: 0px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	background-image: url(image/content_bg.png);
+	float: left;
+	clear: both;
+}
+
+#content_list {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	clear: both;
+}
+
+#content_list .content_item {
+	display: block;
+	width: 640px;
+	height: auto;
+	margin: 7 0 7 0;
+	float: left;
+	clear: both;
+}
+
+#content_list .content_item img {
+	width: 55px;
+	height: 55px;
+	margin: 0 0 0 0;
+	float: left;
+	clear: both;
+}
+
+#content_list .content_item .message_item {
+	display: block;
+	width: 560px;
+	margin: 0px;
+	padding: 5px;
+	border-radius: 5px 5px 5px 5px;
+	background-color: #CAD1DC;
+	float: right;
+	clear: right;
+}
+
+#content_list .content_item .replayMessage_editor {
+	width: 63px;
+	height: 108px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-align: center;
+}
+
+#content_list .content_item .replayMessage_editor a {
+	margin: 0px;
+	color: #54A7E3;
+}
+
+#content_list .content_item .message_detail {
+	width: 551;
+	margin: 0px;
+	padding: 3px;
+	float: left;
+	border: thin dashed;
+	text-align: left;
+}
+
+#content_list .content_item .message_detail p {
+	padding: 0px 0px 0px 7px;
+	float: left;
+}
+
+#content_list .content_item .message_detail_replay {
+	width: 537;
+	margin: 0px 0px 0px 14px;
+	padding: 3px;
+	float: left;
+	border: thin dashed;
+}
+
+#content_list .content_item .message_detail_replay p {
+	padding: 0px 0px 0px 7px;
+	float: left;
+}
+
+#content_list .content_item .message_photo {
+	width: 48;
+	height: 48;
+	margin: 0px;
+	background-image: url(image/photo_bg_small.png);
+	float: left;
+}
+
+#content_list .content_item .message_photo img {
+	width: 48;
+	height: 48;
+	margin: 0px;
+}
+
+/*===================xurunhua====================*/
+
+#content_list .content_item .blog_date {
+	float: right;
+	color: #33F;
+}
+#gossipDiv {
+	text-align: left;
+	padding: 0px 0px 0px 7px;
+}
+
+.gossip_reply_ul {
+	text-align: left;
+	padding: 0px 0px 0px 7px;
+}
+.label_reply_del {
+	text-align: right;
+}

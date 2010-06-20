@@ -1,0 +1,94 @@
+#content {
+	list-style: none;
+	position: relative;
+	margin: 0px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	background-image: url(image/content_bg.png);
+	float: left;
+	clear: both;
+}
+
+#content_list {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	clear: both;
+}
+
+#content_list .content_item {
+	display: block;
+	width: 640px;
+	height: auto;
+	margin: 7 0 7 0;
+	float: left;
+	clear: both;
+}
+
+#content_list .content_item img {
+	width: 55px;
+	height: 55px;
+	margin: 0 0 0 0;
+	float: left;
+	clear: both;
+}
+
+#content_list .content_item .friend_item {
+	display: block;
+	width: 551;
+	margin: 0px;
+	padding: 7px;
+	border-radius: 5px 5px 5px 5px;
+	background-color: #CAD1DC;
+	float: right;
+	clear: right;
+	text-align: left;
+}
+
+#content_list .content_item .addfriend_editor {
+	width: 55px;
+	height: 90px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#content_list .content_item .addfriend_editor a {
+	text-align: center;
+	margin: 0px;
+	color: #54A7E3;
+}
+
+#content_list .content_item .friend_photo {
+	width: 107;
+	height: 106;
+	margin: 0px;
+	background-image: url(image/photo_bg.png);
+	float: left;
+}
+
+#content_list .content_item .friend_photo img {
+	width: 107;
+	height: 106;
+	margin: 0px;
+}
+
+#content_list .content_item .friend_detail {
+	width: 420;
+	height: 90;
+	margin: 0px 0px 0px 7px;
+	padding: 7px;
+	float: left;
+	border: thin dashed;
+}
+#photolayer {
+    display: block;
+    overflow: hidden;
+    padding: 0;
+	float: left;
+	width: 245px;
+	height: 400px;
+	margin-right: 0px;
+	background-repeat:no-repeat;
+	background-image:url(image/photolayer.png);
+}

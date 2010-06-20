@@ -1,55 +1,41 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+	<jsp:include page="header.jsp"></jsp:include>
 	<head>
-		<link rel="stylesheet" type="text/css"
-			href="<%=basePath%>/style/headStyle.css" />
-		<link rel="stylesheet" type="text/css"
-			href="<%=basePath%>/style/toolboxStyle.css" />
-		<link rel="stylesheet" type="text/css"
-			href="<%=basePath%>/style/blog.css" />
-		<link rel="stylesheet" href="<%=basePath%>/style/navStyle.css"
-			type="text/css" media="screen" />
-		<script type='text/javascript' src='jquery-1.2.6.min.js'></script>
-		<script type='text/javascript' src='kwicks.js'></script>
-		<script type='text/javascript' src='custom.js'></script>
+		<link rel="stylesheet" href="../style/searchResultPanelStyle.css" type="text/css" media="screen" />
 	</head>
 	<body>
-		<!--Global Navigation Bar-->
-		<div id="header">
-			<jsp:include page="header.jsp"></jsp:include>
-		</div>
-		</div>
-		<div id="mainPanel">
-			<!--Global Toolbox-->
-			<div id="global_toolbox">
+	<div id="mainPanel">
+		<div id="global_toolbox">
+			<ul id="photolayer">
+			<li>
+				<img id="userPhoto" src="${session.currentUser.photo}" width="150" height="200"/>
+			</li>
+			<li>
 				<form action="searchFriends">
-					<div id="search" align="left">
+					<div id="search">
 						<s:if test="%{userName} != null">
-							<input id="userName" name="userName" type="text"
-								value="#username" />
-							<button type="submit">
-								<s:text name="friend.search"/>
-							</button>
+						<input id="search_input" name="userName" type="text" value="#username" />
+						<button type="submit">
+							<s:text name="friend.search" />
+						</button>
 						</s:if>
 						<s:else>
-							<input id="userName" name="userName" type="text" />
+							<input id="search_input" name="userName" type="text" />
 							<br>
-							<input type="radio" name="scope" id="scope" value="fromFriends" /><s:text name="friend.goodfriend"/> <input
-								type="radio" name="scope" id="scope" value="fromAll"
-								checked="checked" /><s:text name="friend.all"/><button type="submit">
-								<s:text name="friend.search"/>
-							</button>
+							<input type="radio" name="scope" id="scope" value="fromFriends"  />
+							<s:text name="friend.goodfriend" /><br/>
+							<input type="radio" name="scope" id="scope" value="fromAll" checked="checked"/>
+							<s:text name="friend.all" /><br/>
+							<button type="submit" id="search_button"></button>
 						</s:else>
 					</div>
-				</form>
-			</div>
+				</form>			
+			</li>
+		</ul>
+		</div>
 			<!--Friends Panel-->
 			<div id="content_bg">
 				<div class="content_tab_header">
@@ -66,9 +52,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<ul id="content_list">
 						<s:iterator value="users" var="user">
 							<li class="content_item">
-
-								<span class="friend_item">
-									<ul>
+								<ul class="addfriend_editor">
+                  					<li><img src="../style/image/icon_search_result.png"/></li>
+                  					<li>
+                  						<a href="addFriendToRequestList?friendId=<s:property value="#user.idUser" />">
+                  							<s:text name="search_user.add"/>
+                  						</a>
+                  					</li>
+                				</ul>
+			
+								<ul class="friend_item">
 										<li class="friend_photo">
 											
 											<img src="<s:property value="#user.photo" />" />
@@ -76,11 +69,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li class="friend_detail">
 											<span><a href="#user.idUser"><s:property
 														value="#user.userName" />
-											</a> <br> <a
-												href="addFriendToRequestList?friendId=<s:property value="#user.idUser" />"><s:text name="search_user.add"/></a>
+											</a> <br> 
 											</span>
 										</li>
-									</ul> </span>
+									</ul> 
 							</li>
 						</s:iterator>
 

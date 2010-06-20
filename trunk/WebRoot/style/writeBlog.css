@@ -1,0 +1,19 @@
+form {
+	padding: 10px 10px 10px 100px;
+}
+
+#titleDiv {
+	text-align: left;
+	color :white;
+	font-size: 20;
+}
+
+.title_div {
+	text-align: left;
+	padding: 10px 10px 10px 100px;
+	font-size: 20;
+}
+#title {
+	color :white;
+	font-size: 20;
+}

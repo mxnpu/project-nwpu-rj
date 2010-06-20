@@ -96,20 +96,23 @@ public class ReplyAction {
 	for (int i=0; i < replyList.size(); i++) {
 	    String user = replyList.get(i).getUser().getUserName();
 	    responseBuffer.append(user);
-	    responseBuffer.append("_");
+	    responseBuffer.append("%$");
 	    String replyId = replyList.get(i).getIdReply().toString();
 	    responseBuffer.append(replyId);
-	    responseBuffer.append("_");
+	    responseBuffer.append("%$");
 	    String replyCon = replyList.get(i).getContent();
 	    responseBuffer.append(replyCon);
-	    responseBuffer.append("_");
+	    responseBuffer.append("%$");
 	    String recordTime = replyList.get(i).getTime();
 	    responseBuffer.append(recordTime);
-	    responseBuffer.append("_");
+	    responseBuffer.append("%$");
 	    String userId = replyList.get(i).getUser().getIdUser().toString();
 	    responseBuffer.append(userId);
+	    responseBuffer.append("%$");
+	    String photo = replyList.get(i).getUser().getPhoto();
+	    responseBuffer.append(photo);
 	    if (i != replyList.size()-1) {
-		responseBuffer.append("@");
+		responseBuffer.append("@&");
 	    }
 	}
 	

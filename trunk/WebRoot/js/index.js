@@ -171,42 +171,50 @@ var replyAjax = {
 				}
 
 				var responseStr = xmlrequest.responseText;
-				var array = responseStr.split("@");
+				var array = responseStr.split("@&");
 				var count = array.length;
 				for (var i = 0; i < count; i++) {
-					var replies = array[i].split("_");
-					var user = replies[0];
+					var replies = array[i].split("%$");
+					var username = replies[0];
 					var replyId = replies[1];
 					var content = replies[2];
 					var recordTime = replies[3];
 					var userId = replies[4];
-
+					var photo = replies[5];
+					
 					var oLI = document.createElement("li");
-					var oReplyDiv = document.createElement("div");
-					oReplyDiv.setAttribute("id", "li_reply_" + replyId);
+					oLI.setAttribute("class","message_detail_replay");
+					
+					var oImg = document.createElement("img");
+					oImg.setAttribute("class","message_photo");
+					oImg.setAttribute("src",photo);
+					oImg.setAttribute("width","40");
+					oImg.setAttribute("height","55");
+					oLI.appendChild(oImg);
+					
 					var oA = document.createElement("a");
 					oA.setAttribute("href", "home.action?userId=" + userId);
-					oA.setAttribute("target", "_blank");
-					oA.innerHTML = user;
-					oReplyDiv.appendChild(oA);
+					oA.innerHTML = username;
+					oLI.appendChild(oA);
+					
 					var oSpan1 = document.createElement("span");
 					oSpan1.innerHTML = ":" + content;
-					oReplyDiv.appendChild(oSpan1);
-					var oBr = document.createElement("br");
-					oReplyDiv.appendChild(oBr);
+					oLI.appendChild(oSpan1);
+					
+					
 					var oSpan2 = document.createElement("span");
+					oSpan2.setAttribute("class","blog_date");
 					oSpan2.innerHTML = recordTime;
-					oReplyDiv.appendChild(oSpan2);
+					oLI.appendChild(oSpan2);
+					
 					var oLabel = document.createElement("label");
-					oLabel
-							.setAttribute("id", "label_" + replyId + "_"
-											+ itemId);
-					oLabel.innerHTML = "Delete";
+					oLabel.setAttribute("id", "label_" + replyId + "_" + itemId);
+					oLabel.setAttribute("onmouseover", "JavaScript:this.style.cursor='pointer'");
+					oLabel.innerHTML = "| Delete";
 					oLabel.setAttribute("onclick",
 							"replyDelAjax.deleteReply(this.id)");
-					oReplyDiv.appendChild(oLabel);
-
-					oLI.appendChild(oReplyDiv);
+					oLI.appendChild(oLabel);
+					
 					oReplyUl.appendChild(oLI);
 				}
 			}
@@ -258,42 +266,50 @@ var replyDelAjax = {
 				}
 
 				var responseStr = xmlrequest.responseText;
-				var array = responseStr.split("@");
+				var array = responseStr.split("@&");
 				var count = array.length;
 				for (var i = 0; i < count; i++) {
-					var replies = array[i].split("_");
-					var user = replies[0];
+					var replies = array[i].split("%$");
+					var username = replies[0];
 					var replyId = replies[1];
 					var content = replies[2];
 					var recordTime = replies[3];
 					var userId = replies[4];
-
+					var photo = replies[5];
+					
 					var oLI = document.createElement("li");
-					var oReplyDiv = document.createElement("div");
-					oReplyDiv.setAttribute("id", "li_reply_" + replyId);
+					oLI.setAttribute("class","message_detail_replay");
+					
+					var oImg = document.createElement("img");
+					oImg.setAttribute("class","message_photo");
+					oImg.setAttribute("src",photo);
+					oImg.setAttribute("width","40");
+					oImg.setAttribute("height","55");
+					oLI.appendChild(oImg);
+					
 					var oA = document.createElement("a");
 					oA.setAttribute("href", "home.action?userId=" + userId);
-					oA.setAttribute("target", "_blank");
-					oA.innerHTML = user;
-					oReplyDiv.appendChild(oA);
+					oA.innerHTML = username;
+					oLI.appendChild(oA);
+					
 					var oSpan1 = document.createElement("span");
 					oSpan1.innerHTML = ":" + content;
-					oReplyDiv.appendChild(oSpan1);
-					var oBr = document.createElement("br");
-					oReplyDiv.appendChild(oBr);
+					oLI.appendChild(oSpan1);
+					
+					
 					var oSpan2 = document.createElement("span");
+					oSpan2.setAttribute("class","blog_date");
 					oSpan2.innerHTML = recordTime;
-					oReplyDiv.appendChild(oSpan2);
+					oLI.appendChild(oSpan2);
+					
 					var oLabel = document.createElement("label");
-					oLabel
-							.setAttribute("id", "label_" + replyId + "_"
-											+ itemId);
-					oLabel.innerHTML = "Delete";
+					oLabel.setAttribute("id", "label_" + replyId + "_" + itemId);
+					oLabel.setAttribute("onmouseover", "JavaScript:this.style.cursor='pointer'");
+					oLabel.innerHTML = "| Delete";
 					oLabel.setAttribute("onclick",
 							"replyDelAjax.deleteReply(this.id)");
-					oReplyDiv.appendChild(oLabel);
-
-					oLI.appendChild(oReplyDiv);
+					oLI.appendChild(oLabel);
+					
 					oReplyUl.appendChild(oLI);
 				}
 			}

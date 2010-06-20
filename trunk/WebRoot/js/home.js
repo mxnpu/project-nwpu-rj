@@ -224,81 +224,101 @@ var myGossipAjax = {
 						var ownerPhoto = gossipInfo[6];
 
 						var oLI = document.createElement("li");
-						var oGossipDiv = document.createElement("div");
-						oGossipDiv.setAttribute("id", "li_gossip_" + gossipId);
-						
+						oLI.setAttribute("class", "content_item");
+
+						// reply show hidden button
+						var oUL1 = document.createElement("ul");
+						oUL1.setAttribute("class", "replayMessage_editor");
+						var oLI1 = document.createElement("li");
+						var oLabel1 = document.createElement("label");
+						oLabel1.setAttribute("id", "label_reply_" + gossipId
+										+ "_" + userId);
+						oLabel1.setAttribute("onclick",
+								"myGossipAjax.addReply(this.id);");
+						oLabel1.setAttribute("onmouseover",
+								"JavaScript:this.style.cursor='pointer'");
+						oLabel1.innerHTML = "Reply";
+						var oLI2 = document.createElement("li");
+						var oLabel2 = document.createElement("label");
+						oLabel2.setAttribute("id", "label_reply_" + gossipId
+										+ "_" + userId);
+						oLabel2.setAttribute("onclick",
+								"myGossipReplyAjax.showAllReplies(this.id);");
+						oLabel2.setAttribute("onmouseover",
+								"JavaScript:this.style.cursor='pointer'");
+						oLabel2.innerHTML = "Show";
+						var oLI3 = document.createElement("li");
+						var oLabel3 = document.createElement("label");
+						oLabel3.setAttribute("id", "label_reply_" + gossipId
+										+ "_" + userId);
+						oLabel3.setAttribute("onclick",
+								"myGossipReplyAjax.hiddenAllReplies(this.id);");
+						oLabel3.setAttribute("onmouseover",
+								"JavaScript:this.style.cursor='pointer'");
+						oLabel2.innerHTML = "Hide";
+						oLI1.appendChild(oLabel1);
+						oLI2.appendChild(oLabel2);
+						oLI3.appendChild(oLabel3);
+						oUL1.appendChild(oLI1);
+						oUL1.appendChild(oLI2);
+						oUL1.appendChild(oLI3);
+
+						// message
+						var oUL2 = document.createElement("ul");
+						oUL2.setAttribute("class", "message_item");
+						var oUL2LI1 = document.createElement("li");
+						oUL2LI1.setAttribute("class", "message_detail");
 						var oImg = document.createElement("img");
-						oImg.setAttribute("alt","Photo");
-						oImg.setAttribute("src",ownerPhoto);
-						oImg.setAttribute("width","50");
-						oImg.setAttribute("height","65");
-						oGossipDiv.appendChild(oImg);
-						
-						var oBr1 = document.createElement("br");
-						oGossipDiv.appendChild(oBr1);
-						
+						oImg.setAttribute("class", "message_photo");
+						oImg.setAttribute("alt", "Photo");
+						oImg.setAttribute("src", ownerPhoto);
+						oImg.setAttribute("width", "50");
+						oImg.setAttribute("height", "65");
+						var oPTemp = document.createElement("p");
 						var oA = document.createElement("a");
 						oA.setAttribute("id", "href_" + gossipId);
-						oA.setAttribute("href", "home.action?userId=" + gossipOwnerId);
-						oA.setAttribute("target", "_blank");
-						oA.innerHTML = userName;
-						oGossipDiv.appendChild(oA);
-						
+						oA.setAttribute("href", "home.action?userId="
+										+ gossipOwnerId);
+						oA.innerHTML = userName.trim();
 						var oSpan1 = document.createElement("span");
 						oSpan1.innerHTML = ":" + content;
-						oGossipDiv.appendChild(oSpan1);
-						var oBr = document.createElement("br");
-						oGossipDiv.appendChild(oBr);
+						var oBr1 = document.createElement("br");
+						oPTemp.appendChild(oA);
+						oPTemp.appendChild(oSpan1);
+						oPTemp.appendChild(oBr1);
 						var oSpan2 = document.createElement("span");
-						oSpan2.innerHTML = recordTime + " | ";
-						oGossipDiv.appendChild(oSpan2);
-
-						var oLabelShow = document.createElement("label");
-						oLabelShow.setAttribute("id", "label_reply_" + gossipId + "_"
-										+ userId);
-						oLabelShow.innerHTML = "Show |";
-						oLabelShow.setAttribute("onclick",
-								"myGossipReplyAjax.showAllReplies(this.id)");
-						oGossipDiv.appendChild(oLabelShow);
-						
-						var oLabelHidden = document.createElement("label");
-						oLabelHidden.setAttribute("id", "label_reply_" + gossipId + "_"
-										+ userId);
-						oLabelHidden.innerHTML = "Hidden |";
-						oLabelHidden.setAttribute("onclick",
-								"myGossipReplyAjax.hiddenAllReplies(this.id)");
-						oGossipDiv.appendChild(oLabelHidden);
-
-						var oLabelReply = document.createElement("label");
-						oLabelReply.setAttribute("id", "label_reply_" + gossipId
-										+ "_" + userId);
-						oLabelReply.innerHTML = "Reply ";
-						oLabelReply.setAttribute("onclick", "myGossipAjax.addReply(this.id)");
-						oGossipDiv.appendChild(oLabelReply);
-
-						// if the message owener is the current user
+						oSpan2.setAttribute("class", "blog_date");
+						oSpan2.innerHTML = recordTime.trim();
+						oUL2LI1.appendChild(oImg);
+						oUL2LI1.appendChild(oPTemp);
+						oUL2LI1.appendChild(oSpan2);
 						if (userId == currentId) {
 							var oLabelDel = document.createElement("label");
-							oLabelDel.setAttribute("id", "label_del_" + gossipId
-											+ "_" + userId);
+							oLabelDel.setAttribute("id", "label_del_"
+											+ gossipId + "_" + userId);
 							oLabelDel.innerHTML = " | Delete";
-							oLabelDel.setAttribute("onclick", "myGossipAjax.delGossip(this.id)");
-							oGossipDiv.appendChild(oLabelDel);
+							oLabelDel.setAttribute("onclick",
+									"myGossipAjax.delGossip(this.id)");
+							oLabelDel.setAttribute("onmouseover",
+									"JavaScript:this.style.cursor='pointer'");
+							oUL2LI1.appendChild(oLabelDel);
 						}
 
-						var oReplyDiv = document.createElement("div");
-						oReplyDiv
-								.setAttribute("id", "gossip_reply_" + gossipId);
-						var oUl = document.createElement("ul");
-						oUl.setAttribute("id", "gossip_reply_ul_" + gossipId);
-						oReplyDiv.appendChild(oUl);
-						oGossipDiv.appendChild(oReplyDiv);
+						var oUL2LI2 = document.createElement("li");
+						var oUL2LI2UL = document.createElement("ul");
+						oUL2LI2UL.setAttribute("id", "gossip_reply_ul_"
+										+ gossipId);
+						oUL2LI2UL.setAttribute("class", "gossip_reply_ul");
+						oUL2LI2.appendChild(oUL2LI2UL);
+						oUL2.appendChild(oUL2LI1);
+						oUL2.appendChild(oUL2LI2);
 
-						oLI.appendChild(oGossipDiv);
-						var oHr = document.createElement("hr");
-						oLI.appendChild(oHr);
+						oLI.appendChild(oUL1);
+						oLI.appendChild(oUL2);
 						oGossipUl.appendChild(oLI);
 					}
+					oGossipUl.style.display="block";
+
 				} else { // the gossip's reply
 					// Get the show area of the reply
 					gossipId = head.split("_")[1]
@@ -319,45 +339,44 @@ var myGossipAjax = {
 						var recordTime = replies[3];
 						var userId = replies[4];
 						var currentUserId = replies[5];
+						var photo = replies[6];
 
 						var oLI = document.createElement("li");
-						var oReplyDiv = document.createElement("div");
-						oReplyDiv.setAttribute("id", "li_gossip_reply_"
-										+ replyId);
-
+						oLI.setAttribute("class", "message_detail_replay");
+						var oImg = document.createElement("img");
+						oImg.setAttribute("class", "message_photo");
+						oImg.setAttribute("alt", "Photo");
+						oImg.setAttribute("src", photo);
+						oImg.setAttribute("width", "50");
+						oImg.setAttribute("height", "65");
+						var oPTemp = document.createElement("p");
 						var oA = document.createElement("a");
 						oA.setAttribute("href", "home.action?userId=" + userId);
-						oA.setAttribute("target", "_blank");
-						oA.innerHTML = user;
-						oReplyDiv.appendChild(oA);
-
+						oA.innerHTML = user.trim();
 						var oSpan1 = document.createElement("span");
 						oSpan1.innerHTML = ":" + content;
-						oReplyDiv.appendChild(oSpan1);
-
-						var oBr = document.createElement("br");
-						oReplyDiv.appendChild(oBr);
-
+						oPTemp.appendChild(oA);
+						oPTemp.appendChild(oSpan1);
 						var oSpan2 = document.createElement("span");
-						oSpan2.innerHTML = recordTime;
-						oReplyDiv.appendChild(oSpan2);
-
+						oSpan2.setAttribute("class", "blog_date");
+						oSpan2.innerHTML = recordTime.trim();
+						oLI.appendChild(oImg);
+						oLI.appendChild(oPTemp);
+						oLI.appendChild(oSpan2);
 						if (userId == currentUserId) {
 							var oLabel = document.createElement("label");
-							oLabel.setAttribute("id", "label_" + replyId + "_"
-											+ gossipId);
+							oLabel.setAttribute("id", "label_reply_del_"
+											+ replyId + "_" + gossipId);
 							oLabel.innerHTML = " | Delete";
-							oLabel.setAttribute("onclick", "");
-							oReplyDiv.appendChild(oLabel);
+							oLabel.setAttribute("onclick",
+									"myGossipReplyAjax.delReply(this.id);");
+							oLabel.setAttribute("onmouseover",
+									"JavaScript:this.style.cursor='pointer'");
+							oLI.appendChild(oLabel);
 						}
 
-						oLI.appendChild(oReplyDiv);
 						oReplyUl.appendChild(oLI);
 					}
-
-					var oListDiv = document.getElementById("gossip_reply_ul_"
-							+ gossipId);
-					oListDiv.style.display = "block";
 				}
 
 			}
@@ -381,16 +400,16 @@ var myGossipAjax = {
 		oBtn.value = "Reply";
 		oText.focus();
 	},
-	
+
 	delGossip : function(id) {
 		var args = id.split("_");
 		var gossipID = args[2];
 		var userID = args[3];
-		
+
 		this.method = "POST";
 		this.url = "delGossip.action";
 		this.parameter = "userId=" + userID + "&&gossipId=" + gossipID;
-		
+
 		// Create the XMLHttpRequest.
 		this.createXMLHttpRequest();
 		// open a connection.
@@ -472,11 +491,11 @@ var myGossipReplyAjax = {
 			if (xmlreqGossipReply.status == 200) {
 				var responseStr = xmlreqGossipReply.responseText.split("&*");
 				var response = responseStr[1];
-				
+
 				if (response == "") {
-					return ;
+					return;
 				}
-				
+
 				// Get the show area of the reply
 				var oUlId = "gossip_reply_ul_" + gossipIdScope;
 				var oReplyUl = document.getElementById(oUlId);
@@ -497,63 +516,64 @@ var myGossipReplyAjax = {
 					var recordTime = replies[3];
 					var userId = replies[4];
 					var currentUserId = replies[5];
+					var photo = replies[6];
 
 					var oLI = document.createElement("li");
-					var oReplyDiv = document.createElement("div");
-					oReplyDiv.setAttribute("id", "li_gossip_reply_" + replyId);
-
+					oLI.setAttribute("class", "message_detail_replay");
+					var oImg = document.createElement("img");
+					oImg.setAttribute("class", "message_photo");
+					oImg.setAttribute("alt", "Photo");
+					oImg.setAttribute("src", photo);
+					oImg.setAttribute("width", "50");
+					oImg.setAttribute("height", "65");
+					var oPTemp = document.createElement("p");
 					var oA = document.createElement("a");
 					oA.setAttribute("href", "home.action?userId=" + userId);
-					oA.setAttribute("target", "_blank");
-					oA.innerHTML = user;
-					oReplyDiv.appendChild(oA);
-
+					oA.innerHTML = user.trim();
 					var oSpan1 = document.createElement("span");
 					oSpan1.innerHTML = ":" + content;
-					oReplyDiv.appendChild(oSpan1);
-
-					var oBr = document.createElement("br");
-					oReplyDiv.appendChild(oBr);
-
+					oPTemp.appendChild(oA);
+					oPTemp.appendChild(oSpan1);
 					var oSpan2 = document.createElement("span");
-					oSpan2.innerHTML = recordTime;
-					oReplyDiv.appendChild(oSpan2);
-
+					oSpan2.setAttribute("class", "blog_date");
+					oSpan2.innerHTML = recordTime.trim();
+					oLI.appendChild(oImg);
+					oLI.appendChild(oPTemp);
+					oLI.appendChild(oSpan2);
 					if (userId == currentUserId) {
 						var oLabel = document.createElement("label");
-						oLabel.setAttribute("id", "label_reply_del_" + replyId + "_"
-										+ gossipIdScope);
+						oLabel.setAttribute("id", "label_reply_del_" + replyId
+										+ "_" + gossipIdScope);
 						oLabel.innerHTML = " | Delete";
-						oLabel.setAttribute("onclick", "myGossipReplyAjax.delReply(this.id)");
-						oReplyDiv.appendChild(oLabel);
+						oLabel.setAttribute("onclick",
+								"myGossipReplyAjax.delReply(this.id);");
+						oLabel.setAttribute("onmouseover",
+								"JavaScript:this.style.cursor='pointer'");
+						oLI.appendChild(oLabel);
 					}
 
-					oLI.appendChild(oReplyDiv);
 					oReplyUl.appendChild(oLI);
 				}
-
-				var oListDiv = document.getElementById("gossip_reply_ul_"
-						+ gossipIdScope);
-				oListDiv.style.display = "block";
+				oReplyUl.style.display="block";
 			}
 		}
 	},
-	
+
 	hiddenAllReplies : function(id) {
 		var args = id.split("_");
 		var gossipId = args[2];
-		
+
 		var showReplyListId = "gossip_reply_ul_" + gossipId;
 		var oList = document.getElementById(showReplyListId);
 		oList.style.display = "none";
 	},
-	
+
 	delReply : function(id) {
 		var args = id.split("_");
 		var replyId = args[3];
 		var gossipId = args[4];
 		gossipIdScope = gossipId;
-		
+
 		this.method = "POST";
 		this.url = "delGossipReply.action";
 		this.parameter = "replyId=" + replyId + "&&gossipId=" + gossipId;
@@ -575,20 +595,18 @@ var myGossipReplyAjax = {
 	}
 }
 
-
 var InputCheck = {
-	checkMaxInput : function (id) {
+	checkMaxInput : function(id) {
 		var args = id.split("_");
 		var userID = args[2];
-	
-		var maxLen = 200; 
+
+		var maxLen = 200;
 		var oText = document.getElementById(id);
-		var oRemain = document.getElementById("gossip_remain_"+userID);
-		
+		var oRemain = document.getElementById("gossip_remain_" + userID);
+
 		if (oText.value.length > maxLen) {
 			oText.value = oText.value.substring(0, maxLen);
-		}
-		else {
+		} else {
 			oRemain.innerHTML = maxLen - oText.value.length;
 		}
 	}
