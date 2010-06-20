@@ -139,6 +139,7 @@ public class BlogAction implements ServletRequestAware {
 	// Get the response to the client.
 	StringBuffer responseBuffer = new StringBuffer();
 	List<Reply> replyList = replyService.getReplies(itemId);
+	Collections.sort(replyList);
 	for (int i=0; i < replyList.size(); i++) {
 	    String username = replyList.get(i).getUser().getUserName();
 	    responseBuffer.append(username);

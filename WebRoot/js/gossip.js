@@ -29,12 +29,7 @@ var myGossip = {
 		oTextarea.value = "Reply " + userName.trim() + " : ";
 		oTextarea.focus();
 
-	},
-	
-	delGossip : function (id) {
-		
 	}
-
 }
 
 
@@ -106,3 +101,11 @@ $(function(){
 					return false;
 				});
 			});
+
+			
+var bodyObject = {
+	ready : function () {
+		var oText = document.getElementsByTagName("textarea")[0];
+		oText.value = "";
+	}
+}

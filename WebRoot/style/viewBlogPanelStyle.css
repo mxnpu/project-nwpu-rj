@@ -23,7 +23,7 @@
 		clear: both;
 	}
 	#content_list .content_item .blog_editor {
-		width: 55px;
+		width: 60px;
 		height: 27px;
 		float:left;
 		margin: 0px;
@@ -32,7 +32,7 @@
 	}
 	#content_list .content_item .blog_editor a{
 		text-align:center;
-		margin:0 0 0 24;
+		margin:0 0 0 15;
 		color:#54A7E3;
 	}
 	#content_list .content_item span{
@@ -45,6 +45,7 @@
 		background-color: #CAD1DC;
 		float: right;
 		clear: right;
+		overflow: hidden;
 	}
 #photolayer {
     display: block;
@@ -56,4 +57,20 @@
 	margin-right: 0px;
 	background-repeat:no-repeat;
 	background-image:url(image/photolayer.png);
+}
+
+body {
+	text-align : left;
+}
+
+
+
+.write_blog {
+	color: white;
+	font-size: 20;
+	float: right;
+}
+
+#pageIndex {
+	text-align: center;
 }

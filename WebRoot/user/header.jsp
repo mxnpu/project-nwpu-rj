@@ -7,9 +7,8 @@
 %>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="<%=basePath%>/style/headStyle.css" />
-		<link rel="stylesheet" href="<%=basePath%>/style/navStyle.css" type="text/css"
-			media="screen" />
+		<link rel="stylesheet" type="text/css" href="../style/mainStyle.css" />
+		<link rel="stylesheet" type="text/css" href="../style/navStyle.css" media="screen" />
 		<script type='text/javascript' src='<%=basePath%>/js/jquery-1.3.2.min.js'></script>
 		<script type='text/javascript' src='<%=basePath%>/js/kwicks.js'></script>
 		<script type='text/javascript' src='<%=basePath%>/js/custom.js'></script>
@@ -21,7 +20,7 @@
 					<a href="#"> <img src="<%=basePath%>/style/image/bf_logo.png" alt="Good Friend" />
 					</a>
 				</h1>
-				<div class="nav_account">
+				<div class="account_nav">
 					<s:text name="header.welcome"/>
 					<s:if test="#session.currentUser.userName != null">
 						, <s:property value="#session.currentUser.userName"/>
@@ -33,7 +32,7 @@
 					</s:else>		
 					
 				</div>
-				<div class="global_nav">
+				<div class="global_func_nav">
 					<ul class="kwicks">
 						<li id="kwick1">
 							<a href="<%=basePath%>/user/first.action"><s:text name="header.homepage"/></a>
@@ -54,7 +53,7 @@
 							</s:url>'><s:text name="gossip_leave_message"/></a>
 						</li>
 						<li id="kwick6">
-							<a href="#"><s:text name="header.personal_information"/></a>
+							<a href="topersonal_info.action"><s:text name="header.personal_information"/></a>
 						</li>
 					</ul>
 				</div>

@@ -5,8 +5,8 @@
 <html> 
 	<head>
 		<title><s:text name="modify_blog.blog_edit"/></title>
-		<link rel="stylesheet" type="text/css" href="../style/style.css"/>
 		<script type="text/javascript" src="../js/kindeditor/kindeditor.js"></script>
+		<link type="text/css" rel="stylesheet" href="../style/writeBlog.css" />	
 		<script type="text/javascript">
     	KE.show({
         	id : 'content'
@@ -14,25 +14,21 @@
     	</script>
   </head>
   
-  <body> 
-  	<div id="header">
-  	</div>
-  	
-  	<div id="wrap">
+  <body> 	
+  	<div id="contentPanel">
   		<br><br>
   		<form action="updateBlog" method="post">
-  		<input id="id" name="id" style="display:none" value="<s:property value="blog.id" />">
-    	<label><s:text name="modify_blog.title"/></label><input id="title" name="title" type="text" value="<s:property value="blog.title" />"><br><br>
-    	
-    	<textarea id="content" rows="20" cols="80" name="content"><s:property value="blog.content" /></textarea><br><br>
+  			<input id="id" name="id" style="display:none" value="<s:property value="blog.id" />">
+  			<div id="titleDiv">
+	  			<label><s:text name="modify_blog.title"/></label>
+    			<input id="title" name="title" type="text" value="<s:property value="blog.title" />"><br><br>
+  			</div>	 	
+    		<textarea id="content" rows="20" cols="80" name="content"><s:property value="blog.content" /></textarea><br>
 
-    	<button type="submit"><s:text name="modify_blog.publish"/></button>
+    		<button type="submit"><s:text name="modify_blog.publish"/></button>
      	</form>
-     	<br>
-     	
+     	<br>	
     </div>
-   <div id="footer">
-   </div>
   </body>
   <jsp:include page="footer.jsp"></jsp:include>
 </html>

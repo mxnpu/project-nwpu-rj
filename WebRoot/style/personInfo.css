@@ -1,0 +1,13 @@
+#photoFormDiv {
+	width: 300px;
+	float: left;
+	padding: 50 0 0 150;
+}
+#infoFormDiv {
+	width: 400px;
+	float: right;
+	padding: 0 200 0 20;
+}
+#fileup {
+	padding: 0 0 0 45;
+}

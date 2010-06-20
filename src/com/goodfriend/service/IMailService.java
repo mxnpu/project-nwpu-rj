@@ -7,15 +7,19 @@ import com.goodfriend.model.User;
 
 public interface IMailService {
 
-	public void save(Mail mail);
-	
-	public void addFriendRequest(int toUser, User fromUser);
-	
-	public List<Mail> getFriendRequest(User user);
-	
-	public void mailOpened(int mailID);
-	
-	public List<Mail> getAllMails(User user);
-	
-//	public Mail getById()
+    public void save(Mail mail);
+
+    public void addFriendRequest(int toUser, User fromUser);
+
+    public List<Mail> getFriendRequest(User user);
+
+    public void mailOpened(int mailID);
+
+    public List<Mail> getAllMails(User user);
+
+    public void addGossipMail(User toUser, User formUser, String content);
+
+    public void addReplyMail(User toUser, User formUser, String content);
+
+    // public Mail getById()
 }

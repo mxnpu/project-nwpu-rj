@@ -58,6 +58,8 @@ public class LatestMessageAction {
 	List<Placard> latestPlacards = placardService.getLatestPlacards();
 	ActionContext.getContext().getSession().put("placards", latestPlacards);
 	
+	User user = (User)session.get("user");
+	ActionContext.getContext().getSession().put("user", user);
 	
 	return "success";
     }

@@ -13,6 +13,8 @@ public class MailService implements IMailService {
 
     // 主题为好友请求的站内信 用户查看好友页面时会显示该种类型的站内信
     public static final String FRIEND_REQUEST = "Friends Request";
+    public static final String GOSSIP_MAIL = "Gossip Mail";
+    public static final String REPLY_MAIL = "Reply Mail";
 
     private IMailDAO mailDao;
 
@@ -45,6 +47,34 @@ public class MailService implements IMailService {
 		+ fromUser.getUserName() + "</a> Want to be a friend of you!");
 	mailDao.merge(mail);
     }
+    
+    public void addGossipMail(User toUser, User fromUser, String content) {
+	
+	if (fromUser.getUserName().equals(toUser.getUserName())) {
+	    return;
+	}
+	Mail mail = new Mail();
+	mail.setFromUser(fromUser);
+	mail.setToUser(toUser);
+	mail.setContent(content);
+	mail.setTitle(GOSSIP_MAIL);
+
+	mailDao.save(mail);
+    }
+    
+    public void addReplyMail(User toUser, User fromUser, String content) {
+	if (fromUser.getUserName().equals(toUser.getUserName())) {
+	    return;
+	}
+	Mail mail = new Mail();
+	mail.setFromUser(fromUser);
+	mail.setToUser(toUser);
+	mail.setContent(content);
+	mail.setTitle(REPLY_MAIL);
+
+	mailDao.save(mail);
+    }
+    
 
     /**
      * 获得对一个用户的所有好友申请
