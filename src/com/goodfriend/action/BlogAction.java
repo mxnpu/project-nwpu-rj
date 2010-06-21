@@ -16,6 +16,7 @@ import com.goodfriend.model.Blog;
 import com.goodfriend.model.Reply;
 import com.goodfriend.model.User;
 import com.goodfriend.service.IBlogService;
+import com.goodfriend.service.IMailService;
 import com.goodfriend.service.IReplyService;
 import com.goodfriend.service.IUserService;
 import com.opensymphony.xwork2.ActionContext;
@@ -30,6 +31,7 @@ public class BlogAction implements ServletRequestAware {
     private IBlogService blogService;
     private IUserService userService;
     private IReplyService replyService;
+    private IMailService mailService;
     private InputStream inputStream;
 
     // 当修改某一篇日志的时候使用下面三个对象
@@ -54,6 +56,7 @@ public class BlogAction implements ServletRequestAware {
     private int totalPage;
 
     private HttpServletRequest request;
+   
 
     // 显示所有日志
     public String showBlogs() throws Exception {
@@ -118,12 +121,17 @@ public class BlogAction implements ServletRequestAware {
 	Blog blog = blogService.getBlog(id);
 	Reply reply = new Reply();
 	reply.setContent(content);
-	User user = (User) ActionContext.getContext().getSession().get(
+	User currentUser = (User) ActionContext.getContext().getSession().get(
 		"currentUser");
 	
-	replyService.addReply(reply, blog.getItem().getIdItem(), user
+	replyService.addReply(reply, blog.getItem().getIdItem(), currentUser
 		.getIdUser());
-	
+	User user = (User) ActionContext.getContext().getSession().get("user");
+	String replyMails = "<a href='home.action?userId=" + currentUser.getIdUser() +"'>"
+				+ currentUser.getUserName() + "</a>"
+				+ " do a <a href='showBlog.action?id=" + id + "&&&state=show'> " 
+				+ "Reply </a>in your blog!";
+	mailService.addReplyMail(user, currentUser, replyMails);
 	Integer itemId = blog.getItem().getIdItem();
 	String result = prepareData(itemId);
 	toInStream(result);
@@ -314,4 +322,19 @@ public class BlogAction implements ServletRequestAware {
 	return inputStream;
     }
 
+    /**
+     * @return the mailService
+     */
+    public IMailService getMailService() {
+        return mailService;
+    }
+
+    /**
+     * @param mailService the mailService to set
+     */
+    public void setMailService(IMailService mailService) {
+        this.mailService = mailService;
+    }
+    
+    
 }

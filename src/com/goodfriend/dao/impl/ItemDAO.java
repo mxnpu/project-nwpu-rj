@@ -64,7 +64,7 @@ public class ItemDAO extends HibernateDaoSupport implements IItemDAO {
 	 * @see com.goodfriend.dao.impl.IItemDAO#findById(java.lang.Integer)
 	 */
 	public Item findById(java.lang.Integer id) {
-		log.debug("getting Item instance with id: " + id);
+	    log.debug("getting Item instance with id: " + id);
 		try {
 			Item instance = (Item) getHibernateTemplate().get(
 					"com.goodfriend.model.Item", id);

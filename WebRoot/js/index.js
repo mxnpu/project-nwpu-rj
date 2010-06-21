@@ -382,7 +382,12 @@ var mailObject = {
 			mailId = args[2];
 			this.url = "addFriend.action?friendId=" + friendId + "&&mailId="
 					+ mailId;
-		} else {
+		}
+		else if (operation == "close") {
+			mailId = args[1];
+			this.url = "deleteMail.action?mailId=" + mailId;
+		}
+		else {
 			mailId = args[1];
 			this.url = "refuseFriend.action?mailId=" + mailId;
 		}
