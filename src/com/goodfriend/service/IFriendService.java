@@ -32,4 +32,6 @@ public interface IFriendService {
 	public void addFriendToRequest(User user, int friendID);
 	 
 	public void addFriend(User user, int friendID);
+	
+	public boolean isFriend(User user, int friendID);
 }

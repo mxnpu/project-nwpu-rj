@@ -215,6 +215,16 @@ public class FriendService implements IFriendService {
 	public List<User> getFriends(User owner){
 		return getFriends(owner, "Y");
 	}
+	
+	public boolean isFriend(User user, int friendID){
+	    List<User> friends = getFriends(user);
+	    for (int i = 0; i < friends.size(); i++){
+		if (friends.get(i).getIdUser() == friendID){
+		    return true;
+		}
+	    }
+	    return false;
+	}
 
 	public void updateFriend(Friends friend) {
 		// TODO Auto-generated method stub

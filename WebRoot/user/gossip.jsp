@@ -38,7 +38,7 @@
 							value='<s:property value="#session.user.idUser"/>'>
 					<input type="hidden" id="gossipIdHidden" name="gossipIdHidden"
 							value=''>
-					<textarea rows="3" cols="80" id='textarea_gossip_<s:property value="#session.user.idUser"/>'
+					<textarea rows="3" cols="100" id='textarea_gossip_<s:property value="#session.user.idUser"/>'
 							title='<s:text name="gossip_give_message"/>' name="gossip"
 							class="gossip" onkeypress="InputCheck.checkMaxInput(this.id);">
 					</textarea>

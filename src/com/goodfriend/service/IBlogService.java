@@ -1,6 +1,5 @@
 package com.goodfriend.service;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import com.goodfriend.model.Blog;
@@ -34,5 +33,5 @@ public interface IBlogService {
 	
 	public List<Blog> getBlogsByUser(Integer userId);
 	
-	public List<Blog> getBlogsByDeadline(Integer userId, Timestamp deadline);
+	public List<Blog> getBlogsByDeadline(Integer userId);
 }

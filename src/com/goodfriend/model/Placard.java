@@ -2,6 +2,7 @@ package com.goodfriend.model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Placard entity.
@@ -16,7 +17,7 @@ public class Placard implements Serializable, Comparable<Placard>{
     private Integer idPlacard;
     private String title;
     private String content;
-    private Timestamp recordTime;
+    private Timestamp recordTime = new Timestamp(new Date().getTime());
     private String publish;
 
     // Constructors

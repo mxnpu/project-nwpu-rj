@@ -67,7 +67,7 @@ var replyBlogAjax = {
 			if (xmlrequest.status == 200) {
 				var responseStr = xmlrequest.responseText;
 
-				var oReplyUl = document.getElementById("ul_blog_replies");
+				var oReplyUl = document.getElementById("content_list_reply");
 				while (oReplyUl.firstChild) {
 					var oldNode = oReplyUl.removeChild(oReplyUl.firstChild);
 					oldNode = null;
@@ -84,35 +84,73 @@ var replyBlogAjax = {
 					var content = replies[3];
 					var recordTime = replies[4];
 					
+					var oBLI = document.createElement("li");
+					oBLI.setAttribute("class","content_item");
+					var oEUL = document.createElement("ul");
+					oEUL.setAttribute("class","replayMessage_editor");
+					var oTempLI = document.createElement("li");
+					var oImgTemp = document.createElement("img");
+					oImgTemp.setAttribute("src", "../style/image/icon_message.png");
+					oTempLI.appendChild(oImgTemp);
+					oEUL.appendChild(oTempLI);
+					oBLI.appendChild(oEUL);
+					
+					var oDiv = document.createElement("div");
+					oDiv.setAttribute("class","message_item");
+					var oTempUL = document.createElement("ul");
+					oTempUL.setAttribute("id","ul_blog_replies");
+					
 					var oLI = document.createElement("li");
-
+					oLI.setAttribute("class","message_detail");
 					var oImg = document.createElement("img");
 					oImg.setAttribute("alt", "Photo");
 					oImg.setAttribute("src", photo);
 					oImg.setAttribute("width", "50");
 					oImg.setAttribute("height", "65");
 					oLI.appendChild(oImg);
-
+					var oP1 = document.createElement("p");
 					var oA = document.createElement("a");
 					oA.setAttribute("href", "home.action?userId=" + userid);
 					oA.innerHTML = userName;
-					oLI.appendChild(oA);
-
-					var oSpan1 = document.createElement("span");
-					oSpan1.innerHTML = ":" + content;
-					oLI.appendChild(oSpan1);
-					var oBr = document.createElement("br");
-					oLI.appendChild(oBr);
-					var oSpan2 = document.createElement("span");
-					oSpan2.innerHTML = recordTime;
-					oLI.appendChild(oSpan2);
-
+					oP1.appendChild(oA);
+					oLI.appendChild(oP1);
+					var oP2 = document.createElement("p");
+					oP2.innerHTML = ":" + content;
+					oLI.appendChild(oP2);
+					var oSpan = document.createElement("span");
+					oSpan.setAttribute("class","message_date");
+					oSpan.innerHTML = recordTime;
+					oLI.appendChild(oSpan);
 					
-					oReplyUl.appendChild(oLI);
-
+					oTempUL.appendChild(oLI);
+					oDiv.appendChild(oTempUL);
+					oBLI.appendChild(oDiv);
+					oReplyUl.appendChild(oBLI);
 				}
 			}
 		}
 	}
 
+}
+
+var InputCheck = {
+	checkMaxInput : function () {
+		var maxLen = 200; 
+		var oText = document.getElementById("replyContent");
+		var oRemain = document.getElementById("gossip_remain");
+		
+		if (oText.value.length > maxLen) {
+			oText.value = oText.value.substring(0, maxLen);
+		}
+		else {
+			oRemain.innerHTML = maxLen - oText.value.length;
+		}
+	}
+}
+
+var bodyObject = {
+	ready : function () {
+		var oText = document.getElementsByTagName("textarea")[0];
+		oText.value = "";
+	}
 }

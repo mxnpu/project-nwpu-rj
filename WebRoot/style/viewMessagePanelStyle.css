@@ -6,6 +6,7 @@
 	background-image: url(image/content_bg.png);
 	float: left;
 	clear: both;
+	width : 650px;
 }
 
 #content_list {

@@ -20,5 +20,5 @@ public interface IStatementService {
 	public void updateStatement(Statement statement);
 	public void deleteStatement(Statement statement);
 	public Statement getLatestStatement(Integer userId);
-	public List<Statement> getStatementsByDeadline(Integer userId, Timestamp deadline);
+	public List<Statement> getStatementsByDeadline(Integer userId);
 }

@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-		<div id="wrap">
+		<div id="mainPanel">
 			<div id="photo">
 				<s:form action="fileUpload.action" method="post"
 					enctype="multipart/form-data">

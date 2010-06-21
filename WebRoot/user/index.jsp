@@ -32,7 +32,7 @@
 				<li><h6><s:text name="index.public"></s:text></h6></li>
 				<s:iterator value="#session.placards" var="placard" status="i">
 					<li>
-					<div id='placard_<s:property value="#placard.idPlacard"/>' class="div_placard">
+					<div id='placard_<s:property value="#i.count"/>' class="div_placard">
 						<label class="placard" onclick="placardObject.show)"
 								onmouseover="JavaScript:this.style.cursor='pointer'">
 							<s:property value="#placard.title" />
@@ -54,11 +54,11 @@
 				<s:text name="home_state" />
 				<label id="showLastStmt"></label>
 				<br>
-				<textarea rows="2" cols="80" name="statement" id="statement"
+				<textarea rows="2" cols="100" name="statement" id="statement"
 						title='<s:text name="index.update_situation"/>'
 						onkeydown="myStmtAjax.checkMaxInput()">
   	  			</textarea>
-				<br />
+				<br>
 				<input type="button" value='<s:text name="index.publish"/>'
 						onclick="myStmtAjax.updateStmt()" />
 				<label id="remain">150</label>/150

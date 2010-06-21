@@ -2,6 +2,7 @@ package com.goodfriend.service.impl;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -20,6 +21,7 @@ import com.goodfriend.service.IBlogService;
  */
 public class BlogService implements IBlogService {
 
+    private static final int BLOG_COUNT = 3;
     private IBlogDAO blogDao;
     private IUserDAO userDao;
 
@@ -92,22 +94,17 @@ public class BlogService implements IBlogService {
      * @param deadlint
      *            the deadline of the blog wanted.
      */
-    public List<Blog> getBlogsByDeadline(Integer userId, Timestamp deadline) {
+    public List<Blog> getBlogsByDeadline(Integer userId) {
 	List<Blog> blogs = new ArrayList<Blog>();
 
 	List<Blog> allBlogs = getBlogsByUser(userId);
-	long deadlineTime = deadline.getTime();
-
-	if (allBlogs != null && allBlogs.size() > 0) {
-	    for (Blog temp : allBlogs) {
-		
-		long time = temp.getItem().getRecordTime().getTime();
-		if (time > deadlineTime) {
-		    String content = temp.getContent().replaceAll("<[^<]+?>", "");
-		    temp.setContent(content);
-		    blogs.add(temp);
-		}
-	    }
+	Collections.sort(allBlogs);
+	
+	if (allBlogs.size() > BLOG_COUNT) {
+	    blogs.addAll(allBlogs.subList(0, BLOG_COUNT));
+	}
+	else {
+	    blogs.addAll(allBlogs);
 	}
 
 	return blogs;

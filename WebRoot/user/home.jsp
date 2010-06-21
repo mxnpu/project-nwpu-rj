@@ -47,7 +47,7 @@
 					<br>
 				</li>
 				<li>
-					<a style="color: #34425c" href="editPhoto.action"><s:text name="home_change_photo" /> </a>
+					<a style="color: #34425c" href="topersonal_info.action"><s:text name="home_change_photo" /> </a>
 				</li>
 				<li>
 					<a style="color: #34425c" href="topersonal_info.action"><s:text name="home_edit" /> </a>
@@ -88,8 +88,12 @@
 	<div id="content_bg">
 		
 		<div class="content_tab_header">
-			<span id="personal_state"><s:text name="home_state"/>:<label id="showLastStmt"></label></span>
-			<span id="all_state"><a href=""><s:text name="home_all_state" /></a></span>
+			<span id="personal_state"><s:text name="home_state"/><label id="showLastStmt"></label></span>
+			<span id="all_state">
+				<!-- 
+				<a href=""><s:text name="home_all_state" /></a>
+				 -->
+			</span>
 		</div>
 		
 		<div id="content">
@@ -106,7 +110,7 @@
   					</a> 
   				</span>
 				<br>
-				<textarea rows="3" cols="80"
+				<textarea rows="3" cols="95"
 						id='textarea_gossip_<s:property value="#session.user.idUser"/>'
 						title='<s:text name="gossip_give_message"/>' name="gossip"
 						class="gossip" onkeypress="InputCheck.checkMaxInput(this.id);">
@@ -114,7 +118,8 @@
 				<br>
 				<br>
 				<br>
-				<br/>
+				<br>
+				<br>
 				<span id="gossip_remain">
 					<input id='btn_gossip_<s:property value="#session.user.idUser"/>'
 						type="button" value='<s:text name="gossip_message"/>'

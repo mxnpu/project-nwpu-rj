@@ -5,7 +5,7 @@ package com.goodfriend.model;
  * @author 
  */
 
-public class Statement implements java.io.Serializable {
+public class Statement implements java.io.Serializable, Comparable<Statement> {
 
 	// Fields
 
@@ -51,6 +51,22 @@ public class Statement implements java.io.Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Comparable#compareTo(java.lang.Object)
+	 */
+	public int compareTo(Statement o) {
+	    long time1 = this.getItem().getRecordTime().getTime();
+		long time2 =o.getItem().getRecordTime().getTime();
+
+		if (time1 < time2) {
+		    return 1;
+		} else if (time1 > time2) {
+		    return -1;
+		} else {
+		    return 0;
+		}
 	}
 
 }

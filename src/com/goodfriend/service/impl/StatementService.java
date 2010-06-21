@@ -2,6 +2,7 @@ package com.goodfriend.service.impl;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import com.goodfriend.service.IStatementService;
  */
 public class StatementService implements IStatementService {
 
+    private static final int STATEMENT_COUNT = 3;
     private IStatementDAO statementDao;
     private IItemDAO itemDao;
     private IUserDAO userDao;
@@ -119,21 +121,17 @@ public class StatementService implements IStatementService {
      *            the limited time of the needed statement.
      * @return the statements list according to the requirement.
      */
-    public List<Statement> getStatementsByDeadline(Integer userId,
-	    Timestamp deadline) {
+    public List<Statement> getStatementsByDeadline(Integer userId) {
 	List<Statement> statements = new ArrayList<Statement>();
-	List<Statement> userStatements = getStatements(userId); // get the
-								// user's
-								// statements.
-
-	long deadlineTime = deadline.getTime();
-
-	// if the statement is after the deadline time and get it.
-	for (Statement temp : userStatements) {
-	    long time = temp.getItem().getRecordTime().getTime();
-	    if (time > deadlineTime) {
-		statements.add(temp);
-	    }
+	List<Statement> userStatements = getStatements(userId); // get the user's statements.
+	
+	Collections.sort(userStatements);
+	
+	if (userStatements.size() > STATEMENT_COUNT) {
+	    statements.addAll(userStatements.subList(0, STATEMENT_COUNT));
+	}
+	else {
+	    statements.addAll(userStatements);
 	}
 
 	return statements;
