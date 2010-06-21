@@ -257,6 +257,7 @@ a img {
 #content_bg {
 	float: right;
 	clear: right;
+	width : 700px;
 	padding: 10px 0px 10px 0px;
 	background-image: url(image/content_border.png)
 }

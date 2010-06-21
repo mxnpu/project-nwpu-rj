@@ -54,10 +54,15 @@ public class FriendAction implements ServletRequestAware {
 		"currentUser");
 	int friendID = Integer.parseInt(request.getParameter("friendId").trim());
 	// friendService.addFriendToRequest(user, friendID);
+	//如果已经是好友
+	if (friendService.isFriend(user, friendID)){
+	    return "success";
+	}
 	// 给用户发送站内信通知请求
 	if (friendID != user.getIdUser()) {// 不能添加自己为自己的好友
 	    mailService.addFriendRequest(friendID, user);
 	}
+	
 	return "success";
     }
 

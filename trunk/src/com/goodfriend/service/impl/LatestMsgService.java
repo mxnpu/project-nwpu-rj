@@ -1,6 +1,5 @@
 package com.goodfriend.service.impl;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -44,7 +43,7 @@ public class LatestMsgService implements ILatestMsgService {
      * 
      * @return the List of all the message including the statement, gossip etc.
      */
-    public List<Message> getLastestMsg(Integer userId, Timestamp deadline) {
+    public List<Message> getLastestMsg(Integer userId) {
 	List<Message> latestMsg = new ArrayList<Message>();
 
 	// Get the current user.
@@ -59,9 +58,8 @@ public class LatestMsgService implements ILatestMsgService {
 	for (User temp : friends) {
 	    // Get the user's id.
 	    Integer id = temp.getIdUser();
-	    List<Statement> stmtTemp = statementService
-		    .getStatementsByDeadline(id, deadline);
-	    List<Blog> blogTemp = blogService.getBlogsByDeadline(id, deadline);
+	    List<Statement> stmtTemp = statementService.getStatementsByDeadline(id);
+	    List<Blog> blogTemp = blogService.getBlogsByDeadline(id);
 
 	    blogs.addAll(blogTemp);
 	    statements.addAll(stmtTemp);

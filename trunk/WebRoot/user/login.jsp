@@ -114,7 +114,7 @@
           <tbody>
             <tr>
               <td>
-                <a href="toregister.action" target="_blank" id="register">
+                <a href="toregister.action" id="register">
                   <strong><s:text name="bottom.registerbtn" /></strong>
                 </a>              
 			  </td>

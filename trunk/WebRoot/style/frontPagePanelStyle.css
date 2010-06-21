@@ -6,6 +6,7 @@
 	background-image: url(image/content_bg.png);
 	float: left;
 	clear: both;
+	width : 650px;
 }
 
 #recent_reply {
@@ -16,7 +17,7 @@
 	clear: both;
 	border: dashed thin;
 	background-image: url(image/content_bg.png);
-	width: 658px;
+	width: 669px;
 }
 
 #recent_reply ul li {

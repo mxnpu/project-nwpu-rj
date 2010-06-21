@@ -90,6 +90,8 @@ public class BlogAction implements ServletRequestAware {
 	    while (it.hasNext()) {
 		replyList.add(it.next());
 	    }
+	    
+	    Collections.sort(replyList);
 	    return "showBlog";
 	} else if (request.getParameter("state").equals("edit")) {
 	    return "editBlog";
@@ -146,24 +148,24 @@ public class BlogAction implements ServletRequestAware {
     private String prepareData(Integer itemId) {
 	// Get the response to the client.
 	StringBuffer responseBuffer = new StringBuffer();
-	List<Reply> replyList = replyService.getReplies(itemId);
-	Collections.sort(replyList);
-	for (int i=0; i < replyList.size(); i++) {
-	    String username = replyList.get(i).getUser().getUserName();
+	List<Reply> replyLists = replyService.getReplies(itemId);
+	Collections.sort(replyLists);
+	for (int i=0; i < replyLists.size(); i++) {
+	    String username = replyLists.get(i).getUser().getUserName();
 	    responseBuffer.append(username);
 	    responseBuffer.append("_&");
-	    String userid = replyList.get(i).getUser().getIdUser().toString();
+	    String userid = replyLists.get(i).getUser().getIdUser().toString();
 	    responseBuffer.append(userid);
 	    responseBuffer.append("_&");
-	    String photo = replyList.get(i).getUser().getPhoto();
+	    String photo = replyLists.get(i).getUser().getPhoto();
 	    responseBuffer.append(photo);
 	    responseBuffer.append("_&");
-	    String replyCon = replyList.get(i).getContent();
+	    String replyCon = replyLists.get(i).getContent();
 	    responseBuffer.append(replyCon);
 	    responseBuffer.append("_&");
-	    String recordTime = replyList.get(i).getTime();
+	    String recordTime = replyLists.get(i).getTime();
 	    responseBuffer.append(recordTime);
-	    if (i != replyList.size()-1) {
+	    if (i != replyLists.size()-1) {
 		responseBuffer.append("@&");
 	    }
 	}

@@ -1,5 +1,7 @@
 package com.goodfriend.action;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,6 +64,8 @@ public class LoginAction {
 
     public String logout() throws Exception {
 	session = (Map<String, Object>) ActionContext.getContext().getSession();
+	User currentUser = (User) session.get("currentUser");
+	currentUser.setLastLogoutTime(new Timestamp(new Date().getTime()));
 	session.remove("currentUser");
 	return "login";
     }

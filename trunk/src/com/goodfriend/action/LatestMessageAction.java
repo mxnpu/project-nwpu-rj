@@ -1,7 +1,5 @@
 package com.goodfriend.action;
 
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -39,17 +37,7 @@ public class LatestMessageAction {
 	Map<String, Object> session = ActionContext.getContext().getSession();
 	User currentUser = (User) session.get("currentUser");
 
-	Timestamp deadlineTime = null;
-	deadlineTime = currentUser.getLastLogoutTime();
-	// if the deadline is null, give a default time stamp.
-	if (deadlineTime == null) {
-	    deadlineTime = new Timestamp(new Date().getTime() - (24*3600*1000));
-	}
-	
-	msgs = latestMsgService.getLastestMsg(currentUser
-		.getIdUser(), deadlineTime);
-	
-	// put the message to the index page.
+	msgs = latestMsgService.getLastestMsg(currentUser.getIdUser());
 	ActionContext.getContext().getSession().put("msg", msgs);
 	
 	List<Mail> latestMails = mailService.getAllMails(currentUser);

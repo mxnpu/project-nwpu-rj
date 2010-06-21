@@ -28,6 +28,7 @@ public class MailService implements IMailService {
      * 向数据库中添加一个好友请求, 用户下次登录以后通知用户
      */
     public void addFriendRequest(int toUser, User fromUser) {
+	
 	// 如果已经存在一个相同的请求 则不再向数据库添加
 	List<Mail> mails = mailDao.findByProperty("fromUser", fromUser);
 	for (int i = 0; i < mails.size(); i++) {

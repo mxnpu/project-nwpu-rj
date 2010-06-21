@@ -87,7 +87,10 @@ public class PlacardService implements IPlacardService {
      * @return the list of placards you want.
      */
     public List<Placard> getPlacards() {
-	return placrdDao.findAll();
+	List<Placard> list = new ArrayList<Placard>();
+	list.addAll(placrdDao.findAll());
+	Collections.sort(list);
+	return list;
     }
 
     public void updatePlacard(Placard placard) {
