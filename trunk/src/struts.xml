@@ -154,8 +154,9 @@
 			<result name="success">gossip.jsp</result>
 			<interceptor-ref name="myDefault"></interceptor-ref>
 		</action>
-		<!-- 编辑用户个人信息 -->
-		<action name="editPersonalInfo" >
+		<action name="deleteMail" class="mailAction" method="deleteMail">
+			<interceptor-ref name="myDefault"></interceptor-ref>
+			<result name="success" type="stream"></result>
 		</action>
 		
 		

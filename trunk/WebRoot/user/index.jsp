@@ -77,6 +77,7 @@
 								<s:property value="#mail.fromUser.userName" /> 
 							</a>
 							<span> <s:text name="index.addrequest"></s:text> </span>
+							<span id="operation_span">
 							<label id='add_<s:property value="#mail.fromUser.idUser"/>_<s:property value="#mail.id" />'
 										onclick="mailObject.mail(this.id)"
 										onmouseover="JavaScript:this.style.cursor='pointer'">
@@ -87,9 +88,17 @@
 										onmouseover="JavaScript:this.style.cursor='pointer'">
 										<s:text name="friend_refuse" />
 							</label>
+							</span>
 						</s:if>
 						<s:else>
-							<span><s:property value="#mail.title" /> </span>
+							<span>${ mail.content}</span>
+							<span id="operation_span">
+							<label id='close_<s:property value="#mail.id" />'
+										onclick="mailObject.mail(this.id)"
+										onmouseover="JavaScript:this.style.cursor='pointer'">
+										<s:text name="index.closemail" />
+							</label>
+							</span>
 						</s:else>
 						</li>
 					</s:iterator>
@@ -138,8 +147,8 @@
 							<li class="message_detail">
 								<img alt="Photo" src="<s:property value="#message.owner.photo"/>"
 										width="50" height="65"/>
-								<p>
-									<h3>
+								
+								<h3>
 									<a href='<s:url action="home.action" namespace="/user">
   	  											<s:param name="userId" value="#message.owner.idUser">
   	  											</s:param>
@@ -148,8 +157,8 @@
   	  								</a>:
 									<s:property value="#message.content" />
 									<br />
-									</h3>
-								</p>
+								</h3>
+								
 								<span class="blog_date"><s:property value="#message.time" /> </span>
 							</li>
 

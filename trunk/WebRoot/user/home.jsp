@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../style/personalPagePanelStyle.css" media="screen" />
 </head>
 <jsp:include page="header.jsp"></jsp:include>
-<body onload="myStmtAjax.getNewStmt();">
+<body onload="myStmtAjax.getNewStmt();bodyObject.ready();">
 	<div id="hiddenDiv">
 		<input type="hidden" id="hidden" name="hidden"
 			value='<s:property value="#session.user.idUser"/>' />

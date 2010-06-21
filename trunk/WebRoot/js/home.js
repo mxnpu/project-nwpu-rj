@@ -611,3 +611,9 @@ var InputCheck = {
 		}
 	}
 }
+var bodyObject = {
+	ready : function () {
+		var oText = document.getElementsByTagName("textarea")[0];
+		oText.value = "";
+	}
+}

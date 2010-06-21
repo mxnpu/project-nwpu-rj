@@ -91,13 +91,7 @@
               </td>
               <td></td>
             </tr>
-            <tr>
-              <th width="100">&nbsp;</th>
-              <td>
-                <input type="checkbox" id="cookietime" name="cookietime" style="margin-bottom: -2px;">
-                <label for="cookietime"><s:text name="loginform.autologin"></s:text></label>
-              </td>
-            </tr>
+            
           </tbody>
           <tbody>
             <tr>

@@ -10,6 +10,8 @@ import java.util.Map;
 
 import com.goodfriend.model.Reply;
 import com.goodfriend.model.User;
+import com.goodfriend.service.IItemService;
+import com.goodfriend.service.IMailService;
 import com.goodfriend.service.IReplyService;
 import com.opensymphony.xwork2.ActionContext;
 
@@ -24,6 +26,8 @@ public class ReplyAction {
     
     private IReplyService replyService;
     private InputStream inputStream;
+    private IMailService mailService;
+    private IItemService itemService;
     
     public String replyAjax() {
 	Map<String, Object> parameters = ActionContext.getContext().getParameters();
@@ -44,6 +48,12 @@ public class ReplyAction {
 
 	// Add the data to the database;
 	replyService.addReply(reply, itemId, currentUser.getIdUser());
+	User user = itemService.getItemById(itemId).getUser();
+	String replyMails = "<a href='home.action?userId=" + currentUser.getIdUser() +"'>"
+		+ currentUser.getUserName() + "</a>"
+		+ " do a <a href='home.action?userId=" + user.getIdUser() + "'> " 
+		+ "Reply </a> in your page!";
+	mailService.addReplyMail(user, currentUser, replyMails);	
 
 	String response = prepareData(itemId);
 	toInStream(response);
@@ -145,5 +155,33 @@ public class ReplyAction {
      */
     public InputStream getInputStream() {
 	return inputStream;
+    }
+
+    /**
+     * @return the mailService
+     */
+    public IMailService getMailService() {
+        return mailService;
+    }
+
+    /**
+     * @param mailService the mailService to set
+     */
+    public void setMailService(IMailService mailService) {
+        this.mailService = mailService;
+    }
+
+    /**
+     * @param itemService the itemService to set
+     */
+    public void setItemService(IItemService itemService) {
+	this.itemService = itemService;
+    }
+
+    /**
+     * @return the itemService
+     */
+    public IItemService getItemService() {
+	return itemService;
     }
 }

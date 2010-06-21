@@ -93,6 +93,11 @@ public class GossipAction {
 		// add the reply to the databases;
 		replyService.addReply(reply, gossip.getItem().getIdItem(),
 			currentUser.getIdUser());
+		String replyMails = "<a href='home.action?userId=" + currentUser.getIdUser() +"'>"
+			+ currentUser.getUserName() + "</a>"
+			+ " do a <a href='allGossip.action?userId=" + user.getIdUser() + "'> " 
+			+ "Reply </a> in your message!";
+		mailService.addReplyMail(user, currentUser, replyMails);
 	    }
 	} else {
 	    // create a new gossip
@@ -101,8 +106,11 @@ public class GossipAction {
 
 	    // add the new gossip
 	    gossipService.addGossip(gossip, userId, currentUser.getIdUser());
-//	    String gossipMails = "<a href=''>" + currentUser.getUserName() + "</a>";
-//	    mailService.addGossipMail(user, currentUser, gossipMails);
+	    String gossipMails = "<a href='home.action?userId=" + currentUser.getIdUser() +"'>"
+				+ currentUser.getUserName() + "</a>"
+	    			+ " leave a <a href='allGossip.action?userId=" + user.getIdUser() + "'> " 
+	    			+ "Message </a> for you";
+	    mailService.addGossipMail(user, currentUser, gossipMails);
 
 	}
 
@@ -211,6 +219,12 @@ public class GossipAction {
 
 	// add the new gossip
 	gossipService.addGossip(gossip, userId, currentUser.getIdUser());
+	User user = (User) session.get("user");
+	String gossipMails = "<a href='home.action?userId=" + currentUser.getIdUser() +"'>"
+				+ currentUser.getUserName() + "</a>"
+				+ " leave a <a href='allGossip.action?userId=" + user.getIdUser() + "'> " 
+				+ "Message </a> for you";
+	mailService.addGossipMail(user, currentUser, gossipMails);
 
 	// get the latest gossip.
 	List<Message> latestGossips = messageService.getHomeGossipMsg(userId);
@@ -239,6 +253,12 @@ public class GossipAction {
 	// add the reply to the databases;
 	replyService.addReply(reply, gossip.getItem().getIdItem(), currentUser
 		.getIdUser());
+	User user = (User) session.get("user");
+	String replyMails = "<a href='home.action?userId=" + currentUser.getIdUser() +"'>"
+				+ currentUser.getUserName() + "</a>"
+				+ " do a <a href='allGossip.action?userId=" + user.getIdUser() + "'> " 
+				+ "Reply </a> in your message!";
+	mailService.addReplyMail(user, currentUser, replyMails);
 
 	List<Reply> replies = replyService.getReplies(gossip.getItem()
 		.getIdItem());

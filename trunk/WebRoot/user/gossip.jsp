@@ -17,11 +17,11 @@
 			<ul id="photoBox">
 				<li>
 					<br><br>
-					<img alt="Photo" src="${session.currentUser.photo}" width="150" height="200"/>
+					<img alt="Photo" src="${session.user.photo}" width="150" height="200"/>
 				</li>
 				<li>
 					<br>
-					<span><s:text name="gossip_name" /><s:property value="#session.currentUser.realName" /></span>
+					<span><s:text name="gossip_name" /><s:property value="#session.user.realName" /></span>
 				</li>
 			</ul>
 		</div>
