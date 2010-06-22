@@ -146,8 +146,19 @@
 						<li>
 							<img src="../style/image/icon_blog.png" />
 						</li>
-						<li><a href="#">Edit</a></li>
-						<li><a href="#">Delete</a></li>
+						<li>
+							<a href='<s:url action="showBlog.action">
+  										<s:param name="id" value="#msg.msgId"></s:param>
+  										<s:param name="state" value="'show'"></s:param>
+  									</s:url>'>
+  									Edit
+  							</a>
+  						</li>		
+						<li>
+							<a href='<s:url action="deleteBlog.action">
+  										<s:param name="id" value="#msg.msgId"></s:param>
+  									</s:url>'>Delete</a>
+  						</li>
 					</ul>	
 					<ul class="blog_item">
 						<li class="message_detail">
