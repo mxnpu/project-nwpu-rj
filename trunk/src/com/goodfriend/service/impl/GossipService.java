@@ -4,7 +4,9 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import com.goodfriend.dao.IGossipDAO;
 import com.goodfriend.dao.IItemDAO;
@@ -67,6 +69,12 @@ public class GossipService implements IGossipService {
 	gossip.setUser(null);
 
 	Item item = gossip.getItem();
+	Set<Reply> replies = item.getReplies();
+	Iterator<Reply>  iter = replies.iterator();
+	while(iter.hasNext()) {
+	    Reply r = iter.next();
+	    replyService.deleteReply(r);
+	}
 	item.setUser(null);
 
 	itemDao.delete(item);
