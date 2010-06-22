@@ -166,7 +166,7 @@ var myGossipAjax = {
 		oTextarea.value = "";
 		var btnId = "btn_gossip_" + userId;
 		var oBtn = document.getElementById(btnId);
-		oBtn.value = "Gossip";
+		oBtn.value = "Message";
 
 		this.method = "POST";
 		this.url = "addGossip.action";
