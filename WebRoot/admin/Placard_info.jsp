@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="contentBox">
    	  <div class="leftNevigation"><label class="labelFont1">Nevigation</label>
     	  <ul class="nevigation_ul">
-       	    <li class="nevigation_li"><a href="admin/Admin_index.jsp" class="nevigation_a">Home</a></li>
+       	    <li class="nevigation_li"><a href="admin/homePlacard" class="nevigation_a">Home</a></li>
     	  <li class="nevigation_li"><a href="admin/Placard_list" class="nevigation_a">Public &nbsp;Information</a></li>
           <li class="nevigation_li"><a href="admin/User_list" class="nevigation_a">User &nbsp;Management</a></li>
           <li class="nevigation_li"><a href="admin/Admin_list" class="nevigation_a">Administrator &nbsp;Management</a></li>
@@ -33,8 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</div>
    	  <div class="rightBox">
 <label class="labelFont1">Public Information</label>
-          <p>&nbsp;
-          </p>
+          <br>
         <table width="512">
             <tr>
               <td width="118" height="43">Title:</td>
@@ -52,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </p>
       </div>
     </div>
-    <div class="tail">Copyright(c) 2010. --RJ010706--. All rights reserved.</div>
+   <div class="tail">Copyright(c) 2010.  All rights reserved.</div>
   </div>
 </div>
 </body>

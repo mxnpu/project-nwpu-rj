@@ -20,8 +20,6 @@ public class ManagerUserAction extends ActionSupport implements SessionAware {
 
 	private static final String FAILED = "failed";
 	private int id;
-	private String isMale;
-	private String isFemale;
 	private Map<String, Object> session;
 	private User user = new User();
 	private UserDTO userDTO;
