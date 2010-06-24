@@ -54,14 +54,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </tr>
   <s:iterator value="placardLists" var="pd">
   <tr>
-    <td><s:property value="#pd.title"/></td>
+    <td><a href=admin/Placard_viewPlacard?id=<s:property value="#pd.idPlacard"/> class="linkA"><s:property value="#pd.title"/></a></td>
   </tr>
   </s:iterator>
 </table><br>
 
     	</div>
     </div>
-    <div class="tail">Copyright(c) 2010. --RJ010706--. All rights reserved.</div>
+  <div class="tail">Copyright(c) 2010.  All rights reserved.</div>
   </div>
 </div>
 </body>

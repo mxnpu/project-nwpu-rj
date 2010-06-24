@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="globalheader">
   <div class = "globalselect">
 	<ul>
-		<li><a href="admin/Admin_index.jsp">Home</a></li>
+		<li><a href="admin/homePlacard">Home</a></li>
     	<li><a href="admin/Placard_list">Public Information</a></li>
         <li><a href="admin/Admin_list">All Admins</a></li>
         <li><a href="admin/User_list">All Users</a></li>
