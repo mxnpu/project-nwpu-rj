@@ -41,6 +41,9 @@
 			<result name="success" type="redirectAction">first.action</result>
 			<result name="login">login.jsp</result>
 		</action>
+		<action name="adminCheck" class="homeAction" method="adminCheck">
+			<result name="success">home.jsp</result>
+		</action>
 		<!-- 用户退出请求处理Action -->
 		<action name="logout" class="loginAction" method="logout">
 			<interceptor-ref name="defaultStack"/>

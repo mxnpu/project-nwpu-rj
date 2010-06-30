@@ -104,7 +104,12 @@ public class BlogAction implements ServletRequestAware {
 	User user = (User) ActionContext.getContext().getSession().get(
 		"currentUser");
 	Blog blog = new Blog();
-	blog.setTitle(title);
+	if (title.equals("")) {
+	    blog.setTitle("Default Title");
+	}
+	else {
+	    blog.setTitle(title);
+	}
 	blog.setContent(content);
 	blogService.addBlog(blog, user);
 	return "success";

@@ -236,3 +236,7 @@
 #operation_span {
 	float: right;
 }
+#photoBox {
+	height:250;
+	background-image: url(image/messagebox.png);
+}

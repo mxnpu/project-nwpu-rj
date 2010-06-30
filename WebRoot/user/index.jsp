@@ -23,10 +23,11 @@
 	<div id="mainPanel">
 		<!--Global Toolbox-->
 		<div id="global_toolbox">
-			<ul id="linkBox">
-				<li><button id="linkButton_friend" onclick="javascript:window.location.href='showFriends.action'"></button></li>
-				<li><button id="linkButton_album" onclick="javascript:window.location.href='toalbum.action'"></button></li>
-				<li><button id="linkButton_blog" onclick="javascript:window.location.href='showAllBlogs.action'"></button></li>
+			<ul id="photoBox">
+				<li>
+					<br><br>
+					<img alt="Photo" src="${session.currentUser.photo}" width="130" height="180"/>
+				</li>
 			</ul>
 			<ul id="systemMessageBox">
 				<li><h6><s:text name="index.public"></s:text></h6></li>

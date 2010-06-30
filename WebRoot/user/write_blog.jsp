@@ -22,7 +22,7 @@
   		<form action="publishBlog" method="post">
   			<div id="titleDiv">
 	  			<span ><s:text name="write_blog.title"/></span>
-    			<input id="title" name="title" type="text"><br><br>
+    			<input id="title" name="title" type="text" maxlength="40"><br><br>
   			</div>	
     		<textarea id="content" rows="20" cols="80" name="content"></textarea>
     		<br>

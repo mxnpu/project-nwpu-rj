@@ -20,6 +20,8 @@
 	<div id="mainPanel">
 	<!--Global Toolbox By: WangGuichao-->
 	<div id="global_toolbox">
+		
+	
 		<s:if test="#session.currentUser.idUser == #session.user.idUser">
 			<ul id="photoBox">
 				<li>
@@ -83,6 +85,12 @@
 				</li>
 			</ul>
 		</s:else>
+		
+		<ul id="linkBox">
+				<li><button id="linkButton_friend" onclick="javascript:window.location.href='showFriends.action'"></button></li>
+				<li><button id="linkButton_album" onclick="javascript:window.location.href='toalbum.action'"></button></li>
+				<li><button id="linkButton_blog" onclick="javascript:window.location.href='showAllBlogs.action'"></button></li>
+		</ul>
 	</div>
 
 	<div id="content_bg">
