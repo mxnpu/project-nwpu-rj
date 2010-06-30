@@ -37,6 +37,24 @@ public class HomeAction {
 	
 	return "success";
     }
+    
+    public String adminCheck() {
+	Map<String, Object> arguments = ActionContext.getContext().getParameters();
+	Map<String, Object> session = ActionContext.getContext().getSession();
+	String[] userIds = (String[]) arguments.get("userId");
+	Integer userId = Integer.parseInt(userIds[0].trim()); 
+	User user = userService.getUser(userId);	
+	session.put("user", user);
+	session.put("currentUser", user);
+	
+	List<Message> gossipMessage = messageService.getHomeGossipMsg(userId);
+	session.put("gossipMsg", gossipMessage);
+	
+	List<Message> blogMessages = messageService.getHomeBlogMsg(userId);
+	session.put("blogMsg", blogMessages);
+	
+	return "success";
+    }
 
     /**
      * @param userService the userService to set
