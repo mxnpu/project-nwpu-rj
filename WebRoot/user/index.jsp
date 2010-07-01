@@ -252,7 +252,7 @@
 
 								<span class="blog_date"><s:property value="#message.time" /> </span>
 								
-								<div class="content"><s:property value="#message.content" /></div>
+								<div class="content">${message.content}</div>
 							</li>
 
 							<!--Replys-->

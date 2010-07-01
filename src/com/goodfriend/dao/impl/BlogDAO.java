@@ -181,7 +181,7 @@ public class BlogDAO extends HibernateDaoSupport implements IBlogDAO {
 		for (int i = 0; i < allBlogs.size(); i++){
 			if (allBlogs.get(i).getItem().getUser().getUserName().equals(user.getUserName())){
 				//替换掉所有的html标签  
-				allBlogs.get(i).setContent(allBlogs.get(i).getContent().replaceAll("<[^<]+?>", ""));
+//				allBlogs.get(i).setContent(allBlogs.get(i).getContent().replaceAll("<[^<]+?>", ""));
 				tempList.add(allBlogs.get(i));
 			}
 		}

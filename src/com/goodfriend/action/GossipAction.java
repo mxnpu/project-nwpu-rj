@@ -253,7 +253,7 @@ public class GossipAction {
 	// add the reply to the databases;
 	replyService.addReply(reply, gossip.getItem().getIdItem(), currentUser
 		.getIdUser());
-	User user = (User) session.get("user");
+	User user = gossip.getUser();
 	String replyMails = "<a href='home.action?userId=" + currentUser.getIdUser() +"'>"
 				+ currentUser.getUserName() + "</a>"
 				+ " do a <a href='allGossip.action?userId=" + user.getIdUser() + "'> " 
