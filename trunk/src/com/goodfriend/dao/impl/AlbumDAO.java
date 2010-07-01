@@ -46,6 +46,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		// do nothing
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#save(com.goodfriend.model.Album)
+	 */
 	public void save(Album transientInstance) {
 		log.debug("saving Album instance");
 		Session session;
@@ -62,6 +65,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#delete(com.goodfriend.model.Album)
+	 */
 	public void delete(Album persistentInstance) {
 		log.debug("deleting Album instance");
 		Session session;
@@ -78,6 +84,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#findById(java.lang.Integer)
+	 */
 	public Album findById(java.lang.Integer id) {
 		log.debug("getting Album instance with id: " + id);
 		Session session;
@@ -94,6 +103,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#findByExample(com.goodfriend.model.Album)
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Album> findByExample(Album instance) {
 		log.debug("finding Album instance by example");
@@ -108,6 +120,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#findByProperty(java.lang.String, java.lang.Object)
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Album> findByProperty(String propertyName, Object value) {
 		log.debug("finding Album instance with property: " + propertyName
@@ -135,10 +150,16 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#findByTitle(java.lang.Object)
+	 */
 	public List<Album> findByTitle(Object title) {
 		return findByProperty(TITLE, title);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#findAll()
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Album> findAll() {
 		log.debug("finding all Album instances");
@@ -151,6 +172,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#merge(com.goodfriend.model.Album)
+	 */
 	public Album merge(Album detachedInstance) {
 		log.debug("merging Album instance");
 		Session session;
@@ -168,6 +192,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#attachDirty(com.goodfriend.model.Album)
+	 */
 	public void attachDirty(Album instance) {
 		log.debug("attaching dirty Album instance");
 		Session session;
@@ -184,6 +211,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#attachClean(com.goodfriend.model.Album)
+	 */
 	public void attachClean(Album instance) {
 		log.debug("attaching clean Album instance");
 		Session session;
@@ -205,6 +235,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#saveAlbumFlex(com.goodfriend.model.flex.FAlbum, com.goodfriend.model.flex.FItem)
+	 */
 	public void saveAlbumFlex(FAlbum fAlbum, FItem fItem){
 		
 		Album album = new Album();
@@ -223,6 +256,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	}
 	
 	//新建一个相册
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#createAlbum(int, java.lang.String)
+	 */
 	public void createAlbum(int userID, String title){
 		Album album = new Album();
 		Item item = new Item();
@@ -236,6 +272,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	}
 	
 	//获得一个用户的所有相册名称
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#getAlbumTitles(int)
+	 */
 	public List<String> getAlbumTitles(int userID){		
 		List<Album> albums = findAll();
 		List<String> titles = new ArrayList<String>();
@@ -249,6 +288,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		return titles;
 	}
 	//保存一张图片到数据库
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#saveImage(int, java.lang.String, java.lang.String)
+	 */
 	public void saveImage(int userID, String groupName, String path){
 		User user = userDAO.findById(userID);
 		
@@ -263,6 +305,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	}
 	
 	//根据相册名称返回相册中的所有图片
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#getImagesByAlbumName(int, java.lang.String)
+	 */
 	public List<Album> getImagesByAlbumName(int userID, String albumName){
 		List<Album> albums = findAll();
 		List<Album> result = new ArrayList<Album>();
@@ -277,6 +322,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	}
 	
 	//根据相册名删除相册  把该相册下的所有图片转移到default album相册下
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#removeAlbum(int, java.lang.String)
+	 */
 	public void removeAlbum(int userID, String albumName){
 		List<Album> albums = this.findByProperty("title", albumName);
 		Album album;
@@ -296,6 +344,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	}
 	
 	//删除一张图片信息
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#deleteImage(int, java.lang.String, java.lang.String)
+	 */
 	public void deleteImage(int userID, String albumName, String path){
 		List<Album> albums = this.findByProperty("title", albumName);
 		Album album;
@@ -312,6 +363,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	}
 	
 	//更新图片描述
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#updateDescription(int, java.lang.String, java.lang.String, java.lang.String)
+	 */
 	public void updateDescription(int userID, String albumName, String path, String description){
 		List<Album> albums = this.findByProperty("title", albumName);
 		Album album;
@@ -329,6 +383,9 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 	}
 	
 	//改变一张图片所属的相册
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#moveImage(int, java.lang.String, java.lang.String, java.lang.String)
+	 */
 	public void moveImage(int userID, String fromAlbum, String toAlbum, String path){
 		List<Album> albums = this.findByProperty("title", fromAlbum);
 		Album album;
@@ -345,10 +402,16 @@ public class AlbumDAO extends HibernateDaoSupport implements IAlbumDAO {
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#getUserDAO()
+	 */
 	public UserDAO getUserDAO() {
 		return userDAO;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.goodfriend.dao.impl.IAlbumDAO#setUserDAO(com.goodfriend.dao.impl.UserDAO)
+	 */
 	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
 	}

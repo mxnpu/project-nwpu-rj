@@ -36,7 +36,7 @@
     			<th><label><s:text name="personal_info.username"/></label></th>
     			<td>
     				<input type="text" value="${session.currentUser.userName }" id="username" name="username"
-    					tabindex="1" maxlength="16" 
+    					tabindex="1" maxlength="16" readonly="readonly"
     					onBlur="Validate.required(this,4,16,'User Name Required','userNameError');
               				myNameValidateAjax.validate(this.value); "/>
               	</td>

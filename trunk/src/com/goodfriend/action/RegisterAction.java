@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.apache.commons.lang.time.DateUtils;
 
+import com.goodfriend.dao.IAlbumDAO;
 import com.goodfriend.model.User;
 import com.goodfriend.service.IUserService;
 import com.opensymphony.xwork2.ActionContext;
@@ -31,6 +32,7 @@ public class RegisterAction {
     private String validateCode;
 
     private InputStream inputStream;
+    private IAlbumDAO albumDAO;
 
     private static final String SUCCESS = "success";
     private static final String FAILED = "failed";
@@ -137,10 +139,12 @@ public class RegisterAction {
 		}
 
 		userService.addUser(user);
+		
 
 		if (userService.isUserExist(username)) {
 		    ActionContext.getContext().getSession().put("currentUser",
 			    user);
+		    albumDAO.createAlbum(userService.getUser(user.getUserName()).getIdUser(), "default album");
 		    return SUCCESS;
 		} else {
 		    ActionContext.getContext().put("errorMsg",
@@ -473,5 +477,19 @@ public class RegisterAction {
      */
     public String getHobby() {
 	return hobby;
+    }
+
+    /**
+     * @param albumDAO the albumDAO to set
+     */
+    public void setAlbumDAO(IAlbumDAO albumDAO) {
+	this.albumDAO = albumDAO;
+    }
+
+    /**
+     * @return the albumDAO
+     */
+    public IAlbumDAO getAlbumDAO() {
+	return albumDAO;
     }
 }

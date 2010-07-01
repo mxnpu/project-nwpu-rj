@@ -140,9 +140,7 @@
 						</ul>
 					</li>
 				</s:iterator>
-				</ul>
-
-				<div>
+					<li>
 					<s:iterator var="i" begin="1" end="%{totalPage}" step="1">
 						<a href='<s:url action="getGossipByPage">
 									<s:param name="totalPage" value="%{totalPage }"></s:param>
@@ -152,7 +150,10 @@
 						<s:set name="endCount" value="%{totalPage}"></s:set>
 						<s:if test="#i != #endCount">-</s:if>
 					</s:iterator>
-				</div>
+				</li>
+				</ul>
+
+				
 				
 				<!-- UI-dialog -->
 				<div id="dialog" title='<s:text name="gossip_delete_confirm"/>'>

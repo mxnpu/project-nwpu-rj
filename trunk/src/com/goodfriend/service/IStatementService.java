@@ -1,6 +1,5 @@
 package com.goodfriend.service;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import com.goodfriend.model.Statement;
