@@ -83,6 +83,10 @@ public class BlogAction implements ServletRequestAware {
     public String showBlog() {
 	int id = Integer.parseInt(request.getParameter("id"));
 	blog = blogService.getBlog(id);
+	
+	User user = blog.getItem().getUser();
+	
+	ActionContext.getContext().getSession().put("user", user);
 
 	if (request.getParameter("state").equals("show")) {
 	    Iterator<Reply> it = blog.getItem().getReplies().iterator();

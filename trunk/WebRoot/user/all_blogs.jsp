@@ -46,7 +46,7 @@
 								<h4><s:property value="#blog.title" /></h4>
 							</s:a>
 						</label> 
-						<s:property value="#blog.content" />
+						${blog.content}
 					</span>
 				</li>
 			</s:iterator>
