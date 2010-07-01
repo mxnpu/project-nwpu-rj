@@ -303,6 +303,9 @@
 		<property name="userService">
 			<ref bean="userService" />
 		</property>
+		<property name="albumDAO">
+			<ref bean="albumDAO"/>
+		</property>
 	</bean>
 	
 	<bean id="randomNumberAction" class="com.goodfriend.action.RandomNumberAction"

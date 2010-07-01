@@ -45,9 +45,11 @@
 							<s:a href="showBlog?id=%{#blog.id}&state=show">
 								<h4><s:property value="#blog.title" /></h4>
 							</s:a>
+							<s:property value="#blog.item.time" /><br>
 						</label> 
 						${blog.content}
 					</span>
+					
 				</li>
 			</s:iterator>
 			<li id="pageIndex">	
